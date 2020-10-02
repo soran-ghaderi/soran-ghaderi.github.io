@@ -61,8 +61,9 @@ about_content: | # this will include new lines to allow paragraphs
   and a few more. To make it more tangible, I would like to employ the mentioned topics in:<br>
     - <mark>Machine vision</mark><br>
     - <mark>NLP and sequence models</mark> (e.g. speech recognition, machine translation, natural language understanding etc.)<br>
-    - <mark></mark><br>
-    - <mark>Computer vision</mark><br>
+    - <mark>Question answering</mark><br>
+    - <mark>Context extraction</mark><br>
+    - <mark>Text generation</mark><br>
 
 
 #  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as

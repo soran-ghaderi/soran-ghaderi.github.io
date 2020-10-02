@@ -50,14 +50,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_test/_data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/_test/_data" />
       <recent name="$PROJECT_DIR$/_data" />
       <recent name="$PROJECT_DIR$/_includes" />
-      <recent name="$PROJECT_DIR$/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -78,7 +78,7 @@
       <workItem from="1600660985050" duration="5991000" />
       <workItem from="1601424895309" duration="371000" />
       <workItem from="1601584134504" duration="973000" />
-      <workItem from="1601585234437" duration="13261000" />
+      <workItem from="1601585234437" duration="13934000" />
     </task>
     <task id="LOCAL-00001" summary="Changed basic info">
       <created>1600661423631</created>
@@ -318,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601605294396</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added profile.jpeg">
+      <created>1601606632326</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1601606632326</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,17 +363,18 @@
     <MESSAGE value="second initial commit !!!" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="new info ingested" />
-    <option name="LAST_COMMIT_MESSAGE" value="new info ingested" />
+    <MESSAGE value="added profile.jpeg" />
+    <option name="LAST_COMMIT_MESSAGE" value="added profile.jpeg" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="103" width="918" height="908" key="CommitChangelistDialog2" timestamp="1601605294353">
+    <state x="525" y="103" width="918" height="908" key="CommitChangelistDialog2" timestamp="1601606632282">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="525" y="103" width="918" height="908" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1601605294353" />
-    <state x="584" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601605296902">
+    <state x="525" y="103" width="918" height="908" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1601606632282" />
+    <state x="584" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601606634820">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="584" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1601605296902" />
+    <state x="584" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1601606634820" />
     <state x="653" y="252" key="run.anything.popup" timestamp="1600661409528">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>

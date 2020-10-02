@@ -51,8 +51,6 @@ about_content: | # this will include new lines to allow paragraphs
 
   Besides, I have done a few pieces of research in <mark>Bioinformatic</mark> and <mark>Recommender systems</mark> as well as having team-working experience in software companies.
 
-#  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>Deep learning</mark>.
-
   My long-term goal is to figure out how the cognitive mechanisms give rise to intelligence. However, I do have more specific interests in the field, and the following are some of them:<br>
     - <mark>Attention mechanisms</mark><br>
     - <mark>Representation learning</mark><br>

@@ -53,7 +53,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>Deep learning</mark>.
 
-  My overall goal is to use brain mechanisms to enhance current techniques in the machine learning. However, I do have more specific intersts in the field, and the following are some of them:
+  My overall goal is to use brain mechanisms to enhance current techniques in the machine learning.
 #  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
 #    - Lists
 #    - Tables

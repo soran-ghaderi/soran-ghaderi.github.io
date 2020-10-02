@@ -49,7 +49,7 @@ about_profile_image: images/profile.jpeg #Directory of profile image (eg. images
 about_content: | # this will include new lines to allow paragraphs
   Looking for a well-suited deep learning research position, I am currently intending to both join a vibrant research team and build on my academic foundations in Deep learning both theoretically and practically and stay in tune with new innovative researches through continued coursework and professional development.
 
-  Besides, I have done a few pieces of research in Bioinformatic and Recommender systems as well as having team-working experience in software companies.
+  Besides, I have done a few pieces of research in <mark>Bioinformatic</mark> and <mark>Recommender systems</mark> as well as having team-working experience in software companies.
 
 #  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>Deep learning</mark>.
 

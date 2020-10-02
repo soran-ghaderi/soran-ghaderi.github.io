@@ -64,6 +64,7 @@ about_content: | # this will include new lines to allow paragraphs
     - <mark>Text generation</mark><br>
   and the list goes on.
 
+
 #  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
 #    - Lists
 #    - Tables

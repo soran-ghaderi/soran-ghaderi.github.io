@@ -54,7 +54,8 @@ about_content: | # this will include new lines to allow paragraphs
   Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>Deep learning</mark>.
 
   My long-term goal is to figure out how the cognitive mechanisms give rise to intelligence. However, I do have more specific interests in the field, and the following are some of them:<br>
-  <mark>Deep learning</mark>
+  <mark>Deep learning</mark><br>
+  machine learning
 #  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
 #    - Lists
 #    - Tables

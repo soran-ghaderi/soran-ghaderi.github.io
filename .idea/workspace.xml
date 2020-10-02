@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hny7V1dc28Mgn1cxXahmMqXQtF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_test/_data" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_test/_data" />
+      <recent name="$PROJECT_DIR$/_data" />
+      <recent name="$PROJECT_DIR$/_includes" />
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="" />
+      <created>1600660984042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600660984042</updated>
+      <workItem from="1600660985050" duration="5991000" />
+      <workItem from="1601424895309" duration="371000" />
+      <workItem from="1601584134504" duration="973000" />
+      <workItem from="1601585234437" duration="11776000" />
+    </task>
+    <task id="LOCAL-00001" summary="Changed basic info">
+      <created>1600661423631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600661423631</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed basic info">
+      <created>1600661563170</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600661563170</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dark mode enabled">
+      <created>1600661733749</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600661733749</updated>
+    </task>
+    <task id="LOCAL-00004" summary="light mode enabled">
+      <created>1600661850041</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600661850041</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding social media accounts">
+      <created>1600662585692</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600662585692</updated>
+    </task>
+    <task id="LOCAL-00006" summary="corrected the website url">
+      <created>1600663208132</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600663208132</updated>
+    </task>
+    <task id="LOCAL-00007" summary="corrected the website url">
+      <created>1600663237154</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600663237154</updated>
+    </task>
+    <task id="LOCAL-00008" summary="initial about me">
+      <created>1600665063456</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600665063456</updated>
+    </task>
+    <task id="LOCAL-00009" summary="adding profile.jpg">
+      <created>1600665481618</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600665481618</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ordered sections">
+      <created>1601585575428</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601585575428</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test projects.yml">
+      <created>1601588663023</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601588663023</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test projects.yml&#10;corrected issues">
+      <created>1601588957465</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601588957465</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test projects.yml&#10;corrected issues">
+      <created>1601589058563</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601589058563</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added a test ling">
+      <created>1601591905569</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1601591905569</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added a test ling">
+      <created>1601592029147</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601592029147</updated>
+    </task>
+    <task id="LOCAL-00016" summary="reordered the page layout">
+      <created>1601597268691</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1601597268691</updated>
+    </task>
+    <task id="LOCAL-00017" summary="new experience components">
+      <created>1601598980496</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1601598980496</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new experience components">
+      <created>1601599020936</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1601599020936</updated>
+    </task>
+    <task id="LOCAL-00019" summary="new experience components">
+      <created>1601599478994</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1601599478994</updated>
+    </task>
+    <task id="LOCAL-00020" summary="new experience components">
+      <created>1601599521528</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1601599521528</updated>
+    </task>
+    <task id="LOCAL-00021" summary="new experience components">
+      <created>1601599687830</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1601599687830</updated>
+    </task>
+    <task id="LOCAL-00022" summary="new experience components">
+      <created>1601599889638</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1601599889638</updated>
+    </task>
+    <task id="LOCAL-00023" summary="new experience components">
+      <created>1601600211775</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1601600211775</updated>
+    </task>
+    <task id="LOCAL-00024" summary="new experience components">
+      <created>1601602176966</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602176966</updated>
+    </task>
+    <task id="LOCAL-00025" summary="roll back">
+      <created>1601602392098</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602392098</updated>
+    </task>
+    <task id="LOCAL-00026" summary="new config">
+      <created>1601602561522</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602561522</updated>
+    </task>
+    <task id="LOCAL-00027" summary="removed everything!">
+      <created>1601602951409</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602951409</updated>
+    </task>
+    <task id="LOCAL-00028" summary="second initial commit !!!">
+      <created>1601603174365</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1601603174365</updated>
+    </task>
+    <task id="LOCAL-00029" summary="initial commit">
+      <created>1601603812244</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1601603812244</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed basic info" />
+    <MESSAGE value="dark mode enabled" />
+    <MESSAGE value="light mode enabled" />
+    <MESSAGE value="adding social media accounts" />
+    <MESSAGE value="corrected the website url" />
+    <MESSAGE value="initial about me" />
+    <MESSAGE value="adding profile.jpg" />
+    <MESSAGE value="Ordered sections" />
+    <MESSAGE value="test projects.yml" />
+    <MESSAGE value="test projects.yml&#10;corrected issues" />
+    <MESSAGE value="added a test ling" />
+    <MESSAGE value="reordered the page layout" />
+    <MESSAGE value="new experience components" />
+    <MESSAGE value="roll back" />
+    <MESSAGE value="new config" />
+    <MESSAGE value="removed everything!" />
+    <MESSAGE value="second initial commit !!!" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="525" y="103" width="918" height="908" key="CommitChangelistDialog2" timestamp="1601603812174">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="525" y="103" width="918" height="908" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1601603812174" />
+    <state x="584" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601603817771">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="584" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1601603817771" />
+    <state x="653" y="252" key="run.anything.popup" timestamp="1600661409528">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="653" y="252" key="run.anything.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1600661409528" />
+  </component>
+</project>

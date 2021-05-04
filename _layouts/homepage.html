@@ -13,6 +13,16 @@
       {%- if jekyll.environment == 'production' and site.gtm -%}
         {%- include gtm_body.html -%}
       {%- endif -%}
+      <div class="container header-contianer">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
+            {% for post in site.posts %}
+            <h1><a href="{{post.url}}">{{post.title}}</a></h1>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
 
       {%- include about.html -%}
 

@@ -15,6 +15,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    beautiful-jekyll-theme (1.1.1)
+      jekyll (~> 3.3)
+      jekyll-paginate (~> 1.1)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -266,8 +269,9 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  beautiful-jekyll-theme
   html-proofer (~> 3.9)
   modern-resume-theme!
 
 BUNDLED WITH
-   2.1.0
+   2.2.16

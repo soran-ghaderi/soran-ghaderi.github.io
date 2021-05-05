@@ -33,7 +33,7 @@
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_pages/categories.md" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/categories.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mediumish-theme-jekyll" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -124,14 +124,8 @@
       <workItem from="1620128777858" duration="4561000" />
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
-      <workItem from="1620223299189" duration="5905000" />
-    </task>
-    <task id="LOCAL-00010" summary="Ordered sections">
-      <created>1601585575428</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1601585575428</updated>
+      <workItem from="1620223299189" duration="8040000" />
+      <workItem from="1620241441933" duration="3734000" />
     </task>
     <task id="LOCAL-00011" summary="test projects.yml">
       <created>1601588663023</created>
@@ -469,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620232127847</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="1. Resolve css referencing issue in the default.html">
+      <created>1620232635874</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1620232635874</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +489,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ordered sections" />
     <MESSAGE value="test projects.yml" />
     <MESSAGE value="test projects.yml&#10;corrected issues" />
     <MESSAGE value="added a test ling" />
@@ -513,7 +513,8 @@
     <MESSAGE value="Add new assets to the asset directory" />
     <MESSAGE value="Add new assets to the _sass directory" />
     <MESSAGE value="1. Add pages directory with 3 new pages &#10;2. Resolve css referencing issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Add pages directory with 3 new pages &#10;2. Resolve css referencing issue" />
+    <MESSAGE value="1. Resolve css referencing issue in the default.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve css referencing issue in the default.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

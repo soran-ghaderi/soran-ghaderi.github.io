@@ -31,7 +31,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_includes/menubar.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/menubar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/adsense-under-header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/disqus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/featuredbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/postbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/search-lunr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/share.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/star_rating.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/star_rating_postbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +84,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_includes" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -118,14 +131,9 @@
       <workItem from="1620094258532" duration="2250000" />
       <workItem from="1620096627997" duration="446000" />
       <workItem from="1620128777858" duration="4561000" />
-      <workItem from="1620143301090" duration="13382000" />
-    </task>
-    <task id="LOCAL-00004" summary="light mode enabled">
-      <created>1600661850041</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1600661850041</updated>
+      <workItem from="1620143301090" duration="15730000" />
+      <workItem from="1620222525918" duration="723000" />
+      <workItem from="1620223299189" duration="724000" />
     </task>
     <task id="LOCAL-00005" summary="adding social media accounts">
       <created>1600662585692</created>
@@ -463,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620181109079</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Clean menubar.html file">
+      <created>1620181150381</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1620181150381</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +497,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dark mode enabled" />
     <MESSAGE value="light mode enabled" />
     <MESSAGE value="adding social media accounts" />
     <MESSAGE value="corrected the website url" />
@@ -507,7 +521,8 @@
     <MESSAGE value="Add menu list as a yml file to the data folder to iterate through" />
     <MESSAGE value="Successfully added a menubar to the top of the homepage" />
     <MESSAGE value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
+    <MESSAGE value="Clean menubar.html file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean menubar.html file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

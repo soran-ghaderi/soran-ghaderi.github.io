@@ -30,10 +30,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
+    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="1. Remove rating stars at the bottom of post pages">
+      <change afterPath="$PROJECT_DIR$/_includes/menubar2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/screen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,14 +127,7 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="3734000" />
-    </task>
-    <task id="LOCAL-00011" summary="test projects.yml">
-      <created>1601588663023</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1601588663023</updated>
+      <workItem from="1620241441933" duration="11158000" />
     </task>
     <task id="LOCAL-00012" summary="test projects.yml&#10;corrected issues">
       <created>1601588957465</created>
@@ -470,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620232635874</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="1. Remove rating stars at the bottom of post pages">
+      <created>1620245548316</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1620245548317</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test projects.yml" />
     <MESSAGE value="test projects.yml&#10;corrected issues" />
     <MESSAGE value="added a test ling" />
     <MESSAGE value="reordered the page layout" />
@@ -514,7 +515,8 @@
     <MESSAGE value="Add new assets to the _sass directory" />
     <MESSAGE value="1. Add pages directory with 3 new pages &#10;2. Resolve css referencing issue" />
     <MESSAGE value="1. Resolve css referencing issue in the default.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve css referencing issue in the default.html" />
+    <MESSAGE value="1. Remove rating stars at the bottom of post pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Remove rating stars at the bottom of post pages" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

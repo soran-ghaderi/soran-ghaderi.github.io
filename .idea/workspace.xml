@@ -31,20 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_includes/adsense-under-header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/disqus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/featuredbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/postbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/search-lunr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/share.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/star_rating.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/star_rating_postbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/toc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-01-11-customer-service.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,18 +72,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_includes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_posts" />
+      <recent name="$PROJECT_DIR$/_layouts" />
+      <recent name="$PROJECT_DIR$/_includes" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/_test/_data" />
-      <recent name="$PROJECT_DIR$/_data" />
-      <recent name="$PROJECT_DIR$/_includes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -133,21 +121,7 @@
       <workItem from="1620128777858" duration="4561000" />
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
-      <workItem from="1620223299189" duration="724000" />
-    </task>
-    <task id="LOCAL-00005" summary="adding social media accounts">
-      <created>1600662585692</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1600662585692</updated>
-    </task>
-    <task id="LOCAL-00006" summary="corrected the website url">
-      <created>1600663208132</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1600663208132</updated>
+      <workItem from="1620223299189" duration="1049000" />
     </task>
     <task id="LOCAL-00007" summary="corrected the website url">
       <created>1600663237154</created>
@@ -478,7 +452,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620181150381</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Add new include html files to the include directory">
+      <created>1620224059443</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1620224059443</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html">
+      <created>1620224160564</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1620224160564</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,8 +485,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="light mode enabled" />
-    <MESSAGE value="adding social media accounts" />
     <MESSAGE value="corrected the website url" />
     <MESSAGE value="initial about me" />
     <MESSAGE value="adding profile.jpg" />
@@ -522,7 +508,9 @@
     <MESSAGE value="Successfully added a menubar to the top of the homepage" />
     <MESSAGE value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
     <MESSAGE value="Clean menubar.html file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean menubar.html file" />
+    <MESSAGE value="Add new include html files to the include directory" />
+    <MESSAGE value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

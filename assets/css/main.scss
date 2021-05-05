@@ -1,15 +1,15 @@
 ---
-# Add a comment to make this file sass-y.
-# Change this file for any custom CSS.
+# Front matter comment to ensure Jekyll properly reads file.
 ---
 
-/* We need to add display:inline in order to align the '>>' of the 'read more' link */
+@import 'modern-resume-theme';
+
 .post-excerpt p {
-	display:inline;
+  display:inline;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-	"syntax",
-    "starsnonscss"
+  "syntax",
+  "starsnonscss"
 ;

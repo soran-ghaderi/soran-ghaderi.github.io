@@ -31,8 +31,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2018-01-11-customer-service.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/ie10-viewport-bug-workaround.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/lazyload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/lunr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/lunrsearchengine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/mediumish.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/main.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,20 +79,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js" />
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/_layouts" />
       <recent name="$PROJECT_DIR$/_includes" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/.." />
     </key>
@@ -121,14 +129,7 @@
       <workItem from="1620128777858" duration="4561000" />
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
-      <workItem from="1620223299189" duration="1049000" />
-    </task>
-    <task id="LOCAL-00007" summary="corrected the website url">
-      <created>1600663237154</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1600663237154</updated>
+      <workItem from="1620223299189" duration="2239000" />
     </task>
     <task id="LOCAL-00008" summary="initial about me">
       <created>1600665063456</created>
@@ -466,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620224160564</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Add new assets to the asset directory">
+      <created>1620224471190</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1620224471190</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +493,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="corrected the website url" />
     <MESSAGE value="initial about me" />
     <MESSAGE value="adding profile.jpg" />
     <MESSAGE value="Ordered sections" />
@@ -510,7 +517,8 @@
     <MESSAGE value="Clean menubar.html file" />
     <MESSAGE value="Add new include html files to the include directory" />
     <MESSAGE value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
+    <MESSAGE value="Add new assets to the asset directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new assets to the asset directory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

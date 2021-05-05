@@ -1,17 +1,29 @@
 <div class="container header-contianer">
   <div class="row">
+    <ul class="menu-3">
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="news.asp">News</a></li>
+      <li><a href="contact.asp">Contact</a></li>
+      <li><a href="about.asp">About</a></li>
+    </ul>
+  </div>
+  <div class="row">
+
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
       <h1>{{ site.name | escape }}</h1>
       <h2>{{ site.title | escape }}</h2>
+
     </div>
+
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
 
       <ul class="icons no-print">
-        <li>
-          <a target="_blank" href="{{ site.posts_page }}" class="button button--sacnite button--round-l">
-            <i class="fas fa-rss" title="Blog"></i>
-          </a>
-        </li>
+<!--        <li>-->
+<!--          <a target="_blank" href="{{ site.posts_page }}" class="button button&#45;&#45;sacnite button&#45;&#45;round-l">-->
+<!--            <i class="fas fa-rss" title="Blog"></i>-->
+<!--          </a>-->
+<!--        </li>-->
+
         {%- if site.dribbble_username -%}
           <li>
             <a target="_blank" href="https://dribbble.com/{{ site.dribbble_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">

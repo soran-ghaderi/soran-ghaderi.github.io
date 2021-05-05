@@ -30,17 +30,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="injected info">
-      <change afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2020-01-01-second-post.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" afterDir="false" />
+    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/simple-menu-css.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,14 +122,7 @@
       <workItem from="1620094258532" duration="2250000" />
       <workItem from="1620096627997" duration="446000" />
       <workItem from="1620128777858" duration="4561000" />
-      <workItem from="1620143301090" duration="4116000" />
-    </task>
-    <task id="LOCAL-00001" summary="Changed basic info">
-      <created>1600661423631</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1600661423631</updated>
+      <workItem from="1620143301090" duration="10195000" />
     </task>
     <task id="LOCAL-00002" summary="Changed basic info">
       <created>1600661563170</created>
@@ -472,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601613075097</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Add menu list as a yml file to the data folder to iterate through">
+      <created>1620171659280</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1620171659280</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +509,8 @@
     <MESSAGE value="added info" />
     <MESSAGE value="disabled other sections until the next time" />
     <MESSAGE value="injected info" />
-    <option name="LAST_COMMIT_MESSAGE" value="injected info" />
+    <MESSAGE value="Add menu list as a yml file to the data folder to iterate through" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add menu list as a yml file to the data folder to iterate through" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

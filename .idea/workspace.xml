@@ -31,7 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_pages/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +127,7 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="18240000" />
-    </task>
-    <task id="LOCAL-00014" summary="added a test ling">
-      <created>1601591905569</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1601591905569</updated>
+      <workItem from="1620241441933" duration="19466000" />
     </task>
     <task id="LOCAL-00015" summary="added a test ling">
       <created>1601592029147</created>
@@ -468,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620262803618</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="1. Add Blog page">
+      <created>1620262822757</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1620262822757</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a test ling" />
     <MESSAGE value="reordered the page layout" />
     <MESSAGE value="new experience components" />
     <MESSAGE value="roll back" />
@@ -512,7 +515,8 @@
     <MESSAGE value="1. Resolve css referencing issue in the default.html" />
     <MESSAGE value="1. Remove rating stars at the bottom of post pages" />
     <MESSAGE value="1. Resolve font-size inconsistencies &#10;2. Resolve base url error causing page not found error" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve font-size inconsistencies &#10;2. Resolve base url error causing page not found error" />
+    <MESSAGE value="1. Add Blog page" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Add Blog page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

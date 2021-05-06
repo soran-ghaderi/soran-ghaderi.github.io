@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Home
+permalink: /blog
 ---
 
-{% if page.url == "/" %}
+{% if page.url == "/blog" %}
 
 <!-- Featured
 ================================================== -->
@@ -12,13 +13,10 @@ title: Home
         <h2><span>Featured</span></h2>
     </div>
     <div class="row">
-
         {% for post in site.posts %}
 
         {% if post.featured == true %}
-
         {% include featuredbox.html %}
-
         {% endif %}
 
         {% endfor %}
@@ -40,7 +38,7 @@ title: Home
 
     <div class="row listrecent">
 
-        {% for post in paginator.posts %}
+        {% for post in site.posts %}
 
         {% include postbox.html %}
 

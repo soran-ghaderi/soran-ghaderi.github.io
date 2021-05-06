@@ -31,10 +31,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_data/members/author.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/site_short_description_text.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/menubar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/menubar2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-01-11-customer-service.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-01-11-customer-service.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-01-11-quick-start-guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/_drafts/2018-01-11-quick-start-guide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-06-12-powerful-things-markdown-editor.md" beforeDir="false" afterPath="$PROJECT_DIR$/_drafts/2018-06-12-powerful-things-markdown-editor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-01-01-second-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_drafts/2020-01-01-second-post.markdown" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,10 +95,11 @@
       <recent name="$PROJECT_DIR$/assets/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_drafts" />
+      <recent name="$PROJECT_DIR$/_data" />
       <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/.." />
     </key>
   </component>
   <component name="RunManager">
@@ -127,14 +134,7 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="23939000" />
-    </task>
-    <task id="LOCAL-00018" summary="new experience components">
-      <created>1601599020936</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1601599020936</updated>
+      <workItem from="1620241441933" duration="25814000" />
     </task>
     <task id="LOCAL-00019" summary="new experience components">
       <created>1601599478994</created>
@@ -472,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620267336835</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="1. Resolve menu routing for homepage &#10;2. Routing now works from everywhere">
+      <created>1620268591533</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1620268591533</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +498,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new config" />
     <MESSAGE value="removed everything!" />
     <MESSAGE value="second initial commit !!!" />
     <MESSAGE value="initial commit" />
@@ -516,7 +522,8 @@
     <MESSAGE value="1. Resolve blog page errors &#10;2. Modify blog page base url" />
     <MESSAGE value="1. Add a new test post for testing additional images in posts" />
     <MESSAGE value="1. Resolve pages' width" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve pages' width" />
+    <MESSAGE value="1. Resolve menu routing for homepage &#10;2. Routing now works from everywhere" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve menu routing for homepage &#10;2. Routing now works from everywhere" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

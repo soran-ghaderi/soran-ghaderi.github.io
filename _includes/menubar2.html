@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
 
-  <div class="container pr-0">
+  <div class="container mx-auto" style="width: inherit">
 
     <!-- Begin Logo -->
     <a class="navbar-brand" href="{{ site.baseurl }}/">
@@ -18,33 +18,40 @@
 
       <ul class="navbar-nav ml-auto">
 
-        {% if page.url == "/" %}
-        <li class="nav-item active">
-          {% else %}
+        {% for item in site.data.menu_items.menu.docs %}
+<!--        <li><a href="{{ item.url }}">{{ item.title }}</a></li>-->
         <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/index.html">Home</a>
+          <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
         </li>
+        {% endfor %}
+<!--        -->
+<!--        {% if page.url == "/blog" %}-->
+<!--        <li class="nav-item active">-->
+<!--          {% else %}-->
+<!--        <li class="nav-item">-->
+<!--          {% endif %}-->
+<!--          <a class="nav-link" href="{{ site.baseurl }}/">Home</a>-->
+<!--        </li>-->
 
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{{ site.baseurl }}/about">About</a>-->
+<!--        </li>-->
 
-        <li class="nav-item">
-          <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>-->
+<!--        </li>-->
 
-        <li class="nav-item">
-          <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>-->
+<!--        </li>-->
 
-        <li class="nav-item">
-          <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>-->
+<!--        </li>-->
 
-        <li class="nav-item">
-          <a target="_blank" class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a target="_blank" class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>-->
+<!--        </li>-->
 
         {% include search-lunr.html %}
 

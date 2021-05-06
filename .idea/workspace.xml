@@ -32,7 +32,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-01-11-quick-start-guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-01-11-quick-start-guide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/menubar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/menubar2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-06-12-powerful-things-markdown-editor.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-06-12-powerful-things-markdown-editor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/modern-resume-theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/modern-resume-theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/screen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,16 +78,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mediumish-theme-jekyll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/_sass" />
       <recent name="$PROJECT_DIR$/assets/js" />
     </key>
@@ -124,14 +130,7 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="19680000" />
-    </task>
-    <task id="LOCAL-00016" summary="reordered the page layout">
-      <created>1601597268691</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1601597268691</updated>
+      <workItem from="1620241441933" duration="22632000" />
     </task>
     <task id="LOCAL-00017" summary="new experience components">
       <created>1601598980496</created>
@@ -469,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620264093395</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="1. Add a new test post for testing additional images in posts">
+      <created>1620264373464</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1620264373465</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +494,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new experience components" />
     <MESSAGE value="roll back" />
     <MESSAGE value="new config" />
     <MESSAGE value="removed everything!" />
@@ -513,7 +518,8 @@
     <MESSAGE value="1. Resolve font-size inconsistencies &#10;2. Resolve base url error causing page not found error" />
     <MESSAGE value="1. Add Blog page" />
     <MESSAGE value="1. Resolve blog page errors &#10;2. Modify blog page base url" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve blog page errors &#10;2. Modify blog page base url" />
+    <MESSAGE value="1. Add a new test post for testing additional images in posts" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Add a new test post for testing additional images in posts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

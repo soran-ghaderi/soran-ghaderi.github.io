@@ -81,6 +81,7 @@ puts markdown.to_html
 ```
 
 #### C
+![walking]({{ site.baseurl }}/assets/images/3.jpg)
 
 ```c
 printf("Hello World");

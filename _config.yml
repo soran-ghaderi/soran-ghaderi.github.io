@@ -3,12 +3,14 @@
 description: "Jekyll template, Medium styled, free for bloggers."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-#baseurl: /
+baseurl:
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
 #disqus: 'soran-ghadri.github.io'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-#include: ["_pages"]
+include:
+  - _pages
+#  - _static
 #permalink: /:title/
 
 # Authors
@@ -134,13 +136,16 @@ footer_show_references: true
 #theme: modern-resume-theme (Use this is you are hosting your resume yourself)
 # remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
 #theme: jekyll-theme-hacker
-#theme: mediumish-theme-jekyll
 
 defaults:
   - scope:
       path: _posts
     values:
       layout: post
+  - scope:
+      path: _pages
+    values:
+      layout: page
 sass:
   sass_dir: _sass
   style: compressed

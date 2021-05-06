@@ -5,7 +5,7 @@ docs:
     url: /
 
   - title: About
-    url: configuration.html
+    url: about.html
 
   - title: Blog
-    url: deployment.html
+    url: blog.md

@@ -30,11 +30,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="1. Remove rating stars at the bottom of post pages">
-      <change afterPath="$PROJECT_DIR$/_includes/menubar2.html" afterDir="false" />
+    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/menubar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/menubar2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/categories.md" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/tags.md" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/screen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,14 +134,7 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="11158000" />
-    </task>
-    <task id="LOCAL-00012" summary="test projects.yml&#10;corrected issues">
-      <created>1601588957465</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1601588957465</updated>
+      <workItem from="1620241441933" duration="18118000" />
     </task>
     <task id="LOCAL-00013" summary="test projects.yml&#10;corrected issues">
       <created>1601589058563</created>
@@ -472,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620245548317</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="1. Remove rating stars at the bottom of post pages">
+      <created>1620255787275</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1620255787275</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

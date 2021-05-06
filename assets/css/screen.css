@@ -28,7 +28,7 @@ pre {
     width: 100%;
     padding: 7px;
     font-family: monospace, sans-serif;
-    font-size: .9rem;
+    font-size: 1.35rem;
     white-space: pre;
     overflow: auto;
     background: #fff;
@@ -67,7 +67,7 @@ section.recent-posts {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     margin-bottom: 25px;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 2.1rem;
     margin-bottom: 27px;
 }
 
@@ -142,7 +142,7 @@ section.recent-posts {
 
 .listfeaturedtag h2.card-title,
 .listrecent h2.card-title {
-    font-size: 1.3rem;
+    font-size: 1.95rem;
     font-weight: 700;
     line-height: 1.25;
 }
@@ -150,7 +150,7 @@ section.recent-posts {
 .listfeaturedtag h4.card-text,
 .listrecent h4.card-text {
     color: rgba(0, 0, 0, .44);
-    font-size: 0.95rem;
+    font-size: 1.425rem;
     line-height: 1.6;
     font-weight: 400;
 }
@@ -171,7 +171,7 @@ section.recent-posts {
 }
 
 .wrapfooter {
-    font-size: .8rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     margin-bottom: 15px;
@@ -198,7 +198,7 @@ section.recent-posts {
 }
 
 .post-top-meta span {
-    font-size: 0.9rem;
+    font-size: 1.35rem;
     color: rgba(0, 0, 0, .44);
     display: inline-block;
 }
@@ -206,7 +206,7 @@ section.recent-posts {
 .post-top-meta .author-description {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-size: 0.95rem;
+    font-size: 1.425rem;
 }
 
 .toc ul {
@@ -255,7 +255,7 @@ span.post-read-more a:hover {
 }
 
 .mediumnavigation .form-control {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     border-radius: 30px;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.09);
@@ -290,7 +290,7 @@ span.post-read-more a:hover {
 
 .mediumnavigation .nav-item,
 .dropdown-menu {
-    font-size: 0.9rem;
+    font-size: inherit;
 }
 
 .mediumnavigation .search-icon {
@@ -318,7 +318,7 @@ span.post-read-more a:hover {
     border-top: 1px solid rgba(0, 0, 0, .05) !important;
     padding-top: 15px;
     padding-bottom: 12px;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     color: rgba(0, 0, 0, .44);
     margin-top: 50px;
     margin-bottom: 62px;
@@ -328,11 +328,12 @@ span.post-read-more a:hover {
 
 .link-dark {
     color: rgba(0, 0, 0, .8);
+    font-size: 1.5rem;
 }
 
 .article-post {
     font-family: Merriweather;
-    font-size: 1.1rem;
+    font-size: 1em;
     line-height: 1.84;
     color: rgba(0, 0, 0, .8);
 }
@@ -360,7 +361,7 @@ blockquote {
 
 .share p {
     margin-bottom: 10px;
-    font-size: 0.95rem;
+    font-size: 1.5rem;
 }
 
 .share ul li {
@@ -498,7 +499,7 @@ ul.tags {
 
 ul.tags li {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 1.35rem;
 }
 
 ul.tags li a {
@@ -531,7 +532,7 @@ ul.tags li a:hover {
     padding: 3px 10px;
     text-align: center;
     border-radius: 999em;
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     display: inline-block;
 }
 
@@ -541,7 +542,7 @@ ul.tags li a:hover {
     color: rgba(255, 255, 255, 1);
     fill: rgba(255, 255, 255, 1);
     border-radius: 30px;
-    font-size: 0.85rem;
+    font-size: 1.275rem;
     margin-left: 10px;
     font-weight: 600;
     text-transform: uppercase;
@@ -569,7 +570,7 @@ ul.tags li a:hover {
 }
 
 .alertbar input[type="email"] {
-    font-size: 0.85rem;
+    font-size: 1.275rem;
     padding: 3px 5px 3px 10px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -586,7 +587,7 @@ ul.tags li a:hover {
     border: 1px solid #1C9963;
     color: rgba(255, 255, 255, 1);
     fill: rgba(255, 255, 255, 1);
-    font-size: 0.85rem;
+    font-size: 1.275rem;
     border-radius: 0;
     padding: 4px 10px;
     border-top-right-radius: 3px;
@@ -627,7 +628,7 @@ ul.tags li a:hover {
 }
 
 .authorpage .author-description {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: rgba(0, 0, 0, .6);
 }
 
@@ -635,7 +636,7 @@ ul.tags li a:hover {
     padding: 7px 20px;
     margin-top: 10px;
     margin-left: 0;
-    font-size: 0.9rem;
+    font-size: 1.35rem;
 }
 
 .graybg.authorpage {
@@ -713,7 +714,7 @@ h6 {
 
 .layout-page .article-post {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .layout-page .article-post p {
@@ -726,7 +727,7 @@ img {
 
 .bottompagination span.navigation {
     display: block;
-    font-size: 0.93rem;
+    font-size: 1.395rem;
     padding: 15px 0 0 0;
     text-align: center;
     margin-bottom: 0rem;
@@ -750,7 +751,7 @@ img {
 
 span.navigation {
     display: inline-block;
-    font-size: 0.93rem;
+    font-size: 1.395rem;
     font-weight: 700;
     text-align: center;
 }
@@ -804,7 +805,7 @@ iframe {
     color: #fff;
     font-weight: 500;
     text-transform: lowercase;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     display: inline-block;
 }
 
@@ -899,4 +900,12 @@ iframe {
 .lazyimg[data-srcset] {
     opacity: 0;
     transition: opacity .25s;
+}
+
+.next {
+    font-size: 1.5rem;
+}
+
+.prev {
+    font-size: 1.5rem;
 }

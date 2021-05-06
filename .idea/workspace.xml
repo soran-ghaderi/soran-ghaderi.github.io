@@ -32,13 +32,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_includes/menubar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/menubar2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-06-12-powerful-things-markdown-editor.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-06-12-powerful-things-markdown-editor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/modern-resume-theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/modern-resume-theme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/screen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,14 +127,7 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="22632000" />
-    </task>
-    <task id="LOCAL-00017" summary="new experience components">
-      <created>1601598980496</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1601598980496</updated>
+      <workItem from="1620241441933" duration="23939000" />
     </task>
     <task id="LOCAL-00018" summary="new experience components">
       <created>1601599020936</created>
@@ -475,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620264373465</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="1. Resolve pages' width">
+      <created>1620267336835</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1620267336835</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="roll back" />
     <MESSAGE value="new config" />
     <MESSAGE value="removed everything!" />
     <MESSAGE value="second initial commit !!!" />
@@ -519,7 +515,8 @@
     <MESSAGE value="1. Add Blog page" />
     <MESSAGE value="1. Resolve blog page errors &#10;2. Modify blog page base url" />
     <MESSAGE value="1. Add a new test post for testing additional images in posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Add a new test post for testing additional images in posts" />
+    <MESSAGE value="1. Resolve pages' width" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve pages' width" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

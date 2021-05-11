@@ -31,11 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2021-05-06-test-post.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-05-06-test-post.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-05-06-test-post.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +86,11 @@
       <recent name="$PROJECT_DIR$/assets/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/_drafts" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/_data" />
       <recent name="$PROJECT_DIR$/assets/css" />
-      <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
   <component name="RunManager">
@@ -132,21 +129,7 @@
       <workItem from="1620274501305" duration="1900000" />
       <workItem from="1620317651879" duration="2516000" />
       <workItem from="1620745869407" duration="641000" />
-      <workItem from="1620746604657" duration="103000" />
-    </task>
-    <task id="LOCAL-00020" summary="new experience components">
-      <created>1601599521528</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1601599521528</updated>
-    </task>
-    <task id="LOCAL-00021" summary="new experience components">
-      <created>1601599687830</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1601599687830</updated>
+      <workItem from="1620746604657" duration="1202000" />
     </task>
     <task id="LOCAL-00022" summary="new experience components">
       <created>1601599889638</created>
@@ -477,7 +460,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620270426314</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="1. Remove the about item from the menu.yml">
+      <created>1620746739975</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746739976</updated>
+    </task>
+    <task id="LOCAL-00070" summary="1. Remove jumbotron from the default.html">
+      <created>1620746931672</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746931672</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,8 +493,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="second initial commit !!!" />
-    <MESSAGE value="initial commit" />
     <MESSAGE value="new info ingested" />
     <MESSAGE value="added profile.jpeg" />
     <MESSAGE value="added info" />
@@ -521,7 +516,9 @@
     <MESSAGE value="1. Resolve pages' width" />
     <MESSAGE value="1. Resolve menu routing for homepage &#10;2. Routing now works from everywhere" />
     <MESSAGE value="1. Create drafts directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Create drafts directory" />
+    <MESSAGE value="1. Remove the about item from the menu.yml" />
+    <MESSAGE value="1. Remove jumbotron from the default.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Remove jumbotron from the default.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

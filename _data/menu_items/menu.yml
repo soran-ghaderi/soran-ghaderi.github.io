@@ -4,8 +4,5 @@ docs:
   - title: Home
     url:
 
-  - title: About
-    url: about.html
-
   - title: Blog
     url: blog.html

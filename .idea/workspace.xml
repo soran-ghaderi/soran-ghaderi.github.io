@@ -31,17 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_data/members/author.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_data/site_short_description_text.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2021-05-06-test-post.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-01-11-customer-service.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-01-11-customer-service.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-01-11-quick-start-guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/_drafts/2018-01-11-quick-start-guide.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-06-12-powerful-things-markdown-editor.md" beforeDir="false" afterPath="$PROJECT_DIR$/_drafts/2018-06-12-powerful-things-markdown-editor.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-01-01-second-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_drafts/2020-01-01-second-post.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-01-03-first-post.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/screen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +77,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -96,10 +90,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/_drafts" />
+      <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/_data" />
       <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -134,14 +128,11 @@
       <workItem from="1620143301090" duration="15730000" />
       <workItem from="1620222525918" duration="723000" />
       <workItem from="1620223299189" duration="8040000" />
-      <workItem from="1620241441933" duration="25814000" />
-    </task>
-    <task id="LOCAL-00019" summary="new experience components">
-      <created>1601599478994</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1601599478994</updated>
+      <workItem from="1620241441933" duration="27722000" />
+      <workItem from="1620274501305" duration="1900000" />
+      <workItem from="1620317651879" duration="2516000" />
+      <workItem from="1620745869407" duration="641000" />
+      <workItem from="1620746604657" duration="103000" />
     </task>
     <task id="LOCAL-00020" summary="new experience components">
       <created>1601599521528</created>
@@ -479,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620268591533</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="1. Create drafts directory">
+      <created>1620270426314</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1620270426314</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +496,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed everything!" />
     <MESSAGE value="second initial commit !!!" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="new info ingested" />
@@ -523,7 +520,8 @@
     <MESSAGE value="1. Add a new test post for testing additional images in posts" />
     <MESSAGE value="1. Resolve pages' width" />
     <MESSAGE value="1. Resolve menu routing for homepage &#10;2. Routing now works from everywhere" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Resolve menu routing for homepage &#10;2. Routing now works from everywhere" />
+    <MESSAGE value="1. Create drafts directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Create drafts directory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

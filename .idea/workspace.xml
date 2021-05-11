@@ -129,14 +129,7 @@
       <workItem from="1620274501305" duration="1900000" />
       <workItem from="1620317651879" duration="2516000" />
       <workItem from="1620745869407" duration="641000" />
-      <workItem from="1620746604657" duration="1202000" />
-    </task>
-    <task id="LOCAL-00022" summary="new experience components">
-      <created>1601599889638</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1601599889638</updated>
+      <workItem from="1620746604657" duration="1476000" />
     </task>
     <task id="LOCAL-00023" summary="new experience components">
       <created>1601600211775</created>
@@ -474,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620746931672</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="1. Modified the first blog&#10;2. Add a brief about me">
+      <created>1620747866893</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1620747866893</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +493,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new info ingested" />
     <MESSAGE value="added profile.jpeg" />
     <MESSAGE value="added info" />
     <MESSAGE value="disabled other sections until the next time" />
@@ -518,7 +517,8 @@
     <MESSAGE value="1. Create drafts directory" />
     <MESSAGE value="1. Remove the about item from the menu.yml" />
     <MESSAGE value="1. Remove jumbotron from the default.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Remove jumbotron from the default.html" />
+    <MESSAGE value="1. Modified the first blog&#10;2. Add a brief about me" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Modified the first blog&#10;2. Add a brief about me" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

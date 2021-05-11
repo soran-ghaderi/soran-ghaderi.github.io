@@ -2,7 +2,7 @@
 layout: post
 title:  "About this blog"
 author: soran
-categories: [ test, tutorial ]
+categories: [ about, blog ]
 image: images/profile.jpeg
 featured: true
 hidden: true

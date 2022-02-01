@@ -18,7 +18,7 @@ include:
 
 # --------------------------------------------------------------------------------------
 
-repository: soran-ghaderi/soran-ghaderi.github.io
+repository: soran-ghaderi/soranghaderi.github.io
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Personal info
@@ -26,7 +26,7 @@ name: Soran Ghaderi
 title: B.Eng. in Computer software engineering
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
-website: soran-ghaderi.github.io
+website: soranghaderi.github.io
 
 
 # Dark Mode (true/false/never)

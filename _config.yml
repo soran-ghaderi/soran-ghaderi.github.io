@@ -15,18 +15,18 @@ include:
 
 
 
-#
+
 # --------------------------------------------------------------------------------------
 
-repository: soran-ghadri/soran-ghadri.github.io
+repository: soran-ghaderi/soran-ghaderi.github.io
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Personal info
-name: Soran Ghadri
+name: Soran Ghaderi
 title: B.Eng. in Computer software engineering
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
-website: soran-ghadri.github.io
+website: soran-ghaderi.github.io
 
 
 # Dark Mode (true/false/never)
@@ -34,7 +34,7 @@ darkmode: false
 
 # Social links
 twitter_username: soranghadri
-github_username:  soran-ghadri
+github_username:  soran-ghaderi
 #stackoverflow_username: "00000001"
 #dribbble_username: jekyll
 #facebook_username: jekyll

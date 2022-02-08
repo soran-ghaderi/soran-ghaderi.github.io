@@ -115,19 +115,19 @@ more_content: | # this will include new lines to allow paragraphs
   
   #### my academic accomplishments<br>
   
-  During my B.Eng., recommendation systems and bioinformatics were what I was interested in; along which I engrossed in 
+   - During my B.Eng., recommendation systems and bioinformatics were what I was interested in; along which I engrossed in 
   the machine learning and deep learning feilds. Those were the impetueses to delve more deeply into the theories as 
   well as enhancing my programming skills in particular python programming language and a couple of well-known and/or 
   cutting edge technologies in the field. <br>
   
-  <a href="https://github.com/soran-ghaderi/NUSCCF">"A new efficient subspace and K-Means clustering based method to 
+   - <a href="https://github.com/soran-ghaderi/NUSCCF">"A new efficient subspace and K-Means clustering based method to 
   improve Collaborative Filtering"</a> was my B.Eng. final thesis, which tries to deal with the High dimensionality and 
   data sparsity problems in an efficient way which recommender systems are facing. <br>
   
-  Another noticeable research accomplishment was in bioinformatics which was aiming to predict new correlations between 
+   - Another noticeable research accomplishment was in bioinformatics which was aiming to predict new correlations between 
   probiotics and diseases and we could reveal a remarkable number of new potential connections between the two. <br> 
   
-  Furthermore, I've written a whole new <mark>Python library</mark> for researchers who work on link prediction in 
+   - Furthermore, I've written a whole new <mark>Python library</mark> for researchers who work on link prediction in 
   bipartite graphs named <a href="https://github.com/bi-graph/bigraph">BiGraph</a>. Furtunately, the repository on 
   Github has new contributors and is being updated once in a while. There's also the 
   <a href="https://bigraph.readthedocs.io/en/latest/index.html">documentation</a> available for the package. 

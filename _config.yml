@@ -107,8 +107,27 @@ more_content: | # this will include new lines to allow paragraphs
   
   Following the outstanding papers and researches being published by the internationally renowned research-labs and tech-companies for the last few years on one hand,
   I have aquired a general idea of the current challenges scientists are facing. On the other hand, having a keen interest in coding and hands-on stuff, I've
-   an up-to-date knowledge of current technologies being used the the field of machine learning including a number of frameworks and libraries as well as some of the 
-  well-known optimization and high performance computing techniques. 
+   an up-to-date knowledge of current technologies being used the the field of machine learning including frameworks and libraries as well as some of the 
+  well-known optimization and high performance computing techniques. /
+  / 
+  # my academic accomplishments /
+  
+  During my B.Eng., recommendation systems and bioinformatics were what I was interested in; along which I engrossed in 
+  the machine learning and deep learning feilds. Those were the impetueses to delve more deeply into the theories as 
+  well as enhancing my programming skills in particular python programming language and a couple of well-known and/or 
+  cutting edge technologies in the field. /
+  
+  TL;DR, "A new efficient subspace and K-Means clustering based method to improve Collaborative Filtering" was my B.Eng.
+  final thesis, which tries to deal with the High dimensionality and data sparsity problems in an efficient way which 
+  recommender systems are facing. /
+  
+  Another noticeable research accomplishment was in bioinformatics which was aiming to predict new correlations between 
+  probiotics and diseases and we could reveal a remarkable number of new potential connections between the two. / 
+  
+  Furthermore, I wrote a whole new Python library for researchers who work on link prediction in bipartite graphs named 
+  <a href="https://github.com/bi-graph/bigraph">BiGraph</a>. Furtunately, the repository on Github has new contributors 
+  and is being updated once in a while. There's also the 
+  <a href="https://bigraph.readthedocs.io/en/latest/index.html">documentation</a> available for the package. 
   
   I'm a bit pressed for time at the moment, however, I will upload more information (i.e. my research and work experiences) later on.
     If you think you'll come here once in a blue moon and I can help you out in someway, then you can check out my <a href="https://www.linkedin.com/in/soran-ghadri/">Linkedin</a>.

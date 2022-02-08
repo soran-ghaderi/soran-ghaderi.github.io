@@ -102,7 +102,14 @@ about_content: | # this will include new lines to allow paragraphs
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
 more_content: | # this will include new lines to allow paragraphs
-
+  I'm Soran Ghaderi holding a BEng. in computer software engineeing since 2018. My academic passions encompass the cutting-edge 
+  researches currently being conducted in the fields of machine learning; peculiarly, methods which are trying to understand and represent the surrounding world optimaly. /
+  
+  Following the outstanding papers and researches being published by the internationally renowned research-labs and tech-companies for the last few years on one hand,
+  I have aquired a general idea of the current challenges scientists are facing. On the other hand, having a keen interest in coding and hands-on stuff, I've
+   an up-to-date knowledge of current technologies being used the the field of machine learning including a number of frameworks and libraries as well as some of the 
+  well-known optimization and high performance computing techniques. 
+  
   I'm a bit pressed for time at the moment, however, I will upload more information (i.e. my research and work experiences) later on.
     If you think you'll come here once in a blue moon and I can help you out in someway, then you can check out my <a href="https://www.linkedin.com/in/soran-ghadri/">Linkedin</a>.
 

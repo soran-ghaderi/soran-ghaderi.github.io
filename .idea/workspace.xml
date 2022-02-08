@@ -31,7 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/2021-05-06-about this blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2021-05-06-about this blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +59,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1hny7V1dc28Mgn1cxXahmMqXQtF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -129,13 +133,7 @@
       <workItem from="1620317651879" duration="2516000" />
       <workItem from="1620745869407" duration="641000" />
       <workItem from="1620746604657" duration="1651000" />
-    </task>
-    <task id="LOCAL-00025" summary="roll back">
-      <created>1601602392098</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1601602392098</updated>
+      <workItem from="1644280556732" duration="3118000" />
     </task>
     <task id="LOCAL-00026" summary="new config">
       <created>1601602561522</created>
@@ -473,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620748167541</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="1. Modified linkedin url">
+      <created>1644280718384</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1644280718384</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,10 +494,8 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="disabled other sections until the next time" />
     <MESSAGE value="injected info" />
     <MESSAGE value="Add menu list as a yml file to the data folder to iterate through" />
     <MESSAGE value="Successfully added a menubar to the top of the homepage" />
@@ -517,7 +520,8 @@
     <MESSAGE value="1. Modified the first blog&#10;2. Add a brief about me" />
     <MESSAGE value="1. Disable comments for the test_post blog" />
     <MESSAGE value="1. Rename the about_this_blog.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Rename the about_this_blog.md" />
+    <MESSAGE value="1. Modified linkedin url" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Modified linkedin url" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -31,7 +31,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,14 +133,7 @@
       <workItem from="1620745869407" duration="641000" />
       <workItem from="1620746604657" duration="1651000" />
       <workItem from="1644280556732" duration="3356000" />
-      <workItem from="1644328137575" duration="4698000" />
-    </task>
-    <task id="LOCAL-00028" summary="second initial commit !!!">
-      <created>1601603174365</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1601603174365</updated>
+      <workItem from="1644328137575" duration="5031000" />
     </task>
     <task id="LOCAL-00029" summary="initial commit">
       <created>1601603812244</created>
@@ -479,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644331805354</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="1. Added more details to the more about section 2">
+      <created>1644332999751</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1644332999751</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Successfully added a menubar to the top of the homepage" />
     <MESSAGE value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
     <MESSAGE value="Clean menubar.html file" />
     <MESSAGE value="Add new include html files to the include directory" />
@@ -522,7 +520,8 @@
     <MESSAGE value="1. Modified linkedin url" />
     <MESSAGE value="1. Modified the more content section" />
     <MESSAGE value="1. Added more details to the more about section" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section" />
+    <MESSAGE value="1. Added more details to the more about section 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

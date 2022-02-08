@@ -134,14 +134,7 @@
       <workItem from="1620745869407" duration="641000" />
       <workItem from="1620746604657" duration="1651000" />
       <workItem from="1644280556732" duration="3356000" />
-      <workItem from="1644328137575" duration="3637000" />
-    </task>
-    <task id="LOCAL-00027" summary="removed everything!">
-      <created>1601602951409</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1601602951409</updated>
+      <workItem from="1644328137575" duration="4698000" />
     </task>
     <task id="LOCAL-00028" summary="second initial commit !!!">
       <created>1601603174365</created>
@@ -479,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644283909402</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="1. Added more details to the more about section">
+      <created>1644331805354</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1644331805354</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add menu list as a yml file to the data folder to iterate through" />
     <MESSAGE value="Successfully added a menubar to the top of the homepage" />
     <MESSAGE value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
     <MESSAGE value="Clean menubar.html file" />
@@ -522,7 +521,8 @@
     <MESSAGE value="1. Rename the about_this_blog.md" />
     <MESSAGE value="1. Modified linkedin url" />
     <MESSAGE value="1. Modified the more content section" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Modified the more content section" />
+    <MESSAGE value="1. Added more details to the more about section" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

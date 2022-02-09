@@ -110,31 +110,34 @@ more_content: | # this will include new lines to allow paragraphs
   machine learning and deep learning fields. Those were the impetuses to delve more deeply into the theories.
   Following the outstanding papers and research published by the internationally renowned research-labs and 
   tech-companies for the last few years, on the one hand, I have acquired a general idea of the current challenges scientists 
-  are facing. On the other hand, having a keen interest in coding and hands-on stuff, I've got an up-to-date knowledge of 
+  are facing. On the other hand, having an avid interest in coding and hands-on stuff, I've got an up-to-date knowledge of 
   current technologies used in the field of machine learning, including a couple of frameworks and libraries as 
   well as some of the well-known optimization and high-performance computing techniques.<br>
   <br>
 
-  ### **Soran Ghaderi**'s academic accomplishments<br><br>
+  ### <b>Soran Ghaderi</b>'s academic accomplishments<br>
   
   
    - <a href="https://github.com/soran-ghaderi/NUSCCF">"<b>A new efficient subspace and K-Means clustering based method to 
-  improve Collaborative Filtering</b>"</a> was my B.Eng. final thesis, which tries to deal with the High dimensionality and 
-  data sparsity problems in an efficient way which recommender systems are facing. <br>
+  improve Collaborative Filtering</b>"</a> was my B.Eng. final thesis, which tries to deal with the <b>High dimensionality</b> and 
+  <b>data sparsity</b> problems in an <b>efficient</b> way which recommender systems are facing. <br>
   
-   - Another evident research accomplishment was in bioinformatics, which aimed to predict new correlations between 
+   - Another evident research accomplishment was in bioinformatics, which aimed to <b>predict</b> new correlations between 
   probiotics and diseases, which resulted in finding several new potential connections between the two.<br> 
   
-   - Furthermore, I've written a new <mark>Python library</mark> for researchers working on link prediction in 
-  bipartite graphs named <a href="https://github.com/bi-graph/bigraph">BiGraph</a>. Fortunately, the repository on 
+   - Furthermore, I've written a new <b>Python library</b> for researchers working on <b>link prediction</b> in 
+  <b>bipartite graphs</b> named <a href="https://github.com/bi-graph/bigraph"><b>BiGraph</b></a>. Fortunately, the repository on 
   Github has new contributors and is being updated once in a while. There's also the 
-  <a href="https://bigraph.readthedocs.io/en/latest/intro.html">documentation</a> available for the package. 
+  <a href="https://bigraph.readthedocs.io/en/latest/intro.html"><b>documentation</b></a> available for the package. 
   <br> <br>
   
+  ### Technical skills<br>
+  
+  python <i class="fab fa-facebook" title="Facebook link"></i>
   
   I'm a bit pressed for time at the moment, however, I will upload more information later on. If you think you'll come 
   here once in a blue moon and I can help you out in someway, then you can drop me an email or check out my 
-  <a href="https://www.linkedin.com/in/soran-ghadri/">Linkedin</a>.
+  <a href="https://www.linkedin.com/in/soran-ghaderi/">Linkedin</a>.
 
 #  This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
 

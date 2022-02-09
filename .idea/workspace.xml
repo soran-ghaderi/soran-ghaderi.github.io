@@ -31,6 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,21 +134,8 @@
       <workItem from="1620745869407" duration="641000" />
       <workItem from="1620746604657" duration="1651000" />
       <workItem from="1644280556732" duration="3356000" />
-      <workItem from="1644328137575" duration="5031000" />
-    </task>
-    <task id="LOCAL-00029" summary="initial commit">
-      <created>1601603812244</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1601603812244</updated>
-    </task>
-    <task id="LOCAL-00030" summary="initial commit">
-      <created>1601604611519</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1601604611519</updated>
+      <workItem from="1644328137575" duration="6283000" />
+      <workItem from="1644356529450" duration="3349000" />
     </task>
     <task id="LOCAL-00031" summary="initial commit">
       <created>1601604775953</created>
@@ -478,7 +466,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644332999751</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="1. Added more details to the more about section 3">
+      <created>1644333249816</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1644333249816</updated>
+    </task>
+    <task id="LOCAL-00079" summary="1. Added more details to the more about section 4">
+      <created>1644333380028</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1644333380028</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,8 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
-    <MESSAGE value="Clean menubar.html file" />
     <MESSAGE value="Add new include html files to the include directory" />
     <MESSAGE value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
     <MESSAGE value="Add new assets to the asset directory" />
@@ -521,7 +521,9 @@
     <MESSAGE value="1. Modified the more content section" />
     <MESSAGE value="1. Added more details to the more about section" />
     <MESSAGE value="1. Added more details to the more about section 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 2" />
+    <MESSAGE value="1. Added more details to the more about section 3" />
+    <MESSAGE value="1. Added more details to the more about section 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

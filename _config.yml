@@ -102,35 +102,33 @@ about_content: | # this will include new lines to allow paragraphs
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
 more_content: | # this will include new lines to allow paragraphs
-  I'm Soran Ghaderi holding a BEng. in computer software engineeing since 2018. My academic passions encompass the 
-  cutting-edge researches currently being conducted in the fields of machine learning; peculiarly, methods which are 
-  trying to understand and represent the surrounding world optimaly.<br>
+  I'm Soran Ghaderi holding a BEng. in computer software engineering since 2018. My academic passions encompass the 
+  cutting-edge research conducted in the fields of machine learning; peculiarly, methods that are 
+  trying to understand and represent the surrounding world optimally.<br>
   
-  Following the outstanding papers and researches being published by the internationally renowned research-labs and 
-  tech-companies for the last few years on one hand, I have aquired a general idea of the current challenges scientists 
-  are facing. On the other hand, having a keen interest in coding and hands-on stuff, I've an up-to-date knowledge of 
-  current technologies being used the the field of machine learning including frameworks and libraries as well as some 
-  of the well-known optimization and high performance computing techniques.<br>
+  During my B.Eng., recommendation systems, and bioinformatics were what I was interested in, along which I engrossed in 
+  machine learning and deep learning fields. Those were the impetuses to delve more deeply into the theories.
+  Following the outstanding papers and research published by the internationally renowned research-labs and 
+  tech-companies for the last few years, on the one hand, I have acquired a general idea of the current challenges scientists 
+  are facing. On the other hand, having a keen interest in coding and hands-on stuff, I've got an up-to-date knowledge of 
+  current technologies used in the field of machine learning, including a couple of frameworks and libraries as 
+  well as some of the well-known optimization and high-performance computing techniques.<br>
   <br>
+
+  ### Soran Ghaderi's academic accomplishments<br><br>
   
-  #### my academic accomplishments<br>
-  
-   - During my B.Eng., recommendation systems and bioinformatics were what I was interested in; along which I engrossed in 
-  the machine learning and deep learning feilds. Those were the impetueses to delve more deeply into the theories as 
-  well as enhancing my programming skills in particular python programming language and a couple of well-known and/or 
-  cutting edge technologies in the field. <br>
   
    - <a href="https://github.com/soran-ghaderi/NUSCCF">"A new efficient subspace and K-Means clustering based method to 
   improve Collaborative Filtering"</a> was my B.Eng. final thesis, which tries to deal with the High dimensionality and 
   data sparsity problems in an efficient way which recommender systems are facing. <br>
   
-   - Another noticeable research accomplishment was in bioinformatics which was aiming to predict new correlations between 
-  probiotics and diseases and we could reveal a remarkable number of new potential connections between the two. <br> 
+   - Another evident research accomplishment was in bioinformatics, which aimed to predict new correlations between 
+  probiotics and diseases, which resulted in finding several new potential connections between the two.<br> 
   
-   - Furthermore, I've written a whole new <mark>Python library</mark> for researchers who work on link prediction in 
-  bipartite graphs named <a href="https://github.com/bi-graph/bigraph">BiGraph</a>. Furtunately, the repository on 
+   - Furthermore, I've written a new <mark>Python library</mark> for researchers working on link prediction in 
+  bipartite graphs named <a href="https://github.com/bi-graph/bigraph">BiGraph</a>. Fortunately, the repository on 
   Github has new contributors and is being updated once in a while. There's also the 
-  <a href="https://bigraph.readthedocs.io/en/latest/index.html">documentation</a> available for the package. 
+  <a href="https://bigraph.readthedocs.io/en/latest/intro.html">documentation</a> available for the package. 
   <br> <br>
   
   

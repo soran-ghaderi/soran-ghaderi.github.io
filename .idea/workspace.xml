@@ -32,7 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,14 +135,7 @@
       <workItem from="1620746604657" duration="1651000" />
       <workItem from="1644280556732" duration="3356000" />
       <workItem from="1644328137575" duration="6283000" />
-      <workItem from="1644356529450" duration="3349000" />
-    </task>
-    <task id="LOCAL-00031" summary="initial commit">
-      <created>1601604775953</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1601604775953</updated>
+      <workItem from="1644356529450" duration="4217000" />
     </task>
     <task id="LOCAL-00032" summary="initial commit">
       <created>1601604807972</created>
@@ -480,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644333380028</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="1. Added more details to the more about section 5">
+      <created>1644365353877</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1644365353885</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add new include html files to the include directory" />
     <MESSAGE value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
     <MESSAGE value="Add new assets to the asset directory" />
     <MESSAGE value="Add new assets to the _sass directory" />
@@ -523,7 +522,8 @@
     <MESSAGE value="1. Added more details to the more about section 2" />
     <MESSAGE value="1. Added more details to the more about section 3" />
     <MESSAGE value="1. Added more details to the more about section 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 4" />
+    <MESSAGE value="1. Added more details to the more about section 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 5" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -30,9 +30,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="1. Modify technical skills 3&#10;2. Comment google tag">
+    <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,14 +137,7 @@
       <workItem from="1644328137575" duration="6283000" />
       <workItem from="1644356529450" duration="8222000" />
       <workItem from="1644506753903" duration="1817000" />
-      <workItem from="1644625728483" duration="2158000" />
-    </task>
-    <task id="LOCAL-00039" summary="added info">
-      <created>1601607776116</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1601607776116</updated>
+      <workItem from="1644625728483" duration="2560000" />
     </task>
     <task id="LOCAL-00040" summary="added info">
       <created>1601608099387</created>
@@ -483,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644627027143</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="1. Modify technical skills 4&#10;2. Add google tag 2">
+      <created>1644627909810</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1644627909810</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. Add Blog page" />
     <MESSAGE value="1. Resolve blog page errors &#10;2. Modify blog page base url" />
     <MESSAGE value="1. Add a new test post for testing additional images in posts" />
     <MESSAGE value="1. Resolve pages' width" />
@@ -526,7 +524,8 @@
     <MESSAGE value="1. Modify technical skills" />
     <MESSAGE value="1. Modify technical skills 2&#10;2. Modify google tag 2" />
     <MESSAGE value="1. Modify technical skills 3&#10;2. Comment google tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Modify technical skills 3&#10;2. Comment google tag" />
+    <MESSAGE value="1. Modify technical skills 4&#10;2. Add google tag 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Modify technical skills 4&#10;2. Add google tag 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

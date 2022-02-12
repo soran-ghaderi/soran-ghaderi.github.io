@@ -32,6 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +137,7 @@
       <workItem from="1644328137575" duration="6283000" />
       <workItem from="1644356529450" duration="8222000" />
       <workItem from="1644506753903" duration="1817000" />
-      <workItem from="1644625728483" duration="792000" />
-    </task>
-    <task id="LOCAL-00036" summary="added info">
-      <created>1601607439444</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1601607439444</updated>
+      <workItem from="1644625728483" duration="1231000" />
     </task>
     <task id="LOCAL-00037" summary="added info">
       <created>1601607538092</created>
@@ -481,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644626117228</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="1. Modify technical skills">
+      <created>1644626576018</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1644626576018</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. Resolve css referencing issue in the default.html" />
     <MESSAGE value="1. Remove rating stars at the bottom of post pages" />
     <MESSAGE value="1. Resolve font-size inconsistencies &#10;2. Resolve base url error causing page not found error" />
     <MESSAGE value="1. Add Blog page" />
@@ -524,7 +524,8 @@
     <MESSAGE value="1. Added more details to the more about section 7" />
     <MESSAGE value="1. Add google verification tag" />
     <MESSAGE value="1. Add google verification tag 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Add google verification tag 2" />
+    <MESSAGE value="1. Modify technical skills" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Modify technical skills" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

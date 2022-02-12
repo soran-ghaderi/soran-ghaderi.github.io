@@ -135,14 +135,8 @@
       <workItem from="1620746604657" duration="1651000" />
       <workItem from="1644280556732" duration="3356000" />
       <workItem from="1644328137575" duration="6283000" />
-      <workItem from="1644356529450" duration="5512000" />
-    </task>
-    <task id="LOCAL-00033" summary="initial commit">
-      <created>1601604989028</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1601604989028</updated>
+      <workItem from="1644356529450" duration="8222000" />
+      <workItem from="1644506753903" duration="1817000" />
     </task>
     <task id="LOCAL-00034" summary="new info ingested">
       <created>1601605294396</created>
@@ -480,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644367204059</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="1. Added more details to the more about section 7">
+      <created>1644368209801</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1644368209801</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add new assets to the asset directory" />
     <MESSAGE value="Add new assets to the _sass directory" />
     <MESSAGE value="1. Add pages directory with 3 new pages &#10;2. Resolve css referencing issue" />
     <MESSAGE value="1. Resolve css referencing issue in the default.html" />
@@ -523,7 +523,8 @@
     <MESSAGE value="1. Added more details to the more about section 4" />
     <MESSAGE value="1. Added more details to the more about section 5" />
     <MESSAGE value="1. Added more details to the more about section 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 6" />
+    <MESSAGE value="1. Added more details to the more about section 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added more details to the more about section 7" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

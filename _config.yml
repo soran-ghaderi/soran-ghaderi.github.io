@@ -118,11 +118,11 @@ more_content: | # this will include new lines to allow paragraphs
   ### <b>Soran Ghaderi</b>'s academic accomplishments<br>
   
   
-   - <a href="https://github.com/soran-ghaderi/NUSCCF">"<b>A new efficient subspace and K-Means clustering based method to 
-  improve Collaborative Filtering</b>"</a> was my B.Eng. final thesis, which tries to deal with the <b>High dimensionality</b> and 
+   - <a href="https://github.com/soran-ghaderi/NUSCCF">"<b>A new efficient subspace and K-Means-clustering based method to 
+  improve Collaborative Filtering</b>"</a> was my B.Eng. final thesis, that tries to deal with the <b>High dimensionality</b> and 
   <b>data sparsity</b> problems in an <b>efficient</b> way which recommender systems are facing. <br>
   
-   - Another evident research accomplishment was in bioinformatics, which aimed to <b>predict</b> new correlations between 
+   - Another evident research accomplishment was in bioinformatics, that aimed to <b>predict</b> new correlations between 
   probiotics and diseases, which resulted in finding several new potential connections between the two.<br> 
   
    - Furthermore, I've written a new <b>Python library</b> for researchers working on <b>link prediction</b> in 
@@ -132,8 +132,9 @@ more_content: | # this will include new lines to allow paragraphs
   <br> <br>
   
   ### Technical skills<br>
-  
-  python <i class="fab fa-facebook" title="Facebook link"></i>
+  Will be updloaded soon ...
+#  Python <i class="fab fa-python"></i>
+#  Tensorflow <i class="cib-tensorflow"></i>
   
   I'm a bit pressed for time at the moment, however, I will upload more information later on. If you think you'll come 
   here once in a blue moon and I can help you out in someway, then you can drop me an email or check out my 

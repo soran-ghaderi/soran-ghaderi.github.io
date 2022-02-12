@@ -31,7 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +136,7 @@
       <workItem from="1644328137575" duration="6283000" />
       <workItem from="1644356529450" duration="8222000" />
       <workItem from="1644506753903" duration="1817000" />
-      <workItem from="1644625728483" duration="345000" />
-    </task>
-    <task id="LOCAL-00035" summary="added profile.jpeg">
-      <created>1601606632326</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1601606632326</updated>
+      <workItem from="1644625728483" duration="792000" />
     </task>
     <task id="LOCAL-00036" summary="added info">
       <created>1601607439444</created>
@@ -481,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644625904237</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="1. Add google verification tag 2">
+      <created>1644626117228</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1644626117228</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. Add pages directory with 3 new pages &#10;2. Resolve css referencing issue" />
     <MESSAGE value="1. Resolve css referencing issue in the default.html" />
     <MESSAGE value="1. Remove rating stars at the bottom of post pages" />
     <MESSAGE value="1. Resolve font-size inconsistencies &#10;2. Resolve base url error causing page not found error" />
@@ -524,7 +523,8 @@
     <MESSAGE value="1. Added more details to the more about section 6" />
     <MESSAGE value="1. Added more details to the more about section 7" />
     <MESSAGE value="1. Add google verification tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Add google verification tag" />
+    <MESSAGE value="1. Add google verification tag 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Add google verification tag 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

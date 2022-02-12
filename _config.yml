@@ -81,7 +81,7 @@ about_content: | # this will include new lines to allow paragraphs
     - <mark>Question answering</mark><br>
     - <mark>Context extraction</mark><br>
     - <mark>Text generation</mark><br>
-  and the list goes on.
+  
 
 
 #  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
@@ -133,10 +133,8 @@ more_content: | # this will include new lines to allow paragraphs
   
   ### Technical skills<br>
   
-  Will be updloaded soon
-#  Python <i class="fab fa-python"></i>
-#  Tensorflow <i class="cib-tensorflow"></i>
-  
+  Will be updloaded soon<br>
+
   I'm a bit pressed for time at the moment, however, I will upload more information later on. If you think you'll come 
   here once in a blue moon and I can help you out in someway, then you can drop me an email or check out my 
   <a href="https://www.linkedin.com/in/soran-ghaderi/">Linkedin</a>.

@@ -32,7 +32,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8a1332fc-3608-4193-bb78-db9e946003e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_drafts/2018-01-11-quick-start-guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-01-11-quick-start-guide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_drafts/2020-01-01-second-post.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-01-01-second-post.markdown" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -133,11 +135,114 @@
       <workItem from="1620317651879" duration="2516000" />
       <workItem from="1620745869407" duration="641000" />
       <workItem from="1620746604657" duration="1651000" />
-      <workItem from="1644280556732" duration="3356000" />
-      <workItem from="1644328137575" duration="6283000" />
-      <workItem from="1644356529450" duration="8222000" />
-      <workItem from="1644506753903" duration="1817000" />
-      <workItem from="1644625728483" duration="2560000" />
+      <workItem from="1644691187291" duration="168000" />
+      <workItem from="1644757789681" duration="611000" />
+      <workItem from="1645058042571" duration="811000" />
+    </task>
+    <task id="LOCAL-00025" summary="roll back">
+      <created>1601602392098</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602392098</updated>
+    </task>
+    <task id="LOCAL-00026" summary="new config">
+      <created>1601602561522</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602561522</updated>
+    </task>
+    <task id="LOCAL-00027" summary="removed everything!">
+      <created>1601602951409</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1601602951409</updated>
+    </task>
+    <task id="LOCAL-00028" summary="second initial commit !!!">
+      <created>1601603174365</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1601603174365</updated>
+    </task>
+    <task id="LOCAL-00029" summary="initial commit">
+      <created>1601603812244</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1601603812244</updated>
+    </task>
+    <task id="LOCAL-00030" summary="initial commit">
+      <created>1601604611519</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1601604611519</updated>
+    </task>
+    <task id="LOCAL-00031" summary="initial commit">
+      <created>1601604775953</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1601604775953</updated>
+    </task>
+    <task id="LOCAL-00032" summary="initial commit">
+      <created>1601604807972</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1601604807972</updated>
+    </task>
+    <task id="LOCAL-00033" summary="initial commit">
+      <created>1601604989028</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1601604989028</updated>
+    </task>
+    <task id="LOCAL-00034" summary="new info ingested">
+      <created>1601605294396</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1601605294396</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added profile.jpeg">
+      <created>1601606632326</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1601606632326</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added info">
+      <created>1601607439444</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1601607439444</updated>
+    </task>
+    <task id="LOCAL-00037" summary="added info">
+      <created>1601607538092</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1601607538092</updated>
+    </task>
+    <task id="LOCAL-00038" summary="added info">
+      <created>1601607710943</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1601607710943</updated>
+    </task>
+    <task id="LOCAL-00039" summary="added info">
+      <created>1601607776116</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1601607776116</updated>
     </task>
     <task id="LOCAL-00040" summary="added info">
       <created>1601608099387</created>
@@ -377,112 +482,7 @@
       <option name="project" value="LOCAL" />
       <updated>1620748167541</updated>
     </task>
-    <task id="LOCAL-00074" summary="1. Modified linkedin url">
-      <created>1644280718384</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1644280718384</updated>
-    </task>
-    <task id="LOCAL-00075" summary="1. Modified the more content section">
-      <created>1644283909402</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1644283909402</updated>
-    </task>
-    <task id="LOCAL-00076" summary="1. Added more details to the more about section">
-      <created>1644331805354</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1644331805354</updated>
-    </task>
-    <task id="LOCAL-00077" summary="1. Added more details to the more about section 2">
-      <created>1644332999751</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1644332999751</updated>
-    </task>
-    <task id="LOCAL-00078" summary="1. Added more details to the more about section 3">
-      <created>1644333249816</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1644333249816</updated>
-    </task>
-    <task id="LOCAL-00079" summary="1. Added more details to the more about section 4">
-      <created>1644333380028</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1644333380028</updated>
-    </task>
-    <task id="LOCAL-00080" summary="1. Added more details to the more about section 5">
-      <created>1644365353877</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1644365353885</updated>
-    </task>
-    <task id="LOCAL-00081" summary="1. Added more details to the more about section 6">
-      <created>1644367204059</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1644367204059</updated>
-    </task>
-    <task id="LOCAL-00082" summary="1. Added more details to the more about section 7">
-      <created>1644368209801</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1644368209801</updated>
-    </task>
-    <task id="LOCAL-00083" summary="1. Add google verification tag">
-      <created>1644625904237</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1644625904237</updated>
-    </task>
-    <task id="LOCAL-00084" summary="1. Add google verification tag 2">
-      <created>1644626117228</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1644626117228</updated>
-    </task>
-    <task id="LOCAL-00085" summary="1. Modify technical skills">
-      <created>1644626576018</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1644626576018</updated>
-    </task>
-    <task id="LOCAL-00086" summary="1. Modify technical skills 2&#10;2. Modify google tag 2">
-      <created>1644626981367</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1644626981368</updated>
-    </task>
-    <task id="LOCAL-00087" summary="1. Modify technical skills 3&#10;2. Comment google tag">
-      <created>1644627027143</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1644627027143</updated>
-    </task>
-    <task id="LOCAL-00088" summary="1. Modify technical skills 4&#10;2. Add google tag 2">
-      <created>1644627909810</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1644627909810</updated>
-    </task>
-    <option name="localTasksCounter" value="89" />
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +500,21 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="disabled other sections until the next time" />
+    <MESSAGE value="injected info" />
+    <MESSAGE value="Add menu list as a yml file to the data folder to iterate through" />
+    <MESSAGE value="Successfully added a menubar to the top of the homepage" />
+    <MESSAGE value="Add menubar.html&#10;Add iterating through menu.yml file for menu items" />
+    <MESSAGE value="Clean menubar.html file" />
+    <MESSAGE value="Add new include html files to the include directory" />
+    <MESSAGE value="Add new layouts to the layout directory:&#10;1. archive.html&#10;2. categories.html&#10;3. default.html&#10;4. page.html&#10;5. post.html&#10;6. tags.html" />
+    <MESSAGE value="Add new assets to the asset directory" />
+    <MESSAGE value="Add new assets to the _sass directory" />
+    <MESSAGE value="1. Add pages directory with 3 new pages &#10;2. Resolve css referencing issue" />
+    <MESSAGE value="1. Resolve css referencing issue in the default.html" />
+    <MESSAGE value="1. Remove rating stars at the bottom of post pages" />
+    <MESSAGE value="1. Resolve font-size inconsistencies &#10;2. Resolve base url error causing page not found error" />
+    <MESSAGE value="1. Add Blog page" />
     <MESSAGE value="1. Resolve blog page errors &#10;2. Modify blog page base url" />
     <MESSAGE value="1. Add a new test post for testing additional images in posts" />
     <MESSAGE value="1. Resolve pages' width" />
@@ -510,22 +525,7 @@
     <MESSAGE value="1. Modified the first blog&#10;2. Add a brief about me" />
     <MESSAGE value="1. Disable comments for the test_post blog" />
     <MESSAGE value="1. Rename the about_this_blog.md" />
-    <MESSAGE value="1. Modified linkedin url" />
-    <MESSAGE value="1. Modified the more content section" />
-    <MESSAGE value="1. Added more details to the more about section" />
-    <MESSAGE value="1. Added more details to the more about section 2" />
-    <MESSAGE value="1. Added more details to the more about section 3" />
-    <MESSAGE value="1. Added more details to the more about section 4" />
-    <MESSAGE value="1. Added more details to the more about section 5" />
-    <MESSAGE value="1. Added more details to the more about section 6" />
-    <MESSAGE value="1. Added more details to the more about section 7" />
-    <MESSAGE value="1. Add google verification tag" />
-    <MESSAGE value="1. Add google verification tag 2" />
-    <MESSAGE value="1. Modify technical skills" />
-    <MESSAGE value="1. Modify technical skills 2&#10;2. Modify google tag 2" />
-    <MESSAGE value="1. Modify technical skills 3&#10;2. Comment google tag" />
-    <MESSAGE value="1. Modify technical skills 4&#10;2. Add google tag 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Modify technical skills 4&#10;2. Add google tag 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Rename the about_this_blog.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

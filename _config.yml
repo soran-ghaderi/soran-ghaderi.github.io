@@ -23,7 +23,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: B.Eng. in Computer software engineering
+title: BE. in Computer software engineering
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 website: soran-ghaderi.github.io
@@ -66,11 +66,18 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile.jpeg #Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-  Looking for a well-suited deep learning research position, I am currently intending to both join a vibrant research team and build on my academic foundations in Deep learning both theoretically and practically and stay in tune with new innovative researches through continued coursework and professional development.
-
-  Besides, I have done a few pieces of research in <mark>Bioinformatic</mark> and <mark>Recommender systems</mark> as well as having team-working experience in software companies.
-
-  My long-term goal is to figure out how the cognitive mechanisms give rise to intelligence. However, I do have more specific interests in the field, and the following are some of them:<br>
+  <b>Looking for</b> a well-suited <b>deep learning research position</b>, I am currently intending to both <b>join a vibrant research 
+  team</b> and build on my academic foundations in Deep learning both theoretically and practically and stay in tune with 
+  new innovative researches through continued coursework and professional development.
+  
+  Technically speaking, I have several years of <b>experience</b> in developing cutting-edge <b>ML</b> models and implementing <b>research papers</b> 
+  using well-known frameworks and libraries, such as <b>Tensorflow</b> and <b>Pytorch</b>, to name a few, in my resume.
+  Besides, I have done a few pieces of research in Bioinformatic and Recommender systems as well as having team-working 
+  experience in software companies.
+  
+  
+  My long-term goal is to figure out how the cognitive mechanisms give rise to intelligence. However, I do have more 
+  specific interests in the field, and the following are some of them:<br>
     - <mark>Attention mechanisms</mark><br>
     - <mark>Representation learning</mark><br>
     - <mark>Propabilistic graphical models</mark><br>
@@ -81,8 +88,6 @@ about_content: | # this will include new lines to allow paragraphs
     - <mark>Question answering</mark><br>
     - <mark>Context extraction</mark><br>
     - <mark>Text generation</mark><br>
-  
-
 
 #  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
 #    - Lists
@@ -105,7 +110,7 @@ more_content: | # this will include new lines to allow paragraphs
   I'm Soran Ghaderi holding a BEng. in computer software engineering since 2018. My academic passions encompass the 
   cutting-edge research conducted in the fields of machine learning; peculiarly, methods that are 
   trying to understand and represent the surrounding world optimally.<br>
-  
+    
   During my B.Eng., recommendation systems, and bioinformatics were what I was interested in, along which I engrossed in 
   machine learning and deep learning fields. Those were the impetuses to delve more deeply into the theories.
   Following the outstanding papers and research published by the internationally renowned research-labs and 
@@ -114,6 +119,7 @@ more_content: | # this will include new lines to allow paragraphs
   current technologies used in the field of machine learning, including a couple of frameworks and libraries as 
   well as some of the well-known optimization and high-performance computing techniques.<br>
   <br>
+  
 
   ### <b>Soran Ghaderi</b>'s academic accomplishments<br>
   
@@ -129,7 +135,13 @@ more_content: | # this will include new lines to allow paragraphs
   <b>bipartite graphs</b> named <a href="https://github.com/bi-graph/bigraph"><b>BiGraph</b></a>. Fortunately, the repository on 
   Github has new contributors and is being updated once in a while. There's also the 
   <a href="https://bigraph.readthedocs.io/en/latest/intro.html"><b>documentation</b></a> available for the package. 
-  <br> <br>
+  <br> 
+  
+  - Emgraph is a Python library — that I have worked on as a <b>ML engineer</b> — that tries to bring researchers involved in 
+  <b>graph representation learning</b> up to speed.
+
+
+  <br>
   
   ### Technical skills<br>
   

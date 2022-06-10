@@ -1,9 +1,94 @@
 # Project template
+#- layout: top-middle
+#  name: Project name
+#  link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+#  github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
+#  quote: >
+#    Short overview of the project (optional)
+#  description: | # this will include new lines to allow paragraphs
+#    Description about the work on/with the project
+
 - layout: top-middle
-  name: Project name
-  link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-  github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
+  name: Emgraph
+  link:
+  github: bi-graph/emgraph
   quote: >
-    Short overview of the project (optional)
+    
+    <b>2021-2022<br>
+    A Python toolkit for embedding knowledge graph, developing and evaluating models</b><br>
+    <b>Keywords</b> -- Deep-learning, Machine-learning, Graph, Knowledge-graph-embedding, Algorithms<br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bi-graph/emgraph?style=social">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/emgraph"> 
+    <img src="https://img.shields.io/pypi/v/emgraph.svg" alt="latest release" />
+    <img alt="Tensorflow 2" src="https://img.shields.io/badge/TensorFlow2-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white"> 
+     
+
+#    <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/bi-graph/emgraph">
+
   description: | # this will include new lines to allow paragraphs
-    Description about the work on/with the project
+    Designed the architecture and led the development of an opensource python library named <b>Emgraph</b> with TensorFlow 2 as its backend. It is used to develop, train, and 
+    evaluate Knowledge graph representation learning models.
+    
+    It is worth mentioning that the Emgraph was initially a part of the Bigraph, that later we 
+    decided to seperate it from the parent library to keep the API more structured.<br>
+    
+    Features:
+    <b>Support for CPU/GPU (CUDA cores)</b>, <b>Standard API</b>, <b>Dataset preprocessor</b>, 
+    <b>Data loader</b>, <b>Scalable</b>, <b>Abstarction</b>,
+    <b>Open source</b>, <b>Easy-to-use</b>, <b>Documentation</b><br>
+    
+    Tech Stack/Environment: <mark>TensorFlow 2</mark> - <mark>Numpy</mark> - <mark>Pandas</mark> - <mark>Scikit learn</mark> - <mark>TensorBoard</mark> - <mark>SQLite</mark> - <mark>driven development (TDD)</mark> - <mark>
+    PyTest</mark> - <mark>Sphinx</mark> - <mark>Python</mark><br><br>
+    
+
+- layout: top-middle
+  name: Bigraph
+  link:
+  github: bi-graph/bigraph
+  quote: >
+    <b>2019-2022<br>
+    A python library for link prediction in bipartite-networks</b> <br>
+    <b>Keywords</b> -- link-prediction, Machine-learning, Graph, Graph-analysis<br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bi-graph/bigraph?style=social">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/bigraph">
+    <img src="https://img.shields.io/pypi/v/bigraph.svg" alt="latest release" />
+#    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
+  description: | # this will include new lines to allow paragraphs
+    <b>Bigraph</b> is a Python package for Link prediction in bipartite networks. Currently, it encompasses 
+    <i>Jaccard, Adamic adar, Common neighbors, Preferential attachment, 
+    Katz similarity</i> methods. <br>
+    Features: 
+    <b>Documentation</b>, <b>Open source</b>, <b>Easy-to-use</b><br>
+    Tech Stack/Environment: <mark>Networkx</mark> - <mark>Numpy</mark> - <mark>Pandas</mark> - <mark>Scikit learn</mark> - 
+    <mark>matplotlib</mark> - <mark>Sphinx</mark> - <mark>Python</mark><br><br>
+    
+
+- layout: top-middle
+  name: TASE (<b>T</b>elegram <b>A</b>udio <b>S</b>earch <b>E</b>ngine)
+  link:
+  github: > 
+    appheap/TASE
+
+  quote: >
+    <b>2020-2022<br>
+    A lightening-fast audio search engine python library on top of the Telegram messenger platform</b> <br>
+    <b>Keywords</b> -- Audio-search-engine, Audio-indexing, Knowledge-graph<br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/appheap/TASE?style=social">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/bigraph">
+#    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
+  description: | # this will include new lines to allow paragraphs
+    <b>TASE</b> allows users to quickly and easily find information that is of genuine interest 
+    or value, without the need to wade through numerous irrelevant Telegram channels. It provides users with search 
+    results that lead to relevant information on high-quality channels.<br>
+    
+    Features: <b>Search engine</b>, direct bot search, search from groups and private chats, Real-time, Search based on 
+    file-name, performer name, audio-name, and lyrics, High accuracy and relevance, Multilingual search, Returns 
+    reference, <b>Indexing features</b>, Optimistic crawling, Scoring channel quality, banning-proof, ID hashing, 
+    Interactive indexing, Fast indexing, <b>User controlling features</b>, <b>User interface</b>, <b>Playlists</b>, 
+    <b>Admin features</b>, <b>Developer features</b>, <b>Documentation</b>, Exception safe, Extremely fast, 
+    Monitoring logs, Handles RTL langues smoothly
+    <br>
+    
+    Tech Stack/Environment: <mark>Elasticsearch</mark> - <mark>Multi processing</mark> - <mark>Multi threading</mark> - 
+    <mark>Pyrogram</mark> - <mark>ArangoDB</mark> - <mark>Celery</mark> - <mark>Sphinx</mark> - <mark>Python</mark><br>
+    

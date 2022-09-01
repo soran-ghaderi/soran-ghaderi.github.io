@@ -5,11 +5,11 @@ logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: '/'
 google_analytics: 'UA-46278016-1'
-disqus: 'demowebsite'
+#disqus: 'demowebsite'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include:
   - _pages
-#  - _static
+  - _static
 #permalink: /:title/
 
 
@@ -26,7 +26,7 @@ name: Soran Ghaderi
 title: BE. in Computer software engineering
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
-website: soran-ghaderi.github.io
+website: https://soran-ghaderi.github.io
 
 
 # Dark Mode (true/false/never)
@@ -35,6 +35,7 @@ darkmode: false
 # Social links
 twitter_username: soranghadri
 github_username:  soran-ghaderi
+medium_username: soran-ghaderi
 #stackoverflow_username: "00000001"
 #dribbble_username: jekyll
 #facebook_username: jekyll
@@ -49,12 +50,17 @@ linkedin_username: soran-ghaderi
 
 # Additional icon links
 additional_links:
-- title: kaggle
-  icon: fa-kaggle
-  url: https://www.kaggle.com/soranghadri
-# - title: another link
-#   icon: font awesome brand icon name (eg. fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-#   url: Link url (eg. https://google.com)
+#- title: kaggle
+#  icon: fa-kaggle
+#  url: https://www.kaggle.com/soranghadri
+
+- title: Medium
+  icon: fa-medium
+  url: https://soran-ghaderi.medium.com/
+
+#- title: another link
+#icon: font awesome brand icon name (eg. fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
+#url: Link url (eg. https://google.com)
 
 # Google Analytics and Tag Manager
 # Using more than one of these may cause issues with reporting

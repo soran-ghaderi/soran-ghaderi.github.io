@@ -3,8 +3,8 @@
   <div class="container mx-auto" style="width: inherit">
 
     <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-      <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+    <a class="navbar-brand" href="{{ site.url }}/">
+      <img src="{{ site.url }}/{{ site.logo }}" alt="{{ site.name }}">
     </a>
     <!-- End Logo -->
 
@@ -21,7 +21,7 @@
         {% for item in site.data.menu_items.menu.docs %}
 <!--        <li><a href="{{ item.url }}">{{ item.title }}</a></li>-->
         <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}/{{ item.url }}">{{ item.title }}</a>
+          <a class="nav-link" href="{{ site.url }}/{{ item.url }}">{{ item.title }}</a>
         </li>
         {% endfor %}
 <!--        -->
@@ -30,11 +30,11 @@
 <!--          {% else %}-->
 <!--        <li class="nav-item">-->
 <!--          {% endif %}-->
-<!--          <a class="nav-link" href="{{ site.baseurl }}/">Home</a>-->
+<!--          <a class="nav-link" href="{{ site.url }}/">Home</a>-->
 <!--        </li>-->
 
 <!--        <li class="nav-item">-->
-<!--          <a class="nav-link" href="{{ site.baseurl }}/about">About</a>-->
+<!--          <a class="nav-link" href="{{ site.url }}/about">About</a>-->
 <!--        </li>-->
 
 <!--        <li class="nav-item">-->

@@ -3,7 +3,24 @@
     {{ site.name | escape }} -
     <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
     {%- if site.footer_show_references -%}
-      &nbsp;- {{ site.references_title | default: "References on request" }}
+<!--      &nbsp;- {{ site.references_title | default: "References on request" }}-->
+      {%include footer_links.html%}
     {%- endif -%}
   </p>
 </div>
+
+<!-- Begin Footer
+    ================================================== -->
+<!--<footer class="container footer-container">-->
+  <div class="container footer-container">
+      <div class="col-md-6 col-sm-6 text-center text-lg-left">
+        Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
+      </div>
+      <div class="col-md-6 col-sm-6 text-center text-lg-right">
+        <a href="{{site.url}}">Home</a>
+        {%include footer_links.html%}
+      </div>
+  </div>
+<!--</footer>-->
+<!-- End Footer
+================================================== -->

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af54743e-1567-4620-81be-cfa2d0747ac5" name="Changes" comment="">
+    <list default="true" id="af54743e-1567-4620-81be-cfa2d0747ac5" name="Changes" comment="refactor: rename about.html to skills.html&#10;&#10;Rename and edit skills.html">
+      <change afterPath="$PROJECT_DIR$/_posts/2022-07-08-transformerx.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/transformerx_text.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/menu_items/menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/menu_items/menu.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2021-05-06-about this blog.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <workItem from="1654868029023" duration="2314000" />
       <workItem from="1654880695020" duration="3225000" />
       <workItem from="1661990511975" duration="7837000" />
-      <workItem from="1662676212389" duration="1963000" />
+      <workItem from="1662676212389" duration="3521000" />
     </task>
     <task id="LOCAL-00001" summary="1. Add new info">
       <created>1654882055030</created>
@@ -97,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662679111559</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor: rename about.html to skills.html&#10;&#10;Rename and edit skills.html">
+      <created>1662679705094</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662679705094</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +127,7 @@
     <MESSAGE value="doc(author.yml): Modify description&#10;&#10;Comment out the sample author" />
     <MESSAGE value="fix!: Resolve all issues&#10;&#10;BREAKING CHANGE: Resolved all issues with URLs and addressing &#10;&#10;Unified the menubar: used the menubar.html for all pages&#10;&#10;Update footer links&#10;&#10;Add footer_links.html&#10;&#10;Update information" />
     <MESSAGE value="refactor: Rename blog.html to projects.html&#10;fix: Resolve minor bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Rename blog.html to projects.html&#10;fix: Resolve minor bugs" />
+    <MESSAGE value="refactor: rename about.html to skills.html&#10;&#10;Rename and edit skills.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename about.html to skills.html&#10;&#10;Rename and edit skills.html" />
   </component>
 </project>

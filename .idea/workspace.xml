@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/images/tase_thumbnail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bigraph_thumbnail.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2022-05-02-tase.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-05-02-tase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2022-05-01-bigraph.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-05-01-bigraph.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bigraph_logo.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
       <updated>1678141889827</updated>
       <workItem from="1678141892773" duration="5178000" />
       <workItem from="1678149815152" duration="5785000" />
-      <workItem from="1678288354502" duration="2752000" />
+      <workItem from="1678288354502" duration="4635000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -98,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678288873900</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="doc: Add tase background">
+      <created>1678303315553</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678303315553</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +129,7 @@
     <MESSAGE value="doc: remove redundant" />
     <MESSAGE value="doc: Add details to the transformerx page" />
     <MESSAGE value="doc: Add details to the transformerx page, Emgraph and tase" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Add details to the transformerx page, Emgraph and tase" />
+    <MESSAGE value="doc: Add tase background" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Add tase background" />
   </component>
 </project>

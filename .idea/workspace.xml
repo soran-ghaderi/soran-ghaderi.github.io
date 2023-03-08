@@ -1,124 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="af54743e-1567-4620-81be-cfa2d0747ac5" name="Changes" comment="" />
+    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="doc: Add details to the transformerx page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2022-05-02-tase.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-05-02-tase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2022-07-08-transformerx.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-07-08-transformerx.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="76a9b2e6-7061-467e-b1d9-c5c84a1db840" />
+        <option name="url" value="https://github.com/soran-ghaderi/soran-ghaderi.github.io.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="28G3WL4jhoF27yqgcakA9uYZMOc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2MexXXUal1njsZmkvUUbbeGdb6A" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_posts" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/_posts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/_drafts" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="print(2)" />
-    </option>
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="af54743e-1567-4620-81be-cfa2d0747ac5" name="Changes" comment="" />
-      <created>1650829128998</created>
+      <changelist id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="" />
+      <created>1678141889827</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1650829128998</updated>
-      <workItem from="1650829134454" duration="10155000" />
-      <workItem from="1650883435333" duration="10539000" />
-      <workItem from="1650998451365" duration="14917000" />
-      <workItem from="1653519614180" duration="1528000" />
-      <workItem from="1653566354916" duration="3575000" />
-      <workItem from="1653865684460" duration="1747000" />
-      <workItem from="1654205055984" duration="66000" />
-      <workItem from="1654868029023" duration="2314000" />
-      <workItem from="1654880695020" duration="3225000" />
-      <workItem from="1661990511975" duration="7837000" />
-      <workItem from="1662676212389" duration="8258000" />
+      <updated>1678141889827</updated>
+      <workItem from="1678141892773" duration="5178000" />
+      <workItem from="1678149815152" duration="5785000" />
+      <workItem from="1678288354502" duration="389000" />
     </task>
-    <task id="LOCAL-00001" summary="1. Add new info">
-      <created>1654882055030</created>
+    <task id="LOCAL-00001" summary="Add details to the emgraph page">
+      <created>1678152357153</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1654882055030</updated>
+      <updated>1678152357153</updated>
     </task>
-    <task id="LOCAL-00002" summary="fix!: Resolve all issues&#10;&#10;BREAKING CHANGE: Resolved all issues with URLs and addressing &#10;&#10;Unified the menubar: used the menubar.html for all pages&#10;&#10;Update footer links&#10;&#10;Add footer_links.html&#10;&#10;Update information">
-      <created>1661997630589</created>
+    <task id="LOCAL-00002" summary="doc: minor modification">
+      <created>1678152433211</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1661997630589</updated>
+      <updated>1678152433211</updated>
     </task>
-    <task id="LOCAL-00003" summary="refactor: Rename blog.html to projects.html&#10;fix: Resolve minor bugs">
-      <created>1662679111559</created>
+    <task id="LOCAL-00003" summary="doc: remove redundant">
+      <created>1678153357670</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1662679111559</updated>
+      <updated>1678153357670</updated>
     </task>
-    <task id="LOCAL-00004" summary="refactor: rename about.html to skills.html&#10;&#10;Rename and edit skills.html">
-      <created>1662679705094</created>
+    <task id="LOCAL-00004" summary="doc: Add details to the transformerx page">
+      <created>1678155462420</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1662679705094</updated>
+      <updated>1678155462420</updated>
     </task>
-    <task id="LOCAL-00005" summary="refactor: rename posts and minor changes">
-      <created>1662681242409</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1662681242409</updated>
-    </task>
-    <task id="LOCAL-00006" summary="refactor: Add more details">
-      <created>1662685875365</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1662685875365</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,13 +109,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. Add new info" />
-    <MESSAGE value="doc(author.yml): Modify description&#10;&#10;Comment out the sample author" />
-    <MESSAGE value="fix!: Resolve all issues&#10;&#10;BREAKING CHANGE: Resolved all issues with URLs and addressing &#10;&#10;Unified the menubar: used the menubar.html for all pages&#10;&#10;Update footer links&#10;&#10;Add footer_links.html&#10;&#10;Update information" />
-    <MESSAGE value="refactor: Rename blog.html to projects.html&#10;fix: Resolve minor bugs" />
-    <MESSAGE value="refactor: rename about.html to skills.html&#10;&#10;Rename and edit skills.html" />
-    <MESSAGE value="refactor: rename posts and minor changes" />
-    <MESSAGE value="refactor: Add more details" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Add more details" />
+    <MESSAGE value="Add details to the emgraph page" />
+    <MESSAGE value="doc: minor modification" />
+    <MESSAGE value="doc: remove redundant" />
+    <MESSAGE value="doc: Add details to the transformerx page" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Add details to the transformerx page" />
   </component>
 </project>

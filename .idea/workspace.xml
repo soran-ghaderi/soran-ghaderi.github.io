@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="doc: Update skills.html h">
+    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_pages/skills.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
     </list>
@@ -63,7 +63,7 @@
       <workItem from="1678149815152" duration="5785000" />
       <workItem from="1678288354502" duration="4939000" />
       <workItem from="1678313263096" duration="8853000" />
-      <workItem from="1678361326095" duration="4277000" />
+      <workItem from="1678361326095" duration="4915000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -128,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678365906365</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="doc: Update skills.html html tags added">
+      <created>1678366531284</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678366531284</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +162,7 @@
     <MESSAGE value="doc: Add bigraph_thumbnail.png" />
     <MESSAGE value="doc: Update skills.html content" />
     <MESSAGE value="doc: Update skills.html more projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html more projects" />
+    <MESSAGE value="doc: Update skills.html html tags added" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html html tags added" />
   </component>
 </project>

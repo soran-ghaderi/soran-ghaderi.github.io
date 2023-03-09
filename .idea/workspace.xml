@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/images/bigraph_thumbnail.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2022-05-01-bigraph.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-05-01-bigraph.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bigraph_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/skills.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -62,7 +61,8 @@
       <updated>1678141889827</updated>
       <workItem from="1678141892773" duration="5178000" />
       <workItem from="1678149815152" duration="5785000" />
-      <workItem from="1678288354502" duration="4635000" />
+      <workItem from="1678288354502" duration="4939000" />
+      <workItem from="1678313263096" duration="8724000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -106,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678303315553</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="doc: Add bigraph_thumbnail.png">
+      <created>1678313056237</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678313056237</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +137,7 @@
     <MESSAGE value="doc: Add details to the transformerx page" />
     <MESSAGE value="doc: Add details to the transformerx page, Emgraph and tase" />
     <MESSAGE value="doc: Add tase background" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Add tase background" />
+    <MESSAGE value="doc: Add bigraph_thumbnail.png" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Add bigraph_thumbnail.png" />
   </component>
 </project>

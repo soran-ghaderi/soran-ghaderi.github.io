@@ -62,7 +62,8 @@
       <workItem from="1678141892773" duration="5178000" />
       <workItem from="1678149815152" duration="5785000" />
       <workItem from="1678288354502" duration="4939000" />
-      <workItem from="1678313263096" duration="8724000" />
+      <workItem from="1678313263096" duration="8853000" />
+      <workItem from="1678361326095" duration="3483000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -113,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678313056237</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="doc: Update skills.html content">
+      <created>1678332259209</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678332259210</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +146,7 @@
     <MESSAGE value="doc: Add details to the transformerx page, Emgraph and tase" />
     <MESSAGE value="doc: Add tase background" />
     <MESSAGE value="doc: Add bigraph_thumbnail.png" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Add bigraph_thumbnail.png" />
+    <MESSAGE value="doc: Update skills.html content" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html content" />
   </component>
 </project>

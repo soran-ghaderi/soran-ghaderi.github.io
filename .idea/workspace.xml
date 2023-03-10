@@ -63,7 +63,7 @@
       <workItem from="1678149815152" duration="5785000" />
       <workItem from="1678288354502" duration="4939000" />
       <workItem from="1678313263096" duration="8853000" />
-      <workItem from="1678361326095" duration="9034000" />
+      <workItem from="1678361326095" duration="11728000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -142,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678370545701</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="doc: Update skills.html add intro">
+      <created>1678388040242</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678388040242</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +178,7 @@
     <MESSAGE value="doc: Update skills.html more projects" />
     <MESSAGE value="doc: Update skills.html html tags added" />
     <MESSAGE value="doc: Update skills.html add links" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html add links" />
+    <MESSAGE value="doc: Update skills.html add intro" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html add intro" />
   </component>
 </project>

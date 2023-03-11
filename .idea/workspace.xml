@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="">
+    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="doc: Update skills.html add other details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_pages/skills.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
     </list>
@@ -63,7 +63,9 @@
       <workItem from="1678149815152" duration="5785000" />
       <workItem from="1678288354502" duration="4939000" />
       <workItem from="1678313263096" duration="8853000" />
-      <workItem from="1678361326095" duration="11728000" />
+      <workItem from="1678361326095" duration="11832000" />
+      <workItem from="1678460627605" duration="8446000" />
+      <workItem from="1678548691870" duration="1133000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -149,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678388040242</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="doc: Update skills.html add tools">
+      <created>1678412322513</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678412322513</updated>
+    </task>
+    <task id="LOCAL-00014" summary="doc: Update skills.html add other details">
+      <created>1678501419657</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678501419657</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +195,8 @@
     <MESSAGE value="doc: Update skills.html html tags added" />
     <MESSAGE value="doc: Update skills.html add links" />
     <MESSAGE value="doc: Update skills.html add intro" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html add intro" />
+    <MESSAGE value="doc: Update skills.html add tools" />
+    <MESSAGE value="doc: Update skills.html add other details" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: Update skills.html add other details" />
   </component>
 </project>

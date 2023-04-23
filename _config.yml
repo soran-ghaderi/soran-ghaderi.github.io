@@ -34,7 +34,7 @@ darkmode: false
 
 # Social links
 twitter_username: soranghadri
-github_username:  soran-ghaderi
+github_username: soran-ghaderi
 medium_username: soran-ghaderi
 #stackoverflow_username: "00000001"
 #dribbble_username: jekyll
@@ -50,13 +50,13 @@ linkedin_username: soran-ghaderi
 
 # Additional icon links
 additional_links:
-#- title: kaggle
-#  icon: fa-kaggle
-#  url: https://www.kaggle.com/soranghadri
+  #- title: kaggle
+  #  icon: fa-kaggle
+  #  url: https://www.kaggle.com/soranghadri
 
-- title: Medium
-  icon: fa-medium
-  url: https://soran-ghaderi.medium.com/
+  - title: Medium
+    icon: fa-medium
+    url: https://soran-ghaderi.medium.com/
 
 #- title: another link
 #icon: font awesome brand icon name (eg. fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
@@ -76,24 +76,32 @@ about_content: | # this will include new lines to allow paragraphs
   team</b> and build on my academic foundations in Deep learning both theoretically and practically and stay in tune with 
   new innovative researches through continued coursework and professional development.
   
-  Technically speaking, I have several years of <b>experience</b> in developing cutting-edge <b>ML</b> models and implementing <b>research papers</b> 
-  using well-known frameworks and libraries, such as <b>Tensorflow</b> and <b>Pytorch</b>, to name a few, in my resume.
-  Besides, I have done a few pieces of research in Bioinformatic and Recommender systems as well as having team-working 
-  experience in software companies.
+  Throughout my professional journey, I have been fortunate enough to gain a few years of <b>experience</b> in 
+  creating <b>machine learning</b> models and implementing research papers utilizing established frameworks like 
+  <b>TensorFlow</b> and <b>PyTorch</b>. Furthermore, my experience in conducting research in the domains of 
+  Bioinformatics and Recommender Systems has enabled me to acquire valuable insights and knowledge. Moreover, 
+  I have collaborated with software companies, which has provided me with the opportunity to enhance my technical 
+  and professional abilities through <b>team work</b> experiences.
   
   
-  My long-term goal is to figure out how the cognitive mechanisms give rise to intelligence. However, I do have more 
-  specific interests in the field, and the following are some of them:<br>
-    - <mark>Attention mechanisms</mark><br>
-    - <mark>Representation learning</mark><br>
-    - <mark>Propabilistic graphical models</mark><br>
-    - <mark>Generative models</mark><br>
-  and a few more. To make it more tangible, I would like to employ the mentioned topics in:<br>
-    - <mark>Machine vision</mark><br>
-    - <mark>NLP and sequence models</mark> (e.g. speech recognition, machine translation, natural language understanding etc.)<br>
-    - <mark>Question answering</mark><br>
-    - <mark>Context extraction</mark><br>
-    - <mark>Text generation</mark><br>
+  My ultimate objective is to study the cognitive mechanisms underlying intelligence. However, I have specific 
+  interests in the field, including 
+    - <mark>attention mechanisms</mark><br>
+    - <mark>representation learning</mark><br>
+    - <mark>generative models</mark><br>
+    - <mark>multimodal learning</mark><br>
+    - <mark>self-supervised learning</mark><br>
+  among others. I aim to apply these concepts to 
+    - <mark>machine vision</mark><br>
+    - <mark>natural language processing (NLP)</mark><br>
+      - <mark>machine translation</mark><br>
+      - <mark>natural language understanding</mark><br>
+      - <mark>question answering</mark><br>
+      - <mark>context extraction</mark><br>
+      - <mark>text generation</mark><br>
+    - <mark>speech recognition</mark><br>
+    - <mark>video/music generation</mark><br>
+    
 
 #  ### Academic accomplishments<br>
 #
@@ -187,9 +195,9 @@ sass:
   style: compressed
 
 plugins:
- - jekyll-seo-tag
+  - jekyll-seo-tag
 
-exclude : [
+exclude: [
   "Gemfile",
   "Gemfile.lock",
   "node_modules",
@@ -200,5 +208,5 @@ exclude : [
   "lib/",
   "scripts/",
   "docker-compose.yml",
-  ]
+]
 

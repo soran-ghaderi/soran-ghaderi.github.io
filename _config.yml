@@ -23,7 +23,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: BE. in Computer software engineering
+title: Master's Student in AI at the University of Essex
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -46,7 +46,7 @@ linkedin_username: soran-ghaderi
 #pinterest_username: jekyll
 #youtube_username: jekyll
 #googleplus_username: +jekyll
-#orcid_username: 0000-0000-0000-0000
+orcid_username: 0009-0004-6564-4517
 
 # Additional icon links
 additional_links:
@@ -72,26 +72,25 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile.jpeg #Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-  <b>Looking for</b> a well-suited <b>deep learning research position</b>, I am currently intending to both <b>join a vibrant research 
-  team</b> and build on my academic foundations in Deep learning both theoretically and practically and stay in tune with 
-  new innovative researches through continued coursework and professional development.
+  I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex. 
+  With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents. 
   
-  Throughout my professional journey, I have been fortunate enough to gain a few years of <b>experience</b> in 
-  creating <b>machine learning</b> models and implementing research papers utilizing established frameworks like 
-  <b>TensorFlow</b> and <b>PyTorch</b>. Furthermore, my experience in conducting research in the domains of 
-  Bioinformatics and Recommender Systems has enabled me to acquire valuable insights and knowledge. Moreover, 
-  I have collaborated with software companies, which has provided me with the opportunity to enhance my technical 
-  and professional abilities through <b>team work</b> experiences.
+  I am eager to explore the potential of attention mechanisms in enhancing the performance of multimodal models in 
+  representation learning, reasoning, and zero-shot learning within uncertain environments.
+  
+  Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made 
+  contributions to the open-source community.
   
   
-  My ultimate objective is to study the cognitive mechanisms underlying intelligence. However, I have specific 
-  interests in the field, including 
+  My ultimate objective is to study the cognitive mechanisms underlying intelligence. Specifically, 
     - <mark>attention mechanisms</mark><br>
     - <mark>representation learning</mark><br>
+  with a bias toward <mark>efficient computation</mark> in the following settings:
     - <mark>generative models</mark><br>
     - <mark>multimodal learning</mark><br>
     - <mark>self-supervised learning</mark><br>
-  among others. I aim to apply these concepts to 
+  
+  I aim to apply these concepts to 
     - <mark>machine vision</mark><br>
     - <mark>natural language processing (NLP)</mark><br>
       - <mark>machine translation</mark><br>
@@ -99,8 +98,10 @@ about_content: | # this will include new lines to allow paragraphs
       - <mark>question answering</mark><br>
       - <mark>context extraction</mark><br>
       - <mark>text generation</mark><br>
-    - <mark>speech recognition</mark><br>
-    - <mark>video/music generation</mark><br>
+    - <mark>speech processing</mark><br>
+    - <mark>video processing</mark><br>
+      - <mark>generation</mark><br>
+      - <mark>representation</mark><br>
     
 
 #  ### Academic accomplishments<br>
@@ -140,7 +141,7 @@ about_content: | # this will include new lines to allow paragraphs
 # experience_title: Experience #(Use this to override about experience section title)
 
 # Education Section
-# education_title: Education #(Use this to override about education section title)
+education_title: Education #(Use this to override about education section title)
 
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)

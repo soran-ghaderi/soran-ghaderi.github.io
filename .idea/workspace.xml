@@ -32,6 +32,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2MexXXUal1njsZmkvUUbbeGdb6A" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,6 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/aiengineer/WebstormProjects/soran-ghaderi.github.io/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,6 +56,21 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="127.0.0.1:4000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:4000//">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.127.0.0.1:4000" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +86,9 @@
       <workItem from="1678361326095" duration="11832000" />
       <workItem from="1678460627605" duration="8446000" />
       <workItem from="1678548691870" duration="2147000" />
-      <workItem from="1682197291251" duration="5303000" />
+      <workItem from="1682197291251" duration="6690000" />
+      <workItem from="1696712623911" duration="9984000" />
+      <workItem from="1696761644182" duration="7868000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -181,7 +202,29 @@
       <option name="project" value="LOCAL" />
       <updated>1682210004909</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="doc: Update resume (skills.html)">
+      <created>1682210809428</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682210809428</updated>
+    </task>
+    <task id="LOCAL-00018" summary="doc: other minor updates">
+      <created>1682210937158</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682210937158</updated>
+    </task>
+    <task id="LOCAL-00019" summary="doc: update the about section and profile picture">
+      <option name="closed" value="true" />
+      <created>1696768639209</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1696768639209</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +258,9 @@
     <MESSAGE value="doc: Update skills.html add other details" />
     <MESSAGE value="doc: Update skills.html restructuring sections" />
     <MESSAGE value="doc: Update about sections" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Update about sections" />
+    <MESSAGE value="doc: Update resume (skills.html)" />
+    <MESSAGE value="doc: other minor updates" />
+    <MESSAGE value="doc: update the about section and profile picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: update the about section and profile picture" />
   </component>
 </project>

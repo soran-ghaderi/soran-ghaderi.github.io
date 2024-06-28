@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_pages/skills.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/profile.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/images/profile.jpeg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +43,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.127.0.0.1:4000.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/aiengineer/WebstormProjects/soran-ghaderi.github.io/images",
+    "last_opened_file_path": "/home/aiengineer/WebstormProjects/soran-ghaderi.github.io",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +73,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -88,7 +97,8 @@
       <workItem from="1678548691870" duration="2147000" />
       <workItem from="1682197291251" duration="6690000" />
       <workItem from="1696712623911" duration="9984000" />
-      <workItem from="1696761644182" duration="7868000" />
+      <workItem from="1696761644182" duration="8543000" />
+      <workItem from="1719541797400" duration="11331000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -224,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696768639209</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="doc: update the about section in the skills page">
+      <option name="closed" value="true" />
+      <created>1696775827743</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1696775827743</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +279,7 @@
     <MESSAGE value="doc: Update resume (skills.html)" />
     <MESSAGE value="doc: other minor updates" />
     <MESSAGE value="doc: update the about section and profile picture" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: update the about section and profile picture" />
+    <MESSAGE value="doc: update the about section in the skills page" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: update the about section in the skills page" />
   </component>
 </project>

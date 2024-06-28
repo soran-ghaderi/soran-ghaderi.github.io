@@ -95,14 +95,14 @@ about_content: | # this will include new lines to allow paragraphs
   mechanisms with a bias toward efficient computation in these settings: generative models, multimodal
   learning, and self-supervised learning.
   
-  #      I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
-  #    With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
-  #
-  #    I am eager to explore the potential of attention mechanisms in enhancing the performance of multimodal models in
-  #    representation learning, reasoning, and zero-shot learning within uncertain environments.
-  #
-  #    Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made
-  #    contributions to the open-source community.
+#        I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
+#      With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
+#
+#      I am eager to explore the potential of attention mechanisms in enhancing the performance of multimodal models in
+#      representation learning, reasoning, and zero-shot learning within uncertain environments.
+#
+#      Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made
+#      contributions to the open-source community.
     
 
 #  ### Academic accomplishments<br>

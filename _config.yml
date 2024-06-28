@@ -72,36 +72,37 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile.jpeg #Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-  I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex. 
-  With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents. 
+  I am a Master's student pursuing a specialization in Artificial Intelligence at the <a href="https://www.essex.ac.uk/">University of Essex</a>, Under the supervision of
+  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca-Citi">Professor Luca Citi</a>. Previously, I obtained my
+  bachelor's degree from the <a href="https://eng.uok.ac.ir/en/">University of Kurdistan</a>. I have experience in
+  developing deep learning pipelines through contributions to the open-source community and research collaborations.
   
-  I am eager to explore the potential of attention mechanisms in enhancing the performance of multimodal models in 
-  representation learning, reasoning, and zero-shot learning within uncertain environments.
+  My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop agents able to
+  reason and interact with the real world.
   
-  Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made 
-  contributions to the open-source community.
+  A major challenge in current AI models is their struggle with consistent logical reasoning and decision-making,
+  especially in scenarios that require multi-step inference or handling of previously unseen situations. Current LLMs can
+  generate highly semantically coherent text, yet, often fail in robust reasoning abilities that are necessary for tasks
+  such as complex problem-solving, planning, or adapting to novel environments.
   
+  To this end, my research explores fully <strong>differentiable approaches for implementing multi-step reasoning</strong> in LLMs,
+  decision-making, zero-shot learning within uncertain environments, and embodied agents.
+  This involves developing new architectures that can maintain coherent thought processes across multiple inference steps.<br>
   
-  My ultimate objective is to study the cognitive mechanisms underlying intelligence. Specifically, 
-    - <mark>attention mechanisms</mark><br>
-    - <mark>representation learning</mark><br>
-  with a bias toward <mark>efficient computation</mark> in the following settings:
-    - <mark>generative models</mark><br>
-    - <mark>multimodal learning</mark><br>
-    - <mark>self-supervised learning</mark><br>
+  In a wider context, I am fascinated by the idea of developing a network of specialized networks such as memory and rapid learning,
+  goal-driven planning, spatial reasoning, and error detection and conflict monitoring that operate collaboratively to 
+  consistently make good decisions within a complex environment. I am interested in transformers and attention
+  mechanisms with a bias toward efficient computation in these settings: generative models, multimodal
+  learning, and self-supervised learning.
   
-  I aim to apply these concepts to 
-    - <mark>machine vision</mark><br>
-    - <mark>natural language processing (NLP)</mark><br>
-      - <mark>machine translation</mark><br>
-      - <mark>natural language understanding</mark><br>
-      - <mark>question answering</mark><br>
-      - <mark>context extraction</mark><br>
-      - <mark>text generation</mark><br>
-    - <mark>speech processing</mark><br>
-    - <mark>video processing</mark><br>
-      - <mark>generation</mark><br>
-      - <mark>representation</mark><br>
+  #      I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
+  #    With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
+  #
+  #    I am eager to explore the potential of attention mechanisms in enhancing the performance of multimodal models in
+  #    representation learning, reasoning, and zero-shot learning within uncertain environments.
+  #
+  #    Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made
+  #    contributions to the open-source community.
     
 
 #  ### Academic accomplishments<br>

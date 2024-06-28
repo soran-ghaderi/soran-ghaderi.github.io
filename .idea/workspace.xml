@@ -31,9 +31,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
   <component name="ProjectId" id="2MexXXUal1njsZmkvUUbbeGdb6A" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/aiengineer/WebstormProjects/soran-ghaderi.github.io",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +53,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+
+
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
@@ -78,6 +77,7 @@
       </set>
     </attachedChunks>
   </component>
+
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,10 +93,12 @@
       <workItem from="1678361326095" duration="11832000" />
       <workItem from="1678460627605" duration="8446000" />
       <workItem from="1678548691870" duration="2147000" />
-      <workItem from="1682197291251" duration="6690000" />
+
+      <workItem from="1682197291251" duration="5303000" />
       <workItem from="1696712623911" duration="9984000" />
       <workItem from="1696761644182" duration="8543000" />
       <workItem from="1719541797400" duration="11660000" />
+
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -210,6 +212,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682210004909</updated>
     </task>
+
     <task id="LOCAL-00017" summary="doc: Update resume (skills.html)">
       <created>1682210809428</created>
       <option name="number" value="00017" />
@@ -248,7 +251,8 @@
       <option name="project" value="LOCAL" />
       <updated>1719554813516</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <option name="localTasksCounter" value="17" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +291,7 @@
     <MESSAGE value="doc: update the about section and profile picture" />
     <MESSAGE value="doc: update the about section in the skills page" />
     <MESSAGE value="doc: update the about section in the config.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: update the about section in the config.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: update the about section" />
+
   </component>
 </project>

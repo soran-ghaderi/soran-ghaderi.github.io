@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="doc: update the about section in the config.yml">
       <change beforePath="$PROJECT_DIR$/_pages/skills.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +38,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.127.0.0.1:4000.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,6 +53,31 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+
+
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="127.0.0.1:4000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:4000//">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.127.0.0.1:4000" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +93,12 @@
       <workItem from="1678361326095" duration="11832000" />
       <workItem from="1678460627605" duration="8446000" />
       <workItem from="1678548691870" duration="2147000" />
+
       <workItem from="1682197291251" duration="5303000" />
+      <workItem from="1696712623911" duration="9984000" />
+      <workItem from="1696761644182" duration="8543000" />
+      <workItem from="1719541797400" duration="11660000" />
+
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -181,7 +212,47 @@
       <option name="project" value="LOCAL" />
       <updated>1682210004909</updated>
     </task>
+
+    <task id="LOCAL-00017" summary="doc: Update resume (skills.html)">
+      <created>1682210809428</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682210809428</updated>
+    </task>
+    <task id="LOCAL-00018" summary="doc: other minor updates">
+      <created>1682210937158</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682210937158</updated>
+    </task>
+    <task id="LOCAL-00019" summary="doc: update the about section and profile picture">
+      <option name="closed" value="true" />
+      <created>1696768639209</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1696768639209</updated>
+    </task>
+    <task id="LOCAL-00020" summary="doc: update the about section in the skills page">
+      <option name="closed" value="true" />
+      <created>1696775827743</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1696775827743</updated>
+    </task>
+    <task id="LOCAL-00021" summary="doc: update the about section in the config.yml">
+      <option name="closed" value="true" />
+      <created>1719554813516</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1719554813516</updated>
+    </task>
     <option name="localTasksCounter" value="17" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +286,12 @@
     <MESSAGE value="doc: Update skills.html add other details" />
     <MESSAGE value="doc: Update skills.html restructuring sections" />
     <MESSAGE value="doc: Update about sections" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Update about sections" />
+    <MESSAGE value="doc: Update resume (skills.html)" />
+    <MESSAGE value="doc: other minor updates" />
+    <MESSAGE value="doc: update the about section and profile picture" />
+    <MESSAGE value="doc: update the about section in the skills page" />
+    <MESSAGE value="doc: update the about section in the config.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: update the about section" />
+
   </component>
 </project>

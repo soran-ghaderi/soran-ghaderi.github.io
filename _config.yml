@@ -23,11 +23,10 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: Master's Student in AI at the University of Essex
+title: Looking for PhD & Research Opportunities - MSc in AI at the University of Essex
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
-
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -153,9 +152,6 @@ about_content: | # this will include new lines to allow paragraphs
     </ul>
   </section>
   
-  
-  
-  
 #        I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
 #      With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
 #
@@ -164,7 +160,6 @@ about_content: | # this will include new lines to allow paragraphs
 #
 #      Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made
 #      contributions to the open-source community.
-    
 
 #  ### Academic accomplishments<br>
 #
@@ -254,4 +249,3 @@ exclude: [
   "scripts/",
   "docker-compose.yml",
 ]
-

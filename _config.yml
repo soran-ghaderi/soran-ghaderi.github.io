@@ -76,48 +76,85 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h2>About</h2>
   <p>
-  I am a Master's student pursuing a specialization in Artificial Intelligence at the <a href="https://www.essex.ac.uk/">University of Essex</a>, Under the supervision of
+  I received my MSc in Artificial Intelligence at the <a href="https://www.essex.ac.uk/">University of Essex</a>, supervised by
   <a href="https://www.essex.ac.uk/people/CITIL35902/Luca-Citi">Professor Luca Citi</a>. Previously, I obtained my
-  bachelor's degree from the <a href="https://eng.uok.ac.ir/en/">University of Kurdistan</a>. I have experience in
-  developing deep learning pipelines through contributions to the open-source community and research collaborations. </p>
+  bachelor's degree from the <a href="https://eng.uok.ac.ir/en/">University of Kurdistan</a>. During my postgraduate studies,
+  I was working on reasoning in LLMs for code generation; as a result, I developed a new approach for guiding the 
+  generation process. It consisted of a separate deep-think stage with self-reflection (somehow similar to OpenAI o1) and 
+  a direct integration of thoughts (hidden states) into the LLM's main generation's hidden states using model surgery! 
+  This framework called <a href="https://soran-ghaderi.github.io/nir/">NIR</a> is applicable to various LLMs without 
+  finetuning. As an extension, It has a thought memory manager which controls the memories and thoughts of the LLM 
+  (not included in the evaluations) which allows the integration of approaches like Neural Turing Machines or DNC and LLMs.
+  
+  I have also contributed to the open-source projects and have collaborated with research teams in the past.</p>
   </section>
   
   <br>
   <section>
     <h2>Research Interests</h2>
   
-  <p>
-  My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop agents able to
-  reason and interact with the real world.
-  </p>
+    <p>
+    My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop embodied agents able to
+    reason and interact with the real world.
+    </p>
+    
+    <p>
+    A major challenge in current AI models is their struggle with consistent logical reasoning and decision-making,
+    especially in scenarios that require multi-step inference or handling of previously unseen situations. Current models (ie. LLMs) can
+    generate highly semantically coherent text, yet, often fail in robust reasoning abilities that are necessary for tasks
+    such as complex problem-solving, planning, or adapting to novel environments.
+    </p>
+    
+    <p>
+    Researchers have explored many approaches such as Prompt engineering methods (eg. CoT and self-reflection), which 
+    can enhance reasoning abilities to an extent as a temporarily and short-term solution, however, they are limited 
+    and are not architecturally native to the models. 
+    Therefore, my research focuses on developing <strong>differentiable approaches for implementing iterative reasoning</strong> and
+    decision-making in uncertain environments in embodied agents.
+    This involves developing new architectures that can maintain coherent thought processes across multiple inference steps.<br>
+    </p>
+    
+    <p>Currently, I am exploring diffusion models, score-based and flow-based models, differential geometry 
+    (particularly Riemannian geometry), metric learning, energy-based models, joint embedding predictive architectures 
+    operating in the latent spaces among others to design generalizable intelligent agents capable of reasoning 
+    (as an optimization problem), deliberate planning (system 2-like), and able to handle uncertainty (in the inference-time)</p>
+    
+    <p>
+    In a wider context, I am fascinated by the idea of developing a network of specialized networks such as memory and rapid learning,
+    goal-driven planning, spatial reasoning, and error detection and conflict monitoring that operate collaboratively to 
+    consistently make good decisions within a complex environment. I am interested in transformers and attention
+    mechanisms with a bias toward efficient computation in these settings: generative models, multimodal
+    learning, and self-supervised learning.
+    </p>
+    <br><br>
+    <section>
+    <h2>Research Highlights</h2>
+    <ul>
+        <li><strong>Reasoning and Planning</strong>: Embodied agents able to reason, plan and adapt to new environments</li> 
+        <li><strong>Representation learning</strong>: Efficiently learn the geometry of parameters and data distributions</li>
+        <li><strong>Handling OOD problems</strong>: Robust out-of-distribution generalization</li>
+        <li><strong>Embodied Intelligent Agents</strong>: Agents that comprise the above capabilities and able to learn 
+        while interacting with the world</li>
+    </ul>
+  </section>
+  </section>
   
-  <p>
-  A major challenge in current AI models is their struggle with consistent logical reasoning and decision-making,
-  especially in scenarios that require multi-step inference or handling of previously unseen situations. Current LLMs can
-  generate highly semantically coherent text, yet, often fail in robust reasoning abilities that are necessary for tasks
-  such as complex problem-solving, planning, or adapting to novel environments.
-  </p>
+  <section>
+    <h2>News</h2>
+    <ul>
+        <li>I defended my MSc at the University of Essex - CSEE! (<a href="https://soran-ghaderi.github.io/nir/">Thesis</a>) - Oct. 2024</li> 
+    </ul>
+  </section>
   
-  <p>
-  To this end, my research explores fully <strong>differentiable approaches for implementing multi-step reasoning</strong> in LLMs,
-  decision-making, zero-shot learning within uncertain environments, and embodied agents.
-  This involves developing new architectures that can maintain coherent thought processes across multiple inference steps.<br>
-  </p>
-  
-  <p>
-  In a wider context, I am fascinated by the idea of developing a network of specialized networks such as memory and rapid learning,
-  goal-driven planning, spatial reasoning, and error detection and conflict monitoring that operate collaboratively to 
-  consistently make good decisions within a complex environment. I am interested in transformers and attention
-  mechanisms with a bias toward efficient computation in these settings: generative models, multimodal
-  learning, and self-supervised learning.
-  </p>
-  <br><br>
   <section>
     <h2>Awards</h2>
     <ul>
-        <li>Full funding award for postgraduate studies in Artificial Intelligence, University of Essex</li>
+        <li>Fully funding scholarship for postgraduate studies in Artificial Intelligence, University of Essex</li>
     </ul>
   </section>
+  
+  
+  
   
 #        I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
 #      With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
@@ -131,24 +168,6 @@ about_content: | # this will include new lines to allow paragraphs
 
 #  ### Academic accomplishments<br>
 #
-#
-#
-#
-#   - <a href="https://github.com/soran-ghaderi/NUSCCF">"<b>A new efficient subspace and K-Means-clustering based method to
-#  improve Collaborative Filtering</b>"</a> was my B.Eng. final thesis, that tries to deal with the <b>High dimensionality</b> and
-#  <b>data sparsity</b> problems in an <b>efficient</b> way which recommender systems are facing. <br>
-#
-#   - Another evident research accomplishment was in bioinformatics, that aimed to <b>predict</b> new correlations between
-#  probiotics and diseases, which resulted in finding several new potential connections between the two.<br>
-#
-#   - Furthermore, I've written a new <b>Python library</b> for researchers working on <b>link prediction</b> in
-#  <b>bipartite graphs</b> named <a href="https://github.com/bi-graph/bigraph"><b>BiGraph</b></a>. Fortunately, the repository on
-#  Github has new contributors and is being updated once in a while. There's also the
-#  <a href="https://bigraph.readthedocs.io/en/latest/intro.html"><b>documentation</b></a> available for the package.
-#  <br>
-#
-#  - Emgraph is a Python library — that I have worked on as a <b>ML engineer</b> — that tries to bring researchers involved in
-#  <b>graph representation learning</b> up to speed.
 #
 #
 #  <br>

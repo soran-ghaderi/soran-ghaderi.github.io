@@ -9,15 +9,26 @@
 #    Description about the work on/with the project
 
 
-- layout: top-middle
+- layout: left
+  name: TorchEBM
+  link: github.com/soran-ghaderi/torchebm
+  github: soran-ghaderi/torchebm
+  description: >
+    Oct. 2024-Present<br>
+    <b>Energy-Based Modeling library for PyTorch. Provides tools for sampling, inference, and learning in complex distributions.</b>
+    <b>Keywords</b> -- variational-inference, Reasoning, Sampling, langevin-dynamics, Contrastive Divergence, Energy-based-model, Diffusion-models probabilistic-ML, Score-matching, Generative-ai<br>
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/torchebm">
+    <img alt="PyPI - Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg">
+
+- layout: left
   name: TransformerX
-  link:
+  link: github.com/tensorops/TransformerX
   github: tensorops/TransformerX
-  quote: >
-    
-    <b>2021-2022<br>
-    A Python library for building transformer-based models.</b><br>
+  description: >
+    2021-2022<br>
+    <b>A Python library for building transformer-based models.</b>
     <b>Keywords</b> -- Deep-learning, Machine-learning, Transformers, Attention mechanisms, Algorithms, python library<br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/tensorops/transformerx?style=social">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/emgraph">
     <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/transformerx">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tensorops/transformerx">
@@ -25,25 +36,23 @@
     <img alt="PyPI - License" src="https://img.shields.io/pypi/l/transformerx.svg">
     <img alt="PyPI - Format" src="https://img.shields.io/pypi/format/transformerx.svg">
 
-
-- layout: top-middle
+- layout: left
   name: Emgraph
-  link:
+  link: github.com/bi-graph/emgraph
   github: bi-graph/emgraph
-  quote: >
-    
-    <b>2021-2022<br>
-    A Python toolkit for embedding knowledge graph, developing and evaluating models</b><br>
+  description: >
+    2021-2022<br>
+    <b>A Python toolkit for embedding knowledge graph, developing and evaluating models</b>
     <b>Keywords</b> -- Deep-learning, Machine-learning, Graph, Knowledge-graph-embedding, Algorithms<br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bi-graph/emgraph?style=social">
     <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/emgraph"> 
     <img src="https://img.shields.io/pypi/v/emgraph.svg" alt="latest release" />
-    <img alt="Tensorflow 2" src="https://img.shields.io/badge/TensorFlow2-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white"> 
-     
+    <img alt="Tensorflow 2" src="https://img.shields.io/badge/TensorFlow2-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white">
+
 
 #    <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/bi-graph/emgraph">
 
-  description: | # this will include new lines to allow paragraphs
+#  description: | # this will include new lines to allow paragraphs
 #    Designed the architecture and led the development of an opensource python library named <b>Emgraph</b> with TensorFlow 2 as its backend. It is used to develop, train, and
 #    evaluate Knowledge graph representation learning models.
 #
@@ -59,19 +68,19 @@
 #    PyTest</mark> - <mark>Sphinx</mark> - <mark>Python</mark><br><br>
     
 
-- layout: top-middle
+- layout: left
   name: Bigraph
-  link:
+  link: github.com/bi-graph/bigraph
   github: bi-graph/bigraph
-  quote: >
-    <b>2019-2022<br>
+  description: >
+    2019-2022<br>
     A python library for link prediction in bipartite-networks</b> <br>
     <b>Keywords</b> -- link-prediction, Machine-learning, Graph, Graph-analysis<br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bi-graph/bigraph?style=social">
     <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/bigraph">
     <img src="https://img.shields.io/pypi/v/bigraph.svg" alt="latest release" />
 #    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
-  description: | # this will include new lines to allow paragraphs
+#  description: | # this will include new lines to allow paragraphs
 #    <b>Bigraph</b> is a Python package for Link prediction in bipartite networks. Currently, it encompasses
 #    <i>Jaccard, Adamic adar, Common neighbors, Preferential attachment,
 #    Katz similarity</i> methods. <br>
@@ -81,20 +90,20 @@
 #    <mark>matplotlib</mark> - <mark>Sphinx</mark> - <mark>Python</mark><br><br>
     
 
-- layout: top-middle
+- layout: left
   name: TASE (<b>T</b>elegram <b>A</b>udio <b>S</b>earch <b>E</b>ngine)
-  link:
+  link: github.com/appheap/TASE
   github: > 
     appheap/TASE
 
-  quote: >
-    <b>2020-2022<br>
+  description: >
+    2020-2022<br>
     A lightening-fast audio search engine python library on top of the Telegram messenger platform</b> <br>
     <b>Keywords</b> -- Audio-search-engine, Audio-indexing, Knowledge-graph<br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/appheap/TASE?style=social">
     <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/bigraph">
 #    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
-  description: | # this will include new lines to allow paragraphs
+#  description: | # this will include new lines to allow paragraphs
 #    <b>TASE</b> allows users to quickly and easily find information that is of genuine interest
 #    or value, without the need to wade through numerous irrelevant Telegram channels. It provides users with search
 #    results that lead to relevant information on high-quality channels.<br>

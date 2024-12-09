@@ -1,10 +1,55 @@
+- layout: left
+  #  company: Open Source
+  link: github.com/soran-ghaderi
+  job_title: Postgraduate Student Researcher (Reasoning)
+  dates: Apr 2024 - present
+  #  quote: >
+  #   Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    - Developed NIR Framework
+    - Researching Reasoning
+
 # Experience template
 - layout: left
-  company: Company name
-  link: Link to company (optional)
-  job_title: Job title
-  dates: Date Range (eg. November 2016 - present)
-  quote: >
-   Short description of the company (optional)
+#  company: Open Source
+  link: github.com/soran-ghaderi
+  job_title: Open-Source Developer
+  dates: 2019 - present
+#  quote: >
+#   Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
-    Description of role
+    - TorchEBM library- Under development (a high performance and scalable Python lib for energy-based models)
+    - TransformerX library
+    - Emgraph library
+    - Bigraph library
+
+# Experience template
+- layout: left
+#  company: Open Source
+#  link: Link to company (optional)
+  job_title: Teaching Assistant
+  dates: Oct. 2018 - Jan. 2019
+  #  quote: >
+  #   Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    - Social Networks Analysis: Python, Gephi, and review sessions
+
+- layout: left
+  #  company: Open Source
+  link: github.com/soran-ghaderi/EfficientCoF
+  job_title: Undergraduate Research Assistant
+  dates: Sep. 2017 - Jun. 2018
+  #  quote: >
+  #   Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    - Developed EfficientCof
+
+- layout: left
+  #  company: Open Source
+#  link:
+  job_title: Intern - KurdCloud
+  dates: Jan. 2017 - Mar. 2018
+  #  quote: >
+  #   Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    - Developed NFC-based Attendance Tracking Systems

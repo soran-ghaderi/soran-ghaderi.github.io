@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="doc: re-">
+    <list default="true" id="c46d806d-bc46-4136-aced-1fe4801eacae" name="Changes" comment="doc: update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/education.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/education.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/experience.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/experience.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_data/projects.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_data/projects.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/skills.html" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/skills.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +26,12 @@
     &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/soran-ghaderi/soran-ghaderi.github.io.git",
-    "accountId": "891aa1e2-d7ee-4f29-b9fa-2fe58574fc64"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/soran-ghaderi/soran-ghaderi.github.io.git&quot;,
+    &quot;accountId&quot;: &quot;891aa1e2-d7ee-4f29-b9fa-2fe58574fc64&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,6 +47,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/aiengineer/WebstormProjects/soran-ghaderi.github.io/images&quot;,
@@ -72,7 +78,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -94,7 +100,9 @@
       <workItem from="1682197291251" duration="6690000" />
       <workItem from="1696712623911" duration="9984000" />
       <workItem from="1696761644182" duration="7868000" />
-      <workItem from="1721790326281" duration="925000" />
+      <workItem from="1721790326281" duration="1444000" />
+      <workItem from="1733611179585" duration="7130000" />
+      <workItem from="1733702278450" duration="20570000" />
     </task>
     <task id="LOCAL-00001" summary="Add details to the emgraph page">
       <created>1678152357153</created>
@@ -246,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719599713799</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="doc: update">
+      <option name="closed" value="true" />
+      <created>1721791348589</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1721791348589</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +301,7 @@
     <MESSAGE value="doc: update the about section and profile picture" />
     <MESSAGE value="doc: re-add" />
     <MESSAGE value="doc: re-" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: re-" />
+    <MESSAGE value="doc: update" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: update" />
   </component>
 </project>

@@ -79,7 +79,7 @@ about_content: | # this will include new lines to allow paragraphs
   <a href="https://www.essex.ac.uk/people/CITIL35902/Luca-Citi">Professor Luca Citi</a>. Previously, I obtained my
   bachelor's degree from the <a href="https://eng.uok.ac.ir/en/">University of Kurdistan</a>. During my postgraduate studies,
   I was working on reasoning in LLMs for code generation; as a result, I developed a new approach for guiding the 
-  generation process. It consisted of a separate deep-think stage with self-reflection (somehow similar to OpenAI o1) and 
+  generation process. It consisted of a separate deep-think stage with self-reflection and 
   a direct integration of thoughts (hidden states) into the LLM's main generation's hidden states using model surgery! 
   This framework called <a href="https://soran-ghaderi.github.io/nir/">NIR</a> is applicable to various LLMs without 
   finetuning. As an extension, It has a thought memory manager which controls the memories and thoughts of the LLM 
@@ -98,15 +98,15 @@ about_content: | # this will include new lines to allow paragraphs
     </p>
     
     <p>
-    A major challenge in current AI models is their struggle with consistent logical reasoning and decision-making,
-    especially in scenarios that require multi-step inference or handling of previously unseen situations. Current models (ie. LLMs) can
+    A major challenge in current AI models is their struggle with generalization, consistent logical reasoning, and decision-making,
+    especially in scenarios that require multi-step inference or handling previously unseen situations. Current models (ie. LLMs) can
     generate highly semantically coherent text, yet, often fail in robust reasoning abilities that are necessary for tasks
     such as complex problem-solving, planning, or adapting to novel environments.
     </p>
     
     <p>
     Researchers have explored many approaches such as Prompt engineering methods (eg. CoT and self-reflection), which 
-    can enhance reasoning abilities to an extent as a temporarily and short-term solution, however, they are limited 
+    can enhance reasoning abilities to an extent as a temporary and short-term solution, however, they are limited 
     and are not architecturally native to the models. 
     Therefore, my research focuses on developing <strong>differentiable approaches for implementing iterative reasoning</strong> and
     decision-making in uncertain environments in embodied agents.

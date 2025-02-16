@@ -9,6 +9,7 @@ image: images/transformerx.png
 featured: true
 hidden: true
 comments: false
+excerpt: TransformerX is a Python library for building transformer-based models.
 ---
 
 ## Foreword

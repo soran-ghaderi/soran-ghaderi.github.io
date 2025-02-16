@@ -1,16 +1,17 @@
 ---
 layout: default
-title: Home
-permalink: /projects
+title: Projects
+permalink: /projects-page
+comments: false
 ---
 
-{% if page.url == "/projects" %}
+{% if page.url == "/projects-page" %}
 
 <!-- Featured
 ================================================== -->
-<section class="featured-posts">
+<section class="container featured-posts">
     <div class="section-title">
-        <h2><span>Featured</span></h2>
+        <h3><span>Featured</span></h3>
     </div>
     <div class="row">
         {% for post in site.posts %}
@@ -28,25 +29,24 @@ permalink: /projects
 
 <!-- Posts Index
 ================================================== -->
-<section class="recent-posts">
+<div class="container recent-posts">
 
     <div class="section-title">
 
-        <h2><span>All Stories</span></h2>
+    <h3><span>All Projects</span></h3>
 
     </div>
 
-    <div class="row listrecent">
+    <div class="">
 
         {% for post in site.posts %}
-
         {% include postbox.html %}
 
         {% endfor %}
 
     </div>
 
-</section>
+</div>
 
 <!-- Pagination
 ================================================== -->
@@ -56,4 +56,3 @@ permalink: /projects
     {% include pagination.html %}
 </span>
 </div>
-

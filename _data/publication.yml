@@ -1,0 +1,85 @@
+# Publication Template
+- layout: left-publication
+  title: Neural Integration of Iterative Reasoning (NIR) in LLMs for Code Generation
+  venue: University of Essex
+  year: 2024
+  publication_type: Master's Thesis
+  authors:
+    - Soran Ghaderi
+#  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=-2N2iKcAAAAJ&authuser=5&citation_for_view=-2N2iKcAAAAJ:u-x6o8ySG0sC
+  website: https://soran-ghaderi.github.io/nir/
+  code: https://github.com/soran-ghaderi/nir_code_release
+  paper: https://soran-ghaderi.github.io/nir/nir.pdf
+  image: https://soran-ghaderi.github.io/nir/materials/nir.png  # optional
+  cite:
+    - id: soran_2024_essex
+      type: thesis
+      authors:
+        - family: Ghaderi
+          given: Soran
+      title: "Neural Integration of Iterative Reasoning (NIR) in LLMs for Code Generation"
+      genre: "Master's Thesis"
+      publisher: University of Essex
+      issued:
+        year: 2024
+
+  details: |
+    Abstract: Despite advances in large language models (LLMs) for code generation, they still struggle in 
+    effectively utilizing contextual information throughout the generation process. To tackle this challenge, 
+    we introduce the Neural Integration of Iterative Reasoning (NIR) framework, which offers a new method for 
+    incorporating Context Representation Vectors (CRVs) at multiple levels within LLMs. NIR boosts the ability 
+    of these models to generate code without needing fine-tuning, allowing it to be used across various LLM 
+    architectures. We assess NIR by testing it with LLaMA 3.1 on the MBPP dataset, focusing on early, mid, and 
+    deep integration stages. Our experiments show that the depth of CRV integration has a notable impact on 
+    several facets of code generation, including response rates, syntactic correctness, and overall code structure. 
+    Deeper integration generally improves syntactic accuracy and code conciseness, while mid-layer integration 
+    shows optimal performance in semantic tasks. We report detailed evaluation metrics that assess code quality, 
+    complexity, and structure. Our findings indicate possible trade-offs among various code quality measures and 
+    emphasize the potential of adaptive integration strategies. While NIR demonstrates promising results, we also 
+    identify limitations such as dataset specificity and output inconsistencies. This study contributes to 
+    understanding contextual information processing in LLMs and might be useful for future developments in 
+    codeLLMs. We conclude by outlining future research directions, including multi-layer integration and dynamic 
+    adaptation strategies.
+
+#- layout: left-publication
+#  title: Advanced Convolutional Architectures for Image Recognition
+#  venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
+#  year: 2022
+#  publication_type: Journal Article
+#  link: https://example.com/publication1
+#  # You can use either image or gif
+#  # image: /assets/images/publication-icon.png
+#  gif: https://yilundu.github.io/data/projects/ired.gif
+#  details: |
+#    Abstract: Presents novel convolutional architectures with improved feature extraction.
+#
+#    Highlights:
+#    - Achieved 98.7% accuracy on benchmark datasets.
+#    - Introduced innovative residual connections with extensive experimental validation.
+#
+#- layout: left-publication
+#  title: Advanced Convolutional Architectures for Image Recognition
+#  venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
+#  year: 2022
+#  publication_type: Journal Article
+#  authors:
+#    - Jane Smith
+#    - Soran Ghaderi
+#    - Alan Turing
+#
+#  link: https://example.com/publication1
+#  website: https://example.com/advanced-conv-architectures
+#  code: https://github.com/example/conv-architectures
+#  paper: https://arxiv.org/abs/1234.5678
+#  gif: /assets/images/publication-demo.gif
+#  details: |
+#    **Abstract:**
+#    This paper presents a novel set of convolutional architectures that improve feature extraction and representation in deep neural networks.
+#
+#    **Highlights:**
+#    - Achieved state-of-the-art performance on benchmark datasets.
+#    - Introduced innovative residual connections.
+#    - Comprehensive experimental validation across multiple tasks.
+#
+#    **Conclusion:**
+#    The proposed architectures demonstrate significant improvements over conventional methods, paving the way for future research in efficient deep learning models.

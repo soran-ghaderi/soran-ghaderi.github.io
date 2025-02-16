@@ -1,0 +1,367 @@
+# _data/skills.yml
+
+#    - name: Python
+#      description: Experienced in machine learning, deep learning, and software development
+#    - name: C++
+#      description: Intermediate knowledge with experience in algorithm implementation and briefly for computer vision
+#
+
+- layout: left-skill
+  type: technical
+  items:
+    - category: Machine Learning & Deep Learning
+      items:
+        - name: Pytorch
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/PyTorch-EE4C2C?style=for-the-#badge&logo=pytorch&logoColor=white
+          tool-type: Frameworks
+          notes: Experience gained through implementing various projects including my dissertation and Python libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge:
+          projects:
+            - name: TorchEBM
+              link: https://github.com/soran-ghaderi/torchebm
+            - name: NIR
+              link: https://soran-ghaderi.github.io/nir/
+
+        - name: TensorFlow
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/TensorFlow-FF6F00?style=for-the-#badge&logo=tensorflow&logoColor=white
+          tool-type: Frameworks
+          notes: Experience gained through implementing various projects including Python libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge:
+          projects:
+            - name: TransformerX
+              link: github.com/tensorops/TransformerX
+            - name: Emgraph
+              link: github.com/bi-graph/emgraph
+            - name: Bigraph
+              link: github.com/bi-graph/bigraph
+            - name: Make-A-Video
+              link: https://github.com/soran-ghaderi/make-a-video
+
+        - name: Keras
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/Keras-D00000?style=for-the-#badge&logo=keras&logoColor=white
+          tool-type: Libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge:
+#          projects:
+#            - name: Image Classification Model
+#              link: https://github.com/username/image-classifier
+
+        - name: NumPy
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/NumPy-013243?style=for-the-#badge&logo=numpy&logoColor=white
+          tool-type: Libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge:
+#          projects:
+#            - name:
+#              link:
+
+        - name: Pandas
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/Pandas-150458?style=for-the-#badge&logo=pandas&logoColor=white
+          tool-type: Libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge:
+#          projects:
+#            - name:
+#              link:
+
+        - name: Scikit-learn
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/Scikit--learn-F7931E?style=for-the-#badge&logo=scikit-learn&logoColor=white
+          tool-type: Libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge:
+#          projects:
+#            - name:
+#              link:
+
+        - name: Matplotlib
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/Matplotlib-11557C?style=for-the-#badge&logo=matplotlib&logoColor=white
+          tool-type: Libraries
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge: https://img.shields.io/#badge/TensorFlow%20Developer-Certified-FF6F00?style=for-the-#badge&logo=tensorflow&logoColor=white
+#          projects:
+#            - name:
+#              link:
+
+        - name: CUDA
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/CUDA-76B900?style=for-the-#badge&logo=nvidia&logoColor=white
+          tool-type: Parallel Computing Platforms
+          notes: Limited experience for implementing custom kernels
+#          certifications:
+#            - name: TensorFlow Developer Certificate
+##              #badge: https://img.shields.io/#badge/TensorFlow%20Developer-Certified-FF6F00?style=for-the-#badge&logo=tensorflow&logoColor=white
+#          projects:
+#            - name:
+#              link:
+
+        - name: NVIDIA TensorRT
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/TensorRT-76B900?style=for-the-#badge&logo=nvidia&logoColor=white
+          tool-type: SDKs
+          notes: Limited experience through inference optimization using layer fusion techniques
+    - category: Programming Languages
+      items:
+        - name: Python
+#          proficiency: Expert
+#          years_experience: 5
+          tool-type: Main
+          #badge: https://img.shields.io/#badge/Python-3776AB?style=for-the-#badge&logo=python&logoColor=white
+          notes: Experienced in machine learning, deep learning, and software development
+          projects:
+            - name: Machine Learning Pipeline
+              link: https://github.com/username/ml-pipeline
+            - name: Data Visualization Tool
+              link: https://github.com/username/data-viz-tool
+        - name: C++
+          tool-type: Main
+#          proficiency: Advanced
+#          years_experience: 3
+          #badge: https://img.shields.io/#badge/C++-00599C?style=for-the-#badge&logo=cplusplus&logoColor=white
+          notes: Intermediate knowledge with experience in algorithm implementation and briefly for computer vision
+#          projects:
+#            - name: Web-based Dashboard
+#              link: https://github.com/username/web-dashboard
+        - name: Java
+          tool-type: Other
+          #          proficiency: Advanced
+          #          years_experience: 3
+          #badge: https://img.shields.io/#badge/Java-ED8B00?style=for-the-#badge&logo=java&logoColor=white
+          notes: Used Java for algorithm design during undergraduate studies
+      #          projects:
+      #            - name: Web-based Dashboard
+      #              link: https://github.com/username/web-dashboard
+#          certifications:
+#            - name:
+##              #badge:
+#          projects:
+#            - name:
+
+    - category: Sotware Engineering
+      items:
+        - name: Open source Development
+          #badge: https://img.shields.io/#badge/Open_Source-3DA639?style=for-the-#badge&logo=opensource&logoColor=white
+          tool-type: Methodology
+          notes: Experience in developing and maintaining multiple open-source Python libraries and standalone projects. Built a scalable music search engine using Python, implementing fault-tolerant microservices architecture using various technologies such as Elasticsearch, Pyrogram, ArangoDB, RabbitMQ, Celery
+          projects:
+            - name: TASE - Telegram Music Search Engine
+              link: https://github.com/username/TASE
+
+        - name: Agile Methodologies
+          #badge: https://img.shields.io/#badge/Agile-239120?style=for-the-#badge&logo=agile&logoColor=white
+          tool-type: Methodology
+          notes: Experience in Kanban methodology
+
+        - name: Concurrent Programming
+          #badge: https://img.shields.io/#badge/Concurrent_Programming-777BB4?style=for-the-#badge&logo=python&logoColor=white
+          tool-type: Programming Paradigm
+          notes: Experienced in asynchronous and multiprocessing programming
+
+        - name: Version Control
+          #badge: https://img.shields.io/#badge/Git-F05032?style=for-the-#badge&logo=git&logoColor=white
+          tool-type: Version Control Systems
+          notes: Proficient in Git version control
+
+        - name: Microservices
+          #badge: https://img.shields.io/#badge/Microservices-FF6600?style=for-the-#badge&logo=microservices&logoColor=white
+          tool-type: Architecture
+          notes: Experience in API integration and microservices architecture
+
+        - name: Elasticsearch
+          #badge: https://img.shields.io/#badge/Elasticsearch-005571?style=for-the-#badge&logo=elasticsearch&logoColor=white
+          tool-type: Database
+#          notes: Experienced with
+        - name: Message Queuing
+          #badge: https://img.shields.io/#badge/RabbitMQ-FF6600?style=for-the-#badge&logo=rabbitmq&logoColor=white
+          tool-type: Architecture
+          notes: Experience in using Kafka and RabbitMQ for distributed systems
+
+#- layout: left-skill
+#  type: other
+#  items:
+#    - name: Team Collaboration
+#      tool-type: Team working
+#      description: Experience working in cross-functional teams and agile environments
+##      icon: 👥
+
+- layout: left-skill
+  type: other
+  items:
+    - category: Professional Skills
+      items:
+        - name: Team Collaboration
+          tool-type: Team Working
+          notes: Experience working in cross-functional teams and agile environments
+
+#        - name: Project Management
+#          tool-type: Team Working
+#          notes: Leading and coordinating technical projects, setting milestones, and ensuring timely delivery
+
+    - category: Technical Writing
+      items:
+        - name: Technical Writing
+          tool-type: Documentation
+          notes:  |
+            Experience in writing technical documentation, research papers, project specifications, and widely read articles on machine learning and artificial intelligence.
+            Published on prominent platforms such as Medium and Towards Data Science, reaching a wide audience of data science and AI enthusiasts.
+          projects:
+            - name: "The Map Of Transformers"
+              link: https://medium.com/your-profile/the-map-of-transformers
+              description: An accessible overview of Transformer architectures, widely read in the AI community.
+            - name: "Transformers in Action: Attention Is All You Need"
+              link: https://towardsdatascience.com/your-profile/transformers-in-action
+              description: A practical guide to implementing Transformers, popular among machine learning practitioners.
+            - name: "Rethinking Thinking: How Do Attention Mechanisms Actually Work?"
+              link: https://medium.com/your-profile/rethinking-thinking
+              description: An exploration of the inner workings of attention mechanisms, sparking discussions on their interpretability.
+
+
+        - name: Public Speaking
+          tool-type: Presentation
+          notes: Experience in presenting technical concepts to diverse audiences
+
+- layout: left-skill
+  type: language
+  items:
+    - name: English
+      tool-type: Main Languages
+      proficiency: Fluent
+#      flag: "&#x1F1EC;&#x1F1E7; &#x1F1FA;&#x1F1F8;"
+
+    - name: Kurdish
+      tool-type: Main Languages
+      proficiency: Native
+
+    - name: Persian
+      tool-type: Other Languages
+      proficiency: Professional working experience
+
+- layout: left-skill
+  type: interest
+  items:
+    - notes: |
+        I am generally interested in mathematics. However, I'm particularly interested in 
+        fields such as geometry, algebra, and topology among others which I'm currently spending more time on and 
+        am learning about information geometry, manifold learning, and geometric deep learning. Usually I try to 
+        implement them in code and you can find more on my GitHub.<br><br>
+        
+        I enjoy staying up-to-date on the latest developments in fields relevant to my research interests, and usually try to read outstanding papers.<br><br>
+        
+        Apart from the above mentioned, I usually listen to the physics conferences/interviews on various topics as I find many of 
+        the underlying theories highly relevant to theoretical ML.<br><br>
+        
+        In my free time, I enjoy strolling around the city or hiking. I also used to do Kickboxing for a many years.
+        
+
+#
+#- layout: list
+#  category: Technical Skills
+#  title: Software Engineering Skills
+#  items:
+#    - name: Open-source Libraries development
+#    - name: Agile methodologies (Kanban)
+#    - name: Asynchronous and multiprocessing programming
+#    - name: Git version control
+#    - name: API integration and microservices architecture
+
+#- layout: list
+#  category: Technical Skills
+#  title: Technical Skills
+#  items:
+#    - category: Programming Languages
+#      items:
+#        - name: Python
+#          description: Experienced in machine learning, deep learning, and software development
+#        - name: C++
+#          description: Intermediate knowledge with experience in algorithm implementation and briefly for computer vision
+#    - category: Machine Learning & Deep Learning
+#      items:
+#        - name: Frameworkss
+#          description: PyTorch, TensorFlow, Keras
+#        - name: Libraries
+#          description: NumPy, Pandas, Scikit-learn, Matplotlib
+#        - name: Specialized Tools (limited experience)
+#          description: NVIDIA TensorRT, CUDA
+#    - category: Software Engineering Skills
+#      items:
+#        - name: Open-source Libraries development
+#        - name: Agile methodologies (Kanban)
+#        - name: Asynchronous and multiprocessing programming
+#        - name: Git version control
+#        - name: API integration and microservices architecture
+#
+#
+#- layout: project # or left
+#  category: Projects
+#  title: Open Source Projects & Contributions
+#  projects:
+#    - name: ML Libraries
+#      description: |
+#        Developed and deployed multiple Python libraries on PyPI, including TransformerX, Emgraph, and Bigraph.
+#        Implemented modular, object-oriented architectures with comprehensive documentation and testing.
+#        Actively engaged in open-source community through code reviews and collaborative development.
+#    - name: TASE - Telegram Music Search Engine
+#      description: |
+#        Built a scalable music search engine using Python.
+#        Integrated technologies: Elasticsearch, Pyrogram, ArangoDB, RabbitMQ, Celery.
+#        Implemented fault-tolerant microservices architecture.
+#
+#
+#- layout: writing # or left
+#  category: Writing
+#  title: Technical Writing
+#
+#  writing-items:
+#    - type: other
+#      content: Published popular articles on Medium and Towards Data Science
+#    - type: article
+#      items:
+#        - name: The Map Of Transformers
+#          url: https://medium.com/towards-data-science/the-map-of-transformers-e14952226398
+#          descrition:
+#        - name: Transformers - in Action Attention Is All You Need
+#          url: https://medium.com/towards-data-science/transformers-in-action-attention-is-all-you-need-ac10338a023a
+#          descrition:
+#        - name: Rethinking Thinking - How Do Attention Mechanisms Actually Work?
+#          url: https://medium.com/towards-data-science/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99
+#          descrition:
+#  writing-items:
+#    - writing-item:
+#      - other: Published popular articles on Medium and Towards Data Science
+#    - writing-item:
+#      - article:
+#        - name: The Map Of Transformers
+#          url: https://towardsdatascience.com/the-map-of-transformers-e14952226398
+#          descrition:
+#      - article:
+#        - name: Transformers - in Action Attention Is All You Need
+#          url: https://towardsdatascience.com/transformers-in-action-attention-is-all-you-need-ac10338a023a
+#          descrition:
+#      - article:
+#        - name: Rethinking Thinking - How Do Attention Mechanisms Actually Work?
+#          url: https://towardsdatascience.com/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99
+#          descrition:

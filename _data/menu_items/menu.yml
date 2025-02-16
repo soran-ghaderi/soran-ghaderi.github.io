@@ -4,11 +4,14 @@ docs:
   - title: Home
     url: /
 
+  - title: Publications
+    url: /publications.html
+
   - title: Skills
     url: /skills.html
 
-  - title: Open source
-    url: /projects.html
+  - title: Projects
+    url: /projects-page.html
 
   - title: Blog
     url: https://soran-ghaderi.medium.com/

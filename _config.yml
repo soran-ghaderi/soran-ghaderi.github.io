@@ -34,7 +34,7 @@ darkmode: false
 # Social links
 twitter_username: soranghadri
 github_username: soran-ghaderi
-medium_username: soran-ghaderi
+#medium_username: soran-ghaderi
 #stackoverflow_username: "00000001"
 #dribbble_username: jekyll
 #facebook_username: jekyll
@@ -46,16 +46,18 @@ linkedin_username: soran-ghaderi
 #youtube_username: jekyll
 #googleplus_username: +jekyll
 orcid_username: 0009-0004-6564-4517
+#googlescholar_username: -2N2iKcAAAAJ
+
 
 # Additional icon links
 additional_links:
+  - title: Google Scholar
+    icon: fab fa-google-scholar
+    url: https://scholar.google.com/citations?user=-2N2iKcAAAAJ&hl=en&authuser=5
   #- title: kaggle
   #  icon: fa-kaggle
   #  url: https://www.kaggle.com/soranghadri
 
-  - title: Medium
-    icon: fa-medium
-    url: https://soran-ghaderi.medium.com/
 
 #- title: another link
 #icon: font awesome brand icon name (eg. fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
@@ -181,7 +183,8 @@ about_content: | # this will include new lines to allow paragraphs
 
 # Education Section
 education_title: Education #(Use this to override about education section title)
-
+publication_title: Publications
+skills_title: Skills
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
 

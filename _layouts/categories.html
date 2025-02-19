@@ -4,20 +4,21 @@ layout: default
 permalink: "/categories.html"
 ---
 
-<div class="row listrecent">
-{% for category in site.categories %}
-<div class="section-title col-md-12 mt-4">
-<h2 id="{{ category[0] | replace: " ","-" }}">Category <span class="text-capitalize">{{ category[0] }}</span></h2>
-</div>
-{% assign pages_list = category[1] %}
-{% for post in pages_list %}
-{% if post.title != null %}
-{% if group == null or group == post.group %}
-{% include postbox.html %}
-{% endif %}
-{% endif %}
-{% endfor %}
-{% assign pages_list = nil %}
-{% assign group = nil %}
-{% endfor %}
+<div class="container listrecent">
+    {% assign displayed_posts = "" | split: "," %}
+
+    {% for category in site.categories %}
+        <div class="section-title col-md-12 mt-4">
+            <h2 id="{{ category[0] | replace: " ","-" }}">Category <span class="text-capitalize"><a href="/category/{{ category[0] | slugify }}">{{ category[0] }}</a></span></span></h2>
+        </div>
+
+        {% for post in category[1] %}
+            {% unless displayed_posts contains post.url %}
+                {% if post.title != null and (group == null or group == post.group) %}
+                    {% include postbox.html %}
+                    {% assign displayed_posts = displayed_posts | push: post.url %}
+                {% endif %}
+            {% endunless %}
+        {% endfor %}
+    {% endfor %}
 </div>

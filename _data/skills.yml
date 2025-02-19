@@ -179,17 +179,17 @@
         - name: Concurrent Programming
           #badge: https://img.shields.io/#badge/Concurrent_Programming-777BB4?style=for-the-#badge&logo=python&logoColor=white
           tool-type: Programming Paradigm
-          notes: Experienced in asynchronous and multiprocessing programming
+#          notes: Experienced in asynchronous and multiprocessing programming
 
         - name: Version Control
           #badge: https://img.shields.io/#badge/Git-F05032?style=for-the-#badge&logo=git&logoColor=white
           tool-type: Version Control Systems
-          notes: Proficient in Git version control
+#          notes: Proficient in Git version control
 
         - name: Microservices
           #badge: https://img.shields.io/#badge/Microservices-FF6600?style=for-the-#badge&logo=microservices&logoColor=white
           tool-type: Architecture
-          notes: Experience in API integration and microservices architecture
+#          notes: Experience in API integration and microservices architecture
 
         - name: Elasticsearch
           #badge: https://img.shields.io/#badge/Elasticsearch-005571?style=for-the-#badge&logo=elasticsearch&logoColor=white
@@ -223,41 +223,46 @@
 
     - category: Technical Writing
       items:
-        - name: Technical Writing
+        - name: API docs
           tool-type: Documentation
           notes:  |
-            Experience in writing technical documentation, research papers, project specifications, and widely read articles on machine learning and artificial intelligence.
-            Published on prominent platforms such as Medium and Towards Data Science, reaching a wide audience of data science and AI enthusiasts.
+            As a technical writer, I develop API documentation for my libraries and craft project specifications. 
+
+        - name: Technical Writing
+          tool-type: ML Articles
+          notes:  |
+            I also write articles on machine learning and artificial intelligence. Published on Medium and Towards Data Science, my articles have reached a wide audience of AI enthusiasts and have been viewed over 50,000 times.
+
           projects:
             - name: "The Map Of Transformers"
-              link: https://medium.com/your-profile/the-map-of-transformers
-              description: An accessible overview of Transformer architectures, widely read in the AI community.
+              link: https://medium.com/towards-data-science/the-map-of-transformers-e14952226398
+              description: An broad overview of Transformer architectures.
             - name: "Transformers in Action: Attention Is All You Need"
-              link: https://towardsdatascience.com/your-profile/transformers-in-action
-              description: A practical guide to implementing Transformers, popular among machine learning practitioners.
+              link: https://medium.com/towards-data-science/transformers-in-action-attention-is-all-you-need-ac10338a023a
+              description: A brief survey, illustration, and implementation of transformers.
             - name: "Rethinking Thinking: How Do Attention Mechanisms Actually Work?"
-              link: https://medium.com/your-profile/rethinking-thinking
-              description: An exploration of the inner workings of attention mechanisms, sparking discussions on their interpretability.
+              link: https://medium.com/towards-data-science/transformers-in-action-attention-is-all-you-need-ac10338a023a
+              description: The brain, the mathematics, and DL — research frontiers
 
 
-        - name: Public Speaking
-          tool-type: Presentation
-          notes: Experience in presenting technical concepts to diverse audiences
+#        - name: Public Speaking
+#          tool-type: Presentation
+#          notes: Experience in presenting technical concepts to diverse audiences
 
 - layout: left-skill
   type: language
   items:
+    - name: Kurdish
+#      tool-type: Main Languages
+      proficiency: Native
+
     - name: English
-      tool-type: Main Languages
+#      tool-type: Main Languages
       proficiency: Fluent
 #      flag: "&#x1F1EC;&#x1F1E7; &#x1F1FA;&#x1F1F8;"
 
-    - name: Kurdish
-      tool-type: Main Languages
-      proficiency: Native
-
     - name: Persian
-      tool-type: Other Languages
+#      tool-type: Other Languages
       proficiency: Professional working experience
 
 - layout: left-skill
@@ -274,7 +279,7 @@
         Apart from the above mentioned, I usually listen to the physics conferences/interviews on various topics as I find many of 
         the underlying theories highly relevant to theoretical ML.<br><br>
         
-        In my free time, I enjoy strolling around the city or hiking. I also used to do Kickboxing for a many years.
+        In my free time, I enjoy strolling around the city or hiking. I also used to do Kickboxing for many years.
         
 
 #

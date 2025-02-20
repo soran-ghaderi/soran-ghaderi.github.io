@@ -14,9 +14,11 @@ permalink: "/categories.html"
 
         {% for post in category[1] %}
             {% unless displayed_posts contains post.url %}
-                {% if post.title != null and (group == null or group == post.group) %}
+                {% if post.title != null %}
+                {% if group == null or group == post.group %}
                     {% include postbox.html %}
                     {% assign displayed_posts = displayed_posts | push: post.url %}
+                {% endif %}
                 {% endif %}
             {% endunless %}
         {% endfor %}

@@ -37,11 +37,11 @@
 ##              #badge:
           projects:
             - name: TransformerX
-              link: github.com/tensorops/TransformerX
+              link: https://github.com/tensorops/TransformerX
             - name: Emgraph
-              link: github.com/bi-graph/emgraph
+              link: https://github.com/bi-graph/emgraph
             - name: Bigraph
-              link: github.com/bi-graph/bigraph
+              link: https://github.com/bi-graph/bigraph
             - name: Make-A-Video
               link: https://github.com/soran-ghaderi/make-a-video
 
@@ -133,10 +133,8 @@
           #badge: https://img.shields.io/#badge/Python-3776AB?style=for-the-#badge&logo=python&logoColor=white
           notes: Experienced in machine learning, deep learning, and software development
           projects:
-            - name: Machine Learning Pipeline
-              link: https://github.com/username/ml-pipeline
-            - name: Data Visualization Tool
-              link: https://github.com/username/data-viz-tool
+            - name: ML/Softwar-eng Projects
+              link: https://github.com/soran-ghaderi/
         - name: C++
           tool-type: Main
 #          proficiency: Advanced
@@ -169,7 +167,7 @@
           notes: Experience in developing and maintaining multiple open-source Python libraries and standalone projects. Built a scalable music search engine using Python, implementing fault-tolerant microservices architecture using various technologies such as Elasticsearch, Pyrogram, ArangoDB, RabbitMQ, Celery
           projects:
             - name: TASE - Telegram Music Search Engine
-              link: https://github.com/username/TASE
+              link: https://github.com/soran-ghaderi/TASE
 
         - name: Agile Methodologies
           #badge: https://img.shields.io/#badge/Agile-239120?style=for-the-#badge&logo=agile&logoColor=white
@@ -234,6 +232,8 @@
             I also write articles on machine learning and artificial intelligence. Published on Medium and Towards Data Science, my articles have reached a wide audience of AI enthusiasts and have been viewed over 50,000 times.
 
           projects:
+            - name: "From Physics to Probability: Hamiltonian Mechanics for Generative Modeling and MCMC"
+              link: https://towardsdatascience.com/from-physics-to-probability-hamiltonian-mechanics-for-generative-modeling-and-mcmc/
             - name: "The Map Of Transformers"
               link: https://medium.com/towards-data-science/the-map-of-transformers-e14952226398
               description: An broad overview of Transformer architectures.

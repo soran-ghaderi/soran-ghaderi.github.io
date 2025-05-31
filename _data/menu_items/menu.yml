@@ -7,11 +7,8 @@ docs:
   - title: Publications
     url: /publications.html
 
-  - title: Skills
-    url: /skills.html
-
   - title: Projects
     url: /projects-page.html
 
   - title: Blog
-    url: https://soran-ghaderi.medium.com/
+    url: /blog

@@ -1,44 +1,62 @@
 ul.icons a:hover {
-  background: rgba(0, 0, 0, 0.025);
+  background: none;
+  transform: none;
+  box-shadow: none;
 }
 
 ul.icons li {
   display: inline-block;
-  padding-left: 0.75rem;
-  //width: auto;
+  padding-left: 0.5rem;
 }
 
 ul.icons a {
-  -moz-transition: background-color 0.25s ease-in-out;
-  -webkit-transition: background-color 0.25s ease-in-out;
-  -ms-transition: background-color 0.25s ease-in-out;
-  transition: background-color 0.25s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: inline-block;
   width: 2.75rem;
-  //width: auto;
   height: 2.75rem;
-  //height: auto;
-  line-height: 2.8rem;
+  line-height: 2.75rem;
   text-align: center;
   border: 0;
   box-shadow: none;
-  padding:0;
+  padding: 0;
   border-radius: 100%;
-  color: #aaa;
+  background: none;
+  color: var(--icon-color, #2d3748);
 }
 
 .icons i {
-  font-size: 30px;
-  line-height:60px;
+  font-size: 1.5rem;
+  line-height: 2.75rem;
+  transition: all 0.3s ease;
+  color: var(--icon-color, #2d3748);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icons a:hover i {
+  color: var(--icon-hover, #1a202c);
+  transform: scale(1.1);
 }
 
 .icons {
   padding: 0;
   font-size: 1rem;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   text-align: right;
   flex-wrap: wrap;
+}
 
+// Override generic icon styles for button icons (higher specificity)
+.button.button--sacnite i {
+  font-size: 3.0rem !important;
+  line-height: 1 !important;
+  display: block;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 768px) {
@@ -50,10 +68,19 @@ ul.icons a {
 .dark {
   .icons i {
     background: none;
-    color: #222;
+    color: var(--icon-color, #e2e8f0);
   }
 
   .icons a:hover i {
-    color: #e6e6e6;
+    color: var(--icon-hover, #f7fafc);
+  }
+  
+  ul.icons a:hover {
+    background: none;
+    box-shadow: none;
+  }
+  
+  ul.icons a {
+    color: var(--icon-color, #e2e8f0);
   }
 }

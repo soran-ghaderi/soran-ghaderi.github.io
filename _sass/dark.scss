@@ -1,15 +1,245 @@
 .dark {
-  background-color: #222;
-  color: #e6e6e6;
-}
+  background-color: #1a202c;
+  color: #e2e8f0;
 
-.dark {
-  mark {
-    color: #222;
-    background-color: #e6e6e6;
+  // General text and background overrides
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color, #f7fafc);
   }
 
+  p, li, span, div {
+    color: var(--text-color, #e2e8f0);
+  }
+
+  // Navigation - ensure it stays dark in dark mode too
+  .main-navigation {
+    background-color: #1a202c !important;
+    border-color: #2d3748 !important;
+    
+    .navbar-brand {
+      color: #f7fafc !important;
+      
+      &:hover,
+      &:focus {
+        color: var(--link-color, #63b3ed) !important;
+      }
+      
+      .brand-logo {
+        border-color: var(--accent-color);
+        
+        &:hover {
+          border-color: var(--accent-hover);
+        }
+      }
+    }
+    
+    .navbar-nav > li > a {
+      color: #f7fafc !important;
+      
+      &:hover,
+      &:focus {
+        color: var(--accent-color) !important;
+        background-color: rgba(229, 115, 115, 0.1) !important;
+        border-radius: 8px;
+      }
+    }
+    
+    .navbar-nav > li.active > a {
+      color: var(--accent-color) !important;
+      background-color: rgba(229, 115, 115, 0.15) !important;
+      border-radius: 8px;
+      
+      &:hover,
+      &:focus {
+        color: var(--accent-hover) !important;
+        background-color: rgba(229, 115, 115, 0.2) !important;
+      }
+    }
+    
+    .theme-toggle-btn {
+      border-color: #f7fafc !important;
+      color: #f7fafc !important;
+      background: transparent !important;
+      
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: var(--accent-color) !important;
+        color: #1a202c !important;
+        border-color: var(--accent-color) !important;
+      }
+    }
+    
+    .navbar-toggle {
+      border-color: #f7fafc !important;
+      
+      .icon-bar {
+        background-color: #f7fafc !important;
+      }
+      
+      &:hover {
+        border-color: var(--accent-color) !important;
+        
+        .icon-bar {
+          background-color: var(--accent-color) !important;
+        }
+      }
+    }
+    
+    .navbar-collapse {
+      background-color: #1a202c !important;
+      border-color: #2d3748 !important;
+      
+      @media (max-width: 767px) {
+        background-color: rgba(26, 32, 44, 0.98) !important;
+      }
+    }
+  }
+
+  // Skills container specific styling
+  .skills-container {
+    background-color: #1a202c !important;
+    
+    .skills-intro {
+      background-color: #1a202c !important;
+      border-left: 4px solid var(--accent-color);
+      color: var(--text-color, #e2e8f0);
+      
+      .lead {
+        color: var(--text-color, #e2e8f0) !important;
+        opacity: 1;
+      }
+    }
+
+    .skill-group {
+      > p > strong {
+        color: var(--heading-color, #f7fafc) !important;
+      }
+    }
+
+    .skill-list {
+      li {
+        color: var(--text-color, #e2e8f0) !important;
+        opacity: 1;
+        
+        strong {
+          color: var(--text-strong, #f7fafc) !important;
+          opacity: 1;
+        }
+        
+        em {
+          color: var(--text-muted, #a0aec0) !important;
+          opacity: 1;
+        }
+        
+        a {
+          color: var(--link-color, #63b3ed) !important;
+          
+          &:hover {
+            color: var(--link-hover, #90cdf4) !important;
+          }
+        }
+      }
+    }
+  }
+
+  // General link styling
   a {
-    color: #477dca;
+    color: var(--link-color, #63b3ed);
+    
+    &:hover {
+      color: var(--link-hover, #90cdf4);
+    }
+  }
+
+  // Form elements
+  input, textarea, select {
+    background-color: #1a202c;
+    color: var(--text-color, #e2e8f0);
+    border-color: #2d3748;
+  }
+
+  // Cards and containers - ensure all use the same background
+  .card, .container {
+    background-color: #1a202c !important;
+    color: var(--text-color, #e2e8f0);
+  }
+
+  // Headers and navigation
+  .header-container {
+    background-color: #1a202c;
+    color: var(--text-color, #e2e8f0);
+  }
+
+  // Footer
+  .footer {
+    background-color: #1a202c;
+    color: var(--text-color, #e2e8f0);
+  }
+
+  // Override any remaining light mode colors
+  .text-muted {
+    color: var(--text-muted, #a0aec0) !important;
+  }
+
+  .text-dark {
+    color: var(--text-color, #e2e8f0) !important;
+  }
+
+  .bg-light {
+    background-color: #1a202c !important;
+  }
+
+  .bg-white {
+    background-color: #1a202c !important;
+  }
+
+  // All sections and content areas
+  .education-container,
+  .experience-container,
+  .projects-container,
+  .publications-container,
+  .skills-container {
+    background-color: #1a202c !important;
+    color: var(--text-color, #e2e8f0);
+  }
+
+  // Ensure all text elements use proper colors
+  .layout-left,
+  .layout-right,
+  .layout-top {
+    .details {
+      h4 {
+        color: var(--heading-color, #f7fafc) !important;
+      }
+      
+      p, span {
+        color: var(--text-color, #e2e8f0) !important;
+      }
+    }
+  }
+
+  // Lists typography for dark mode
+  ol li, ul li {
+    color: var(--text-color, #e2e8f0) !important;
+  }
+
+  // Blog post sidebar share buttons
+  .blog-sidebar .toc-sidebar {
+    .sidebar-share {
+      .share-buttons-sidebar {
+        .share-btn {
+          background-color: #2d3748;
+          color: var(--text-color, #e2e8f0);
+          border-color: var(--link-color, #63b3ed);
+          
+          &:hover {
+            background-color: var(--link-color, #63b3ed);
+            color: #1a202c;
+            box-shadow: 0 2px 8px rgba(99, 179, 237, 0.3);
+          }
+        }
+      }
+    }
   }
 }

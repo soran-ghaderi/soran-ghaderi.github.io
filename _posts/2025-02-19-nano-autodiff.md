@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Nano AutoDiff
+title:  Nano AutoDiff 
 author: Soran Ghaderi
 
 #categories: [ library, python, machine learning, deep learning, automatic differentiation ]
@@ -13,7 +13,7 @@ excerpt: A from-scratch implementation of the following components with a Keras-
 ---
 
 
-<h2 align="center"> <b><a target="_blank" href="https://github.com/soran-ghaderi/backpropagation">Nano Autodiff</a></b></h2>
+<!-- <h2 align="center"> <b><a target="_blank" href="https://github.com/soran-ghaderi/backpropagation">Nano Autodiff</a></b></h2> -->
 A from-scratch implementation of the following components with a Keras-like API.</b> <br>
 
 ## features

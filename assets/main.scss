@@ -2,6 +2,8 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+@charset "utf-8";
+
 @import 'modern-resume-theme';
 
 .post-excerpt p {
@@ -13,3 +15,48 @@
   "syntax",
   "starsnonscss"
 ;
+
+/* MathJax styles for proper math rendering */
+.MathJax_Display {
+  text-align: center !important;
+  margin: 1em 0 !important;
+}
+
+.MathJax {
+  outline: 0;
+  display: inline-block;
+  line-height: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  float: none;
+  direction: ltr;
+  max-width: none;
+  max-height: none;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* Ensure math doesn't break responsive layout */
+mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Math in dark mode */
+.dark mjx-container {
+  color: #e5e5e5;
+}

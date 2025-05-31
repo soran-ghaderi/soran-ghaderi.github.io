@@ -5,11 +5,80 @@
   <meta name="google-site-verification" content="iy_Kc5UEJ0ls_AP4oXtSSr8F3Vudo6LP933qWL3Tnfk" />
   <meta name="google-site-verification" content="X36l-RB7V-87ghFwPneHzY9ubJ_GkVdCKPlND3V1xbw" />
 
+  <!-- Performance optimizations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
   <title>{{ site.name }} | {{ site.title }}</title>
   {%- seo title=false -%}
 
+  <!-- Critical CSS - Bootstrap with preload -->
+  <link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></noscript>
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
+
+  <!-- MathJax Configuration for Math Rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        processRefs: true,
+        tags: 'ams',
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+  </script>
+  <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    // Ensure MathJax processes math after page load
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise().catch(function(err) {
+          console.error('MathJax typeset failed: ' + err.message);
+        });
+      }
+    });
+  </script>
+
+  <!-- Preload critical JavaScript -->
+  <link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" as="script">
+  <link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" as="script">
+  <link rel="preload" href="{{ '/assets/js/index.js' | relative_url }}" as="script">
+
+  <!-- jQuery required for Bootstrap -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <!-- Bootstrap JavaScript for navigation functionality -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
+
+  <!-- Resource hints for better performance -->
+  <meta name="theme-color" content="#38a169">
+  <meta name="color-scheme" content="light dark">
 
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}

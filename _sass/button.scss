@@ -7,10 +7,10 @@
   height: 100%;
   border-radius: inherit;
   z-index: -1;
-  box-shadow: inset 0 0 0 35px #333;
+  box-shadow: inset 0 0 0 35px var(--text-color, #2d3748);
   -webkit-transform: scale3d(0.9, 0.9, 1);
   transform: scale3d(0.9, 0.9, 1);
-  -webkit-transition: box-shadow 0.3s, -webkit-transform 0.3;
+  -webkit-transition: box-shadow 0.3s, -webkit-transform 0.3s;
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
@@ -32,6 +32,7 @@
   display: inline-block;
   font-weight: 400;
   max-width: 400px;
+  transition: all 0.3s ease;
 }
 
 .button--round-l {
@@ -43,35 +44,66 @@
   height: 60px;
   min-width: 0;
   padding: 0;
-  color: #fff;
+  color: var(--bg-color, #ffffff);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.button.button--sacnite i {
+  font-size: 3.0rem;
+  line-height: 1;
+  z-index: 3;
+  position: relative;
+  transition: all 0.3s ease;
+  color: var(--bg-color, #ffffff);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .button--sacnite:hover {
-  color: #333;
+  color: var(--text-color, #2d3748);
+  transform: translateY(-2px);
 }
 
 .button--sacnite:hover::before {
-  box-shadow: inset 0 0 0 2px #333;
+  box-shadow: inset 0 0 0 2px var(--accent-color);
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
 
+.button--sacnite:hover i {
+  transform: scale(1.1);
+  color: var(--text-color, #2d3748);
+  text-shadow: none;
+}
+
 .dark {
   .button--sacnite::before {
-    box-shadow: inset 0 0 0 35px #e6e6e6;
+    box-shadow: inset 0 0 0 35px var(--text-color, #e2e8f0);
   }
 
   .button.button--sacnite {
-    color: #222;
+    color: var(--bg-color, #1a202c);
+  }
+  
+  .button.button--sacnite i {
+    color: var(--bg-color, #1a202c);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
   }
 
   .button--sacnite:hover {
-    color: #e6e6e6;
+    color: var(--text-color, #e2e8f0);
   }
 
   .button--sacnite:hover::before {
-    box-shadow: inset 0 0 0 2px #e6e6e6;
+    box-shadow: inset 0 0 0 2px var(--accent-color);
+  }
+  
+  .button--sacnite:hover i {
+    color: var(--text-color, #e2e8f0);
+    text-shadow: none;
   }
 }

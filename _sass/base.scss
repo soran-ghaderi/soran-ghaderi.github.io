@@ -4,10 +4,72 @@
 //@import url(https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
+// CSS Custom Properties for Clean, Readable Color Scheme
+:root {
+  // Main text colors - only 2 colors for normal text
+  --text-color: #2d3748;                    // Main dark gray text
+  --text-strong: #1a202c;                   // Darker for headings/strong text
+  --text-muted: #718096;                    // Muted gray for secondary text
+  --heading-color: #1a202c;                 // Black for headers
+  
+  // Links - blue as requested
+  --link-color: #3182ce;                    // Clean blue for links
+  --link-hover: #2c5aa0;                    // Darker blue on hover
+  
+  // Accent color - green family
+  // --accent-color: #38a169;                  // Clean green accent
+  // --accent-hover: #2f855a;                  // Darker green on hover
+  
+  // Accent color - red family
+  --accent-color: #e53e3e;                  // Clean red accent
+  --accent-hover: #9b2c2c;                  // Darker red on hover
+
+
+  // Backgrounds
+  --bg-color: #ffffff;                      // White background
+  --intro-bg: #f7fafc;                     // Light gray for intro sections
+  
+  // Social media icons - black/white only
+  --icon-color: #2d3748;                   // Black icons
+  --icon-hover: #1a202c;                   // Darker on hover
+}
+
+.dark {
+  // Main text colors - only 2 colors for normal text  
+  --text-color: #e2e8f0;                   // Light gray text
+  --text-strong: #f7fafc;                  // White for headings/strong text
+  --text-muted: #a0aec0;                   // Muted light gray for secondary text
+  --heading-color: #f7fafc;                // White for headers
+  
+  // Links - blue as requested
+  --link-color: #63b3ed;                   // Light blue for links
+  --link-hover: #90cdf4;                   // Lighter blue on hover
+  
+  // Accent color - green family
+  // --accent-color: #68d391;                 // Light green accent
+  // --accent-hover: #9ae6b4;                 // Lighter green on hover
+
+  // Accent color - red family
+  // --accent-color: #e57373;                 // Light red accent
+  // --accent-hover: #ffb3b3;                 // Lighter red on hover
+  --accent-color: #e53e3e;                  // Clean red accent
+  --accent-hover: #9b2c2c;                  // Darker red on hover
+
+
+
+  
+  // Backgrounds
+  --bg-color: #1a202c;                     // Dark background
+  --intro-bg: #2d3748;                     // Darker gray for intro sections
+  
+  // Social media icons - black/white only
+  --icon-color: #e2e8f0;                   // Light gray icons
+  --icon-hover: #f7fafc;                   // White on hover
+}
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   appearance: none;
-  background-color: #477dca;
+  background-color: var(--accent-color, #38a169);
   border: 0;
   border-radius: 3px;
   color: #fff;
@@ -20,7 +82,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   line-height: 1;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
-  transition: background-color 150ms ease;
+  transition: all 150ms ease;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
@@ -29,13 +91,17 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   input[type="button"]:focus, input[type="reset"]:hover,
   input[type="reset"]:focus, input[type="submit"]:hover,
   input[type="submit"]:focus {
-    background-color: #3964a2;
-    color: #fff; }
+    background-color: var(--accent-hover, #2f855a);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3); }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
     button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
-      background-color: #477dca; }
+      background-color: var(--accent-color, #38a169);
+      transform: none;
+      box-shadow: none; }
 
 fieldset {
   background-color: #f7f7f7;
@@ -106,53 +172,29 @@ picture {
   max-width: 100%; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit; }
-//
-//.btn {
-//  border: none;
-//  font-family: inherit;
-//  font-size: inherit;
-//  color: inherit;
-//  background: none;
-//  cursor: pointer;
-//  padding: 18px 60px;
-//  display: inline-block;
-//  margin: 15px 30px;
-//  text-transform: uppercase;
-//  letter-spacing: 1px;
-//  font-weight: 700;
-//  outline: none;
-//  position: relative;
-//  -webkit-transition: all 0.3s;
-//  -moz-transition: all 0.3s;
-//  transition: all 0.3s;
-//  border-radius: 0;
-//  background: #DEDEDE;
-//  color: #4C4C4C; }
-//  .btn:focus {
-//    background: #DEDEDE;
-//    color: #4C4C4C; }
-//  .btn:hover {
-//    background: #CCCCCC;
-//    color: #4C4C4C; }
-//  .btn:active {
-//    top: 2px; }
-//  .btn.disabled {
-//    background: #EAEAEA;
-//    color: #9E9E9E;
-//    cursor: default;
-//    top: 0px; }
+  box-sizing: inherit;
+}
 
 body {
-  background: #ffffff;
+  background: var(--bg-color, #ffffff);
+  color: var(--text-color, #2d3748);
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  width: inherit;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .center-text {
@@ -160,6 +202,7 @@ body {
 
 .container {
   margin-top:30px;
+  background: var(--bg-color, #ffffff);
 
   @media print {
     margin-top: 20px;

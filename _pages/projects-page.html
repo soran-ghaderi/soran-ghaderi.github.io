@@ -5,6 +5,169 @@ permalink: /projects-page
 comments: false
 ---
 
+<style>
+/* Projects Page Clean Grid Styling */
+
+/* Featured Section Grid Alignment */
+.featured-posts {
+    margin-bottom: 4rem;
+}
+
+.featured-posts .section-title h3 {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    text-align: center;
+    border-bottom: 2px dashed var(--text-color, #2d3748);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--heading-color, #1a202c);
+}
+
+.dark .featured-posts .section-title h3 {
+    color: var(--heading-color, #f7fafc);
+    border-bottom-color: var(--text-color, #e2e8f0);
+}
+
+.featured-posts .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0 -15px;
+    gap: 0;
+}
+
+.featured-posts .row > [class*="col-"] {
+    display: flex;
+    align-items: stretch;
+    padding: 0 15px;
+}
+
+/* Ensure proper grid spacing */
+.featured-posts .mb-30px {
+    margin-bottom: 30px !important;
+}
+
+/* All Projects Section */
+.recent-posts {
+    margin-top: 2rem;
+}
+
+.recent-posts .section-title h3 {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    text-align: center;
+    border-bottom: 2px dashed var(--text-color, #2d3748);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--heading-color, #1a202c);
+}
+
+.dark .recent-posts .section-title h3 {
+    color: var(--heading-color, #f7fafc);
+    border-bottom-color: var(--text-color, #e2e8f0);
+}
+
+.recent-posts .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0 -15px;
+    gap: 0;
+}
+
+.recent-posts .row > [class*="col-"] {
+    display: flex;
+    align-items: stretch;
+    padding: 0 15px;
+}
+
+/* Ensure proper grid spacing for all projects */
+.recent-posts .mb-30px {
+    margin-bottom: 30px !important;
+}
+
+/* Responsive grid adjustments for featured items */
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    /* Large tablets - 2 columns for featured */
+    .featured-posts .row > .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* Keep 3 columns for all projects on large tablets */
+    .recent-posts .row > .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    /* Medium tablets - 2 columns for both */
+    .featured-posts .row > .col-lg-4,
+    .featured-posts .row > .col-md-6,
+    .recent-posts .row > .col-lg-4,
+    .recent-posts .row > .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 767.98px) and (min-width: 576px) {
+    /* Small tablets - 2 columns */
+    .featured-posts .row > .col-lg-4,
+    .featured-posts .row > .col-md-6,
+    .featured-posts .row > .col-sm-6,
+    .recent-posts .row > .col-lg-4,
+    .recent-posts .row > .col-md-6,
+    .recent-posts .row > .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .featured-posts .section-title h3,
+    .recent-posts .section-title h3 {
+        font-size: 2.8rem;
+        margin-bottom: 1.8rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Mobile phones - single column */
+    .featured-posts .row > .col-lg-4,
+    .featured-posts .row > .col-md-6,
+    .featured-posts .row > .col-sm-6,
+    .recent-posts .row > .col-lg-4,
+    .recent-posts .row > .col-md-6,
+    .recent-posts .row > .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .featured-posts .section-title h3,
+    .recent-posts .section-title h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Clean section titles */
+.section-title {
+    margin-bottom: 2rem;
+}
+
+.section-title h3 span {
+    background: var(--bg-color, #ffffff);
+    padding: 0 1rem;
+    position: relative;
+}
+
+.dark .section-title h3 span {
+    background: var(--bg-color, #1a202c);
+}
+</style>
+
 {% if page.url == "/projects-page" %}
 
 <!-- Featured
@@ -37,7 +200,7 @@ comments: false
 
     </div>
 
-    <div class="">
+    <div class="row">
 
         {% for post in site.posts %}
         {% include postbox.html %}

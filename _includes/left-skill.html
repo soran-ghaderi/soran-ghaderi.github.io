@@ -1,370 +1,81 @@
-<div class="row clearfix layout layout-left skill-card">
-  {% if include.item.type == 'technical' %}
+<div class="row clearfix layout layout-left">
+  {% if include.item.type == 'technical' or include.item.type == 'research' %}
   {% for category in include.item.items %}
-  <!-- Main category header -->
-  <div class="category-container">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4>{{ category.category }}</h4>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% assign no_type_items = category.items | where_exp: "item", "item.tool-type == nil" %}
-          {% for skill in no_type_items %}
-          <div class="item-block">
-            <div class="skill-header">
-              <h4>{{ skill.name }}</h4>
-              {% if skill.badge %}
-              <img src="{{ skill.badge }}" alt="{{ skill.name }}" class="skill-badge">
-              {% endif %}
-            </div>
-            {% if skill.notes %}
-            <p><strong>Notes</strong>: {{ skill.notes }}</p>
-            {% endif %}
-            {% if skill.projects %}
-            <p>
-              Projects:
-              {% for project in skill.projects %}
-              <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>
-              {% unless forloop.last %} | {% endunless %}
-              {% endfor %}
-            </p>
-            {% endif %}
-            {% if skill.certifications %}
-            <p>
-              {% for cert in skill.certifications %}
-              <img src="{{ cert.badge }}" alt="{{ cert.name }}" class="certification-badge">
-              {% endfor %}
-            </p>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+  <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+    <h4>{{ category.category }}</h4>
   </div>
-
-  <!-- Tool-type groups -->
-  {% assign tool_types = category.items | map: "tool-type" | uniq | compact %}
-  {% for tool_type in tool_types %}
-  {% assign type_items = category.items | where: "tool-type", tool_type %}
-  {% if type_items.size > 0 %}
-  <div class="category-container tool-type-section">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4 class="tool-type-header">{{ tool_type }}</h4>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% for skill in type_items %}
-          <div class="item-block">
-            <div class="skill-header">
-              <h4>{{ skill.name }}</h4>
-              {% if skill.badge %}
-              <img src="{{ skill.badge }}" alt="{{ skill.name }}" class="skill-badge">
-              {% endif %}
-            </div>
-            {% if skill.notes %}
-            <p><strong>Notes</strong>: {{ skill.notes }}</p>
-            {% endif %}
-            {% if skill.projects %}
-            <p>
-              Projects:
-              {% for project in skill.projects %}
-              <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>
-              {% unless forloop.last %} | {% endunless %}
-              {% endfor %}
-            </p>
-            {% endif %}
-            {% if skill.certifications %}
-            <p>
-              {% for cert in skill.certifications %}
-              <img src="{{ cert.badge }}" alt="{{ cert.name }}" class="certification-badge">
-              {% endfor %}
-            </p>
-            {% endif %}
-          </div>
+  <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+    <!-- Skills grouped by tool-type -->
+    {% assign tool_types = category.items | map: "tool-type" | uniq | compact %}
+    {% for tool_type in tool_types %}
+    {% assign type_items = category.items | where: "tool-type", tool_type %}
+    {% if type_items.size > 0 %}
+    <div class="skill-group">
+      <p><strong>{{ tool_type }}:</strong></p>
+      <ul class="skill-list">
+        {% for skill in type_items %}
+        <li>
+          <strong>{{ skill.name }}</strong>
+          {% if skill.notes %}<br><em>{{ skill.notes }}</em>{% endif %}
+          {% if skill.projects %}
+          <br>Projects: 
+          {% for project in skill.projects %}
+          <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>{% unless forloop.last %}, {% endunless %}
           {% endfor %}
-        </div>
-      </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
-  </div>
-  {% endif %}
-  {% endfor %}
-  {% endfor %}
-
-  {% elsif include.item.type == 'other' %}
-  {% for category in include.item.items %}
-  <!-- Main category header -->
-  <div class="category-container">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4>{{ category.category }}</h4>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% assign no_type_items = category.items | where_exp: "item", "item.tool-type == nil" %}
-          {% for skill in no_type_items %}
-          <div class="item-block">
-            <div class="skill-header">
-              <h4>{{ skill.name }}</h4>
-            </div>
-            <p>{{ skill.notes }}</p>
-            {% if skill.projects %}
-            <p>
-              Projects:
-              {% for project in skill.projects %}
-              <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>
-              {% unless forloop.last %} | {% endunless %}
-              {% endfor %}
-            </p>
-            {% endif %}
-          </div>
+    {% endif %}
+    {% endfor %}
+    
+    <!-- Skills without tool-type -->
+    {% assign no_type_items = category.items | where_exp: "item", "item.tool-type == nil" %}
+    {% if no_type_items.size > 0 %}
+    <div class="skill-group">
+      <ul class="skill-list">
+        {% for skill in no_type_items %}
+        <li>
+          <strong>{{ skill.name }}</strong>
+          {% if skill.notes %}<br><em>{{ skill.notes }}</em>{% endif %}
+          {% if skill.projects %}
+          <br>Projects: 
+          {% for project in skill.projects %}
+          <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>{% unless forloop.last %}, {% endunless %}
           {% endfor %}
-        </div>
-      </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
+    {% endif %}
   </div>
-
-  <!-- Tool-type groups -->
-  {% assign tool_types = category.items | map: "tool-type" | uniq | compact %}
-  {% for tool_type in tool_types %}
-  {% assign type_items = category.items | where: "tool-type", tool_type %}
-  {% if type_items.size > 0 %}
-  <div class="category-container tool-type-section">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4 class="tool-type-header">{{ tool_type }}</h4>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% for skill in type_items %}
-          <div class="item-block">
-            <div class="skill-header">
-              <h4>{{ skill.name }}</h4>
-            </div>
-            <p>{{ skill.notes }}</p>
-            {% if skill.projects %}
-            <p>Projects:</p>
-            <ul>
-              {% for project in skill.projects %}
-              <li>
-                <p><a href="{{ project.link }}" target="_blank">{{ project.name }}</a></p>
-                {% if project.description %}
-                <p>{{ project.description }}</p>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
   {% endfor %}
-  {% endfor %}
-
 
   {% elsif include.item.type == 'language' %}
-  <div class="category-container">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4>Languages</h4>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% assign no_type_languages = include.item.items | where_exp: "language", "language.tool-type == nil" %}
-          {% for language in no_type_languages %}
-          <div class="item-block">
-            <div class="skill-header">
-              <h4>{{ language.name }}</h4>
-              {% if language.flag %}
-              <p><span class="language-flag">{{ language.flag }}</span></p>
-              {% endif %}
-            </div>
-            <p>{{ language.proficiency }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+  <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+    <h4>Languages</h4>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+    <ul class="skill-list">
+      {% for language in include.item.items %}
+      <li>
+        <strong>{{ language.name }}</strong> - {{ language.proficiency }}
+        {% if language.flag %} {{ language.flag }}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 
-  <!-- Tool-type groups for languages -->
-  {% assign language_tool_types = include.item.items | map: "tool-type" | uniq | compact %}
-  {% for tool_type in language_tool_types %}
-  {% assign type_languages = include.item.items | where: "tool-type", tool_type %}
-  {% if type_languages.size > 0 %}
-  <div class="category-container tool-type-section">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4 class="tool-type-header">{{ tool_type }}</h4>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% for language in type_languages %}
-          <div class="item-block">
-            <div class="skill-header">
-              <h4>{{ language.name }}</h4>
-              {% if language.flag %}
-              <h4><span class="language-flag">{{ language.flag }}</span></h4>
-              {% endif %}
-            </div>
-            <p>{{ language.proficiency }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-  {% endfor %}
   {% elsif include.item.type == 'interest' %}
-  <div class="category-container">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <div class="category-block">
-        <h4>Personal Interests</h4>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-      <div class="category-block">
-        <div class="items-container">
-          {% for interest in include.item.items %}
-          <div class="item-block">
-            <div class="skill-header">
-              <p>{{ interest.notes }}</p>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+  <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+    <h4>Personal Interests</h4>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+    {% for interest in include.item.items %}
+    {{ interest.notes | markdownify }}
+    {% endfor %}
   </div>
   {% endif %}
 </div>
-
-<style>
-  .skill-card {
-    margin-bottom: 20px;
-  }
-
-  .category-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-  }
-
-  .category-container:last-child {
-    margin-bottom: 0;
-  }
-
-  .tool-type-section {
-    margin-top: 20px;
-    /*margin-left: 20px;*/
-  }
-
-  .tool-type-header {
-    color: #666;
-    font-size: 2.0em;
-  }
-
-  .category-block {
-    width: 100%;
-  }
-
-  .items-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .item-block {
-    flex: 1 1 300px;
-    max-width: 100%;
-    min-width: 250px;
-  }
-
-  .skill-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
-  }
-
-  .skill-header h4 {
-    margin: 0;
-  }
-
-  .skill-badge {
-    height: 28px;
-    width: auto;
-  }
-
-  .certification-badge {
-    max-height: 28px;
-    margin-right: 10px;
-  }
-
-  .details h4 {
-    margin-top: 0;
-    margin-bottom: 6px;
-  }
-
-  .details p {
-    margin-bottom: 3px;
-  }
-
-  a {
-    color: #0366d6;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  @media print {
-    .category-container {
-      page-break-inside: avoid;
-    }
-
-    .item-block {
-      page-break-inside: avoid;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .tool-type-section {
-      margin-left: 0;
-    }
-
-    .items-container {
-      flex-direction: column;
-    }
-
-    .item-block {
-      flex: 1 1 100%;
-    }
-  }
-</style>

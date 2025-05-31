@@ -1,9 +1,39 @@
-<div class="container header-contianer">
-    <div class="row">
-        <ul class="menu-3">
-            {% for item in site.data.menu_items.menu.docs %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-            {% endfor %}
-        </ul>
+<nav class="navbar navbar-default navbar-fixed-top main-navigation">
+    <div class="container">
+        <!-- Mobile toggle button -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-content" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Navigation content -->
+        <div class="collapse navbar-collapse" id="navbar-content">
+            <!-- Center: Brand + Menu items + theme toggle -->
+            <ul class="nav navbar-nav navbar-center">
+                <!-- Brand/Logo as first item -->
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{{ site.url }}/">
+                        {% if site.about_profile_image %}
+                            <img src="{{ site.url }}/{{ site.about_profile_image }}" alt="{{ site.name }}" class="brand-logo">
+                        {% elsif site.logo %}
+                            <img src="{{ site.url }}/{{ site.logo }}" alt="{{ site.name }}" class="brand-logo">
+                        {% else %}
+                            {{ site.name }}
+                        {% endif %}
+                    </a>
+                </li>
+                {% for item in site.data.menu_items.menu.docs %}
+                <li class="nav-item"><a href="{{ site.url }}{{ item.url }}" class="nav-link">{{ item.title }}</a></li>
+                {% endfor %}
+                <!-- Theme toggle positioned with menu items -->
+                <li class="nav-item">
+                    <button id="theme-toggle" class="btn btn-default navbar-btn theme-toggle-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+</nav>

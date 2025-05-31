@@ -7,6 +7,12 @@
 .header-right p {
   margin-bottom: 3px;
 }
+
+.header-left h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
 .author-thumb {
   width: 40px;
   height: 40px;
@@ -56,9 +62,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat, no-repeat;
-  -moz-box-shadow: inset 0 0 20px #636161;
-  -webkit-box-shadow: inset 0 0 20px #636161;
-  box-shadow: inset 0 0 20px #636161;
+  -moz-box-shadow: inset 0 0 20px var(--text-muted, #718096);
+  -webkit-box-shadow: inset 0 0 20px var(--text-muted, #718096);
+  box-shadow: inset 0 0 20px var(--text-muted, #718096);
 }
 
 .into-text-1 {
@@ -72,98 +78,191 @@
 }
 
 .projects-container, .experience-container, .education-container, .publications-container, .skills-container {
-  //h3 {
-  //  margin-bottom: 0;
-  //}
-  h3 {
-    margin-bottom: 0;
-    font-size: 2rem; // Consistent heading size
-    font-weight: 500; // Match theme's heading font-weight
-  }
-
-  /* Shared styling for sections */
+  background-color: var(--bg-color, #ffffff);
+  max-width: 100%;
+  overflow-x: hidden;
+  
   section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
-
 }
 
-//// Add to your SCSS
-//.abstract-container {
-//  position: relative;
-//  margin-top: 1rem;
-//
-//  .abstract-content {
-//    max-height: 3.6em; // About 2 lines of text
-//    overflow: hidden;
-//    transition: max-height 0.3s ease-out;
-//
-//    &.expanded {
-//      max-height: none;
-//    }
-//  }
-//
-//  .abstract-gradient {
-//    position: absolute;
-//    bottom: 0;
-//    left: 0;
-//    right: 0;
-//    height: 2.5em;
-//    background: linear-gradient(
-//                    to bottom,
-//                    transparent,
-//                    var(--background-color, #ffffff) 90%
-//    );
-//    pointer-events: none;
-//    transition: opacity 0.3s ease-out;
-//
-//    &.hidden {
-//      background: none;
-//    }
-//  }
-//
-//  .abstract-toggle {
-//    display: flex;
-//    align-items: center;
-//    justify-content: center;
-//    width: 100%;
-//    padding: 0.5rem;
-//    background: none;
-//    border: none;
-//    cursor: pointer;
-//    color: inherit;
-//    opacity: 0.7;
-//
-//    &:hover {
-//      opacity: 1;
-//    }
-//
-//    i {
-//      transition: transform 0.3s ease;
-//    }
-//
-//    &.expanded i {
-//      transform: rotate(180deg);
-//    }
-//  }
-//}
+// Skills Section Styling - Professional and Theme-Consistent
+.skills-container {
+  background-color: var(--bg-color, #ffffff);
+  max-width: 100%;
+  overflow-x: hidden;
+  
+  .skills-intro {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--intro-bg, #f7fafc);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    
+    .lead {
+      margin-bottom: 0;
+      color: var(--text-color, #2d3748);
+      font-size: 1.6rem;
+      line-height: 1.6;
+      font-weight: 300;
+      opacity: 1;
+    }
+    
+    @media print {
+      background-color: transparent;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+    }
+  }
 
+  .skill-group {
+    margin-bottom: 3rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    > p > strong {
+      color: var(--heading-color, #1a202c);
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      display: block;
+      opacity: 1;
+    }
+  }
 
+  .skill-list {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    
+    li {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      color: var(--text-color, #2d3748);
+      font-size: 1.6rem;
+      opacity: 1;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      strong {
+        font-weight: 600;
+        color: var(--text-strong, #1a202c);
+        font-size: 1.6rem;
+        opacity: 1;
+      }
+      
+      em {
+        color: var(--text-muted, #718096);
+        font-style: normal;
+        font-size: 1.4rem;
+        display: block;
+        margin-top: 0.5rem;
+        line-height: 1.5;
+        opacity: 1;
+      }
+      
+      a {
+        color: var(--link-color, #3182ce);
+        text-decoration: none;
+        font-weight: 400;
+        opacity: 1;
+        
+        &:hover {
+          color: var(--link-hover, #2c5aa0);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media print {
+    .skills-intro .lead {
+      font-size: 1.4rem;
+    }
+    
+    .skill-group {
+      margin-bottom: 2.5rem;
+      
+      > p > strong {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    .skill-list {
+      margin-bottom: 1rem;
+      
+      li {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        
+        strong {
+          font-size: 1.4rem;
+        }
+        
+        em {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// Fix spacing between skill layout rows - add proper margin between different skill categories
+.layout.layout-left {
+  margin-bottom: 1rem;
+  
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+  
+  // Ensure proper spacing between skill sections
+  .details {
+    margin-bottom: 1.5rem;
+    
+    @media (min-width: 768px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Language and Interest sections
+.skills-container {
+  // Languages section
+  .skill-list {
+    // Override for languages which need proficiency display
+    &.language-list li strong {
+      color: var(--text-strong, #333);
+    }
+  }
+}
 
 .layout {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--bg-color, #ffffff);
 
   .details {
     text-align: left;
+    padding-bottom: 1rem;
 
     p {
-      margin-bottom: 3px;
+      margin-bottom: 1rem;
       font-size: 1.6rem;
       text-align: inherit;
       font-weight: 300;
+      color: var(--text-color, #333);
 
       b {
         font-weight: 500;
+        color: var(--text-strong, #333);
       }
     }
 
@@ -176,9 +275,13 @@
     }
 
     a {
-      color: inherit;
+      color: var(--link-color, #477dca);
       font-style: italic;
       font-weight: 300;
+      
+      &:hover {
+        color: var(--link-hover, #355e98);
+      }
     }
 
     .fa {
@@ -190,15 +293,23 @@
     }
 
     h4 {
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.5rem;
       font-weight: 500;
+      font-size: 2rem;
+      color: var(--heading-color, #333);
 
       @media print {
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.4rem;
+        font-size: 1.8rem;
       }
 
       a {
         font-weight: 500;
+        color: var(--link-color, #477dca);
+        
+        &:hover {
+          color: var(--link-hover, #355e98);
+        }
       }
     }
   }
@@ -230,40 +341,67 @@
   }
 }
 
-
-
-
 .footer-container {
-  margin-top:100px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  background-color: var(--bg-color, #ffffff);
+  // border-top: 1px solid var(--text-color, #ddd);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  
+  @media print {
+    border-top: none;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
 }
 
 .footer-container p {
   text-align: center;
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--text-color, #333);
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  
+  @media print {
+    font-size: 1.2rem;
+  }
 }
 
 .footer-container a {
-  color: inherit;
-  font-style: italic;
-  font-weight: 300;
+  color: var(--link-color, #477dca);
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  
+  &:hover {
+    color: var(--link-hover, #355e98);
+    text-decoration: underline;
+  }
 }
 
 .page-content {
   padding: 0;
+  background-color: var(--bg-color, #ffffff);
+  flex: 1;
 }
 
 .contact a {
   line-height: 50px;
   margin-left: 30px;
-  color: #BBBBBB;
+  color: var(--text-muted, #718096);
   -webkit-transition: color 0.4s ease;
   -moz-transition: color 0.4s ease;
   transition: color 0.4s ease;
 }
 
 .contact a:hover {
-  color: #4C4C4C;
+  color: var(--link-color, #667eea);
 }
 
 p.quote {
@@ -309,7 +447,7 @@ p.quote {
   //animation: line 1s;
 }
 .menu-3 li:hover a {
-  color: darkred;
+  color: var(--accent-color);
 }
 .menu-3 li:not(:last-child) {
   margin-right: 10px;
@@ -332,12 +470,19 @@ p.quote {
   display: inline-block;
   padding: 10px 15px;
   margin-top: 10px;
-  background-color: #0073e6;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--bg-color, #ffffff);
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
   position: relative;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+  }
 }
 
 /* Add a dropdown arrow using ::after */
@@ -357,6 +502,877 @@ details[open] .details-summary::after {
 .details-content {
   margin-top: 10px;
   padding: 10px;
-  background: #f9f9f9;
-  border-left: 4px solid #0073e6;
+  background: var(--intro-bg, #f7fafc);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+}
+
+.header-container {
+  background-color: var(--bg-color, #ffffff);
+  color: var(--text-color, #333);
+  padding: 3rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
+}
+
+.header-left h1 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--text-color, #333);
+}
+
+.header-left h2 {
+  color: var(--text-muted, #666);
+  margin-bottom: 0;
+}
+
+.wrapper {
+  background-color: var(--bg-color, #ffffff);
+  padding: 2rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
+}
+
+.header-right .icons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-right .icons li {
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header-right .icons {
+    justify-content: center;
+  }
+}
+
+// Dark/Light Mode Toggle Button
+.theme-toggle-btn {
+  background: transparent !important;
+  border: 2px solid #f7fafc !important;
+  color: #f7fafc !important;
+  margin: 0;
+  padding: 12px 15px;
+  border-radius: 50%;
+  transition: none !important;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    display: none !important;
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--accent-color) !important;
+    color: #1a202c !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+  
+  &:hover::before,
+  &:focus::before {
+    display: none !important;
+  }
+  
+  i {
+    font-size: 1.2rem;
+    transition: none !important;
+  }
+  
+  &:hover i {
+    transform: none !important;
+  }
+}
+
+.dark .theme-toggle-btn {
+  border-color: var(--text-color, #e6e6e6);
+  color: var(--text-color, #e6e6e6);
+  
+  &:hover {
+    background-color: var(--text-color, #e6e6e6);
+    color: var(--bg-color, #1a1a1a);
+  }
+}
+
+.theme-toggle-container {
+  @media screen and (max-width: 768px) {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+  }
+}
+
+// Navigation Bar Styling - Always Dark (Bootstrap 3) - COMPREHENSIVE FIX
+.main-navigation {
+  background-color: #1a202c !important;
+  border-color: #2d3748 !important;
+  border-radius: 0;
+  min-height: 70px !important;
+  z-index: 1030;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  overflow-y: visible;
+  
+  // Force ALL elements to use dark background
+  *, *::before, *::after {
+    background-color: transparent !important;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: transparent !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 70px !important;
+    overflow-x: hidden !important;
+    
+    // Match Bootstrap 3 container responsive behavior
+    @media (min-width: 768px) {
+      max-width: 750px;
+    }
+    @media (min-width: 992px) {
+      max-width: 970px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1170px;
+    }
+  }
+  
+  .navbar-header {
+    background-color: transparent !important;
+    float: none !important;
+    min-height: 70px !important;
+  }
+  
+  .navbar-brand {
+    color: #f7fafc !important;
+    font-weight: 600;
+    font-size: 1.7rem;
+    height: 70px !important;
+    padding: 20px 15px !important;
+    background-color: transparent !important;
+    float: none !important;
+    display: inline-block !important;
+    
+    &:hover,
+    &:focus {
+      color: #e2e8f0 !important;
+      background-color: transparent !important;
+    }
+    
+    .brand-logo {
+      max-height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: inline-block;
+      margin-right: 12px;
+      vertical-align: middle;
+      border: 2px solid var(--accent-color);
+      transition: none !important;
+      background-color: transparent !important;
+      
+      &:hover {
+        border-color: var(--accent-hover);
+        transform: none !important;
+      }
+    }
+  }
+  
+  .navbar-nav {
+    background-color: transparent !important;
+    
+    > li {
+      background-color: transparent !important;
+      
+      > a {
+        color: #f7fafc !important;
+        font-weight: 500;
+        line-height: 35px;
+        padding: 17px 22px !important;
+        transition: none !important;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        letter-spacing: 0.8px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        margin: 0 2px;
+        background-color: transparent !important;
+        
+        &::before,
+        &::after {
+          display: none !important;
+        }
+        
+        &:hover,
+        &:focus {
+          color: var(--accent-color) !important;
+          background-color: rgba(229, 62, 62, 0.08) !important;
+          transform: none !important;
+          box-shadow: none !important;
+          border-radius: 8px;
+        }
+      }
+      
+      &.active > a {
+        color: var(--accent-color) !important;
+        font-weight: 600;
+        background-color: rgba(229, 62, 62, 0.12) !important;
+        border-radius: 8px;
+        
+        &:hover,
+        &:focus {
+          color: var(--accent-hover) !important;
+          background-color: rgba(229, 62, 62, 0.18) !important;
+        }
+        
+        &::before {
+          display: none !important;
+        }
+      }
+    }
+  }
+  
+  // Center menu items and theme toggle together - Bootstrap 3 approach - FIXED WITH OVERFLOW CONTROL
+  .navbar-center {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    height: auto !important;
+    background-color: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+    
+    @media (max-width: 767px) {
+      position: static !important;
+      transform: none !important;
+      left: auto !important;
+      top: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      text-align: left !important;
+      height: auto !important;
+      display: block !important;
+      margin-top: 0 !important;
+      overflow: visible !important;
+    }
+    
+    > li {
+      float: none !important;
+      display: inline-block !important;
+      background-color: transparent !important;
+      flex-shrink: 1 !important;
+      
+      @media (max-width: 767px) {
+        float: none !important;
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+  }
+  
+  .navbar-collapse {
+    position: relative !important;
+    background-color: #1a202c !important;
+    border-color: #2d3748 !important;
+    border: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    
+    @media (max-width: 767px) {
+      background-color: rgba(26, 32, 44, 0.98) !important;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid #2d3748 !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-bottom: none !important;
+      display: block !important;
+    }
+    
+    &.in,
+    &.collapsing {
+      background-color: rgba(26, 32, 44, 0.98) !important;
+    }
+  }
+  
+  .theme-toggle-btn {
+    background: transparent !important;
+    border: 2px solid #f7fafc !important;
+    color: #f7fafc !important;
+    margin: 0;
+    padding: 12px 15px;
+    border-radius: 50%;
+    transition: none !important;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      display: none !important;
+    }
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--accent-color) !important;
+      color: #1a202c !important;
+      border-color: var(--accent-color) !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+    
+    &:hover::before,
+    &:focus::before {
+      display: none !important;
+    }
+    
+    i {
+      font-size: 1.2rem;
+      transition: none !important;
+    }
+    
+    &:hover i {
+      transform: none !important;
+    }
+  }
+  
+  .navbar-toggle {
+    border-color: #f7fafc !important;
+    background-color: transparent !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 15px !important;
+    margin: 0 !important;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: none !important;
+    z-index: 1031 !important;
+    
+    &:hover,
+    &:focus {
+      background-color: rgba(247, 250, 252, 0.1) !important;
+      border-color: var(--accent-color) !important;
+      transform: none !important;
+    }
+    
+    .icon-bar {
+      background-color: #f7fafc !important;
+      width: 24px;
+      height: 3px;
+      border-radius: 2px;
+      transition: none !important;
+    }
+    
+    &:hover .icon-bar {
+      background-color: var(--accent-color) !important;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    min-height: 60px !important;
+    
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      min-height: 60px !important;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      height: 60px !important;
+      padding: 15px 15px !important;
+      
+      .brand-logo {
+        max-height: 30px;
+        width: 30px;
+      }
+    }
+    
+    .navbar-nav {
+      margin: 0;
+      background-color: rgba(26, 32, 44, 0.98) !important;
+      border-top: 1px solid #2d3748;
+      backdrop-filter: blur(10px);
+      
+      > li > a {
+        padding: 15px 25px;
+        border-bottom: 1px solid #2d3748;
+        font-size: 1.4rem;
+        border-radius: 0;
+        margin: 0;
+        transition: none !important;
+        
+        &:hover {
+          background-color: rgba(229, 62, 62, 0.12) !important;
+          transform: none !important;
+          border-left: 3px solid var(--accent-color);
+          border-radius: 0 8px 8px 0;
+        }
+      }
+    }
+    
+    .theme-toggle-btn {
+      margin: 10px 25px;
+      width: 40px;
+      height: 40px;
+      transition: none !important;
+    }
+    
+    .navbar-toggle {
+      right: 15px !important;
+      top: 10px !important;
+      transition: none !important;
+    }
+  }
+}
+
+// Ensure navigation stays dark even in light mode - ALWAYS DARK - COMPREHENSIVE
+body:not(.dark) .main-navigation,
+body.dark .main-navigation,
+.navbar,
+.navbar-default {
+  background-color: #1a202c !important;
+  border-color: #2d3748 !important;
+  
+  // Force ALL elements to stay dark
+  *, *::before, *::after {
+    background-color: transparent !important;
+  }
+  
+  .container {
+    background-color: transparent !important;
+  }
+  
+  .navbar-header {
+    background-color: transparent !important;
+  }
+  
+  .navbar-brand {
+    color: #f7fafc !important;
+    background-color: transparent !important;
+    
+    &:hover,
+    &:focus {
+      color: #e2e8f0 !important;
+      background-color: transparent !important;
+    }
+    
+    .brand-logo {
+      border-color: var(--accent-color);
+      
+      &:hover {
+        border-color: var(--accent-hover);
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .navbar-nav {
+    background-color: transparent !important;
+    
+    > li {
+      background-color: transparent !important;
+      
+      > a {
+        color: #f7fafc !important;
+        background-color: transparent !important;
+        
+        &:hover,
+        &:focus {
+          color: var(--accent-color) !important;
+          background-color: rgba(229, 62, 62, 0.08) !important;
+          border-radius: 8px;
+        }
+      }
+      
+      &.active > a {
+        color: var(--accent-color) !important;
+        background-color: rgba(229, 62, 62, 0.12) !important;
+        border-radius: 8px;
+        
+        &:hover,
+        &:focus {
+          color: var(--accent-hover) !important;
+          background-color: rgba(229, 62, 62, 0.18) !important;
+        }
+      }
+    }
+  }
+  
+  .theme-toggle-btn {
+    border-color: #f7fafc !important;
+    color: #f7fafc !important;
+    background: transparent !important;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--accent-color) !important;
+      color: #1a202c !important;
+      border-color: var(--accent-color) !important;
+    }
+  }
+  
+  .navbar-toggle {
+    border-color: #f7fafc !important;
+    background-color: transparent !important;
+    
+    .icon-bar {
+      background-color: #f7fafc !important;
+    }
+    
+    &:hover {
+      border-color: var(--accent-color) !important;
+      background-color: rgba(247, 250, 252, 0.1) !important;
+      
+      .icon-bar {
+        background-color: var(--accent-color) !important;
+      }
+    }
+  }
+  
+  .navbar-collapse {
+    background-color: #1a202c !important;
+    border-color: #2d3748 !important;
+    border: none !important;
+    
+    @media (max-width: 767px) {
+      background-color: rgba(26, 32, 44, 0.98) !important;
+    }
+    
+    &.in,
+    &.collapsing {
+      background-color: rgba(26, 32, 44, 0.98) !important;
+    }
+  }
+}
+
+// Body padding for fixed navbar
+body {
+  padding-top: 70px !important;
+  margin: 0;
+  
+  @media (max-width: 767px) {
+    padding-top: 60px !important;
+  }
+}
+
+// Ensure main content never overlaps with fixed navbar
+.page-content,
+.wrapper,
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+// COMPREHENSIVE OVERRIDE - Prevent any white backgrounds in navbar area
+.navbar-fixed-top,
+.navbar-static-top,
+.navbar,
+.navbar-default,
+.navbar-light,
+.navbar-dark,
+nav[class*="navbar"] {
+  background-color: #1a202c !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1030 !important;
+  width: 100% !important;
+  
+  *, *::before, *::after {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+  
+  .container,
+  .container-fluid {
+    background-color: transparent !important;
+  }
+}
+
+// Ensure navbar never moves regardless of classes
+.navbar.nav-up,
+.navbar.nav-down,
+.navbar-fixed-top.nav-up,
+.navbar-fixed-top.nav-down,
+.main-navigation.nav-up,
+.main-navigation.nav-down {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+// Improve header spacing and typography
+.header-container {
+  background-color: var(--bg-color, #ffffff);
+  color: var(--text-color, #333);
+  padding: 3rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
+}
+
+.header-left h1 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--text-color, #333);
+}
+
+.header-left h2 {
+  color: var(--text-muted, #666);
+  margin-bottom: 0;
+}
+
+.wrapper {
+  background-color: var(--bg-color, #ffffff);
+  padding: 2rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
+}
+
+// Improve button styling consistency
+.button {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Smooth transitions for all interactive elements
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+// Improve focus states for accessibility
+a:focus,
+button:focus,
+.btn:focus {
+  outline: 2px solid #61a0ff;
+  outline-offset: 2px;
+}
+
+// Prevent horizontal overflow
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+[class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+}
+
+// Performance Optimizations
+* {
+  box-sizing: border-box;
+}
+
+// Hardware acceleration for smooth animations
+.project-card,
+.featured-project-card,
+.main-navigation,
+.theme-toggle-btn,
+.button,
+img {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+// Image optimization
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: optimizeQuality;
+  loading: lazy;
+  decoding: async;
+}
+
+// Font loading optimization
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500,500italic,400italic,300italic,100italic,700italic');
+}
+
+// Reduce layout thrashing
+.container,
+.row,
+[class*="col-"] {
+  contain: layout style;
+}
+
+// Critical CSS optimizations
+body {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Reduce repaints for animations
+.project-card:hover,
+.featured-project-card:hover {
+  contain: layout style paint;
+}
+
+// Optimize scrolling performance
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Prevent layout shifts
+.maxthumb,
+.image-container {
+  contain: layout;
+}
+
+// Improve transition performance
+.theme-toggle-btn,
+.project-card,
+.featured-project-card,
+.main-navigation a {
+  transition-property: transform, box-shadow, border-color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Reduce DOM complexity for mobile
+@media (max-width: 768px) {
+  .project-card::before,
+  .project-card::after,
+  .featured-project-card::before,
+  .featured-project-card::after {
+    display: none;
+  }
+}
+
+// COMPREHENSIVE NAVBAR OVERFLOW PREVENTION - CRITICAL FIX
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+.main-navigation,
+.navbar,
+.navbar-default,
+.navbar-fixed-top {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  
+  .container,
+  .container-fluid {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  .navbar-nav,
+  .navbar-center {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  // Prevent any child elements from extending beyond bounds
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+// ULTIMATE OVERFLOW PREVENTION - NUCLEAR OPTION
+.main-navigation {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  
+  .container {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  .navbar-center {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+}
+
+// Additional global overflow prevention
+html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
 }

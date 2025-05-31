@@ -1,0 +1,57 @@
+- title: "Training an EBM with Contrastive Divergence"
+  date: "May 2025"
+  categories: "Energy-Based Models"
+  description: "Interactive notebook providing a hands-on tutorial on training a simple EBM on synthetic datasets using the TorchEBM library. Covers energy functions, Langevin Dynamics for sampling, and Contrastive Divergence."
+  links:
+    - platform: "GitHub Notebooks"
+      url: "https://github.com/soran-ghaderi/generative-models-colabs"
+    - platform: "Open in Colab"
+      url: "https://colab.research.google.com/drive/1NaSsYEcW6IQgYuOrtyT_Djk9uq7Z5Ir6?usp=sharing" 
+      
+- title: "Hamiltonian Mechanics"
+  date: "March 2025"
+  categories: "Research, Tutorials"
+  description: "Hamiltonian mechanics is a way to describe how physical systems, like planets or pendulums, move over time, focusing on energy rather than just forces. By reframing complex dynamics through energy lenses, this 19th-century physics framework now powers cutting-edge generative AI."
+  links:
+    - platform: "TorchEBM Blog"
+      url: "https://soran-ghaderi.github.io/torchebm/latest/blog/hamiltonian-mechanics/"
+    - platform: "Towards Data Science"
+      url: "https://towardsdatascience.com/from-physics-to-probability-hamiltonian-mechanics-for-generative-modeling-and-mcmc/"
+
+- title: "The Map Of Transformers"
+  date: "April 2023"
+  categories: "Natural Language Processing"
+  description: "A broad overview of Transformers research covering the landscape of transformer architectures, their applications, and the evolution of attention mechanisms in deep learning."
+  links:
+    - platform: "Towards Data Science"
+      url: "https://towardsdatascience.com/the-map-of-transformers-e14952226398/"
+    - platform: "Medium"
+      url: "https://medium.com/data-science/the-map-of-transformers-e14952226398"
+
+- title: "Transformers in Action: Attention Is All You Need"
+  date: "September 2022"
+  categories: "Deep Learning"
+  description: "A brief survey, illustration, and implementation guide to understanding the transformer architecture and attention mechanisms that revolutionized natural language processing."
+  links:
+    - platform: "Towards Data Science"
+      url: "https://towardsdatascience.com/transformers-in-action-attention-is-all-you-need-ac10338a023a/"
+    - platform: "Medium"
+      url: "https://medium.com/data-science/transformers-in-action-attention-is-all-you-need-ac10338a023a"
+
+- title: "Rethinking Thinking: How Do Attention Mechanisms Actually Work?"
+  date: "July 2022"
+  categories: "Deep Learning, Neuroscience"
+  description: "The brain, the mathematics, and DL – research frontiers exploring the intersection of neuroscience and attention mechanisms in artificial intelligence."
+  links:
+    - platform: "Towards Data Science"
+      url: "https://towardsdatascience.com/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99/"
+    - platform: "Medium"
+      url: "https://medium.com/data-science/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99"
+
+# - title: "Langevin Dynamics Sampling with TorchEBM"
+#   date: "April 2024"
+#   categories: "Tutorials, Examples"
+#   description: "A powerful sampling technique that allows us to draw samples from complex probability distributions. Tutorial exploring TorchEBM's implementation of Langevin dynamics for sampling from various energy landscapes."
+#   links:
+#     - platform: "TorchEBM Blog"
+#       url: "https://soran-ghaderi.github.io/torchebm/latest/blog/"

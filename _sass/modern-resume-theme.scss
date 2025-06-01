@@ -820,12 +820,17 @@ details[open] .details-summary::after {
       border-left: none !important;
       border-right: none !important;
       border-bottom: none !important;
-      display: block !important;
+      display: none !important;
     }
     
     &.in,
+    &.show,
     &.collapsing {
       background-color: rgba(26, 32, 44, 0.98) !important;
+      
+      @media (max-width: 767px) {
+        display: block !important;
+      }
     }
   }
   
@@ -1070,17 +1075,34 @@ body.dark .main-navigation,
   }
   
   .navbar-collapse {
+    position: relative !important;
     background-color: #1a202c !important;
     border-color: #2d3748 !important;
     border: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
     
     @media (max-width: 767px) {
       background-color: rgba(26, 32, 44, 0.98) !important;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid #2d3748 !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-bottom: none !important;
+      display: none !important;
     }
     
     &.in,
+    &.show,
     &.collapsing {
       background-color: rgba(26, 32, 44, 0.98) !important;
+      
+      @media (max-width: 767px) {
+        display: block !important;
+      }
     }
   }
 }

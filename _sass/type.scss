@@ -339,7 +339,7 @@ h6 {
 
 /* Homepage/Section-specific large headers (use these classes explicitly) */
 .section-title {
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-medium;
   font-size: $font-size-section-title;
   text-align: center;
   padding-bottom: $spacing-sm;
@@ -419,7 +419,7 @@ mark {
   
   h2 {
     font-size: $font-size-h2;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-light;
     margin-top: $spacing-xl;
     margin-bottom: $heading-margin-bottom;
     color: var(--heading-color, #f7fafc);
@@ -427,7 +427,7 @@ mark {
   
   h3 {
     font-size: $font-size-h3;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-light;
     margin-top: $spacing-xl;
     margin-bottom: $heading-margin-bottom;
     color: var(--heading-color, #f7fafc);
@@ -435,7 +435,7 @@ mark {
   
   h4 {
     font-size: $font-size-h4;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-light;
     margin-top: $spacing-lg;
     margin-bottom: $spacing-sm;
     color: var(--heading-color, #f7fafc);
@@ -443,7 +443,7 @@ mark {
   
   h5 {
     font-size: $font-size-h5;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-light;
     margin-top: $spacing-lg;
     margin-bottom: $spacing-sm;
     color: var(--heading-color, #f7fafc);
@@ -451,7 +451,7 @@ mark {
   
   h6 {
     font-size: $font-size-h6;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-light;
     margin-top: $spacing-md;
     margin-bottom: $spacing-sm;
     color: var(--text-muted, #a0aec0);

@@ -231,10 +231,16 @@ footer_show_references: true
 markdown: kramdown
 kramdown:
   math_engine: mathjax
-  syntax_highlighter: rouge
+  syntax_highlighter: none
   syntax_highlighter_opts:
     block:
       line_numbers: true
+
+# Shiki syntax highlighting themes (client-side)
+# Available themes: https://shiki.style/themes
+shiki:
+  dark_theme: github-dark-default
+  light_theme: github-light-default
 
 defaults:
   - scope:

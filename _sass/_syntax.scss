@@ -1,298 +1,38 @@
 /* =====================================================
-   SYNTAX HIGHLIGHTING - VS Code Dark+ Theme
-   Professional code highlighting matching VS Code
+   SYNTAX HIGHLIGHTING - Pure Shiki
    
-   CENTRALIZED CONFIG:
-   - Font family: var(--code-font-family) from base.scss
-   - Font size: var(--code-font-size) from base.scss  
-   - Line number width: fixed to prevent overlap
+   Shiki generates <pre class="shiki" style="background-color:#xxx">
+   The inline style attribute MUST control the background.
+   We ensure no CSS rules interfere with Shiki's inline styles.
    ===================================================== */
 
-/* Centralized variables */
-$code-line-number-width: 3em;
-$code-gutter-padding: 0.75em;
-$code-content-padding: 1em;
-
-.highlight {
-  background: #1e1e1e;
-  border: 1px solid #3c3c3c;
-  /* NO padding here - let table cells handle it */
-  margin: 1.5rem 0;
-  border-radius: 8px;
-  font-family: var(--code-font-family, 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', monospace);
-  font-size: var(--code-font-size, 0.875rem);
-  line-height: 1.5;
+/* Shiki code blocks - let Shiki's inline style control everything */
+pre.shiki,
+pre[class*="shiki"],
+pre[data-shiki-code] {
+  display: block;
   overflow-x: auto;
-  color: #d4d4d4;
-
-  /* Scrollbar styling */
-  scrollbar-width: thin;
-  scrollbar-color: #4a5568 transparent;
-  
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-  
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background-color: #4a5568;
-    border-radius: 4px;
-  }
-
-  /* Remove nested styling from pre inside highlight wrapper */
-  pre, pre.highlight {
-    margin: 0;
-    padding: 0;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0;
-    overflow: visible;
-  }
-
-  code {
-    font-family: inherit;
-    font-size: inherit;
-    background: transparent !important;
-    padding: 0;
-    color: inherit;
-    border: none;
-    border-radius: 0;
-  }
-
-  /* VS Code Dark+ Token Colors */
-  .c, .c1, .cm, .cs { color: #6a9955; font-style: italic } /* Comments - green */
-  .cp { color: #c586c0 } /* Preprocessor - magenta */
-  .err { color: #f44747 } /* Error - red */
-  .k, .kc, .kd, .kn, .kp, .kr { color: #569cd6 } /* Keywords - blue */
-  .kt { color: #4ec9b0 } /* Keyword Type - teal */
-  .kv { color: #9cdcfe } /* Keyword Variable - light blue */
-  .o, .ow { color: #d4d4d4 } /* Operators */
-  .p { color: #d4d4d4 } /* Punctuation */
-  .m, .mf, .mh, .mi, .mo, .mb, .mx, .il { color: #b5cea8 } /* Numbers - light green */
-  .s, .s1, .s2, .sb, .sc, .sd, .sh, .sx { color: #ce9178 } /* Strings - orange */
-  .se { color: #d7ba7d } /* String Escape - gold */
-  .si { color: #569cd6 } /* String Interpolation - blue */
-  .sr { color: #d16969 } /* Regex - red */
-  .ss { color: #ce9178 } /* Symbol */
-  .na { color: #9cdcfe } /* Attribute - light blue */
-  .nb { color: #dcdcaa } /* Builtin - yellow */
-  .nc { color: #4ec9b0 } /* Class - teal */
-  .no { color: #4fc1ff } /* Constant - cyan */
-  .nd { color: #dcdcaa } /* Decorator - yellow */
-  .ne { color: #4ec9b0 } /* Exception - teal */
-  .nf, .fm { color: #dcdcaa } /* Function - yellow */
-  .ni { color: #d4d4d4 } /* Entity */
-  .nl { color: #9cdcfe } /* Label - light blue */
-  .nn { color: #4ec9b0 } /* Namespace - teal */
-  .nt { color: #569cd6 } /* Tag - blue */
-  .nv, .vc, .vg, .vi { color: #9cdcfe } /* Variable - light blue */
-  .bp { color: #4ec9b0 } /* Builtin Pseudo - teal */
-  .gd { color: #f44747; background-color: rgba(244, 71, 71, 0.15) } /* Diff Deleted */
-  .ge { font-style: italic } /* Generic Emphasis */
-  .gh { color: #569cd6; font-weight: bold } /* Generic Heading */
-  .gi { color: #6a9955; background-color: rgba(106, 153, 85, 0.15) } /* Diff Inserted */
-  .go { color: #808080 } /* Generic Output */
-  .gp { color: #6a9955 } /* Generic Prompt */
-  .gr { color: #f44747 } /* Generic Error */
-  .gs { font-weight: bold } /* Generic Strong */
-  .gu { color: #569cd6 } /* Generic Subheading */
-  .gt { color: #f44747 } /* Generic Traceback */
-  .w { color: #d4d4d4 } /* Whitespace */
-  
-  /* Language-specific: Python */
-  .language-python {
-    .bp { color: #4ec9b0 } /* self, cls */
-    .n { color: #9cdcfe } /* names */
-  }
-  
-  /* Language-specific: JavaScript/TypeScript */
-  .language-javascript, .language-typescript, .language-js, .language-ts {
-    .nx { color: #9cdcfe } /* other names */
-    .kr { color: #c586c0 } /* return, async, await */
-  }
-}
-
-/* Light mode syntax highlighting */
-body:not(.dark) .highlight {
-  background: #f6f8fa;
-  border: 1px solid #e1e4e8;
-  color: #24292e;
-  
-  table.rouge-table td.rouge-gutter {
-    background: rgba(0, 0, 0, 0.03);
-    border-right-color: #e1e4e8;
-    
-    pre {
-      color: #6a737d;
-    }
-  }
-  
-  .c, .c1, .cm, .cs { color: #6a737d; font-style: italic }
-  .cp { color: #d73a49 }
-  .err { color: #cb2431; background: transparent }
-  .k, .kc, .kd, .kn, .kp, .kr { color: #d73a49 }
-  .kt { color: #6f42c1 }
-  .o, .ow { color: #24292e }
-  .m, .mf, .mh, .mi, .mo, .mb, .mx, .il { color: #005cc5 }
-  .s, .s1, .s2, .sb, .sc, .sd, .sh, .sx { color: #032f62 }
-  .se { color: #22863a }
-  .sr { color: #032f62 }
-  .na { color: #6f42c1 }
-  .nb { color: #005cc5 }
-  .nc { color: #6f42c1 }
-  .no { color: #005cc5 }
-  .nd { color: #6f42c1 }
-  .nf, .fm { color: #6f42c1 }
-  .nn { color: #6f42c1 }
-  .nt { color: #22863a }
-  .nv, .vc, .vg, .vi { color: #e36209 }
-  .n { color: #24292e }
-  .gd { color: #cb2431; background-color: #ffeef0 }
-  .gi { color: #22863a; background-color: #f0fff4 }
-}
-
-/* Dark mode explicit */
-.dark .highlight {
-  background: #1e1e1e;
-  border-color: #3c3c3c;
-  color: #d4d4d4;
-  
-  table.rouge-table td.rouge-gutter {
-    background: rgba(0, 0, 0, 0.15);
-    border-right-color: #3c3c3c;
-    
-    pre {
-      color: #858585;
-    }
-  }
-}
-
-/* =====================================================
-   LINE NUMBERS - Rouge Table Format
-   ===================================================== */
-.highlight {
-  /* Table-based line numbers (Rouge) */
-  table.rouge-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: transparent;
-    table-layout: fixed;
-    
-    td {
-      padding: 0;
-      border: none;
-      vertical-align: top;
-      
-      &:hover {
-        background: transparent;
-      }
-    }
-    
-    /* Line number gutter - fixed width to prevent overlap */
-    td.rouge-gutter {
-      width: $code-line-number-width;
-      min-width: $code-line-number-width;
-      max-width: $code-line-number-width;
-      padding: 1rem 0;
-      background: rgba(0, 0, 0, 0.15);
-      border-right: 1px solid #3c3c3c;
-      user-select: none;
-      
-      pre {
-        margin: 0;
-        padding: 0 $code-gutter-padding;
-        background: transparent !important;
-        border: none !important;
-        color: #858585;
-        text-align: right;
-        font-size: inherit;
-        line-height: inherit;
-      }
-    }
-    
-    /* Code content - takes remaining width */
-    td.rouge-code {
-      padding: 1rem $code-content-padding;
-      overflow-x: auto;
-      
-      pre {
-        margin: 0;
-        padding: 0;
-        background: transparent !important;
-        border: none !important;
-        overflow-x: auto;
-      }
-    }
-  }
-  
-  /* When no table format - add padding directly */
-  &:not(:has(table.rouge-table)) {
-    padding: 1rem 1.25rem;
-  }
-  
-  /* Fallback for browsers without :has() support */
-  > pre:first-child:last-child {
-    padding: 1rem 1.25rem;
-  }
-}
-
-/* =====================================================
-   COPY BUTTON STYLES  
-   ===================================================== */
-.code-block-wrapper {
-  position: relative;
   margin: 1.5rem 0;
+  padding: 1rem; /* Shiki doesn't set padding, we add it */
+  border-radius: 0.5rem;
+  border: none;
+  /* NO background-color here - Shiki sets it via inline style */
   
-  .copy-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    padding: 4px 8px;
-    font-family: var(--font-body, sans-serif);
-    font-size: 0.75rem;
-    font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #d4d4d4;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.15s ease, background-color 0.15s ease;
-    z-index: 10;
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-    
-    &.copied {
-      background-color: #4caf50;
-      border-color: #4caf50;
-      color: #fff;
-    }
-  }
-  
-  &:hover .copy-button {
-    opacity: 1;
-  }
-  
-  .highlighter-rouge,
-  .highlight {
-    margin: 0;
+  code {
+    font-family: var(--code-font-family);
+    font-size: var(--code-font-size);
+    background: transparent;
+    padding: 0;
+    border: none;
   }
 }
 
-body:not(.dark) .code-block-wrapper .copy-button {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #24292e;
-  border-color: rgba(0, 0, 0, 0.15);
-  
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+/* Inline code (not inside pre blocks) */
+:not(pre) > code {
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: var(--code-font-family);
+  font-size: var(--code-font-size);
+  color: var(--code-color);
 }

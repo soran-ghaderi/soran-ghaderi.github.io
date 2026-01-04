@@ -31,6 +31,107 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
 
+  <!-- Shiki syntax highlighting (loaded after DOM is ready) -->
+  <!-- Theme configuration from _config.yml: shiki.dark_theme and shiki.light_theme -->
+  <script type="module">
+    // Shiki - TextMate grammar powered syntax highlighter (same as VS Code)
+    import { codeToHtml } from 'https://esm.sh/shiki@1.24.0';
+    
+    // Theme configuration from Jekyll central config (_config.yml)
+    const SHIKI_CONFIG = {
+      darkTheme: '{{ site.shiki.dark_theme | default: "github-dark-default" }}',
+      lightTheme: '{{ site.shiki.light_theme | default: "github-light-default" }}'
+    };
+    
+    // Language alias mapping
+    const langMap = {
+      'py': 'python',
+      'js': 'javascript',
+      'ts': 'typescript',
+      'sh': 'bash',
+      'shell': 'bash',
+      'yml': 'yaml',
+      'tex': 'latex',
+      'bibtex': 'bibtex',
+      'text': 'plaintext',
+      '': 'plaintext'
+    };
+    
+    // Detect if dark mode is active
+    function isDarkMode() {
+      if (document.body.classList.contains('dark')) return true;
+      if (document.body.classList.contains('light')) return false;
+      if (document.documentElement.classList.contains('dark')) return true;
+      if (document.documentElement.classList.contains('light')) return false;
+      const stored = localStorage.getItem('darkMode');
+      return stored !== 'false'; // Default to dark
+    }
+    
+    async function highlightCodeBlocks() {
+      const theme = isDarkMode() ? SHIKI_CONFIG.darkTheme : SHIKI_CONFIG.lightTheme;
+      
+      // First pass: highlight unhighlighted blocks and store original data
+      for (const block of document.querySelectorAll('pre:not([data-shiki-code]) code')) {
+        const pre = block.parentElement;
+        if (!pre || pre.tagName !== 'PRE') continue;
+        
+        // Store original code and language BEFORE highlighting
+        const code = block.textContent || '';
+        let lang = 'plaintext';
+        for (const cls of block.className.split(' ')) {
+          if (cls.startsWith('language-')) {
+            lang = cls.replace('language-', '');
+            break;
+          }
+        }
+        lang = langMap[lang] ?? lang;
+        
+        // Store on the pre element
+        pre.dataset.shikiCode = code;
+        pre.dataset.shikiLang = lang;
+      }
+      
+      // Second pass: (re)highlight all blocks that have stored data
+      for (const pre of document.querySelectorAll('pre[data-shiki-code]')) {
+        const code = pre.dataset.shikiCode;
+        const lang = pre.dataset.shikiLang || 'plaintext';
+        
+        try {
+          const html = await codeToHtml(code, { lang, theme });
+          
+          // Parse the new HTML
+          const temp = document.createElement('div');
+          temp.innerHTML = html;
+          const newPre = temp.firstElementChild;
+          
+          if (newPre) {
+            // Preserve original data on new element
+            newPre.dataset.shikiCode = code;
+            newPre.dataset.shikiLang = lang;
+            pre.parentNode.replaceChild(newPre, pre);
+          }
+        } catch (err) {
+          console.warn('Shiki failed for', lang, err.message);
+        }
+      }
+    }
+    
+    // Initial highlight
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', highlightCodeBlocks);
+    } else {
+      highlightCodeBlocks();
+    }
+    
+    // Re-highlight on theme change
+    window.addEventListener('themechange', () => {
+      setTimeout(highlightCodeBlocks, 10);
+    });
+    
+    // Expose for manual re-highlighting
+    window.shikiHighlight = highlightCodeBlocks;
+  </script>
+
   <!-- MathJax Configuration for Math Rendering -->
   <script>
     window.MathJax = {

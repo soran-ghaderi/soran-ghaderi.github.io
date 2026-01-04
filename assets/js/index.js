@@ -1,37 +1,61 @@
 // Enhanced dark mode detection and application with toggle functionality
 (function() {
-  let darkMode = true; // Set dark mode as default
+  // Default to dark mode
+  let darkMode = true;
   
   function applyDarkMode() {
-    document.body.classList.add("dark");
-    // Ensure all elements properly inherit dark mode styles
+    if (document.body) {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+    }
+    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("light");
     document.documentElement.style.setProperty('color-scheme', 'dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
     updateToggleIcon(true);
     localStorage.setItem('darkMode', 'true');
+    darkMode = true;
+    // Dispatch event for Shiki to re-highlight
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { dark: true } }));
   }
 
   function applyLightMode() {
-    document.body.classList.remove("dark");
+    if (document.body) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+    }
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
     document.documentElement.style.setProperty('color-scheme', 'light');
+    document.documentElement.setAttribute('data-theme', 'light');
     updateToggleIcon(false);
     localStorage.setItem('darkMode', 'false');
+    darkMode = false;
+    // Dispatch event for Shiki to re-highlight
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { dark: false } }));
   }
   
   function updateToggleIcon(isDark) {
     const icon = document.getElementById('theme-icon');
     if (icon) {
+      // Show sun icon in dark mode (to switch to light), moon in light mode (to switch to dark)
       icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       icon.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     }
   }
   
-  function toggleDarkMode() {
-    darkMode = !darkMode;
-    if (darkMode) {
-      applyDarkMode();
-    } else {
-      applyLightMode();
+  function toggleDarkMode(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
     }
+    console.log('Toggle clicked! Current darkMode:', darkMode);
+    if (darkMode) {
+      applyLightMode();
+    } else {
+      applyDarkMode();
+    }
+    console.log('After toggle, darkMode is now:', darkMode);
   }
 
   // Initialize theme based on localStorage or default to dark mode
@@ -40,51 +64,73 @@
     darkMode = savedTheme === 'true';
   }
   
-  // Apply initial theme immediately
+  // Apply initial theme to documentElement immediately (before body exists)
   if (darkMode) {
-    applyDarkMode();
+    document.documentElement.classList.add("dark");
+    document.documentElement.style.setProperty('color-scheme', 'dark');
   } else {
-    applyLightMode();
+    document.documentElement.classList.add("light");
+    document.documentElement.style.setProperty('color-scheme', 'light');
   }
 
   // Function to attach event listeners
   function attachEventListeners() {
     const toggleButton = document.getElementById('theme-toggle');
     if (toggleButton) {
-      // Remove any existing listeners to prevent duplicates
-      toggleButton.removeEventListener('click', toggleDarkMode);
-      toggleButton.addEventListener('click', toggleDarkMode);
+      // Clone and replace to remove all existing listeners
+      const newButton = toggleButton.cloneNode(true);
+      toggleButton.parentNode.replaceChild(newButton, toggleButton);
+      
+      // Add click listener to the new button
+      newButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleDarkMode(e);
+      });
       
       // Add keyboard support
-      toggleButton.addEventListener('keydown', function(e) {
+      newButton.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggleDarkMode();
+          toggleDarkMode(e);
         }
       });
       
       console.log('Dark mode toggle initialized successfully');
+      return true;
     } else {
       console.warn('Theme toggle button not found');
+      return false;
     }
+  }
+  
+  // Apply theme to body when DOM is ready
+  function initTheme() {
+    if (darkMode) {
+      applyDarkMode();
+    } else {
+      applyLightMode();
+    }
+    attachEventListeners();
   }
 
   // Multiple ways to ensure DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-      attachEventListeners();
+      initTheme();
       initializeNavigation();
     });
   } else {
     // DOM is already loaded
-    attachEventListeners();
+    initTheme();
     initializeNavigation();
   }
 
   // Fallback: Try again after a short delay if button wasn't found
   setTimeout(function() {
-    if (!document.getElementById('theme-toggle')) {
-      console.log('Retrying theme toggle initialization...');
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      console.log('Fallback: Re-attaching theme toggle...');
       attachEventListeners();
     }
   }, 500);
@@ -235,7 +281,6 @@
       container.parentNode.insertBefore(wrapper, container);
       wrapper.appendChild(copyButton);
       wrapper.appendChild(container);
-    });
     });
   }
   

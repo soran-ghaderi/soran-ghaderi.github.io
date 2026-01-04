@@ -60,3 +60,108 @@ mjx-container {
 .dark mjx-container {
   color: #e5e5e5;
 }
+
+/* =====================================================
+   NON-HIGHLIGHTED CODE BLOCKS (Plain text, BibTeX, etc.)
+   Fix visibility for code blocks without syntax highlighting
+   ===================================================== */
+
+/* Plain text/generic code blocks that aren't syntax highlighted */
+.article-post pre:not(.highlight):not(.rouge-table pre),
+.article-post .highlighter-rouge:not(.language-python):not(.language-javascript):not(.language-bash):not(.language-shell) .highlight,
+.article-post .language-text .highlight,
+.article-post .language-plaintext .highlight,
+.article-post .language-none .highlight {
+  background: #1e1e1e !important;
+  color: #d4d4d4 !important;
+  
+  pre, code {
+    color: #d4d4d4 !important;
+    background: transparent !important;
+  }
+}
+
+/* Generic code highlighting fallback - ensure all code is visible */
+.dark .highlight,
+.dark .highlighter-rouge .highlight {
+  /* Default text color for all unhighlighted tokens */
+  .n, .nx, .p, .w, .text {
+    color: #d4d4d4 !important;
+  }
+}
+
+/* Fix BibTeX/citation code blocks specifically */
+.dark .article-post .highlighter-rouge .highlight pre,
+.dark .article-post pre.highlight {
+  color: #d4d4d4;
+  
+  /* Ensure all text content is visible */
+  & > code,
+  & > code * {
+    color: inherit;
+  }
+}
+
+/* Plain code blocks without language specification */
+.dark .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  
+  pre {
+    color: #d4d4d4;
+  }
+  
+  code {
+    color: #d4d4d4;
+  }
+  
+  /* Generic token styling for visibility */
+  .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
+  .o, .ow, .p, .w, .text, .err {
+    color: #d4d4d4;
+  }
+}
+
+/* Directory tree structure styling */
+.dark .article-post .language- .highlight,
+.dark .article-post .language-text .highlight,
+.dark .article-post .language-plaintext .highlight {
+  background: #1e1e1e !important;
+  
+  pre, code {
+    color: #9cdcfe !important;
+  }
+  
+  /* Tree structure characters */
+  .err {
+    color: #858585 !important;
+    background: transparent !important;
+  }
+  
+  /* Comments in tree */
+  .c, .c1, .cm {
+    color: #6a9955 !important;
+  }
+}
+
+/* Fix word-wrap and overflow for BibTeX citations */
+.article-post .highlight pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Light mode equivalents */
+body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
+  background: #f6f8fa;
+  color: #24292e;
+  
+  pre, code {
+    color: #24292e;
+  }
+  
+  .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
+  .o, .ow, .p, .w, .text, .err {
+    color: #24292e;
+  }
+}

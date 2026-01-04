@@ -5,13 +5,49 @@
    Font families defined in base.scss as CSS custom properties
    ===================================================== */
 
-// SCSS variables that reference CSS custom properties (for use in calc())
-// Font stacks (fallbacks mirror the CSS custom properties in base.scss)
+// =====================================================
+// CENTRALIZED TYPOGRAPHY CONFIG
+// Change these values to control typography site-wide
+// =====================================================
+
+// Font stacks
 $font-body: var(--font-body, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif);
 $font-code: var(--code-font-family, 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'Liberation Mono', monospace);
 
 // =====================================================
-// CENTRALIZED FONT SIZE SCALE
+// SPACING & LINE HEIGHT - SINGLE SOURCE OF TRUTH
+// =====================================================
+$line-height-tight: 1.3;      // For headings
+$line-height-base: 1.45;      // For body text, paragraphs, lists
+$line-height-relaxed: 1.6;    // For code blocks, special content
+
+// =====================================================
+// FONT WEIGHTS - SINGLE SOURCE OF TRUTH
+// =====================================================
+$font-weight-light: 300;      // Body text
+$font-weight-normal: 400;     // Normal weight
+$font-weight-medium: 500;     // Bold/strong text
+$font-weight-semibold: 600;   // Headings
+$font-weight-bold: 700;       // Extra emphasis
+
+// =====================================================
+// SPACING SCALE - MARGINS & PADDING
+// =====================================================
+$spacing-xs: 0.375rem;        // ~6px
+$spacing-sm: 0.5rem;          // ~8px
+$spacing-md: 1rem;            // ~16px
+$spacing-lg: 1.5rem;          // ~24px
+$spacing-xl: 2rem;            // ~32px
+$spacing-2xl: 2.5rem;         // ~40px
+
+// Paragraph/element margins
+$paragraph-margin: $spacing-md;
+$list-item-margin: $spacing-sm;
+$heading-margin-top: $spacing-xl;
+$heading-margin-bottom: 0.75rem;
+
+// =====================================================
+// FONT SIZE SCALE
 // Change $base-font-size to scale all typography
 // =====================================================
 $base-font-size: 1.6rem;  // ~18px - the foundation for all sizes
@@ -37,19 +73,182 @@ $font-size-h1: calc(#{$base-font-size} * #{$scale-ratio} * #{$scale-ratio} * #{$
 // Special sizes
 $font-size-page-title: calc(#{$base-font-size} * 2.67);                        // ~3rem
 $font-size-section-title: calc(#{$base-font-size} * 2.22);                     // ~2.5rem
-$font-size-code: calc(#{$base-font-size} * 0.9);                               // Slightly smaller for code
+$font-size-code: var(--code-font-size);                                        // Uses CSS variable from base.scss
 $font-size-small: $font-size-sm;
 $font-size-caption: calc(#{$base-font-size} * 0.85);
 
+// =====================================================
+// BASE STYLES - Using centralized variables
+// =====================================================
+
 body {
-  color: var(--text-color, #e2e8f0);
+  color: var(--text-color);
   font-family: $font-body;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: $font-size-base;
-  line-height: 1.6;
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  letter-spacing: 0.01em;
 
   @media print {
     font-size: $font-size-sm;
+  }
+}
+
+/* Global typography refinements */
+p {
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  margin-bottom: $paragraph-margin;
+}
+
+li {
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  margin-bottom: $list-item-margin;
+}
+
+strong, b {
+  font-weight: $font-weight-medium;
+}
+
+/* =====================================================
+   LIGHT MODE TYPOGRAPHY - body:not(.dark)
+   ===================================================== */
+body:not(.dark),
+body.light {
+  color: var(--text-color);
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+  }
+  
+  p, li {
+    color: var(--text-color);
+  }
+  
+  .section-title {
+    color: var(--heading-color);
+    border-bottom-color: #e2e8f0;
+  }
+  
+  .posttitle {
+    color: var(--heading-color);
+  }
+  
+  .article-post {
+    p, li {
+      color: var(--text-color);
+    }
+    
+    h1, h2, h3, h4, h5 {
+      color: var(--heading-color);
+    }
+    
+    h6 {
+      color: var(--text-muted);
+    }
+    
+    strong, b {
+      color: var(--text-strong);
+    }
+    
+    a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+    
+    code {
+      background-color: var(--code-bg);
+      color: var(--code-color);
+    }
+    
+    blockquote {
+      background-color: var(--blockquote-bg);
+      
+      p {
+        color: var(--text-muted);
+      }
+      
+      cite {
+        color: var(--text-muted);
+      }
+    }
+    
+    table {
+      th {
+        background-color: var(--table-header-bg);
+        color: var(--heading-color);
+      }
+      
+      th, td {
+        border-bottom-color: var(--table-border);
+      }
+      
+      tr:hover {
+        background-color: var(--table-row-hover);
+      }
+    }
+    
+    hr {
+      border-top-color: var(--hr-color);
+    }
+    
+    dl {
+      dt {
+        color: var(--heading-color);
+      }
+      
+      dd {
+        color: var(--text-color);
+      }
+    }
+    
+    kbd {
+      background-color: var(--kbd-bg);
+      border-color: var(--kbd-border);
+      box-shadow: inset 0 -1px 0 var(--kbd-shadow);
+    }
+    
+    .footnotes {
+      border-top-color: var(--hr-color);
+    }
+    
+    details {
+      background-color: var(--details-bg);
+      border-color: var(--details-border);
+      
+      summary {
+        color: var(--heading-color);
+      }
+      
+      &[open] summary {
+        border-bottom-color: var(--details-border);
+      }
+    }
+    
+    figcaption, .caption {
+      color: var(--text-muted);
+    }
+  }
+  
+  .toc {
+    background-color: var(--toc-bg);
+    
+    h3 {
+      color: var(--heading-color);
+    }
+    
+    ul li a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
   }
 }
 
@@ -60,13 +259,14 @@ h4,
 h5,
 h6 {
   font-family: $font-body;
-  line-height: 1.3;
-  margin: 0 0 0.5rem;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+  margin: 0 0 $spacing-sm;
   color: var(--heading-color, #f7fafc);
 }
 
 p {
-  margin: 0 0 1rem; 
+  margin: 0 0 $paragraph-margin; 
   color: var(--text-color, #333);
 }
 
@@ -87,27 +287,27 @@ a:hover {
 
 h1 {
   font-size: $font-size-h1;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: $paragraph-margin;
+  font-weight: $font-weight-semibold;
   line-height: 1.2;
 }
 
 h2 {
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   font-size: $font-size-h2;
-  margin-bottom: 0.875rem;
+  margin-bottom: $heading-margin-bottom;
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   font-size: $font-size-h3;
-  margin-bottom: 0.75rem;
+  margin-bottom: $heading-margin-bottom;
 }
 
 h4 {
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   font-size: $font-size-h4;
-  margin-bottom: 0.625rem;
+  margin-bottom: $spacing-sm;
   color: var(--heading-color, #333);
   
   @media print {
@@ -116,9 +316,9 @@ h4 {
 }
 
 h5 {
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   font-size: $font-size-h5;
-  margin-bottom: 0.5rem;
+  margin-bottom: $spacing-sm;
   color: var(--heading-color, #333);
   
   @media print {
@@ -127,9 +327,9 @@ h5 {
 }
 
 h6 {
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   font-size: $font-size-h6;
-  margin-bottom: 0.5rem;
+  margin-bottom: $spacing-sm;
   color: var(--heading-color, #333);
   
   @media print {
@@ -139,38 +339,38 @@ h6 {
 
 /* Homepage/Section-specific large headers (use these classes explicitly) */
 .section-title {
-  font-weight: 300;
+  font-weight: $font-weight-light;
   font-size: $font-size-section-title;
   text-align: center;
   border-bottom: 2px dashed var(--text-color, #333);
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
+  padding-bottom: $spacing-sm;
+  margin-bottom: $spacing-xl;
   position: relative;
   color: var(--heading-color, #333);
 
   @media print {
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
     font-size: $font-size-h2;
   }
 }
 
 .page-title {
   font-size: $font-size-page-title;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: $spacing-sm;
+  font-weight: $font-weight-semibold;
 }
 
 p, ul, ol {
   font-size: $font-size-base;
   text-align: left;
   color: var(--text-color, #e2e8f0);
-  line-height: 1.75;
+  line-height: $line-height-base;
 }
 
 ol li, ul li {
   font-size: $font-size-base;
-  line-height: 1.75;
-  margin-bottom: 0.5rem;
+  line-height: $line-height-base;
+  margin-bottom: $list-item-margin;
   color: var(--text-color, #e2e8f0);
 }
 
@@ -203,8 +403,8 @@ mark {
   /* Article body text - uses same base font size as rest of site */
   p {
     font-size: $font-size-base;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
+    line-height: $line-height-base;
+    margin-bottom: $paragraph-margin;
     color: var(--text-color, #e2e8f0);
     text-align: left;
   }
@@ -212,49 +412,49 @@ mark {
   /* Article headers - uses proper heading scale (h1=h1, h2=h2, etc.) */
   h1 {
     font-size: $font-size-h1;
-    font-weight: 600;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-2xl;
+    margin-bottom: $paragraph-margin;
     color: var(--heading-color, #f7fafc);
   }
   
   h2 {
     font-size: $font-size-h2;
-    font-weight: 600;
-    margin-top: 2.25rem;
-    margin-bottom: 0.875rem;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-xl;
+    margin-bottom: $heading-margin-bottom;
     color: var(--heading-color, #f7fafc);
   }
   
   h3 {
     font-size: $font-size-h3;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-xl;
+    margin-bottom: $heading-margin-bottom;
     color: var(--heading-color, #f7fafc);
   }
   
   h4 {
     font-size: $font-size-h4;
-    font-weight: 600;
-    margin-top: 1.75rem;
-    margin-bottom: 0.625rem;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
     color: var(--heading-color, #f7fafc);
   }
   
   h5 {
     font-size: $font-size-h5;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
     color: var(--heading-color, #f7fafc);
   }
   
   h6 {
     font-size: $font-size-h6;
-    font-weight: 600;
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-sm;
     color: var(--text-muted, #a0aec0);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -263,9 +463,9 @@ mark {
   /* Lists - same font size as body text */
   ul, ol {
     font-size: $font-size-base;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-    padding-left: 2rem;
+    line-height: $line-height-base;
+    margin-bottom: $paragraph-margin;
+    padding-left: $spacing-xl;
   }
   
   ul {
@@ -278,19 +478,19 @@ mark {
   
   li {
     font-size: $font-size-base;
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
+    line-height: $line-height-base;
+    margin-bottom: $list-item-margin;
     color: var(--text-color, #e2e8f0);
     
     p {
-      margin-bottom: 0.5rem;
+      margin-bottom: $spacing-sm;
     }
   }
   
   /* Nested lists */
   ul ul, ol ol, ul ol, ol ul {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: $spacing-sm;
+    margin-bottom: $spacing-sm;
   }
   
   /* Links */
@@ -308,7 +508,7 @@ mark {
   
   /* Strong and emphasis */
   strong, b {
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     color: var(--text-strong, #f7fafc);
   }
   
@@ -316,8 +516,8 @@ mark {
     font-style: italic;
   }
   
-  /* Inline code */
-  code {
+  /* Inline code - only outside of pre blocks */
+  :not(pre) > code {
     font-family: $font-code;
     font-size: $font-size-code;
     padding: 0.2em 0.5em;
@@ -326,27 +526,7 @@ mark {
     color: var(--code-color, #e2e8f0);
   }
   
-  /* Code blocks - VS Code Dark+ inspired */
-  /* Only apply to pre NOT inside .highlight (to avoid double styling) */
-  pre:not(.highlight) {
-    font-family: $font-code;
-    font-size: $font-size-code;
-    line-height: 1.6;
-    padding: 1.25rem 1.5rem;
-    margin: 1.75rem 0;
-    background-color: var(--pre-bg, #1e1e1e);
-    border-radius: 8px;
-    overflow-x: auto;
-    border: 1px solid var(--pre-border, #3c3c3c);
-    
-    code {
-      font-size: $font-size-code;
-      padding: 0;
-      background-color: transparent;
-      color: var(--pre-code-color, #d4d4d4);
-      border-radius: 0;
-    }
-  }
+  /* Code blocks handled by _syntax.scss (Shiki) */
   
   /* Ensure pre inside .highlight doesn't get double styling */
   .highlight pre,
@@ -635,8 +815,8 @@ mark {
     
     li {
       font-size: $font-size-sm;
-      line-height: 1.6;
-      margin-bottom: 0.5rem;
+      line-height: $line-height-relaxed;
+      margin-bottom: $spacing-sm;
       
       a {
         color: var(--link-color, #3182ce);

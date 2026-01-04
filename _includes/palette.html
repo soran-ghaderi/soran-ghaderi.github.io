@@ -41,27 +41,42 @@
       --accent-hover: #b91c1c;
       --accent-light: #fecaca;
       --accent-rgb: 220, 38, 38;
+      /* Link colors use accent */
+      --link-color: #dc2626;
+      --link-hover: #b91c1c;
     {% when "coral" %}
       --accent-color: #f97316;
       --accent-hover: #ea580c;
       --accent-light: #fed7aa;
       --accent-rgb: 249, 115, 22;
+      /* Link colors use accent */
+      --link-color: #f97316;
+      --link-hover: #ea580c;
     {% when "rose" %}
       --accent-color: #e11d48;
       --accent-hover: #be123c;
       --accent-light: #fecdd3;
       --accent-rgb: 225, 29, 72;
+      /* Link colors use accent */
+      --link-color: #e11d48;
+      --link-hover: #be123c;
     {% when "ruby" %}
       --accent-color: #be123c;
       --accent-hover: #9f1239;
       --accent-light: #fda4af;
       --accent-rgb: 190, 18, 60;
+      /* Link colors use accent */
+      --link-color: #be123c;
+      --link-hover: #9f1239;
     {% else %}
       /* vivid-red (default) */
       --accent-color: #ef4444;
       --accent-hover: #dc2626;
       --accent-light: #fecaca;
       --accent-rgb: 239, 68, 68;
+      /* Link colors use accent */
+      --link-color: #ef4444;
+      --link-hover: #dc2626;
   {% endcase %}
 
   /* =====================================================
@@ -140,33 +155,44 @@ body.dark {
   
   /* Accent colors SAME as light mode for consistency */
   /* Only accent-hover changes for better visibility on dark backgrounds */
+  /* Link colors also use accent for consistency */
   {% case site.palette.accent %}
     {% when "crimson" %}
       --accent-color: #dc2626;
       --accent-hover: #ef4444;
       --accent-light: #fecaca;
       --accent-rgb: 220, 38, 38;
+      --link-color: #dc2626;
+      --link-hover: #ef4444;
     {% when "coral" %}
       --accent-color: #f97316;
       --accent-hover: #fb923c;
       --accent-light: #fed7aa;
       --accent-rgb: 249, 115, 22;
+      --link-color: #f97316;
+      --link-hover: #fb923c;
     {% when "rose" %}
       --accent-color: #e11d48;
       --accent-hover: #f43f5e;
       --accent-light: #fecdd3;
       --accent-rgb: 225, 29, 72;
+      --link-color: #e11d48;
+      --link-hover: #f43f5e;
     {% when "ruby" %}
       --accent-color: #be123c;
       --accent-hover: #e11d48;
       --accent-light: #fda4af;
       --accent-rgb: 190, 18, 60;
+      --link-color: #be123c;
+      --link-hover: #e11d48;
     {% else %}
       /* vivid-red (default) */
       --accent-color: #ef4444;
       --accent-hover: #f87171;
       --accent-light: #fecaca;
       --accent-rgb: 239, 68, 68;
+      --link-color: #ef4444;
+      --link-hover: #f87171;
   {% endcase %}
 }
 </style>

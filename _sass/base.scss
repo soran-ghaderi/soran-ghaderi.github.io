@@ -42,9 +42,10 @@
   --text-muted: #718096;                    // Muted gray for secondary text
   --heading-color: #1a202c;                 // Black for headers
   
-  // Links - blue as requested
-  --link-color: #3182ce;                    // Clean blue for links
-  --link-hover: #2c5aa0;                    // Darker blue on hover
+  // Links - uses accent color from _config.yml palette.accent
+  // Values are overridden by palette.html injection
+  --link-color: var(--accent-color);        // Uses accent color for links
+  --link-hover: var(--accent-hover);        // Uses accent hover for link hover
   
   // Accent color - configured via _config.yml palette.accent
   // These are fallbacks; actual values injected by palette.html
@@ -107,9 +108,10 @@ body.dark {
   --text-muted: #a0aec0;                   // Muted light gray for secondary text
   --heading-color: #f7fafc;                // White for headers
   
-  // Links - blue as requested
-  --link-color: #63b3ed;                   // Light blue for links
-  --link-hover: #90cdf4;                   // Lighter blue on hover
+  // Links - uses accent color from _config.yml palette.accent
+  // Values are overridden by palette.html injection
+  --link-color: var(--accent-color);       // Uses accent color for links
+  --link-hover: var(--accent-hover);       // Uses accent hover for link hover
   
   // Accent & Background colors are injected by palette.html
   // from _config.yml settings (palette.dark_bg, palette.accent)
@@ -158,9 +160,9 @@ html.light body.dark {
   --text-muted: #718096 !important;
   --heading-color: #1a202c !important;
   
-  // Links
-  --link-color: #3182ce !important;
-  --link-hover: #2c5aa0 !important;
+  // Links - uses accent color
+  --link-color: var(--accent-color) !important;
+  --link-hover: var(--accent-hover) !important;
   
   // Backgrounds
   --bg-color: #ffffff !important;

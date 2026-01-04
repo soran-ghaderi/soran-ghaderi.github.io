@@ -63,7 +63,7 @@ darkmode: true
 #   - "slate"         : Slate blue navbar (#1e293b)
 # =============================================================================
 palette:
-  dark_bg: "midnight"      # Dark mode background
+  dark_bg: "near-black"      # Dark mode background
   light_bg: "white"          # Light mode background  
   accent: "crimson"        # Accent color (used for highlights, links hover, etc.)
   navbar: "darker"             # Navbar style
@@ -117,80 +117,78 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h2>About</h2>
   <p>
-  I received my MSc in Artificial Intelligence at the <a href="https://www.essex.ac.uk/">University of Essex</a>, supervised by
-  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca-Citi">Professor Luca Citi</a>. Previously, I obtained my
-  bachelor's degree from the <a href="https://eng.uok.ac.ir/en/">University of Kurdistan</a>. During my postgraduate studies,
-  I was working on reasoning in LLMs for code generation; as a result, I developed a new approach for guiding the 
-  generation process. It consisted of a separate deep-think stage with self-reflection and 
-  a direct integration of thoughts (hidden states) into the LLM's main generation's hidden states using model surgery! 
-  This framework called <a href="https://soran-ghaderi.github.io/nir/">NIR</a> is applicable to various LLMs without 
-  finetuning. As an extension, It has a thought memory manager which controls the memories and thoughts of the LLM 
-  (not included in the evaluations) which allows the integration of approaches like Neural Turing Machines or DNC and LLMs.
-  
-  I have also contributed to the open-source projects and have collaborated with research teams in the past.</p>
+  Research intern at <a href="https://blender.cs.illinois.edu/">UIUC Blender Lab</a> working on energy-based models. 
+  MSc AI (Distinction) from <a href="https://www.essex.ac.uk/">Essex</a>, supervised by 
+  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Prof. Luca Citi</a>.
+  </p>
   </section>
   
-  <br>
   <section>
     <h2>Research Interests</h2>
+  <p>
+  I work on differentiable approaches for iterative reasoning and planning in uncertain environments. 
+  Building more capable, efficient, and generalizable AI systems, particularly at the intersection of deep learning, 
+  statistical mechanics, probabilistic modeling, and geometric methods.In a wider context, I am interested in developing a network of specialized networks such as memory and rapid learning, goal-driven planning, spatial reasoning, and error detection and conflict monitoring that operate collaboratively to consistently make good decisions within a complex environment. 
+  </p>
   
-    <p>
-    My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop embodied agents able to
-    reason and interact with the real world.
-    </p>
-    
-    <p>
-    A major challenge in current AI models is their struggle with generalization, consistent logical reasoning, and decision-making,
-    especially in scenarios that require multi-step inference or handling previously unseen situations. Current models (ie. LLMs) can
-    generate highly semantically coherent text, yet, often fail in robust reasoning abilities that are necessary for tasks
-    such as complex problem-solving, planning, or adapting to novel environments.
-    </p>
-    
-    <p>
-    Researchers have explored many approaches such as Prompt engineering methods (eg. CoT and self-reflection), which 
-    can enhance reasoning abilities to an extent as a temporary and short-term solution, however, they are limited 
-    and are not architecturally native to the models. 
-    Therefore, my research focuses on developing <strong>differentiable approaches for implementing iterative reasoning</strong> and
-    decision-making in uncertain environments in embodied agents.
-    This involves developing new architectures that can maintain coherent thought processes across multiple inference steps.<br>
-    </p>
-    
-    <p>Currently, I am exploring diffusion models, score-based and flow-based models, differential geometry 
-    (particularly Riemannian geometry), metric learning, energy-based models, joint embedding predictive architectures 
-    operating in the latent spaces among others to design generalizable intelligent agents capable of reasoning 
-    (as an optimization problem), deliberate planning (system 2-like), and able to handle uncertainty (in the inference-time)</p>
-    
-    <p>
-    In a wider context, I am fascinated by the idea of developing a network of specialized networks such as memory and rapid learning,
-    goal-driven planning, spatial reasoning, and error detection and conflict monitoring that operate collaboratively to 
-    consistently make good decisions within a complex environment. I am interested in transformers and attention
-    mechanisms with a bias toward efficient computation in these settings: generative models, multimodal
-    learning, and self-supervised learning.
-    </p>
-    <br><br>
-    <section>
-    <h2>Research Highlights</h2>
-    <ul>
-        <li><strong>Reasoning and Planning</strong>: Embodied agents able to reason, plan and adapt to new environments</li> 
-        <li><strong>Representation learning</strong>: Efficiently learn the geometry of parameters and data distributions</li>
-        <li><strong>Handling OOD problems</strong>: Robust out-of-distribution generalization</li>
-        <li><strong>Embodied Intelligent Agents</strong>: Agents that comprise the above capabilities and able to learn 
-        while interacting with the world</li>
-    </ul>
+  <details>
+  <summary><strong>▸ Key areas (click to expand)</strong></summary>
+  <br>
+  <ul>
+    <li><strong>Generative Modeling</strong>: Energy-Based Models, Diffusion/Score-Based Models, Normalizing Flows, Optimal Transport, Consistency Models. Mathematical tools: ODEs, PDEs (Fokker-Planck), SDEs, Itô Calculus, OT theory. Also language models and autoregressive generation.</li>
+    <li><strong>Generalisation, Reasoning & Planning</strong>: Robust OOD performance for complex decision-making.</li>
+    <li><strong>Geometric & Mathematical Foundations</strong>: Differential geometry (Riemannian manifolds), metric learning, Hamiltonian & Lagrangian formulations for efficient learning algorithms.</li>
+    <li><strong>Efficient Architectures</strong>: Transformers & attention mechanisms.</li>
+    <li><strong>MPC, RL, Agents & Embodied Intelligence</strong></li>
+    <li><strong>Applications</strong>: World Models, robotics, AI for science, LLMs.</li>
+  </ul>
+  </details>
+  
+  <p style="margin-top: 1em;">
+  <strong>Current Focus</strong>: Unifying diffusion, flow-based, and energy-based models through statistical mechanics and differential geometry—toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
+  </p>
+  
+  <h3>Research Highlights</h3>
+  <ul>
+      <li><strong>Reasoning & Planning</strong>: Agents that reason, plan, and adapt to novel environments</li>
+      <li><strong>Representation Learning</strong>: Learning the geometry of parameters and data distributions</li>
+      <li><strong>OOD Generalisation</strong>: Robust behaviour beyond training distribution</li>
+      <li><strong>Embodied Intelligence</strong>: Systems that learn through interaction with the world</li>
+  </ul>
   </section>
+  
+  
+  <section>
+    <h2>Open Source</h2>
+    <p><strong>Current libraries</strong></p>
+    <ul>
+        <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> (8K+ downloads) · EBMs, diffusion, flow matching, SDE/ODE integrators</li>
+        <li><a href="https://github.com/soran-ghaderi/cuRBLAS">cuRBLAS 🍒</a> · CUDA kernels for randomized linear algebra</li>
+    </ul>
+    <details>
+    <summary><strong>▸ Previous libs</strong></summary>
+    <ul style="margin-top: 0.5em;">
+        <li><a href="https://github.com/tensorops/TransformerX">TransformerX</a> · Modular transformer research library</li>
+        <li><a href="https://github.com/bi-graph/Emgraph">Emgraph</a> · Knowledge graph embeddings</li>
+        <li><a href="https://github.com/bi-graph/Bigraph">Bigraph</a> · Bipartite graph link prediction</li>
+        <li><a href="https://github.com/soran-ghaderi/backpropagation">Nano Autodiff</a> · From-scratch autodiff engine</li>
+        <li><a href="https://github.com/appheap/TASE">TASE</a> · Large-scale multimodal audio search engine</li>
+    </ul>
+    </details>
   </section>
   
   <section>
     <h2>News</h2>
     <ul>
-        <li>I defended my MSc at the University of Essex - CSEE! (<a href="https://soran-ghaderi.github.io/nir/">Thesis</a>) - Oct. 2024</li> 
+        <li>Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
+        <li>MSc defended at Essex (<a href="https://soran-ghaderi.github.io/nir/">NIR thesis</a>) - Oct. 2024</li>
     </ul>
   </section>
   
   <section>
     <h2>Awards</h2>
     <ul>
-        <li>Fully funding scholarship for postgraduate studies in Artificial Intelligence, University of Essex</li>
+        <li>Full scholarship for MSc AI, University of Essex</li>
     </ul>
   </section>
   
@@ -232,29 +230,6 @@ skills_title: Skills
 # more content
 more_content: | # this will include new lines to allow paragraphs
   
-  I'm Soran Ghaderi holding a BEng. in computer software engineering since 2018. My academic passions encompass the
-  cutting-edge research conducted in the fields of machine learning; particularly, methods that are
-  trying to understand and represent the surrounding world optimally.<br>
-
-  During my B.Eng., recommendation systems, and bioinformatics were what I was interested in, along which I engrossed in
-  machine learning and deep learning fields. Those were the impetuses to delve more deeply into the theories.
-  Following the outstanding papers and research published by the internationally renowned research-labs and
-  tech-companies for the last few years, on the one hand, I have acquired a general idea of the current challenges scientists
-  are facing. On the other hand, having an avid interest in coding and hands-on stuff, I've got an up-to-date knowledge of
-  current technologies used in the field of machine learning, including a couple of frameworks and libraries as
-  well as some of the well-known optimization and high-performance computing techniques.<br>
-  <br>
-#  ### Technical skills<br>
-#
-#  Will be uploaded soon<br>
-#
-#  I'm a bit pressed for time at the moment, however, I will upload more information later on. If you think you'll come
-#  here once in a blue moon and I can help you out in someway, then you can drop me an email or check out my
-#  <a href="https://www.linkedin.com/in/soran-ghaderi/">Linkedin</a>.
-
-#  This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
-
-#  Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
 
 # Footer
 footer_show_references: true

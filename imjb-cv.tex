@@ -1,0 +1,219 @@
+%-------------------------
+% Resume in Latex
+% Author: Soran Ghaderi
+% General ML Engineer/Researcher Resume
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% \usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+
+\usepackage{fontawesome5}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+    \textbf{\Large Soran Ghaderi} \\
+    \small \faIcon{envelope} \href{mailto:soran.gdr.cs@gmail.com}{soran.gdr.cs@gmail.com} $|$ 
+    \faIcon{github} \href{https://github.com/soran-ghaderi}{GitHub} $|$ 
+    \faIcon{linkedin} \href{https://www.linkedin.com/in/soran-ghaderi}{LinkedIn} $|$
+    \faIcon{twitter} \href{https://twitter.com/soranghadri}{X} $|$ 
+    \faIcon{globe} \href{https://soran-ghaderi.github.io/}{Website} $|$ 
+    \faIcon{graduation-cap} \href{https://scholar.google.com/citations?user=-2N2iKcAAAAJ}{Scholar}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Research Profile}
+
+
+MSc Artificial Intelligence graduate (\textbf{Distinction, 4.0/4.0 GPA equivalent}) and research intern at UIUC Blender Lab. My research focuses on understanding when generative models should learn globally versus search locally at inference time---treating learning, sampling, and search as points on a continuous spectrum of measure transport operations. Currently preparing work for \textbf{ICML 2026} (with UIUC/Harvard) on mode collapse in energy-based transformers for high-dimensional multi-modal spaces.
+\textbf{Relevant Experience:}
+\begin{itemize}[leftmargin=15pt,topsep=2pt]
+    \item Creator of \textbf{TorchEBM (8K+ downloads)}: PyTorch library for EBMs, diffusion, flow matching, SDE/ODE integrators
+    \item Developer of \textbf{cuRBLAS}: CUDA library for randomized BLAS and probabilistic linear algebra operations
+    \item Developing mathematical frameworks for training EBMs with long sampling trajectories via implicit differentiation
+\end{itemize}
+
+\textbf{Research Interests:} Unified theory of learning, sampling, and search through information geometry and optimal transport. Geometry-aware adaptive algorithms for measure transport. Applications to molecular sampling, world models, and compositional generation. \textbf{UK Home Fee Status}.
+
+
+
+%-----------EDUCATION-----------
+\section{Education}
+
+\subsection*{\textbf{University of Essex} \hfill \textbf{Oct 2023 - Oct 2024}}
+\textit{MSc Artificial Intelligence (\textbf{Distinction} - \textbf{4.0/4.0} GPA equivalent)} \hfill \textit{UK}
+\begin{itemize}[leftmargin=15pt]
+    \item Dissertation: \textbf{Neural Integration of Iterative Reasoning (\href{https://soran-ghaderi.github.io/nir/}{NIR}) in LLMs for Code Generation} (\textbf{90/100})
+\end{itemize}
+
+\subsection*{\textbf{University of Kurdistan} \hfill \textbf{2014 - 2018}}
+\textit{BEng Computer Engineering - Software} \hfill \textit{Iran}
+\begin{itemize}[leftmargin=15pt]
+    \item Thesis: EfficientCoF - Subspace and K-Means Clustering-based Method for Collaborative Filtering (\textbf{19.5/20})
+\end{itemize}
+
+%-----------PUBLICATIONS-----------
+\section{Publications \& Works in Progress}
+
+\subsection*{\textbf{Energy Outscales Diffusion and Flow---Was More Supervision All We Needed?} \hfill \textbf{Dec 2025 and 2026}}
+\textit{Alexi Gladstone, Shivanshu Shekhar, Avery Qian, Ninad Daithankar, \textbf{Soran Ghaderi}, Yilun Du, Heng Ji, Tong Zhang}
+\\ \textit{Preprint under active writing, available soon. \textbf{In preparation for ICML 2026 submission}}
+\begin{itemize}[leftmargin=15pt]
+    \item Developed complete experimental \textbf{codebase} for \textbf{class-conditional image generation} with Energy-Based Transformers
+    \item Implemented and evaluated multiple \textbf{EBT variants}: latent-variable conditioning, best-of-k sampling, depth-hierarchical architectures
+    \item Engineered \textbf{latent caching system} and trained/monitored all models alongside diffusion transformer baselines
+    \item Contributed to the theoretical framework \textbf{investigating mode mixing} in high-dimensional multi-modal spaces
+\end{itemize}
+\subsection*{\textbf{Implicit Gradients for Energy-Based Transformers} \hfill \textbf{Expected 2026}}
+\begin{itemize}[leftmargin=15pt]
+    \item \textbf{Ghaderi, S.} et al. \textit{collaboration with Oxford / UIUC / Harvard.}
+\\ \textit{Work in Progress.}
+\end{itemize}
+
+\subsection*{\textbf{Hierarchical Energy Transformers}\hfill \textbf{Expected 2026}}
+\begin{itemize}[leftmargin=15pt]
+    \item \textbf{Ghaderi, S.} et al. \textit{collaboration with UIUC / Harvard.}
+\\ \textit{Work in Progress.}
+\end{itemize}
+
+
+
+%-----------EXPERIENCE-----------
+\section{Research and Development Experience}
+
+\subsection*{\textbf{Research Intern - Energy-based Models (EBMs)} \hfill \textbf{Jul 2025 - Present}}
+\textit{Blender Lab, University of Illinois Urbana-Champaign (UIUC)} \hfill \textit{ US-Remote}
+\begin{itemize}[leftmargin=15pt]
+    \item Scaling energy-based transformers for text-to-image and text-to-video generation
+    \item Investigating inference-time compute scaling and fast sampling strategies for large-scale generative models
+    \item Developing modality-agnostic reasoning frameworks applicable to world models and temporal prediction
+\end{itemize}
+
+
+\subsection*{\textbf{Developer - cuRBLAS CUDA Randomized BLAS Library} \hfill \textbf{2025 - Present}}
+\textit{GitHub (\href{https://github.com/soran-ghaderi/cuRBLAS}{Repository})} \hfill \textit{C++, CUDA, Python}
+\begin{itemize}[leftmargin=15pt]
+    \item Developing modular GPU-accelerated randomized BLAS library with Python bindings optimized for large-scale AI workloads, and advanced CUDA kernels for probabilistic linear algebra operations
+\end{itemize}
+
+
+\subsection*{\textbf{Developer - TorchEBM (EBM, Diffusion) Library} \hfill \textbf{2024 - Present}}
+\textit{GitHub (\href{https://github.com/soran-ghaderi/TorchEBM}{Repository} $|$ \href{https://soran-ghaderi.github.io/torchebm/}{Website}) - \textbf{7.3K+ downloads}} \hfill \textit{Python, PyTorch, CUDA}
+\begin{itemize}[leftmargin=15pt]
+    \item Built PyTorch library for GPU-accelerated energy-based models, diffusion processes, and flow matching, focusing on continuous generative modeling and real-time inference optimization
+    \item Implemented efficient ODE/SDE solvers/integrators, samplers, losses, models, schedulers, and optimization algorithms through mixed precision training for fast generation, emphasizing memory efficiency and hardware-aware algorithm design. Equilibrium matching, new samplers, models, and transport plans to be featured in the next release.
+\end{itemize}
+
+\subsection*{\textbf{Postgraduate Researcher - LLM Code Generation} \hfill \textbf{Apr 2024 - Oct 2024}}
+\textit{University of Essex, supervised by Prof. Luca Citi $|$ Website (\href{https://soran-ghaderi.github.io/nir/}{NIR})} \hfill \textit{UK}
+\begin{itemize}[leftmargin=15pt]
+    \item Developed Neural Integration of Iterative Reasoning (NIR) framework for code generation. Integrated reasoning contexts directly into hidden states without requiring model fine-tuning, designed separate deep-think stage with self-reflection mechanism, evaluated the results
+    \item Implemented reinforcement learning agents for playing games in complex environments
+    \item Built GPU-accelerated multimodal navigation system on Jetson hardware, optimizing inference for real-time concurrent visual and textual processing, addressing challenges in real-time multimodal AI deployment
+\end{itemize}
+
+
+\subsection*{\textbf{Lead Developer - High-Performance \& GPU Optimized ML Libraries} \hfill \textbf{2019 - 2024}}
+\textit{GitHub (\href{https://github.com/tensorops/TransformerX}{TransformerX}, \href{https://github.com/bi-graph/Emgraph}{Emgraph}, \href{https://github.com/bi-graph/Bigraph}{Bigraph}, \href{https://github.com/soran-ghaderi/backpropagation}{Nano Autodiff})} \hfill \textit{Python, TensorFlow, PyTorch}
+\begin{itemize}[leftmargin=15pt]
+    \item Built and maintained open-source libraries: \textbf{TransformerX} (transformer research), \textbf{Emgraph} (knowledge-graph embeddings), \textbf{Bigraph} (bipartite link prediction), and \textbf{Nano Autodiff} (from-scratch autodiff with numerically stable computation graph).
+    \item Established APIs, comprehensive documentation, and testing frameworks adopted by ML community
+
+
+\end{itemize}
+
+\subsection*{\textbf{Lead Developer - TASE Multimodal Search Engine} \hfill \textbf{2020 - 2022}}
+\textit{GitHub (\href{https://github.com/appheap/TASE}{Repository})} \hfill \textit{Python, Elasticsearch}
+\begin{itemize}[leftmargin=15pt]
+    \item Architected large-scale feature-rich audio search engine with efficient indexing and retrieval pipeline with scalable backend using Elasticsearch, ArangoDB, and Redis for real-time audio and text processing
+\end{itemize}
+
+% ---------- Technical Writing ------------
+\subsection*{\textbf{Technical Writing} \hfill \textbf{Oct 2022 - Present}}
+\textit{Blog (\href{https://soran-ghaderi.github.io/blog}{soran-ghaderi.github.io/blog})} \hfill \textit{Medium, Towards Data Science, TorchEBM Blog}
+\begin{itemize}[leftmargin=15pt]
+    \item Published technical articles on Hamiltonian mechanics, physics, samplers, transformers, attention mechanisms, generative models, and API documentation of multiple ML libraries, reaching a wide ML practitioner audience (\textbf{50K+ views on Medium alone})
+\end{itemize}
+
+%-----------AWARDS-----------
+\section{Awards \& Recognition}
+\subsection*{\textbf{Postgraduate Scholarship} \hfill \textbf{Oct 2023 - Oct 2024}}
+\textit{Full Scholarship - University of Essex} \hfill \textit{UK}
+\begin{itemize}[leftmargin=15pt]
+    \item Awarded a \textbf{full scholarship} for a record of academic excellence and potential for AI research success
+\end{itemize}
+\subsection*{\textbf{Neural Network Design Challenge - Rossmann (Kaggle)} \hfill \textbf{Oct 2023}}
+\begin{itemize}[leftmargin=15pt]
+    \item \textbf{First Place} (100+ participants, inter-departmental) - scores: 0.10886 (public) / 0.11384 (private) \hfill \textit{UK}
+\end{itemize}
+
+
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+
+% ===============================================
+
+\textbf{Deep Learning \& Generative Models:} Energy-Based Models, Diffusion Models, Flow Matching, LLMs, Transformer Architectures, Vision-Language Models, Image/Video Generation, Reinforcement Learning, Multimodal Learning, MCMC Sampling
+
+\textbf{Programming \& ML Frameworks:} Python, PyTorch (advanced), CUDA C/C++, JAX, TensorFlow, NumPy, Triton, Custom Kernel Development, Performance Profiling
+
+\textbf{GPU Computing \& HPC:} Multi-GPU Training, Distributed Computing, Mixed Precision (FP16/BF16), Quantization, Kernel Optimization, Pipeline Parallelization, Slurm, Model Deployment
+
+\textbf{Mathematics \& Theory:} Linear Algebra, Optimisation Theory, Calculus, Probability, Statistics, Numerical Computing, Differential Equations, MCMC, Familiar with Information Theory \& Statistical Mechanics \\
+
+\textbf{Multimodal \& Cross-Modal Learning:} Domain Adaptation, Few-shot Learning, Attention Mechanisms, Multi-task Learning, Inference-time Compute Scaling, RLHF, SFT \\
+
+\textbf{Software Engineering \& System Design:} ML Pipelines, Scalable Architecture Design, Version Control (Git), CI/CD, Testing Frameworks, Containerisation, Performance Measurement, Code Reviews, Agile Methodologies \\
+
+%-----------RESEARCH INTERESTS-----------
+\section{Research Interests}
+
+\textbf{Learning-Sampling-Search Tradeoff:} When should generative models search at inference versus directly sample? Deriving information-geometric criteria (score divergence, Fisher information, transport cost) that separate regimes where learned transport suffices from those requiring active exploration.
+\\
+\textbf{Geometry-Aware Adaptive Transport:} Extending SMC and Feynman-Kac correctors to learned Riemannian manifolds. Developing algorithms that allocate computation dynamically between global transport and local refinement based on target geometry.
+\\
+\textbf{AI4Science Applications:} Molecular conformational sampling, equilibrium sampling via Sequential Boltzmann Generators, free energy calculations. Structure-preserving models respecting geometric constraints.
+\\
+\textbf{Generalisation via Inference-Time Search:} Meta-transport maps that generalise across target families without retraining. Compositional generation combining transport primitives for unseen targets through structured search.
+\\
+
+
+%-----------REFERENCES-----------
+\section{References}
+
+\subsection*{\textbf{Professor Luca Citi}}
+\textit{Professor, School of Computer Science and Electronic Engineering (CSEE)} \\
+\textit{University of Essex, Colchester Campus, 1NW.5.3C} \\
+Email: lciti@essex.ac.uk $|$ Tel: +44 (0)1206 874233 \\
+\textit{Dissertation Supervisor (MSc Artificial Intelligence)}
+
+\subsection*{\textbf{Dr Michael Fairbank}}
+\textit{Senior Lecturer, School of Computer Science and Electronic Engineering (CSEE)} \\
+\textit{University of Essex, Colchester Campus, 1NW.3.19} \\
+Email: m.fairbank@essex.ac.uk  \\
+\textit{Game AI Module Lecturer (MSc Artificial Intelligence)}
+
+\subsection*{\textbf{Dr Şefki Kolozali}}
+\textit{Lecturer, School of Computer Science and Electronic Engineering (CSEE)} \\
+\textit{University of Essex, Colchester Campus, 5A.523} \\
+Email: sefki.kolozali@essex.ac.uk $|$ Tel: +44 (0) 1206 873302 \\
+\textit{Group Project Supervisor (MSc Artificial Intelligence)}
+
+\end{document}

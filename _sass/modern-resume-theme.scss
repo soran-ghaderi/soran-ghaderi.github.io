@@ -225,10 +225,10 @@
   
   // Ensure proper spacing between skill sections
   .details {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     
     @media (min-width: 768px) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -245,13 +245,13 @@
 }
 
 .layout {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
   background-color: var(--bg-color, #ffffff);
 
   .details {
     text-align: left;
-    padding-bottom: 1rem;
+    padding-bottom: 0.1rem;
 
     p {
       margin-bottom: 1rem;

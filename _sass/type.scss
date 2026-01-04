@@ -342,7 +342,6 @@ h6 {
   font-weight: $font-weight-light;
   font-size: $font-size-section-title;
   text-align: center;
-  border-bottom: 2px dashed var(--text-color, #333);
   padding-bottom: $spacing-sm;
   margin-bottom: $spacing-xl;
   position: relative;
@@ -785,6 +784,7 @@ mark {
   font-size: $font-size-section-title;
   font-weight: 700;
   line-height: 1.2;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: var(--heading-color, #1a202c);
   text-align: center;

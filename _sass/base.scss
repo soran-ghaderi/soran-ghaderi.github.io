@@ -46,13 +46,24 @@
   --link-color: #3182ce;                    // Clean blue for links
   --link-hover: #2c5aa0;                    // Darker blue on hover
   
-  // Accent color - red family
-  --accent-color: #e53e3e;                  // Clean red accent
-  --accent-hover: #9b2c2c;                  // Darker red on hover
+  // Accent color - configured via _config.yml palette.accent
+  // These are fallbacks; actual values injected by palette.html
+  --accent-color: #ef4444;                  // Default: vivid-red
+  --accent-hover: #dc2626;                  // Hover state
+  --accent-rgb: 239, 68, 68;                // RGB for rgba() usage
+  --accent-light: #fecaca;                  // Light accent for backgrounds
 
-  // Backgrounds
-  --bg-color: #ffffff;                      // White background
-  --intro-bg: #f7fafc;                      // Light gray for intro sections
+  // Backgrounds - configured via _config.yml palette.light_bg
+  // These are fallbacks; actual values injected by palette.html  
+  --bg-color: #ffffff;                      // Default: white
+  --intro-bg: #f7fafc;                      // Section backgrounds
+  --card-border: rgba(0, 0, 0, 0.06);       // Card borders (light mode)
+  
+  // Navigation - configured via _config.yml palette.navbar
+  // These are fallbacks; actual values injected by palette.html
+  --nav-bg: #1a202c;                        // Default: dark
+  --nav-text: #f7fafc;
+  --nav-border: #2d3748;
   
   // Social media icons
   --icon-color: #2d3748;                    // Dark icons
@@ -84,7 +95,8 @@
 
 /* =====================================================
    DARK MODE CSS VARIABLES
-   Applied when body or html has .dark class
+   Background & accent colors configured via _config.yml
+   These values are overridden by palette.html injection
    ===================================================== */
 .dark,
 html.dark,
@@ -99,13 +111,16 @@ body.dark {
   --link-color: #63b3ed;                   // Light blue for links
   --link-hover: #90cdf4;                   // Lighter blue on hover
   
-  // Accent color - red family (same as light mode for consistency)
-  --accent-color: #e53e3e;                  // Clean red accent
-  --accent-hover: #9b2c2c;                  // Darker red on hover
-  
-  // Backgrounds
-  --bg-color: #1a202c;                     // Dark background
-  --intro-bg: #2d3748;                     // Darker gray for intro sections
+  // Accent & Background colors are injected by palette.html
+  // from _config.yml settings (palette.dark_bg, palette.accent)
+  // Fallback values below:
+  --accent-color: #ef4444;
+  --accent-hover: #f87171;
+  --accent-rgb: 239, 68, 68;
+  --accent-light: #fecaca;
+  --bg-color: #0f0f0f;
+  --intro-bg: #1a1a1a;
+  --card-border: rgba(255, 255, 255, 0.1);  // Visible borders on dark bg
   
   // Social media icons
   --icon-color: #e2e8f0;                   // Light gray icons

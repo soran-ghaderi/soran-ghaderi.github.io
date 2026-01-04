@@ -217,20 +217,20 @@ body.dark {
       &:hover,
       &:focus {
         color: var(--accent-color) !important;
-        background-color: rgba(229, 62, 62, 0.1) !important;
-        border-radius: 8px;
+        background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.12) !important;
+        border-radius: 4px;
       }
     }
     
     .navbar-nav > li.active > a {
       color: var(--accent-color) !important;
-      background-color: rgba(229, 62, 62, 0.15) !important;
-      border-radius: 8px;
+      background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.18) !important;
+      border-radius: 4px;
       
       &:hover,
       &:focus {
         color: var(--accent-hover) !important;
-        background-color: rgba(229, 62, 62, 0.2) !important;
+        background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.25) !important;
       }
     }
     

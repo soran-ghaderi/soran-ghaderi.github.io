@@ -31,6 +31,9 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
 
+  <!-- Centralized Color Palette (from _config.yml) -->
+  {%- include palette.html -%}
+
   <!-- Shiki syntax highlighting (loaded after DOM is ready) -->
   <!-- Theme configuration from _config.yml: shiki.dark_theme and shiki.light_theme -->
   <script type="module">

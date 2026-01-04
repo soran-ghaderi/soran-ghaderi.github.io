@@ -31,6 +31,43 @@ email: soran.gdr.cs@gmail.com
 # Dark Mode (true/false/never)
 darkmode: true
 
+# =============================================================================
+# COLOR PALETTE CONFIGURATION
+# =============================================================================
+# Central theme configuration - change these values to switch palettes site-wide
+# 
+# DARK MODE BACKGROUND OPTIONS:
+#   - "near-black"    : #0f0f0f  (Default - deep black, elegant)
+#   - "pure-black"    : #000000  (OLED friendly, maximum contrast)
+#   - "charcoal"      : #121212  (Material Design dark, softer)
+#   - "slate"         : #1a202c  (Blue-tinted, original theme)
+#   - "midnight"      : #0d1117  (GitHub dark, subtle blue)
+#
+# LIGHT MODE BACKGROUND OPTIONS:
+#   - "white"         : #ffffff  (Default - pure white)
+#   - "snow"          : #fafafa  (Slightly off-white, easier on eyes)
+#   - "cream"         : #fffdf7  (Warm white, paper-like)
+#   - "cool-gray"     : #f8fafc  (Cool tinted white)
+#
+# ACCENT COLOR OPTIONS:
+#   - "vivid-red"     : #ef4444  (Default - bright, prominent red)
+#   - "crimson"       : #dc2626  (Deeper red, more classic)
+#   - "coral"         : #f97316  (Orange-red, warm)
+#   - "rose"          : #e11d48  (Pink-red, modern)
+#   - "ruby"          : #be123c  (Dark red, sophisticated)
+#
+# NAVBAR STYLE OPTIONS:
+#   - "dark"          : Dark navbar (Default - #1a202c)
+#   - "darker"        : Darker navbar (#0f0f0f)
+#   - "pure-black"    : Pure black navbar (#000000)
+#   - "slate"         : Slate blue navbar (#1e293b)
+# =============================================================================
+palette:
+  dark_bg: "midnight"      # Dark mode background
+  light_bg: "white"          # Light mode background  
+  accent: "crimson"        # Accent color (used for highlights, links hover, etc.)
+  navbar: "darker"             # Navbar style
+
 # Social links
 twitter_username: soranghadri
 github_username: soran-ghaderi

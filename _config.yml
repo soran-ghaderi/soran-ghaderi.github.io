@@ -227,6 +227,15 @@ footer_show_references: true
 # remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
 #theme: jekyll-theme-hacker
 
+# Markdown processor settings
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
 defaults:
   - scope:
       path: _posts

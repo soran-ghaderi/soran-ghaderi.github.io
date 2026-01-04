@@ -17,6 +17,9 @@
   <link rel="dns-prefetch" href="//ajax.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 
+  <!-- Fonts: Roboto for body, Fira Code for code -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
   <title>{{ site.name }} | {{ site.title }}</title>
   {%- seo title=false -%}
 
@@ -46,15 +49,30 @@
       },
       options: {
         ignoreHtmlClass: 'tex2jax_ignore',
-        processHtmlClass: 'tex2jax_process'
+        processHtmlClass: 'tex2jax_process',
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      chtml: {
+        scale: 1,
+        minScale: 0.5,
+        matchFontHeight: true,
+        mtextInheritFont: true
+      },
+      svg: {
+        scale: 1,
+        minScale: 0.5
       },
       loader: {
         load: ['[tex]/noerrors']
+      },
+      startup: {
+        pageReady: function() {
+          return MathJax.startup.defaultPageReady();
+        }
       }
     };
   </script>
-  <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     // Ensure MathJax processes math after page load
     document.addEventListener('DOMContentLoaded', function() {

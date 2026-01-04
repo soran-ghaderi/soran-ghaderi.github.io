@@ -1,11 +1,29 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500,500italic,400italic,300italic,100italic,700italic);
+/* =====================================================
+   GLOBAL FONT & STYLE IMPORTS
+   Centralized font loading for consistency across site
+   ===================================================== */
+
+// Fonts are loaded via head.html with Google Fonts for better performance
+// Roboto: Body text, headings
+// Fira Code: Code blocks, inline code
+
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
-//@import url(https://use.fontawesome.com/releases/v5.11.2/css/all.css);
-//@import url(https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
-// CSS Custom Properties for Clean, Readable Color Scheme
+/* =====================================================
+   CSS CUSTOM PROPERTIES - CENTRALIZED COLOR SCHEME
+   All colors defined in one place for easy theming
+   ===================================================== */
+
 :root {
+  // Font families (centralized)
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --code-font-family: 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'Liberation Mono', monospace;
+  
+  // Base font size (change this to scale all typography)
+  --base-font-size: 1.6rem;
+  --code-font-size: 0.875rem;  // Fixed size for code - slightly smaller than body text
+  
   // Main text colors - only 2 colors for normal text
   --text-color: #2d3748;                    // Main dark gray text
   --text-strong: #1a202c;                   // Darker for headings/strong text
@@ -32,6 +50,24 @@
   // Social media icons - black/white only
   --icon-color: #2d3748;                   // Black icons
   --icon-hover: #1a202c;                   // Darker on hover
+  
+  // Article/Blog specific colors
+  --code-bg: rgba(175, 184, 193, 0.2);      // Light gray for inline code
+  --code-color: #24292f;                    // Dark text for inline code
+  --pre-bg: #ffffff;                        // White background for code blocks
+  --pre-border: #d0d7de;                    // Border for code blocks
+  --pre-code-color: #24292f;                // Dark text for code blocks
+  --blockquote-bg: rgba(45, 55, 72, 0.05);  // Light background for blockquotes
+  --table-border: #d0d7de;                  // Table borders
+  --table-header-bg: rgba(45, 55, 72, 0.05);// Table header background
+  --table-row-hover: rgba(45, 55, 72, 0.03);// Table row hover
+  --hr-color: #d0d7de;                      // Horizontal rule color
+  --toc-bg: rgba(45, 55, 72, 0.05);         // TOC background
+  --kbd-bg: #f6f8fa;                        // Keyboard input background
+  --kbd-border: #d0d7de;                    // Keyboard input border
+  --kbd-shadow: #afb8c1;                    // Keyboard input shadow
+  --details-bg: rgba(45, 55, 72, 0.05);     // Details/summary background
+  --details-border: #d0d7de;                // Details/summary border
 }
 
 .dark {
@@ -65,6 +101,24 @@
   // Social media icons - black/white only
   --icon-color: #e2e8f0;                   // Light gray icons
   --icon-hover: #f7fafc;                   // White on hover
+  
+  // Article/Blog specific colors (dark mode)
+  --code-bg: rgba(110, 118, 129, 0.4);     // Subtle gray for inline code
+  --code-color: #e2e8f0;                   // Light text for inline code
+  --pre-bg: #1e1e1e;                       // VS Code Dark+ background
+  --pre-border: #3c3c3c;                   // VS Code border
+  --pre-code-color: #d4d4d4;               // VS Code text color
+  --blockquote-bg: rgba(45, 55, 72, 0.3);  // Dark background for blockquotes
+  --table-border: #4a5568;                 // Table borders
+  --table-header-bg: rgba(45, 55, 72, 0.5);// Table header background
+  --table-row-hover: rgba(45, 55, 72, 0.3);// Table row hover
+  --hr-color: #4a5568;                     // Horizontal rule color
+  --toc-bg: rgba(45, 55, 72, 0.5);         // TOC background
+  --kbd-bg: #2d3748;                       // Keyboard input background
+  --kbd-border: #4a5568;                   // Keyboard input border
+  --kbd-shadow: #1a202c;                   // Keyboard input shadow
+  --details-bg: rgba(45, 55, 72, 0.5);     // Details/summary background
+  --details-border: #4a5568;               // Details/summary border
 }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {

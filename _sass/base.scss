@@ -72,9 +72,9 @@
   // Article/Blog specific colors
   --code-bg: rgba(175, 184, 193, 0.2);      // Light gray for inline code
   --code-color: #24292f;                    // Dark text for inline code
-  --pre-bg: #ffffff;                        // White background for code blocks
+  --pre-bg: #f6f8fa;                        // Subtle gray to distinguish code blocks from page
   --pre-border: #d0d7de;                    // Border for code blocks
-  --pre-code-color: #24292f;                // Dark text for code blocks
+  --pre-code-color: #24292f;                // Fallback text for non-Shiki code blocks
   --blockquote-bg: rgba(45, 55, 72, 0.05);  // Light background for blockquotes
   --table-border: #d0d7de;                  // Table borders
   --table-header-bg: rgba(45, 55, 72, 0.05);// Table header background
@@ -129,9 +129,9 @@ body.dark {
   // Article/Blog specific colors (dark mode)
   --code-bg: rgba(110, 118, 129, 0.4);     // Subtle gray for inline code
   --code-color: #e2e8f0;                   // Light text for inline code
-  --pre-bg: #1e1e1e;                       // VS Code Dark+ background
+  --pre-bg: #1e1e1e;                       // Fallback for non-Shiki code blocks (Shiki derives bg from theme)
   --pre-border: #3c3c3c;                   // VS Code border
-  --pre-code-color: #d4d4d4;               // VS Code text color
+  --pre-code-color: #d4d4d4;               // Fallback text for non-Shiki code blocks
   --blockquote-bg: rgba(45, 55, 72, 0.3);  // Dark background for blockquotes
   --table-border: #4a5568;                 // Table borders
   --table-header-bg: rgba(45, 55, 72, 0.5);// Table header background

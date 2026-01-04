@@ -34,10 +34,12 @@
   <!-- Centralized Color Palette (from _config.yml) -->
   {%- include palette.html -%}
 
-  <!-- Shiki syntax highlighting (loaded after DOM is ready) -->
+  <!-- Shiki syntax highlighting with dual themes (light/dark CSS variables) -->
   <!-- Theme configuration from _config.yml: shiki.dark_theme and shiki.light_theme -->
   <script type="module">
     // Shiki - TextMate grammar powered syntax highlighter (same as VS Code)
+    // Using dual themes: outputs CSS variables for both light and dark themes
+    // Background color is derived from the theme via --shiki-dark-bg / inline style
     import { codeToHtml } from 'https://esm.sh/shiki@1.24.0';
     
     // Theme configuration from Jekyll central config (_config.yml)
@@ -60,19 +62,7 @@
       '': 'plaintext'
     };
     
-    // Detect if dark mode is active
-    function isDarkMode() {
-      if (document.body.classList.contains('dark')) return true;
-      if (document.body.classList.contains('light')) return false;
-      if (document.documentElement.classList.contains('dark')) return true;
-      if (document.documentElement.classList.contains('light')) return false;
-      const stored = localStorage.getItem('darkMode');
-      return stored !== 'false'; // Default to dark
-    }
-    
     async function highlightCodeBlocks() {
-      const theme = isDarkMode() ? SHIKI_CONFIG.darkTheme : SHIKI_CONFIG.lightTheme;
-      
       // First pass: highlight unhighlighted blocks and store original data
       for (const block of document.querySelectorAll('pre:not([data-shiki-code]) code')) {
         const pre = block.parentElement;
@@ -100,7 +90,16 @@
         const lang = pre.dataset.shikiLang || 'plaintext';
         
         try {
-          const html = await codeToHtml(code, { lang, theme });
+          // Use dual themes - outputs CSS variables for both themes
+          // Light theme colors go inline, dark theme colors go to --shiki-dark-* variables
+          const html = await codeToHtml(code, {
+            lang,
+            themes: {
+              light: SHIKI_CONFIG.lightTheme,
+              dark: SHIKI_CONFIG.darkTheme
+            },
+            defaultColor: 'light'  // Light colors inline, dark in --shiki-dark-* vars
+          });
           
           // Parse the new HTML
           const temp = document.createElement('div');
@@ -126,10 +125,7 @@
       highlightCodeBlocks();
     }
     
-    // Re-highlight on theme change
-    window.addEventListener('themechange', () => {
-      setTimeout(highlightCodeBlocks, 10);
-    });
+    // No need to re-highlight on theme change - CSS handles the switch via variables
     
     // Expose for manual re-highlighting
     window.shikiHighlight = highlightCodeBlocks;

@@ -72,11 +72,11 @@ mjx-container {
 .article-post .language-text .highlight,
 .article-post .language-plaintext .highlight,
 .article-post .language-none .highlight {
-  background: #1e1e1e !important;
-  color: #d4d4d4 !important;
+  background: var(--pre-bg) !important;
+  color: var(--pre-code-color) !important;
   
   pre, code {
-    color: #d4d4d4 !important;
+    color: var(--pre-code-color) !important;
     background: transparent !important;
   }
 }
@@ -86,14 +86,14 @@ mjx-container {
 .dark .highlighter-rouge .highlight {
   /* Default text color for all unhighlighted tokens */
   .n, .nx, .p, .w, .text {
-    color: #d4d4d4 !important;
+    color: var(--pre-code-color) !important;
   }
 }
 
 /* Fix BibTeX/citation code blocks specifically */
 .dark .article-post .highlighter-rouge .highlight pre,
 .dark .article-post pre.highlight {
-  color: #d4d4d4;
+  color: var(--pre-code-color);
   
   /* Ensure all text content is visible */
   & > code,
@@ -104,21 +104,21 @@ mjx-container {
 
 /* Plain code blocks without language specification */
 .dark .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
-  background: #1e1e1e;
-  color: #d4d4d4;
+  background: var(--pre-bg);
+  color: var(--pre-code-color);
   
   pre {
-    color: #d4d4d4;
+    color: var(--pre-code-color);
   }
   
   code {
-    color: #d4d4d4;
+    color: var(--pre-code-color);
   }
   
   /* Generic token styling for visibility */
   .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
   .o, .ow, .p, .w, .text, .err {
-    color: #d4d4d4;
+    color: var(--pre-code-color);
   }
 }
 
@@ -126,10 +126,10 @@ mjx-container {
 .dark .article-post .language- .highlight,
 .dark .article-post .language-text .highlight,
 .dark .article-post .language-plaintext .highlight {
-  background: #1e1e1e !important;
+  background: var(--pre-bg) !important;
   
   pre, code {
-    color: #9cdcfe !important;
+    color: var(--pre-code-color) !important;
   }
   
   /* Tree structure characters */
@@ -153,15 +153,15 @@ mjx-container {
 
 /* Light mode equivalents */
 body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
-  background: #f6f8fa;
-  color: #24292e;
+  background: var(--pre-bg);
+  color: var(--pre-code-color);
   
   pre, code {
-    color: #24292e;
+    color: var(--pre-code-color);
   }
   
   .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
   .o, .ow, .p, .w, .text, .err {
-    color: #24292e;
+    color: var(--pre-code-color);
   }
 }

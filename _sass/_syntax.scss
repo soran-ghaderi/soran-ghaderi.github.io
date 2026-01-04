@@ -9,16 +9,30 @@
    Background color is derived from the theme, not hardcoded.
    ===================================================== */
 
-/* Shiki code blocks - let Shiki's inline style control everything */
-pre.shiki,
-pre[class*="shiki"],
-pre[data-shiki-code] {
+/* All pre blocks - baseline styling before and after Shiki processing */
+pre {
   display: block;
   overflow-x: auto;
   margin: 1.5rem 0;
-  padding: 1rem; /* Shiki doesn't set padding, we add it */
+  padding: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--pre-border);  /* Subtle border to distinguish from page */
+  border: 1px solid var(--pre-border);
+  background-color: var(--pre-bg);
+  
+  code {
+    font-family: var(--code-font-family);
+    font-size: var(--code-font-size);
+    background: transparent;
+    padding: 0;
+    border: none;
+    color: var(--pre-code-color);
+  }
+}
+
+/* Shiki-processed code blocks */
+pre.shiki,
+pre[class*="shiki"],
+pre[data-shiki-done="true"] {
   /* Light mode: uses inline style from Shiki (default) */
   
   code {

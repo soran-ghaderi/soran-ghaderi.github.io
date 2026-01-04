@@ -1,5 +1,5 @@
 <div class="container education-container">
-  <h2 class="section-title">{{ site.education_title | default: "Education" }}</h2>
+  <h3 class="section-title">{{ site.education_title | default: "Education" }}</h3>
   {% for education in site.data.education %}
     {% include {{ education.layout | default: 'left' | append: ".html" }} item=education %}
   {% endfor %}

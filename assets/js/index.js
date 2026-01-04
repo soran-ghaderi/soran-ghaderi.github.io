@@ -148,19 +148,43 @@
       }
     });
     
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links with offset for sticky headers
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          // Use scroll-margin-top from CSS if available, otherwise use default offset
+          const scrollMarginTop = parseInt(getComputedStyle(target).scrollMarginTop) || 100;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - scrollMarginTop;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
+          
+          // Update URL hash without triggering another scroll
+          history.pushState(null, null, targetId);
         }
       });
     });
+    
+    // Handle initial page load with hash (e.g., direct link to #eq-energy)
+    if (window.location.hash) {
+      // Wait a bit for the page to fully render (especially MathJax)
+      setTimeout(function() {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          const scrollMarginTop = parseInt(getComputedStyle(target).scrollMarginTop) || 100;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - scrollMarginTop;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    }
     
     // Mobile menu auto-close
     const navbarToggle = document.querySelector('.navbar-toggle');
@@ -297,4 +321,101 @@
     // Small delay to ensure everything is rendered
     setTimeout(initCodeBlocks, 100);
   });
+})();
+
+// =====================================================
+// TABLE OF CONTENTS - Active state on scroll
+// =====================================================
+(function() {
+  function initTocHighlight() {
+    const tocNav = document.querySelector('.toc-nav');
+    if (!tocNav) return;
+    
+    const tocLinks = tocNav.querySelectorAll('a');
+    if (tocLinks.length === 0) return;
+    
+    // Get all headings that are linked in the TOC
+    const headings = [];
+    tocLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const id = href.slice(1);
+        const heading = document.getElementById(id);
+        if (heading) {
+          headings.push({ id, element: heading, link });
+        }
+      }
+    });
+    
+    if (headings.length === 0) return;
+    
+    function updateActiveLink() {
+      const scrollPosition = window.scrollY + 120; // Offset for sticky header
+      
+      let currentHeading = null;
+      
+      // Find the current heading
+      for (let i = headings.length - 1; i >= 0; i--) {
+        const heading = headings[i];
+        if (heading.element.offsetTop <= scrollPosition) {
+          currentHeading = heading;
+          break;
+        }
+      }
+      
+      // If no heading is found and we're at the top, use the first one
+      if (!currentHeading && scrollPosition < headings[0].element.offsetTop) {
+        currentHeading = headings[0];
+      }
+      
+      // Update active class
+      tocLinks.forEach(link => link.classList.remove('active'));
+      if (currentHeading) {
+        currentHeading.link.classList.add('active');
+      }
+    }
+    
+    // Throttle scroll events
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateActiveLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // Initialize on load
+    updateActiveLink();
+    
+    // Smooth scroll for TOC links
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.getElementById(href.slice(1));
+          if (target) {
+            const offset = 100; // Offset for sticky header
+            const targetPosition = target.offsetTop - offset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            // Update URL without jumping
+            history.pushState(null, null, href);
+          }
+        }
+      });
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTocHighlight);
+  } else {
+    initTocHighlight();
+  }
 })();

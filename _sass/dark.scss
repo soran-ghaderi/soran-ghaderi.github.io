@@ -29,6 +29,72 @@ body.dark {
   .container:not(.main-navigation .container) {
     background-color: var(--bg-color) !important;
   }
+  
+  // Blog post container
+  .blog-post-container {
+    background-color: var(--bg-color) !important;
+  }
+  
+  // TOC Sidebar dark mode
+  .toc-sidebar {
+    .toc-title {
+      color: var(--text-muted);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .toc-nav ul li a {
+      color: var(--text-muted);
+      
+      &:hover {
+        color: var(--link-color);
+        border-left-color: var(--link-color);
+      }
+      
+      &.active {
+        color: var(--link-color);
+        border-left-color: var(--accent-color);
+      }
+    }
+  }
+  
+  // Post header dark mode
+  .post-header {
+    .posttitle {
+      color: var(--heading-color);
+    }
+  }
+  
+  .post-meta {
+    color: var(--text-muted);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    
+    .post-author {
+      color: var(--text-color);
+    }
+  }
+  
+  // Post footer dark mode
+  .post-footer {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    
+    .tags li a {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+    }
+  }
+  
+  .post-navigation {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    
+    a {
+      color: var(--link-color);
+    }
+  }
 
   // =====================================================
   // BLOG POST / ARTICLE DARK MODE STYLING
@@ -42,6 +108,10 @@ body.dark {
     // Headers
     h1, h2, h3, h4, h5, h6 {
       color: var(--heading-color);
+    }
+    
+    h2 {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
     }
     
     h6 {

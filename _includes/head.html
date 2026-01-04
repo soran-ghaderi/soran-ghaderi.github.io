@@ -40,7 +40,6 @@
     // Shiki - TextMate grammar powered syntax highlighter (same as VS Code)
     // Using dual themes: outputs CSS variables for both light and dark themes
     // Background color is derived from the theme via --shiki-dark-bg / inline style
-    import { codeToHtml } from 'https://esm.sh/shiki@1.24.0';
     
     // Theme configuration from Jekyll central config (_config.yml)
     const SHIKI_CONFIG = {
@@ -62,14 +61,65 @@
       '': 'plaintext'
     };
     
-    async function highlightCodeBlocks() {
-      // First pass: highlight unhighlighted blocks and store original data
-      for (const block of document.querySelectorAll('pre:not([data-shiki-code]) code')) {
-        const pre = block.parentElement;
-        if (!pre || pre.tagName !== 'PRE') continue;
+    // Highlighter instance - cached for performance
+    let highlighterPromise = null;
+    
+    async function getHighlighter() {
+      if (!highlighterPromise) {
+        highlighterPromise = (async () => {
+          const { createHighlighter } = await import('https://esm.sh/shiki@1.24.0');
+          return createHighlighter({
+            themes: [SHIKI_CONFIG.lightTheme, SHIKI_CONFIG.darkTheme],
+            langs: ['python', 'javascript', 'typescript', 'bash', 'yaml', 'json', 
+                    'html', 'css', 'markdown', 'latex', 'bibtex', 'plaintext',
+                    'ruby', 'java', 'c', 'cpp', 'go', 'rust', 'sql', 'xml', 'diff']
+          });
+        })();
+      }
+      return highlighterPromise;
+    }
+    
+    async function highlightSingleBlock(highlighter, pre, code, lang) {
+      try {
+        const html = highlighter.codeToHtml(code, {
+          lang,
+          themes: {
+            light: SHIKI_CONFIG.lightTheme,
+            dark: SHIKI_CONFIG.darkTheme
+          },
+          defaultColor: 'light'
+        });
         
-        // Store original code and language BEFORE highlighting
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        const newPre = temp.firstElementChild;
+        
+        if (newPre) {
+          newPre.dataset.shikiCode = code;
+          newPre.dataset.shikiLang = lang;
+          newPre.dataset.shikiDone = 'true';
+          pre.parentNode.replaceChild(newPre, pre);
+          return true;
+        }
+      } catch (err) {
+        console.warn('Shiki highlight failed for', lang, ':', err.message);
+        // Mark as attempted to avoid infinite retries
+        pre.dataset.shikiDone = 'error';
+      }
+      return false;
+    }
+    
+    async function highlightCodeBlocks() {
+      // Collect all code blocks that need highlighting
+      const blocks = [];
+      
+      for (const block of document.querySelectorAll('pre:not([data-shiki-done]) code')) {
+        const pre = block.parentElement;
+        if (!pre || pre.tagName !== 'PRE' || pre.dataset.shikiDone) continue;
+        
         const code = block.textContent || '';
+        if (!code.trim()) continue;
+        
         let lang = 'plaintext';
         for (const cls of block.className.split(' ')) {
           if (cls.startsWith('language-')) {
@@ -79,53 +129,48 @@
         }
         lang = langMap[lang] ?? lang;
         
-        // Store on the pre element
+        // Store data and mark as processing
         pre.dataset.shikiCode = code;
         pre.dataset.shikiLang = lang;
+        blocks.push({ pre, code, lang });
       }
       
-      // Second pass: (re)highlight all blocks that have stored data
-      for (const pre of document.querySelectorAll('pre[data-shiki-code]')) {
-        const code = pre.dataset.shikiCode;
-        const lang = pre.dataset.shikiLang || 'plaintext';
+      if (blocks.length === 0) return;
+      
+      try {
+        const highlighter = await getHighlighter();
         
-        try {
-          // Use dual themes - outputs CSS variables for both themes
-          // Light theme colors go inline, dark theme colors go to --shiki-dark-* variables
-          const html = await codeToHtml(code, {
-            lang,
-            themes: {
-              light: SHIKI_CONFIG.lightTheme,
-              dark: SHIKI_CONFIG.darkTheme
-            },
-            defaultColor: 'light'  // Light colors inline, dark in --shiki-dark-* vars
-          });
-          
-          // Parse the new HTML
-          const temp = document.createElement('div');
-          temp.innerHTML = html;
-          const newPre = temp.firstElementChild;
-          
-          if (newPre) {
-            // Preserve original data on new element
-            newPre.dataset.shikiCode = code;
-            newPre.dataset.shikiLang = lang;
-            pre.parentNode.replaceChild(newPre, pre);
-          }
-        } catch (err) {
-          console.warn('Shiki failed for', lang, err.message);
-        }
+        // Process all blocks in parallel for maximum performance
+        await Promise.all(
+          blocks.map(({ pre, code, lang }) => 
+            highlightSingleBlock(highlighter, pre, code, lang)
+          )
+        );
+      } catch (err) {
+        console.error('Shiki initialization failed:', err);
       }
     }
     
-    // Initial highlight
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', highlightCodeBlocks);
-    } else {
-      highlightCodeBlocks();
+    // Robust initialization with multiple fallbacks
+    async function initShiki() {
+      try {
+        await highlightCodeBlocks();
+      } catch (err) {
+        console.error('Shiki highlighting error:', err);
+      }
     }
     
-    // No need to re-highlight on theme change - CSS handles the switch via variables
+    // Run on DOMContentLoaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initShiki);
+    } else {
+      initShiki();
+    }
+    
+    // Also run after full page load (catches late-loading content)
+    window.addEventListener('load', () => {
+      setTimeout(initShiki, 100);
+    });
     
     // Expose for manual re-highlighting
     window.shikiHighlight = highlightCodeBlocks;
@@ -193,6 +238,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
   <!-- Bootstrap JavaScript for navigation functionality -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
+  <!-- LaTeX-like citation system for blog posts -->
+  <script src="{{ '/assets/js/citations.js' | relative_url }}" defer></script>
+  <!-- Academic numbering system (figures, tables, equations) for blog posts -->
+  <script src="{{ '/assets/js/academic-numbering.js' | relative_url }}" defer></script>
 
   <!-- Resource hints for better performance -->
   <meta name="theme-color" content="#38a169">

@@ -62,18 +62,11 @@ $font-size-base: $base-font-size;                                               
 $font-size-lg: calc(#{$base-font-size} * #{$scale-ratio});                     // ~1.4rem
 $font-size-xl: calc(#{$base-font-size} * #{$scale-ratio} * #{$scale-ratio});   // ~1.76rem
 
-// Header sizes - scaled from base
-$font-size-h6: $base-font-size;                                                 // 1.125rem
-$font-size-h5: $font-size-lg;                                                   // ~1.4rem
-$font-size-h4: calc(#{$base-font-size} * 1.0);                                // ~1.5rem
-$font-size-h3: $font-size-lg;                                                   // ~1.76rem
-$font-size-h2: calc(#{$base-font-size} * #{$scale-ratio} * #{$scale-ratio} * #{$scale-ratio}); // ~2.2rem
-$font-size-h1: calc(#{$base-font-size} * #{$scale-ratio} * #{$scale-ratio} * #{$scale-ratio} * #{$scale-ratio}); // ~2.75rem
+// Header sizes - removed to use browser defaults
 
-// Special sizes
-$font-size-page-title: calc(#{$base-font-size} * 2.67);                        // ~3rem
-$font-size-section-title: calc(#{$base-font-size} * 2.22);                     // ~2.5rem
+// Special sizes (for code, math, and captions)
 $font-size-code: var(--code-font-size);                                        // Uses CSS variable from base.scss
+$font-size-math: var(--math-font-size);                                        // Uses CSS variable from base.scss
 $font-size-small: $font-size-sm;
 $font-size-caption: calc(#{$base-font-size} * 0.85);
 
@@ -286,61 +279,41 @@ a:hover {
    ===================================================== */
 
 h1 {
-  font-size: $font-size-h1;
   margin-bottom: $paragraph-margin;
   font-weight: $font-weight-semibold;
-  line-height: 1.2;
 }
 
 h2 {
   font-weight: $font-weight-medium;
-  font-size: $font-size-h2;
   margin-bottom: $heading-margin-bottom;
 }
 
 h3 {
   font-weight: $font-weight-medium;
-  font-size: $font-size-h3;
   margin-bottom: $heading-margin-bottom;
 }
 
 h4 {
   font-weight: $font-weight-medium;
-  font-size: $font-size-h4;
   margin-bottom: $spacing-sm;
   color: var(--heading-color, #333);
-  
-  @media print {
-    font-size: $font-size-lg;
-  }
 }
 
 h5 {
   font-weight: $font-weight-medium;
-  font-size: $font-size-h5;
   margin-bottom: $spacing-sm;
   color: var(--heading-color, #333);
-  
-  @media print {
-    font-size: $font-size-base;
-  }
 }
 
 h6 {
   font-weight: $font-weight-medium;
-  font-size: $font-size-h6;
   margin-bottom: $spacing-sm;
   color: var(--heading-color, #333);
-  
-  @media print {
-    font-size: $font-size-sm;
-  }
 }
 
 /* Homepage/Section-specific large headers (use these classes explicitly) */
 .section-title {
   font-weight: $font-weight-medium;
-  font-size: $font-size-section-title;
   text-align: center;
   padding-bottom: $spacing-sm;
   margin-bottom: $spacing-xl;
@@ -349,12 +322,10 @@ h6 {
 
   @media print {
     margin-bottom: $spacing-lg;
-    font-size: $font-size-h2;
   }
 }
 
 .page-title {
-  font-size: $font-size-page-title;
   margin-bottom: $spacing-sm;
   font-weight: $font-weight-semibold;
 }
@@ -408,9 +379,8 @@ mark {
     text-align: left;
   }
   
-  /* Article headers - uses proper heading scale (h1=h1, h2=h2, etc.) */
+  /* Article headers - uses browser default sizes */
   h1 {
-    font-size: $font-size-h1;
     font-weight: $font-weight-semibold;
     margin-top: $spacing-2xl;
     margin-bottom: $paragraph-margin;
@@ -418,7 +388,6 @@ mark {
   }
   
   h2 {
-    font-size: $font-size-h2;
     font-weight: $font-weight-light;
     margin-top: $spacing-xl;
     margin-bottom: $heading-margin-bottom;
@@ -426,7 +395,6 @@ mark {
   }
   
   h3 {
-    font-size: $font-size-h3;
     font-weight: $font-weight-light;
     margin-top: $spacing-xl;
     margin-bottom: $heading-margin-bottom;
@@ -434,7 +402,6 @@ mark {
   }
   
   h4 {
-    font-size: $font-size-h4;
     font-weight: $font-weight-light;
     margin-top: $spacing-lg;
     margin-bottom: $spacing-sm;
@@ -442,7 +409,6 @@ mark {
   }
   
   h5 {
-    font-size: $font-size-h5;
     font-weight: $font-weight-light;
     margin-top: $spacing-lg;
     margin-bottom: $spacing-sm;
@@ -450,7 +416,6 @@ mark {
   }
   
   h6 {
-    font-size: $font-size-h6;
     font-weight: $font-weight-light;
     margin-top: $spacing-md;
     margin-bottom: $spacing-sm;
@@ -666,6 +631,23 @@ mark {
     }
   }
   
+  /* Academic numbering - equation numbers and cross-references */
+  .equation-number,
+  .ref-link,
+  .eqref-link,
+  .ref-placeholder,
+  .eqref-placeholder {
+    overflow: visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+      height: 0;
+      width: 0;
+    }
+  }
+  
   /* Inline math - fix vertical alignment */
   mjx-container:not([display="true"]) {
     display: inline-block !important;
@@ -696,6 +678,12 @@ mark {
     margin: 1.5rem 0 !important;
     text-align: center;
     overflow: visible !important;
+    font-size: inherit;  // Inherit from parent to match surrounding text
+  }
+  
+  /* Ensure MathJax output matches text size */
+  mjx-container {
+    font-size: $font-size-math !important;  // Derived from global --math-font-size
   }
   
   /* Definition lists */
@@ -781,7 +769,6 @@ mark {
 
 /* Post title styling */
 .posttitle {
-  font-size: $font-size-section-title;
   font-weight: 700;
   line-height: 1.2;
   margin-top: 2.5rem;
@@ -799,7 +786,6 @@ mark {
   margin: 1.5rem 0;
   
   h3 {
-    font-size: $font-size-h5;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--heading-color, #1a202c);
@@ -836,5 +822,27 @@ mark {
         }
       }
     }
+  }
+}
+
+/* =====================================================
+   GLOBAL SCROLLBAR FIX FOR ACADEMIC ELEMENTS
+   Prevents scrollbars on equation numbers, cross-references
+   ===================================================== */
+.equation-number,
+.ref-link,
+.eqref-link,
+.ref-placeholder,
+.eqref-placeholder,
+.academic-equation .equation-number,
+span.equation-number {
+  overflow: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0;
   }
 }

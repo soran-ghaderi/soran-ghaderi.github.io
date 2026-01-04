@@ -31,6 +31,7 @@
   // Base font size (change this to scale all typography)
   --base-font-size: 1.6rem;
   --code-font-size: calc(var(--base-font-size) * 0.9);  // Derived from base font size (90%)
+  --math-font-size: calc(var(--base-font-size) * 1.2);              // Math equations use base font size
   
   // =====================================================
   // LIGHT MODE COLORS (default)
@@ -80,6 +81,7 @@
   --table-border: #d0d7de;                  // Table borders
   --table-header-bg: rgba(45, 55, 72, 0.05);// Table header background
   --table-row-hover: rgba(45, 55, 72, 0.03);// Table row hover
+  --table-row-alt: rgba(45, 55, 72, 0.02);  // Alternating table row background
   --hr-color: #d0d7de;                      // Horizontal rule color
   --toc-bg: rgba(45, 55, 72, 0.05);         // TOC background
   --kbd-bg: #f6f8fa;                        // Keyboard input background
@@ -138,6 +140,7 @@ body.dark {
   --table-border: #4a5568;                 // Table borders
   --table-header-bg: rgba(45, 55, 72, 0.5);// Table header background
   --table-row-hover: rgba(45, 55, 72, 0.3);// Table row hover
+  --table-row-alt: rgba(45, 55, 72, 0.2);  // Alternating table row background
   --hr-color: #4a5568;                     // Horizontal rule color
   --toc-bg: rgba(45, 55, 72, 0.5);         // TOC background
   --kbd-bg: #2d3748;                       // Keyboard input background

@@ -115,7 +115,7 @@ about_profile_image: images/profile.jpeg #Directory of profile image (eg. images
 about_content: | # this will include new lines to allow paragraphs
   
   <section>
-    <h2>About</h2>
+    <h3>About</h3>
   <p>
   Research intern at <a href="https://blender.cs.illinois.edu/">UIUC Blender Lab</a> working on energy-based models. 
   MSc AI (Distinction) from <a href="https://www.essex.ac.uk/">Essex</a>, supervised by 
@@ -124,7 +124,7 @@ about_content: | # this will include new lines to allow paragraphs
   </section>
   
   <section>
-    <h2>Research Interests</h2>
+    <h3>Research Interests</h3>
   <p>
   I work on differentiable approaches for iterative reasoning and planning in uncertain environments. 
   Building more capable, efficient, and generalizable AI systems, particularly at the intersection of deep learning, 
@@ -148,7 +148,7 @@ about_content: | # this will include new lines to allow paragraphs
   <strong>Current Focus</strong>: Unifying diffusion, flow-based, and energy-based models through statistical mechanics and differential geometry—toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
   </p>
   
-  <h3>Research Highlights</h3>
+  <h4>Research Highlights</h4>
   <ul>
       <li><strong>Reasoning & Planning</strong>: Agents that reason, plan, and adapt to novel environments</li>
       <li><strong>Representation Learning</strong>: Learning the geometry of parameters and data distributions</li>
@@ -159,7 +159,7 @@ about_content: | # this will include new lines to allow paragraphs
   
   
   <section>
-    <h2>Open Source</h2>
+    <h3>Open Source</h3>
     <p><strong>Current libraries</strong></p>
     <ul>
         <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> (8K+ downloads) · EBMs, diffusion, flow matching, SDE/ODE integrators</li>
@@ -178,7 +178,7 @@ about_content: | # this will include new lines to allow paragraphs
   </section>
   
   <section>
-    <h2>News</h2>
+    <h3>News</h3>
     <ul>
         <li>Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
         <li>MSc defended at Essex (<a href="https://soran-ghaderi.github.io/nir/">NIR thesis</a>) - Oct. 2024</li>
@@ -186,7 +186,7 @@ about_content: | # this will include new lines to allow paragraphs
   </section>
   
   <section>
-    <h2>Awards</h2>
+    <h3>Awards</h3>
     <ul>
         <li>Full scholarship for MSc AI, University of Essex</li>
     </ul>

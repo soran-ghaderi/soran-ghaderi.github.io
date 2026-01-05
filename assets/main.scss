@@ -216,55 +216,110 @@ body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .h
   display: none !important;
 }
 
-/* References section styling */
-.references-section {
-  margin-top: calc(var(--base-font-size) * 2);
+/* =====================================================
+   ACADEMIC REFERENCES SECTION
+   Clean, scholarly bibliography formatting
+   Supports: APA, IEEE, Chicago, Vancouver styles
+   Style controlled via _config.yml citation_style
+   ===================================================== */
+
+/* Generated references container */
+[data-generated="references"] {
+  margin-top: calc(var(--base-font-size) * 2.5);
   padding-top: calc(var(--base-font-size) * 1.5);
-  border-top: 1px solid var(--hr-color);
+  border-top: 2px solid var(--hr-color);
+  
+  /* References heading */
+  h2 {
+    font-size: calc(var(--base-font-size) * 1.5);
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-bottom: calc(var(--base-font-size) * 1.5);
+    color: var(--heading-color);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* References ordered list - academic style with hanging indent */
+.references-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: bib-counter;
+}
+
+/* Individual bibliography entry - clean academic formatting */
+.bib-entry {
+  display: block;
+  position: relative;
+  padding-left: calc(var(--base-font-size) * 2.2);
+  margin-bottom: calc(var(--base-font-size) * 1);
+  line-height: 1.65;
+  font-size: calc(var(--base-font-size) * 0.95);
+  font-family: var(--font-body);
+  color: var(--text-color);
+  text-align: left;
+  counter-increment: bib-counter;
+  
+  /* Reference number (in brackets) - aligned with first line of text */
+  &::before {
+    content: "[" counter(bib-counter) "]";
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.65;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-size: calc(var(--base-font-size) * 0.95);
+    min-width: calc(var(--base-font-size) * 2);
+  }
+  
+  /* Hanging indent for wrapped lines */
+  text-indent: 0;
+  
+  /* Target highlight - transparent, no background */
+  &:target {
+    /* No background - clean academic style */
+  }
+  
+  /* Italic text (titles, venues) */
+  em {
+    font-style: italic;
+  }
+  
+  /* Links in references */
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+    word-break: break-all;
+    
+    &:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+  }
+}
+
+/* No highlight animation needed - keeping it clean */
+
+/* Legacy class support */
+.references-section {
+  margin-top: calc(var(--base-font-size) * 2.5);
+  padding-top: calc(var(--base-font-size) * 1.5);
+  border-top: 2px solid var(--hr-color);
 }
 
 .references-title {
-  font-size: calc(var(--base-font-size) * 1.4);
+  font-size: calc(var(--base-font-size) * 1.5);
   font-family: var(--font-body);
-  font-weight: 600;
-  margin-bottom: calc(var(--base-font-size) * 1.2);
+  font-weight: 700;
+  margin-bottom: calc(var(--base-font-size) * 1.5);
   color: var(--heading-color);
 }
 
-.references-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  counter-reset: none;
-}
-
-.bib-entry {
-  display: flex;
-  gap: calc(var(--base-font-size) * 0.5);
-  padding: calc(var(--base-font-size) * 0.5) calc(var(--base-font-size) * 0.35);
-  margin-bottom: calc(var(--base-font-size) * 0.35);
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  line-height: 1.6;
-  cursor: pointer;
-  
-  &:hover {
-    background-color: var(--table-row-hover);
-  }
-  
-  &:target,
-  &.bib-highlight {
-    background-color: rgba(var(--accent-rgb), 0.15);
-  }
-}
-
+/* Deprecated - keeping for backward compatibility */
 .bib-number {
-  flex-shrink: 0;
-  font-weight: 600;
-  font-family: var(--font-body);
-  color: var(--text-muted);
-  min-width: calc(var(--base-font-size) * 1.5);
-  font-size: calc(var(--base-font-size) * 0.9);
+  display: none;
 }
 
 .bib-content {
@@ -276,11 +331,11 @@ body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .h
 
 .bib-authors {
   font-weight: 500;
-  color: var(--text-strong);
+  color: var(--text-color);
 }
 
 .bib-year {
-  color: var(--text-muted);
+  color: var(--text-color);
 }
 
 .bib-title {
@@ -289,17 +344,18 @@ body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .h
 
 .bib-journal,
 .bib-booktitle {
+  font-style: italic;
   color: var(--text-color);
 }
 
 .bib-volume {
-  font-weight: 500;
+  font-style: italic;
 }
 
 .bib-doi,
 .bib-url,
 .bib-arxiv {
-  font-size: calc(var(--base-font-size) * 0.85);
+  font-size: calc(var(--base-font-size) * 0.9);
   color: var(--link-color);
   word-break: break-all;
   

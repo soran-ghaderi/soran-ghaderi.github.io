@@ -1,0 +1,56 @@
+name: CI - Build and Test
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+# Cancel in-progress runs for the same PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true  # Caches gems for faster builds
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check for build errors
+        run: |
+          if [ -d "_site" ]; then
+            echo "✅ Build successful! Site generated in _site/"
+            echo "📁 Files generated: $(find _site -type f | wc -l)"
+          else
+            echo "❌ Build failed - _site directory not found"
+            exit 1
+          fi
+
+      - name: Validate HTML (optional)
+        continue-on-error: true
+        run: |
+          gem install html-proofer
+          htmlproofer _site \
+            --disable-external \
+            --ignore-urls "/^http:\/\/localhost/,/^#/" \
+            --allow-missing-href \
+            --ignore-missing-alt \
+            --no-enforce-https \
+            || echo "⚠️ HTML validation completed with warnings"

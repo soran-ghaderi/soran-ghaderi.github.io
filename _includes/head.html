@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="iy_Kc5UEJ0ls_AP4oXtSSr8F3Vudo6LP933qWL3Tnfk" />
   <meta name="google-site-verification" content="X36l-RB7V-87ghFwPneHzY9ubJ_GkVdCKPlND3V1xbw" />
+  <!-- Citation style for academic referencing (apa, ieee, chicago, vancouver) -->
+  <meta name="citation-style" content="{{ site.citation_style | default: 'apa' }}">
 
   <!-- Performance optimizations -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -255,7 +257,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
   <!-- Bootstrap JavaScript for navigation functionality -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
-  <!-- LaTeX-like citation system for blog posts -->
+  <!-- Bibliography/citations (dependency-free) for blog posts -->
   <script src="{{ '/assets/js/citations.js' | relative_url }}" defer></script>
   <!-- Academic numbering system (figures, tables, equations) for blog posts -->
   <script src="{{ '/assets/js/academic-numbering.js' | relative_url }}" defer></script>

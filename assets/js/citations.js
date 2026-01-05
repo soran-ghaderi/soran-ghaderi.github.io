@@ -1,496 +1,658 @@
 /**
- * LaTeX-like Citation System for Jekyll Blog Posts
- * 
- * This script provides a citation/reference system similar to LaTeX/BibTeX.
- * 
- * Usage in Markdown posts:
- * 
- * 1. Inline citations: {% cite key %} or \cite{key} - renders as [1], [2], etc.
- *    Multiple citations: {% cite key1, key2 %} or \cite{key1,key2} - renders as [1, 2]
- * 
- * 2. Bibliography section at the end of the post:
- *    {% bibliography %}
- *    @article{einstein1905,
- *      author = {Albert Einstein},
- *      title = {On the Electrodynamics of Moving Bodies},
- *      journal = {Annalen der Physik},
- *      year = {1905},
- *      volume = {17},
- *      pages = {891--921},
- *      doi = {10.1002/andp.19053221004},
- *      url = {https://doi.org/10.1002/andp.19053221004}
- *    }
- *    @book{knuth1997,
- *      author = {Donald E. Knuth},
- *      title = {The Art of Computer Programming},
- *      publisher = {Addison-Wesley},
- *      year = {1997},
- *      volume = {1},
- *      edition = {3rd}
- *    }
- *    {% endbibliography %}
- * 
- * The bibliography section is parsed but NOT displayed as raw text.
- * A formatted "References" section is automatically generated at the bottom.
+ * Bibliography + citation renderer for Jekyll posts (dependency-free).
+ *
+ * Authoring pattern:
+ * - Inline citations: <cite data-key="key"></cite> or <cite data-key="key1, key2"></cite>
+ * - BibTeX source (hidden): <div class="bibliography-data" style="display:none;"> ... </div>
+ *
+ * Output:
+ * - In-text numeric citations (e.g., [1], [1, 2]) with links to a generated
+ *   References section appended at the end of the article.
  */
 
-(function() {
+(function () {
   'use strict';
 
-  // ============================================================
-  // BibTeX Parser
-  // ============================================================
-  
-  /**
-   * Parse a BibTeX entry string into a structured object
-   * @param {string} bibtex - Raw BibTeX string
-   * @returns {Object} Map of citation keys to entry objects
-   */
-  function parseBibTeX(bibtex) {
-    const entries = {};
-    
-    // Match @type{key, ... }
-    // This regex handles nested braces properly
-    const entryRegex = /@(\w+)\s*\{\s*([^,\s]+)\s*,\s*([\s\S]*?)\n\s*\}/g;
-    
-    let match;
-    while ((match = entryRegex.exec(bibtex)) !== null) {
-      const type = match[1].toLowerCase();
-      const key = match[2].trim();
-      const fieldsStr = match[3];
-      
-      const entry = {
-        type: type,
-        key: key,
-        fields: {}
-      };
-      
-      // Parse individual fields: field = {value} or field = "value" or field = number
-      const fieldRegex = /(\w+)\s*=\s*(?:\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}|"([^"]*)"|(\d+))/g;
-      
-      let fieldMatch;
-      while ((fieldMatch = fieldRegex.exec(fieldsStr)) !== null) {
-        const fieldName = fieldMatch[1].toLowerCase();
-        const fieldValue = (fieldMatch[2] || fieldMatch[3] || fieldMatch[4] || '').trim();
-        entry.fields[fieldName] = fieldValue;
-      }
-      
-      entries[key] = entry;
+  function getArticleRoot() {
+    return document.querySelector('.article-post') || document.querySelector('article') || document.body;
+  }
+
+  function findBibliographyData(root) {
+    return (
+      (root && root.querySelector && root.querySelector('.bibliography-data')) ||
+      document.querySelector('.bibliography-data') ||
+      null
+    );
+  }
+
+  function splitKeys(keys) {
+    return String(keys || '')
+      .split(',')
+      .map(function (k) {
+        return k.trim();
+      })
+      .filter(Boolean);
+  }
+
+  function makeRefId(key) {
+    return (
+      'ref-' +
+      String(key || '')
+        .trim()
+        .replace(/[^A-Za-z0-9_-]/g, '_')
+    );
+  }
+
+  function normalizeWhitespace(s) {
+    return String(s || '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function decodeBibValue(raw) {
+    var v = String(raw || '').trim();
+    if (!v) return '';
+    // Remove wrapping braces or quotes.
+    if ((v[0] === '{' && v[v.length - 1] === '}') || (v[0] === '"' && v[v.length - 1] === '"')) {
+      v = v.slice(1, -1);
     }
-    
+    // Unescape common sequences.
+    v = v.replace(/\\"/g, '"').replace(/\\n/g, ' ');
+    return normalizeWhitespace(v);
+  }
+
+  function parseBibTeX(text) {
+    // Minimal BibTeX parser for common entries:
+    // @type{key, field = {value}, ...}
+    var src = String(text || '');
+    var i = 0;
+    var n = src.length;
+    var entries = Object.create(null);
+
+    function isWs(ch) {
+      return ch === ' ' || ch === '\n' || ch === '\r' || ch === '\t' || ch === '\f';
+    }
+
+    function skipWs() {
+      while (i < n && isWs(src[i])) i++;
+    }
+
+    function readUntil(stopChars) {
+      var start = i;
+      while (i < n && stopChars.indexOf(src[i]) === -1) i++;
+      return src.slice(start, i);
+    }
+
+    function readBalancedBraces() {
+      // Assumes src[i] === '{'
+      var start = i;
+      var depth = 0;
+      while (i < n) {
+        var ch = src[i];
+        if (ch === '{') depth++;
+        else if (ch === '}') {
+          depth--;
+          if (depth === 0) {
+            i++; // include closing brace
+            break;
+          }
+        }
+        i++;
+      }
+      return src.slice(start, i);
+    }
+
+    function readQuotedString() {
+      // Assumes src[i] === '"'
+      var start = i;
+      i++;
+      while (i < n) {
+        var ch = src[i];
+        if (ch === '\\') {
+          i += 2;
+          continue;
+        }
+        if (ch === '"') {
+          i++;
+          break;
+        }
+        i++;
+      }
+      return src.slice(start, i);
+    }
+
+    function readValue() {
+      skipWs();
+      if (i >= n) return '';
+      var ch = src[i];
+      if (ch === '{') return readBalancedBraces();
+      if (ch === '"') return readQuotedString();
+      // Bareword value (e.g., 2025)
+      var v = readUntil(',}');
+      return v;
+    }
+
+    while (i < n) {
+      var at = src.indexOf('@', i);
+      if (at === -1) break;
+      i = at + 1;
+      skipWs();
+
+      var type = readUntil('{(');
+      if (!type) continue;
+      type = type.trim().toLowerCase();
+      if (i >= n) break;
+
+      var open = src[i];
+      if (open !== '{' && open !== '(') continue;
+      var close = open === '{' ? '}' : ')';
+      i++; // skip open
+
+      skipWs();
+      var key = readUntil(',');
+      key = String(key || '').trim();
+      if (!key) {
+        // Skip malformed entry.
+        i = src.indexOf(close, i);
+        if (i === -1) break;
+        i++;
+        continue;
+      }
+      if (src[i] === ',') i++;
+
+      var fields = Object.create(null);
+      fields._type = type;
+      fields._key = key;
+
+      while (i < n) {
+        skipWs();
+        if (src[i] === close) {
+          i++;
+          break;
+        }
+        var name = readUntil('=,}\n\r\t ');
+        name = String(name || '').trim().toLowerCase();
+        skipWs();
+        if (src[i] !== '=') {
+          // Skip to next comma/close.
+          var nextComma = src.indexOf(',', i);
+          var nextClose = src.indexOf(close, i);
+          if (nextClose !== -1 && (nextComma === -1 || nextClose < nextComma)) {
+            i = nextClose + 1;
+            break;
+          }
+          if (nextComma === -1) break;
+          i = nextComma + 1;
+          continue;
+        }
+        i++; // skip '='
+
+        var rawVal = readValue();
+        var val = decodeBibValue(rawVal);
+        if (name) fields[name] = val;
+
+        skipWs();
+        if (src[i] === ',') i++;
+      }
+
+      entries[key] = fields;
+    }
+
     return entries;
   }
 
-  // ============================================================
-  // Citation Formatting (APA-like style)
-  // ============================================================
-  
-  /**
-   * Format author names from BibTeX format to readable format
-   * @param {string} authors - BibTeX author string (e.g., "Last, First and Last2, First2")
-   * @returns {string} Formatted author string
-   */
-  function formatAuthors(authors) {
-    if (!authors) return '';
+  function hasEntry(bibByKey, key) {
+    return !!(bibByKey && Object.prototype.hasOwnProperty.call(bibByKey, key));
+  }
+
+  function getEntry(bibByKey, key) {
+    return hasEntry(bibByKey, key) ? bibByKey[key] : null;
+  }
+
+  function escapeHtml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // Get citation style from Jekyll config (injected via data attribute or default)
+  function getCitationStyle() {
+    // Check for data attribute on html element (set by Jekyll)
+    var htmlEl = document.documentElement;
+    var style = htmlEl.getAttribute('data-citation-style');
+    if (style) return style.toLowerCase();
+    // Check meta tag
+    var meta = document.querySelector('meta[name="citation-style"]');
+    if (meta && meta.content) return meta.content.toLowerCase();
+    // Default to APA
+    return 'apa';
+  }
+
+  // Format author names according to style
+  function formatAuthors(authorStr, style) {
+    if (!authorStr) return '';
+    // Split on " and " to handle multiple authors
+    var authors = authorStr.split(/\s+and\s+/i);
+    var formatted = [];
     
-    // Split by " and " (BibTeX convention)
-    const authorList = authors.split(/\s+and\s+/i);
-    
-    const formatted = authorList.map(author => {
-      author = author.trim();
-      // Handle "Last, First" format
-      if (author.includes(',')) {
-        const parts = author.split(',').map(p => p.trim());
-        const lastName = parts[0];
-        const firstName = parts[1] || '';
+    for (var i = 0; i < authors.length; i++) {
+      var author = authors[i].trim();
+      if (!author) continue;
+      
+      // Check if already in "Last, First" format
+      var parts;
+      if (author.indexOf(',') !== -1) {
+        parts = author.split(',');
+        var lastName = parts[0].trim();
+        var firstName = parts.slice(1).join(',').trim();
         // Get initials from first name
-        const initials = firstName.split(/\s+/)
-          .map(n => n.charAt(0).toUpperCase() + '.')
-          .join(' ');
-        return `${lastName}, ${initials}`;
-      }
-      // Handle "First Last" format
-      const parts = author.split(/\s+/);
-      if (parts.length > 1) {
-        const lastName = parts[parts.length - 1];
-        const firstNames = parts.slice(0, -1);
-        const initials = firstNames.map(n => n.charAt(0).toUpperCase() + '.').join(' ');
-        return `${lastName}, ${initials}`;
-      }
-      return author;
-    });
-    
-    if (formatted.length === 1) {
-      return formatted[0];
-    } else if (formatted.length === 2) {
-      return `${formatted[0]} & ${formatted[1]}`;
-    } else {
-      return formatted.slice(0, -1).join(', ') + ', & ' + formatted[formatted.length - 1];
-    }
-  }
-
-  /**
-   * Format a single bibliography entry
-   * @param {Object} entry - Parsed BibTeX entry
-   * @param {number} index - Citation number (1-based)
-   * @returns {string} HTML string for the bibliography entry
-   */
-  function formatBibEntry(entry, index) {
-    const f = entry.fields;
-    let html = '';
-    
-    // Authors
-    const authors = formatAuthors(f.author);
-    if (authors) {
-      html += `<span class="bib-authors">${authors}</span> `;
-    }
-    
-    // Year
-    if (f.year) {
-      html += `<span class="bib-year">(${f.year}).</span> `;
-    }
-    
-    // Title
-    if (f.title) {
-      // Remove braces used for capitalization preservation in BibTeX
-      const title = f.title.replace(/[{}]/g, '');
-      html += `<span class="bib-title">${title}.</span> `;
-    }
-    
-    // Type-specific formatting
-    switch (entry.type) {
-      case 'article':
-        if (f.journal) {
-          html += `<em class="bib-journal">${f.journal}</em>`;
-          if (f.volume) {
-            html += `, <span class="bib-volume">${f.volume}</span>`;
-            if (f.number) {
-              html += `(${f.number})`;
-            }
-          }
-          if (f.pages) {
-            html += `, ${f.pages.replace('--', '–')}`;
-          }
-          html += '. ';
-        }
-        break;
+        var initials = firstName.split(/\s+/).map(function(n) {
+          return n.charAt(0).toUpperCase() + '.';
+        }).join(' ');
         
-      case 'inproceedings':
-      case 'conference':
-        if (f.booktitle) {
-          html += `In <em class="bib-booktitle">${f.booktitle}</em>`;
-          if (f.pages) {
-            html += ` (pp. ${f.pages.replace('--', '–')})`;
-          }
-          html += '. ';
-          if (f.publisher) {
-            html += `${f.publisher}. `;
-          }
+        if (style === 'ieee') {
+          formatted.push(initials + ' ' + lastName);
+        } else {
+          formatted.push(lastName + ', ' + initials);
         }
-        break;
-        
-      case 'book':
-        if (f.edition) {
-          html += `(${f.edition} ed.). `;
-        }
-        if (f.publisher) {
-          html += `${f.publisher}. `;
-        }
-        break;
-        
-      case 'phdthesis':
-      case 'mastersthesis':
-        const thesisType = entry.type === 'phdthesis' ? 'Doctoral dissertation' : 'Master\'s thesis';
-        html += `<em>${thesisType}</em>`;
-        if (f.school) {
-          html += `, ${f.school}`;
-        }
-        html += '. ';
-        break;
-        
-      case 'techreport':
-        if (f.institution) {
-          html += `${f.institution}. `;
-        }
-        if (f.number) {
-          html += `(Technical Report No. ${f.number}). `;
-        }
-        break;
-        
-      case 'misc':
-      case 'online':
-        if (f.howpublished) {
-          html += `${f.howpublished}. `;
-        }
-        if (f.note) {
-          html += `${f.note}. `;
-        }
-        break;
-        
-      default:
-        // Generic fallback
-        if (f.publisher) {
-          html += `${f.publisher}. `;
-        }
-    }
-    
-    // DOI or URL
-    if (f.doi) {
-      const doiUrl = f.doi.startsWith('http') ? f.doi : `https://doi.org/${f.doi}`;
-      html += `<a href="${doiUrl}" class="bib-doi" target="_blank" rel="noopener">https://doi.org/${f.doi.replace(/^https?:\/\/doi\.org\//, '')}</a>`;
-    } else if (f.url) {
-      html += `<a href="${f.url}" class="bib-url" target="_blank" rel="noopener">${f.url}</a>`;
-    }
-    
-    // arXiv
-    if (f.eprint && f.archiveprefix && f.archiveprefix.toLowerCase() === 'arxiv') {
-      html += ` <a href="https://arxiv.org/abs/${f.eprint}" class="bib-arxiv" target="_blank" rel="noopener">arXiv:${f.eprint}</a>`;
-    }
-    
-    return `<li id="ref-${entry.key}" class="bib-entry" data-citation-key="${entry.key}">
-      <span class="bib-number">[${index}]</span>
-      <span class="bib-content">${html}</span>
-    </li>`;
-  }
-
-  // ============================================================
-  // Main Processing Function
-  // ============================================================
-  
-  /**
-   * Process citations in the document
-   */
-  function processCitations() {
-    const articlePost = document.querySelector('.article-post');
-    if (!articlePost) return;
-    
-    // Find bibliography block
-    // Look for: {% bibliography %} ... {% endbibliography %}
-    // Or HTML comments: <!-- bibliography --> ... <!-- endbibliography -->
-    // Or custom div: <div class="bibliography-source"> ... </div>
-    
-    let bibContent = '';
-    let bibElement = null;
-    
-    // Method 1: Look for <div class="bibliography-source">
-    bibElement = articlePost.querySelector('.bibliography-source');
-    if (bibElement) {
-      bibContent = bibElement.textContent || bibElement.innerText;
-      bibElement.style.display = 'none';
-    }
-    
-    // Method 2: Look for <script type="text/bibliography">
-    if (!bibContent) {
-      const bibScript = articlePost.querySelector('script[type="text/bibliography"]');
-      if (bibScript) {
-        bibContent = bibScript.textContent;
-        bibElement = bibScript;
-      }
-    }
-    
-    // Method 3: Look for HTML pattern {% bibliography %} ... {% endbibliography %}
-    // These become text nodes after Jekyll processing
-    if (!bibContent) {
-      const html = articlePost.innerHTML;
-      const bibMatch = html.match(/\{%\s*bibliography\s*%\}([\s\S]*?)\{%\s*endbibliography\s*%\}/);
-      if (bibMatch) {
-        bibContent = bibMatch[1];
-        // Remove the bibliography block from display
-        articlePost.innerHTML = html.replace(
-          /\{%\s*bibliography\s*%\}[\s\S]*?\{%\s*endbibliography\s*%\}/,
-          '<div class="bibliography-placeholder" style="display:none;"></div>'
-        );
-      }
-    }
-    
-    if (!bibContent) {
-      // No bibliography found, nothing to process
-      return;
-    }
-    
-    // Parse BibTeX entries
-    const entries = parseBibTeX(bibContent);
-    const entryKeys = Object.keys(entries);
-    
-    if (entryKeys.length === 0) {
-      console.warn('Citations: No valid BibTeX entries found in bibliography');
-      return;
-    }
-    
-    // Track which citations are actually used and their order
-    const citedKeys = [];
-    const keyToNumber = {};
-    
-    /**
-     * Process citation keys and return the replacement HTML
-     */
-    function processCiteKeys(keys) {
-      const numbers = [];
-      
-      keys.forEach(key => {
-        if (!entries[key]) {
-          console.warn(`Citations: Unknown citation key "${key}"`);
-          numbers.push('?');
-          return;
-        }
-        
-        if (!keyToNumber[key]) {
-          citedKeys.push(key);
-          keyToNumber[key] = citedKeys.length;
-        }
-        numbers.push(keyToNumber[key]);
-      });
-      
-      // Generate the citation link(s)
-      const links = keys.map((key, i) => {
-        const num = numbers[i];
-        if (num === '?') {
-          return `<span class="citation-missing">[?]</span>`;
-        }
-        return `<a href="#ref-${key}" class="citation-link" data-citation-key="${key}">${num}</a>`;
-      });
-      
-      return `<span class="citation">[${links.join(', ')}]</span>`;
-    }
-    
-    /**
-     * Process a regex citation match and return the replacement HTML
-     */
-    function processCiteMatch(match, keysStr) {
-      const keys = keysStr.split(/\s*,\s*/).map(k => k.trim()).filter(k => k);
-      return processCiteKeys(keys);
-    }
-    
-    // First, process placeholder spans created by Jekyll plugin
-    // These have the format: <span class="cite-placeholder" data-cite-keys="key1, key2"></span>
-    const placeholders = articlePost.querySelectorAll('.cite-placeholder');
-    placeholders.forEach(placeholder => {
-      const keysAttr = placeholder.getAttribute('data-cite-keys');
-      if (keysAttr) {
-        const keys = keysAttr.split(/\s*,\s*/).map(k => k.trim()).filter(k => k);
-        const citationHtml = processCiteKeys(keys);
-        const temp = document.createElement('span');
-        temp.innerHTML = citationHtml;
-        placeholder.replaceWith(temp.firstElementChild);
-      }
-    });
-    
-    // Find all citations in the text and replace them
-    // Patterns: {% cite key %}, {% cite key1, key2 %}, \cite{key}, \cite{key1,key2}
-    let content = articlePost.innerHTML;
-    
-    // Pattern for {% cite ... %}
-    const jsCitePattern = /\{%\s*cite\s+([\w,\s-]+)\s*%\}/g;
-    // Pattern for \cite{...} (may be escaped as \\cite or rendered differently)
-    const latexCitePattern = /\\cite\{([\w,\s-]+)\}/g;
-    // Pattern for escaped versions that might appear
-    const escapedCitePattern = /\\\\cite\{([\w,\s-]+)\}/g;
-    
-    // Replace all citation patterns
-    content = content.replace(jsCitePattern, processCiteMatch);
-    content = content.replace(latexCitePattern, processCiteMatch);
-    content = content.replace(escapedCitePattern, processCiteMatch);
-    
-    // Also handle plain text that might have been rendered
-    // Look for [cite:key] or [@key] patterns (alternative syntax)
-    const altCitePattern = /\[(?:cite:|@)([\w,\s-]+)\]/g;
-    content = content.replace(altCitePattern, processCiteMatch);
-    
-    articlePost.innerHTML = content;
-    
-    // Generate the references section if we have citations
-    if (citedKeys.length > 0) {
-      const referencesHtml = generateReferencesSection(entries, citedKeys, keyToNumber);
-      
-      // Find where to insert (before post footer or at end of article-post)
-      const postFooter = document.querySelector('.post-footer');
-      const insertTarget = postFooter || articlePost;
-      
-      const refsDiv = document.createElement('div');
-      refsDiv.innerHTML = referencesHtml;
-      
-      if (postFooter) {
-        postFooter.parentNode.insertBefore(refsDiv.firstElementChild, postFooter);
       } else {
-        articlePost.appendChild(refsDiv.firstElementChild);
-      }
-      
-      // Add click handlers for smooth scrolling to references
-      document.querySelectorAll('.citation-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
-          const target = document.getElementById(targetId);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // Highlight the reference briefly
-            target.classList.add('bib-highlight');
-            setTimeout(() => target.classList.remove('bib-highlight'), 2000);
-          }
-        });
-      });
-      
-      // Add back-links from references to citations
-      document.querySelectorAll('.bib-entry').forEach(entry => {
-        const key = entry.dataset.citationKey;
-        entry.addEventListener('click', function(e) {
-          if (e.target.tagName === 'A') return; // Don't interfere with actual links
+        // "First Last" format
+        parts = author.split(/\s+/);
+        if (parts.length === 1) {
+          formatted.push(parts[0]);
+        } else {
+          var lastName = parts[parts.length - 1];
+          var initials = parts.slice(0, -1).map(function(n) {
+            return n.charAt(0).toUpperCase() + '.';
+          }).join(' ');
           
-          // Find first citation of this reference
-          const citation = document.querySelector(`.citation-link[data-citation-key="${key}"]`);
-          if (citation) {
-            citation.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // Highlight the citation briefly
-            const parent = citation.closest('.citation');
-            if (parent) {
-              parent.classList.add('citation-highlight');
-              setTimeout(() => parent.classList.remove('citation-highlight'), 2000);
-            }
+          if (style === 'ieee') {
+            formatted.push(initials + ' ' + lastName);
+          } else {
+            formatted.push(lastName + ', ' + initials);
           }
-        });
-      });
+        }
+      }
+    }
+    
+    // Join authors according to style
+    if (formatted.length === 0) return '';
+    if (formatted.length === 1) return formatted[0];
+    if (formatted.length === 2) {
+      if (style === 'apa') return formatted[0] + ', & ' + formatted[1];
+      if (style === 'ieee') return formatted[0] + ' and ' + formatted[1];
+      return formatted[0] + ' and ' + formatted[1];
+    }
+    // 3+ authors
+    var last = formatted.pop();
+    if (style === 'apa') return formatted.join(', ') + ', & ' + last;
+    if (style === 'ieee') return formatted.join(', ') + ', and ' + last;
+    return formatted.join(', ') + ', and ' + last;
+  }
+
+  // Format URL/DOI link
+  function formatLink(url, doi) {
+    var href = '';
+    var display = '';
+    if (doi) {
+      href = doi.indexOf('http') === 0 ? doi : 'https://doi.org/' + doi;
+      display = href;
+    } else if (url) {
+      href = url.trim();
+      display = href;
+    }
+    if (!href) return '';
+    return '<a href="' + escapeHtml(href) + '" rel="noopener" target="_blank">' + escapeHtml(display) + '</a>';
+  }
+
+  // APA 7th Edition format
+  // Author, A. A., & Author, B. B. (Year). Title of work. Publisher. URL
+  function formatAPA(entry) {
+    var parts = [];
+    var author = formatAuthors(entry.author, 'apa');
+    var year = entry.year || '';
+    var title = entry.title || '';
+    var venue = entry.journal || entry.booktitle || '';
+    var publisher = entry.publisher || '';
+    var volume = entry.volume || '';
+    var pages = entry.pages || '';
+    var url = entry.url || '';
+    var doi = entry.doi || '';
+    
+    // Author (Year).
+    if (author) {
+      parts.push(escapeHtml(author) + ' (' + escapeHtml(year) + ').');
+    } else if (year) {
+      parts.push('(' + escapeHtml(year) + ').');
+    }
+    
+    // Title (italicized for books/reports, regular for articles)
+    if (title) {
+      var type = entry._type || 'misc';
+      if (type === 'article' && venue) {
+        parts.push(escapeHtml(title) + '.');
+      } else {
+        parts.push('<em>' + escapeHtml(title) + '</em>.');
+      }
+    }
+    
+    // Journal/venue (italicized), volume, pages
+    if (venue) {
+      var venueStr = '<em>' + escapeHtml(venue) + '</em>';
+      if (volume) venueStr += ', <em>' + escapeHtml(volume) + '</em>';
+      if (pages) venueStr += ', ' + escapeHtml(pages);
+      parts.push(venueStr + '.');
+    } else if (publisher) {
+      parts.push(escapeHtml(publisher) + '.');
+    }
+    
+    // URL/DOI
+    var link = formatLink(url, doi);
+    if (link) parts.push(link);
+    
+    return parts.join(' ');
+  }
+
+  // IEEE format
+  // A. Author, "Title," Journal, vol. X, no. Y, pp. Z, Year. [Online]. Available: URL
+  function formatIEEE(entry) {
+    var parts = [];
+    var author = formatAuthors(entry.author, 'ieee');
+    var year = entry.year || '';
+    var title = entry.title || '';
+    var venue = entry.journal || entry.booktitle || '';
+    var volume = entry.volume || '';
+    var number = entry.number || '';
+    var pages = entry.pages || '';
+    var publisher = entry.publisher || '';
+    var url = entry.url || '';
+    var doi = entry.doi || '';
+    
+    // Author,
+    if (author) parts.push(escapeHtml(author) + ',');
+    
+    // "Title,"
+    if (title) parts.push('"' + escapeHtml(title) + ',"');
+    
+    // Journal (italicized)
+    if (venue) {
+      var venueStr = '<em>' + escapeHtml(venue) + '</em>';
+      if (volume) venueStr += ', vol. ' + escapeHtml(volume);
+      if (number) venueStr += ', no. ' + escapeHtml(number);
+      if (pages) venueStr += ', pp. ' + escapeHtml(pages);
+      parts.push(venueStr + ',');
+    } else if (publisher) {
+      parts.push(escapeHtml(publisher) + ',');
+    }
+    
+    // Year.
+    if (year) parts.push(escapeHtml(year) + '.');
+    
+    // [Online]. Available: URL
+    var link = formatLink(url, doi);
+    if (link) parts.push('[Online]. Available: ' + link);
+    
+    return parts.join(' ');
+  }
+
+  // Chicago Author-Date format
+  // Author, First. Year. "Title." Journal Volume: Pages. URL.
+  function formatChicago(entry) {
+    var parts = [];
+    var author = formatAuthors(entry.author, 'chicago');
+    var year = entry.year || '';
+    var title = entry.title || '';
+    var venue = entry.journal || entry.booktitle || '';
+    var volume = entry.volume || '';
+    var pages = entry.pages || '';
+    var publisher = entry.publisher || '';
+    var url = entry.url || '';
+    var doi = entry.doi || '';
+    
+    // Author. Year.
+    if (author) {
+      parts.push(escapeHtml(author) + '. ' + escapeHtml(year) + '.');
+    } else if (year) {
+      parts.push(escapeHtml(year) + '.');
+    }
+    
+    // "Title."
+    if (title) {
+      var type = entry._type || 'misc';
+      if (type === 'book' || type === 'misc' || type === 'software') {
+        parts.push('<em>' + escapeHtml(title) + '</em>.');
+      } else {
+        parts.push('"' + escapeHtml(title) + '."');
+      }
+    }
+    
+    // Journal volume: pages.
+    if (venue) {
+      var venueStr = '<em>' + escapeHtml(venue) + '</em>';
+      if (volume) venueStr += ' ' + escapeHtml(volume);
+      if (pages) venueStr += ': ' + escapeHtml(pages);
+      parts.push(venueStr + '.');
+    } else if (publisher) {
+      parts.push(escapeHtml(publisher) + '.');
+    }
+    
+    // URL
+    var link = formatLink(url, doi);
+    if (link) parts.push(link + '.');
+    
+    return parts.join(' ');
+  }
+
+  // Vancouver/Numeric format (commonly used in medical/scientific)
+  // Author AA, Author BB. Title. Journal. Year;Volume:Pages. URL
+  function formatVancouver(entry) {
+    var parts = [];
+    var author = formatAuthors(entry.author, 'vancouver');
+    var year = entry.year || '';
+    var title = entry.title || '';
+    var venue = entry.journal || entry.booktitle || '';
+    var volume = entry.volume || '';
+    var pages = entry.pages || '';
+    var publisher = entry.publisher || '';
+    var url = entry.url || '';
+    var doi = entry.doi || '';
+    
+    // Author.
+    if (author) parts.push(escapeHtml(author) + '.');
+    
+    // Title.
+    if (title) parts.push(escapeHtml(title) + '.');
+    
+    // Journal. Year;Volume:Pages.
+    if (venue) {
+      var venueStr = escapeHtml(venue) + '.';
+      venueStr += ' ' + escapeHtml(year);
+      if (volume) venueStr += ';' + escapeHtml(volume);
+      if (pages) venueStr += ':' + escapeHtml(pages);
+      parts.push(venueStr + '.');
+    } else {
+      if (publisher) parts.push(escapeHtml(publisher) + '.');
+      if (year) parts.push(escapeHtml(year) + '.');
+    }
+    
+    // URL
+    var link = formatLink(url, doi);
+    if (link) parts.push('Available from: ' + link);
+    
+    return parts.join(' ');
+  }
+
+  // Main formatter that dispatches to style-specific function
+  function formatReference(entry, style) {
+    if (!entry) return '';
+    
+    style = style || getCitationStyle();
+    
+    switch (style) {
+      case 'ieee':
+        return formatIEEE(entry);
+      case 'chicago':
+        return formatChicago(entry);
+      case 'vancouver':
+        return formatVancouver(entry);
+      case 'apa':
+      default:
+        return formatAPA(entry);
     }
   }
 
-  /**
-   * Generate the formatted references section HTML
-   */
-  function generateReferencesSection(entries, citedKeys, keyToNumber) {
-    let html = `
-      <section class="references-section" id="references">
-        <h2 class="references-title">References</h2>
-        <ol class="references-list">
-    `;
-    
-    // Output in citation order
-    citedKeys.forEach((key, index) => {
-      const entry = entries[key];
-      if (entry) {
-        html += formatBibEntry(entry, index + 1);
+  function renderInlineCitations(root, bibByKey) {
+    var citeEls = Array.prototype.slice.call(root.querySelectorAll('cite[data-key]'));
+    var order = [];
+    var numberByKey = Object.create(null);
+
+    function ensureNumber(key) {
+      if (!Object.prototype.hasOwnProperty.call(numberByKey, key)) {
+        numberByKey[key] = order.length + 1;
+        order.push(key);
       }
+      return numberByKey[key];
+    }
+
+    citeEls.forEach(function (el) {
+      var keys = splitKeys(el.getAttribute('data-key'));
+      if (!keys.length) return;
+
+      var parts = keys.map(function (key) {
+        if (!hasEntry(bibByKey, key)) {
+          return '<span class="citation-missing">?</span>';
+        }
+        var num = ensureNumber(key);
+        var refId = makeRefId(key);
+        return (
+          '<a href="#' +
+          escapeHtml(refId) +
+          '" class="citation-link" data-citation-key="' +
+          escapeHtml(key) +
+          '">' +
+          String(num) +
+          '</a>'
+        );
+      });
+
+      el.innerHTML = '<span class="citation">[' + parts.join(', ') + ']</span>';
     });
-    
-    html += `
-        </ol>
-      </section>
-    `;
-    
-    return html;
+
+    return order;
   }
 
-  // ============================================================
-  // Initialize when DOM is ready
-  // ============================================================
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', processCitations);
-  } else {
-    // Small delay to ensure other scripts (like Shiki) have processed
-    setTimeout(processCitations, 100);
+  function renderInlinePlaceholders(root) {
+    var citeEls = Array.prototype.slice.call(root.querySelectorAll('cite[data-key]'));
+    citeEls.forEach(function (el) {
+      var keys = splitKeys(el.getAttribute('data-key'));
+      if (!keys.length) return;
+      // Always show something even if BibTeX isn't available.
+      el.innerHTML = '<span class="citation">[?]</span>';
+    });
   }
-  
-  // Expose for manual re-processing if needed
-  window.processCitations = processCitations;
-  window.parseBibTeX = parseBibTeX;
-  
+
+  function renderReferences(root, bibByKey, usedOrder) {
+    if (!usedOrder || !usedOrder.length) return;
+
+    var existing = root.querySelector('[data-generated="references"]');
+    if (existing) existing.remove();
+
+    var style = getCitationStyle();
+
+    var container = document.createElement('section');
+    container.setAttribute('data-generated', 'references');
+    container.setAttribute('data-citation-style', style);
+    container.className = 'references-section';
+    container.setAttribute('aria-labelledby', 'references-heading');
+
+    var heading = document.createElement('h2');
+    heading.id = 'references-heading';
+    heading.textContent = 'References';
+    container.appendChild(heading);
+
+    var ol = document.createElement('ol');
+    ol.className = 'references-list';
+    ol.setAttribute('role', 'list');
+
+    usedOrder.forEach(function (key) {
+      var entry = getEntry(bibByKey, key);
+      var li = document.createElement('li');
+      li.id = makeRefId(key);
+      li.className = 'bib-entry';
+      li.setAttribute('data-citation-key', key);
+
+      if (!entry) {
+        li.innerHTML = escapeHtml(key);
+        ol.appendChild(li);
+        return;
+      }
+
+      li.innerHTML = formatReference(entry, style);
+      ol.appendChild(li);
+    });
+
+    container.appendChild(ol);
+    root.appendChild(container);
+  }
+
+  function main() {
+    // Marker for debugging in production without relying on console.
+    // Values: enabled | rendered | no-bib
+    try {
+      document.documentElement.setAttribute('data-citations', 'enabled');
+    } catch (e) {
+      // ignore
+    }
+
+    var root = getArticleRoot();
+    if (!root) return;
+
+    var bibEl = findBibliographyData(root);
+    if (!bibEl) {
+      renderInlinePlaceholders(root);
+      try {
+        document.documentElement.setAttribute('data-citations', 'no-bib');
+      } catch (e) {
+        // ignore
+      }
+      return;
+    }
+
+    var bibtex = String(bibEl.textContent || '').trim();
+    if (!bibtex) {
+      renderInlinePlaceholders(root);
+      try {
+        document.documentElement.setAttribute('data-citations', 'no-bib');
+      } catch (e) {
+        // ignore
+      }
+      return;
+    }
+
+    var bibByKey;
+    try {
+      bibByKey = parseBibTeX(bibtex);
+    } catch (e) {
+      renderInlinePlaceholders(root);
+      return;
+    }
+
+    var usedOrder = renderInlineCitations(root, bibByKey);
+    renderReferences(root, bibByKey, usedOrder);
+
+    try {
+      document.documentElement.setAttribute('data-citations', 'rendered');
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', main);
+  } else {
+    main();
+  }
 })();

@@ -164,7 +164,7 @@ about_content: | # this will include new lines to allow paragraphs
     <h3>Open Source</h3>
     <p><strong>Current libraries</strong></p>
     <ul>
-        <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> (8K+ downloads) · EBMs, diffusion, flow matching, SDE/ODE integrators</li>
+      <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> <strong><i class="fas fa-crown flagship-crown"></i> Flagship</strong> <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">· EBMs, diffusion, flow matching, SDE/ODE integrators</li>
         <li><a href="https://github.com/soran-ghaderi/cuRBLAS">cuRBLAS 🍒</a> · CUDA kernels for randomized linear algebra</li>
     </ul>
     <details>

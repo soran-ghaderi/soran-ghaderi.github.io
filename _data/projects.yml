@@ -9,24 +9,26 @@
 #    Description about the work on/with the project
 
 - layout: left
-  name: cuRBLAS
+  name: TorchEBM 🍓 
+  link: github.com/soran-ghaderi/torchebm
+  github: soran-ghaderi/torchebm
+  description: >
+    <b><i class="fas fa-crown flagship-crown"></i> Flagship</b><br>
+    <b>PyTorch library for energy-based models, diffusion, and flow matching.</b> Implements samplers, score/flow/contrastive objectives, SDE/ODE integrators, interpolants, and mixed-precision training.<br>
+    <span style="color:#888">PyTorch · CUDA</span><br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/torchebm?style=social">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/torchebm">
+    <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">
+
+- layout: left
+  name: cuRBLAS 🍒
   link: https://github.com/soran-ghaderi/cuRBLAS
   github: soran-ghaderi/cuRBLAS
   description: >
     <b>GPU-accelerated randomized linear algebra.</b> CUDA kernels for Hutchinson trace estimation, randomized SVD, and probabilistic matrix operations—useful for sliced score matching and large-scale ML.<br>
     <span style="color:#888">C++ · CUDA · Python</span><br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/curblas?style=social">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/curblas">
-
-
-- layout: left
-  name: TorchEBM
-  link: github.com/soran-ghaderi/torchebm
-  github: soran-ghaderi/torchebm
-  description: >
-    <b>PyTorch library for energy-based models, diffusion, and flow matching.</b> Implements MCMC samplers (Langevin, HMC), score matching objectives, SDE/ODE integrators, and mixed-precision training. 8K+ downloads.<br>
-    <span style="color:#888">PyTorch · CUDA</span><br>
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/torchebm?style=social">
-    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/torchebm">
 
 - layout: left
   name: TransformerX

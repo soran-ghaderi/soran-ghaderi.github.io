@@ -847,6 +847,36 @@ span.equation-number {
   }
 }
 
+/* =====================================================
+   ACADEMIC FIGURES - CENTERED LAYOUT
+   ===================================================== */
+.academic-figure {
+  display: block !important;
+  text-align: center !important;
+  margin: 2rem auto !important;
+  width: 100%;
+  
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  // For multiple inline images
+  &:has(img + img) img {
+    display: inline-block;
+    margin: 0.25rem;
+  }
+  
+  figcaption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.75rem;
+    color: var(--text-muted, #888);
+  }
+}
+
 /* Flagship crown icon */
 .flagship-crown {
   color: gold;

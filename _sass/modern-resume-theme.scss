@@ -610,6 +610,17 @@
         }
       }
     }
+
+    h4 {
+      margin-bottom: 0.3rem;
+      margin-top: 0;
+      font-weight: 500;
+      color: var(--text-strong, #333);
+
+      @media print {
+        margin-bottom: 0.2rem;
+      }
+    }
   }
 }
 

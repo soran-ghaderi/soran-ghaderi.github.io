@@ -9,50 +9,18 @@ comments: true
 excerpt: A comprehensive technical analysis of the NIR framework - separating reasoning from generation in LLMs, then strategically reintegrating contextual understanding at multiple architectural depths.
 ---
 
-<!-- <style>
-.post-content {
-    text-align: justify;
-    line-height: 1.6;
-}
-
-.post-content h1, .post-content h2, .post-content h3 {
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-}
-
-.post-content p {
-    margin-bottom: 1.2em;
-}
-
-.post-content blockquote {
-    margin: 1.5em 0;
-}
-
-.post-content pre {
-    margin: 1.5em 0;
-}
-
-.post-content table {
-    margin: 1.5em 0;
-}
-</style> -->
-
-## Neural Integration of Iterative Reasoning: A Technical Deep Dive into Context-Aware Code Generation
-
 *Soran Ghaderi*  
 *University of Essex, September 2024*
 
 <br>
 
-<br>
-
-### Abstract
+## Abstract
 
 Despite advances in large language models (LLMs) for code generation, they still struggle in effectively utilizing contextual information throughout the generation process. To tackle this challenge, we introduce the Neural Integration of Iterative Reasoning (NIR) framework, which offers a new method for incorporating Context Representation Vectors (CRVs) at multiple levels within LLMs. NIR boosts the ability of these models to generate code without needing fine-tuning, allowing it to be used across various LLM architectures. We assess NIR by testing it with LLaMA 3.1 on the MBPP dataset, focusing on early, mid, and deep integration stages. Our experiments show that the depth of CRV integration has a notable impact on several facets of code generation, including response rates, syntactic correctness, and overall code structure. Deeper integration generally improves syntactic accuracy and code conciseness, while mid-layer integration shows optimal performance in semantic tasks. We report detailed evaluation metrics that assess code quality, complexity, and structure. Our findings indicate possible trade-offs among various code quality measures and emphasize the potential of adaptive integration strategies. While NIR demonstrates promising results, we also identify limitations such as dataset specificity and output inconsistencies. This study contributes to understanding contextual information processing in LLMs and might be useful for future developments in codeLLMs. We conclude by outlining future research directions, including multi-layer integration and dynamic adaptation strategies.
 
 <br>
 
-### 1. Introduction: The Context Integration Problem
+## 1. Introduction
 
 What if we could separate the reasoning process from the generation process, allowing the model to first engage in explicit contextual analysis, then inject these reasoning artifacts back into the generation pipeline at strategically chosen architectural depths?
 
@@ -79,9 +47,9 @@ This report makes an effort to explicitly detail even fundamental aspects such a
 
 <br>
 
-### 2. Theoretical Foundation: Context Representation Vectors
+## 2. Theoretical Foundation
 
-## 2.1 The Reasoning-Generation Dichotomy
+### 2.1 The Reasoning-Generation Dichotomy
 
 Traditional LLM inference conflates reasoning and generation into a single autoregressive process. Each token is generated based on the accumulated hidden states from previous tokens, but there's no explicit mechanism for the model to "step back" and consider the broader context or alternative approaches.
 
@@ -93,7 +61,7 @@ NIR introduces a fundamental separation:
 
 <br>
 
-## 2.2 Context Representation Vector Formation
+### 2.2 Context Representation Vector Formation
 
 The core innovation lies in how we extract and process contextual information from the thinking stage. Given a thinking stage output sequence $T = [t_1, t_2, ..., t_n]$, we extract hidden states $H_T = [h_1, h_2, ..., h_n]$ from a specific layer $l$ of the model.
 
@@ -104,7 +72,7 @@ These hidden states capture different aspects of the reasoning process:
 
 <br>
 
-## 2.3 Integration Mechanics
+### 2.3 Integration Mechanics
 
 The critical question becomes: *where* in the generation model should we inject these CRVs? Our experiments revealed that integration depth profoundly affects different aspects of code quality.
 
@@ -116,9 +84,9 @@ followed by appropriate adjustments to positional encodings and attention mechan
 
 <br>
 
-### 3. Architectural Implementation
+## 3. Architectural Implementation
 
-## 3.1 Model Modifications
+### 3.1 Model Modifications
 
 Implementing NIR required careful modifications to several components of the LLaMA architecture:
 
@@ -130,7 +98,7 @@ Implementing NIR required careful modifications to several components of the LLa
 
 <br>
 
-## 3.2 The Integration Strategy
+### 3.2 The Integration Strategy
 
 Our experiments focused on three integration depths:
 - **Layer 1 (Early)**: Integration near the input embeddings
@@ -141,9 +109,9 @@ This choice was motivated by the hypothesis that different layers encode differe
 
 <br>
 
-### 4. Experimental Analysis: Depth-Dependent Quality Trade-offs
+## 4. Experimental Analysis
 
-## 4.1 Evaluation Framework
+### 4.1 Evaluation Framework
 
 We evaluated NIR using the MBPP (Mostly Basic Python Problems) dataset with LLaMA 3.1-8B-Instruct. Our evaluation encompassed multiple dimensions of code quality:
 
@@ -153,11 +121,11 @@ We evaluated NIR using the MBPP (Mostly Basic Python Problems) dataset with LLaM
 
 <br>
 
-## 4.2 Key Findings: The Integration Depth Paradox
+### 4.2 Key Findings
 
 Our results revealed a fascinating paradox: **deeper integration improves some quality metrics while degrading others**.
 
-# 4.2.1 Response Rate and Syntactic Correctness
+#### 4.2.1 Response Rate and Syntactic Correctness
 
 | Integration Depth | Response Rate | Syntactic Correctness |
 |------------------|---------------|----------------------|
@@ -170,7 +138,7 @@ Our results revealed a fascinating paradox: **deeper integration improves some q
 
 <br>
 
-# 4.2.2 Code Complexity and Structure
+#### 4.2.2 Code Complexity and Structure
 
 | Integration Depth | Cyclomatic Complexity | Lines of Code | Characters |
 |------------------|----------------------|---------------|------------|
@@ -183,7 +151,7 @@ Our results revealed a fascinating paradox: **deeper integration improves some q
 
 <br>
 
-## 4.3 The Layer-Encoding Hypothesis
+### 4.3 The Layer-Encoding Hypothesis
 
 These results support a key hypothesis: **LLMs encode different aspects of code understanding at different architectural depths**:
 
@@ -195,9 +163,9 @@ Injecting reasoning context at different depths therefore influences different a
 
 <br>
 
-### 5. Qualitative Analysis: Understanding the Generated Code
+## 5. Qualitative Analysis
 
-## 5.1 Layer 10 Integration Example
+### 5.1 Layer 10 Integration Example
 
 Consider the task of checking distinct elements in a tuple. Layer 10 integration produced:
 
@@ -210,7 +178,7 @@ This solution demonstrates elegant problem understanding—the reasoning stage l
 
 <br>
 
-## 5.2 Comparative Analysis
+### 5.2 Comparative Analysis
 
 The original model's output for the same task:
 
@@ -229,9 +197,9 @@ def check_distinct(numbers):
 
 <br>
 
-### 6. Limitations and Future Directions
+## 6. Limitations and Future Directions
 
-## 6.1 Current Limitations
+### 6.1 Current Limitations
 
 **Dataset Specificity**: Our evaluation focused on MBPP, which consists of relatively simple programming tasks. The framework's performance on complex tasks remains unexplored.
 
@@ -241,7 +209,7 @@ def check_distinct(numbers):
 
 <br>
 
-## 6.2 Future Research Directions
+### 6.2 Future Research Directions
 
 **Multi-Layer Integration**: Rather than single-point injection, simultaneous integration at multiple layers could capture different aspects of the reasoning process.
 
@@ -251,26 +219,26 @@ def check_distinct(numbers):
 
 <br>
 
-### 7. Implications for Code Generation Research
+## 7. Implications for Code Generation Research
 
-## 7.1 Theoretical Contributions
+### 7.1 Theoretical Contributions
 
 NIR demonstrates that **explicit reasoning separation and strategic reintegration** can enhance LLM capabilities without fine-tuning.
 
 <br>
 
-## 7.2 Practical Applications
+### 7.2 Practical Applications
 
 The framework's plug-and-play nature makes it immediately applicable to existing production systems. Organizations could enhance their code generation pipelines with minimal infrastructure changes.
 
 <br>
 
-## 7.3 Broader Impact
+### 7.3 Broader Impact
 
 The depth-dependent quality trade-offs we discovered suggest that different integration strategies could be optimized for different use cases.
 <br>
 
-### 8. Conclusion
+## 8. Conclusion
 
 The Neural Integration of Iterative Reasoning framework represents a new approach in how we think about LLM enhancement for code generation. By separating reasoning from generation and strategically reintegrating contextual understanding, we can achieve targeted improvements in specific aspects of code quality.
 

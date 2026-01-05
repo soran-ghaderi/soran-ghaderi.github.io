@@ -125,6 +125,8 @@ about_content: | # this will include new lines to allow paragraphs
   
   <section>
     <h3>Research Interests</h3>
+  <p>My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop embodied agents able to reason and interact with the real world.
+  </p>
   <p>
   I work on differentiable approaches for iterative reasoning and planning in uncertain environments. 
   Building more capable, efficient, and generalizable AI systems, particularly at the intersection of deep learning, 
@@ -145,7 +147,7 @@ about_content: | # this will include new lines to allow paragraphs
   </details>
   
   <p style="margin-top: 1em;">
-  <strong>Current Focus</strong>: Unifying diffusion, flow-based, and energy-based models through statistical mechanics and differential geometry—toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
+  <strong>Current Focus</strong>: Unifying diffusion, flow-based, and energy-based models through statistical mechanics and differential geometry, toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
   </p>
   
   <h4>Research Highlights</h4>
@@ -166,7 +168,7 @@ about_content: | # this will include new lines to allow paragraphs
         <li><a href="https://github.com/soran-ghaderi/cuRBLAS">cuRBLAS 🍒</a> · CUDA kernels for randomized linear algebra</li>
     </ul>
     <details>
-    <summary><strong>▸ Previous libs</strong></summary>
+    <summary><strong>▸ Previous libraries (click to expand)</strong></summary>
     <ul style="margin-top: 0.5em;">
         <li><a href="https://github.com/tensorops/TransformerX">TransformerX</a> · Modular transformer research library</li>
         <li><a href="https://github.com/bi-graph/Emgraph">Emgraph</a> · Knowledge graph embeddings</li>

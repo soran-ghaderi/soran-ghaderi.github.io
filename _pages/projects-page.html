@@ -13,21 +13,6 @@ comments: false
     margin-bottom: 4rem;
 }
 
-.featured-posts .section-title h3 {
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 3rem;
-    text-align: center;
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-    color: var(--heading-color, #1a202c);
-}
-
-.dark .featured-posts .section-title h3 {
-    color: var(--heading-color, #f7fafc);
-    border-bottom-color: var(--text-color, #e2e8f0);
-}
-
 .featured-posts .row {
     display: flex;
     flex-wrap: wrap;
@@ -50,21 +35,6 @@ comments: false
 /* All Projects Section */
 .recent-posts {
     margin-top: 2rem;
-}
-
-.recent-posts .section-title h3 {
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 3rem;
-    text-align: center;
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-    color: var(--heading-color, #1a202c);
-}
-
-.dark .recent-posts .section-title h3 {
-    color: var(--heading-color, #f7fafc);
-    border-bottom-color: var(--text-color, #e2e8f0);
 }
 
 .recent-posts .row {
@@ -123,12 +93,6 @@ comments: false
         flex: 0 0 50%;
         max-width: 50%;
     }
-    
-    .featured-posts .section-title h3,
-    .recent-posts .section-title h3 {
-        font-size: 2.8rem;
-        margin-bottom: 1.8rem;
-    }
 }
 
 @media (max-width: 575.98px) {
@@ -142,28 +106,8 @@ comments: false
         flex: 0 0 100%;
         max-width: 100%;
     }
-    
-    .featured-posts .section-title h3,
-    .recent-posts .section-title h3 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
 }
 
-/* Clean section titles */
-.section-title {
-    margin-bottom: 2rem;
-}
-
-.section-title h3 span {
-    background: var(--bg-color, #ffffff);
-    padding: 0 1rem;
-    position: relative;
-}
-
-.dark .section-title h3 span {
-    background: var(--bg-color, #1a202c);
-}
 </style>
 
 {% if page.url == "/projects-page" %}
@@ -171,9 +115,7 @@ comments: false
 <!-- Featured
 ================================================== -->
 <section class="container featured-posts">
-    <div class="section-title">
-        <h3 class="section-title"><span>Featured</span></h3>
-    </div>
+    <h3 class="section-title">Featured</h3>
     <div class="row">
         {% for post in site.posts %}
 
@@ -192,11 +134,7 @@ comments: false
 ================================================== -->
 <div class="container recent-posts">
 
-    <div class="section-title">
-
-    <h3 class="section-title"><span>All Projects</span></h3>
-
-    </div>
+    <h3 class="section-title">All Projects</h3>
 
     <div class="row">
 

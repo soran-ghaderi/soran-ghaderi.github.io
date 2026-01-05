@@ -17,6 +17,9 @@
   <link rel="dns-prefetch" href="//ajax.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 
+  <!-- Fonts: Roboto for body, Fira Code for code -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
   <title>{{ site.name }} | {{ site.title }}</title>
   {%- seo title=false -%}
 
@@ -28,7 +31,156 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
 
+  <!-- Centralized Color Palette (from _config.yml) -->
+  {%- include palette.html -%}
+
+  <!-- Shiki syntax highlighting with dual themes (light/dark CSS variables) -->
+  <!-- Theme configuration from _config.yml: shiki.dark_theme and shiki.light_theme -->
+  <script type="module">
+    // Shiki - TextMate grammar powered syntax highlighter (same as VS Code)
+    // Using dual themes: outputs CSS variables for both light and dark themes
+    // Background color is derived from the theme via --shiki-dark-bg / inline style
+    
+    // Theme configuration from Jekyll central config (_config.yml)
+    const SHIKI_CONFIG = {
+      darkTheme: '{{ site.shiki.dark_theme | default: "github-dark-default" }}',
+      lightTheme: '{{ site.shiki.light_theme | default: "github-light-default" }}'
+    };
+    
+    // Language alias mapping
+    const langMap = {
+      'py': 'python',
+      'js': 'javascript',
+      'ts': 'typescript',
+      'sh': 'bash',
+      'shell': 'bash',
+      'yml': 'yaml',
+      'tex': 'latex',
+      'bibtex': 'bibtex',
+      'text': 'plaintext',
+      '': 'plaintext'
+    };
+    
+    // Highlighter instance - cached for performance
+    let highlighterPromise = null;
+    
+    async function getHighlighter() {
+      if (!highlighterPromise) {
+        highlighterPromise = (async () => {
+          const { createHighlighter } = await import('https://esm.sh/shiki@1.24.0');
+          return createHighlighter({
+            themes: [SHIKI_CONFIG.lightTheme, SHIKI_CONFIG.darkTheme],
+            langs: ['python', 'javascript', 'typescript', 'bash', 'yaml', 'json', 
+                    'html', 'css', 'markdown', 'latex', 'bibtex', 'plaintext',
+                    'ruby', 'java', 'c', 'cpp', 'go', 'rust', 'sql', 'xml', 'diff']
+          });
+        })();
+      }
+      return highlighterPromise;
+    }
+    
+    async function highlightSingleBlock(highlighter, pre, code, lang) {
+      try {
+        const html = highlighter.codeToHtml(code, {
+          lang,
+          themes: {
+            light: SHIKI_CONFIG.lightTheme,
+            dark: SHIKI_CONFIG.darkTheme
+          },
+          defaultColor: 'light'
+        });
+        
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        const newPre = temp.firstElementChild;
+        
+        if (newPre) {
+          newPre.dataset.shikiCode = code;
+          newPre.dataset.shikiLang = lang;
+          newPre.dataset.shikiDone = 'true';
+          pre.parentNode.replaceChild(newPre, pre);
+          return true;
+        }
+      } catch (err) {
+        console.warn('Shiki highlight failed for', lang, ':', err.message);
+        // Mark as attempted to avoid infinite retries
+        pre.dataset.shikiDone = 'error';
+      }
+      return false;
+    }
+    
+    async function highlightCodeBlocks() {
+      // Collect all code blocks that need highlighting
+      const blocks = [];
+      
+      for (const block of document.querySelectorAll('pre:not([data-shiki-done]) code')) {
+        const pre = block.parentElement;
+        if (!pre || pre.tagName !== 'PRE' || pre.dataset.shikiDone) continue;
+        
+        const code = block.textContent || '';
+        if (!code.trim()) continue;
+        
+        let lang = 'plaintext';
+        for (const cls of block.className.split(' ')) {
+          if (cls.startsWith('language-')) {
+            lang = cls.replace('language-', '');
+            break;
+          }
+        }
+        lang = langMap[lang] ?? lang;
+        
+        // Store data and mark as processing
+        pre.dataset.shikiCode = code;
+        pre.dataset.shikiLang = lang;
+        blocks.push({ pre, code, lang });
+      }
+      
+      if (blocks.length === 0) return;
+      
+      try {
+        const highlighter = await getHighlighter();
+        
+        // Process all blocks in parallel for maximum performance
+        await Promise.all(
+          blocks.map(({ pre, code, lang }) => 
+            highlightSingleBlock(highlighter, pre, code, lang)
+          )
+        );
+      } catch (err) {
+        console.error('Shiki initialization failed:', err);
+      }
+    }
+    
+    // Robust initialization with multiple fallbacks
+    async function initShiki() {
+      try {
+        await highlightCodeBlocks();
+      } catch (err) {
+        console.error('Shiki highlighting error:', err);
+      }
+    }
+    
+    // Run on DOMContentLoaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initShiki);
+    } else {
+      initShiki();
+    }
+    
+    // Also run after full page load (catches late-loading content)
+    window.addEventListener('load', () => {
+      setTimeout(initShiki, 100);
+    });
+    
+    // Expose for manual re-highlighting
+    window.shikiHighlight = highlightCodeBlocks;
+  </script>
+
   <!-- MathJax Configuration for Math Rendering -->
+  <!-- 
+    Note: kramdown with math_engine: mathjax outputs <script type="math/tex"> tags (MathJax v2 format)
+    This configuration adds compatibility for MathJax v3 to process these legacy tags
+  -->
   <script>
     window.MathJax = {
       tex: {
@@ -46,15 +198,43 @@
       },
       options: {
         ignoreHtmlClass: 'tex2jax_ignore',
-        processHtmlClass: 'tex2jax_process'
+        processHtmlClass: 'tex2jax_process',
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        renderActions: {
+          findScript: [10, function (doc) {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            }
+          }, '']
+        }
+      },
+      chtml: {
+        scale: 1,
+        minScale: 0.5,
+        matchFontHeight: true,
+        mtextInheritFont: true
+      },
+      svg: {
+        scale: 1,
+        minScale: 0.5
       },
       loader: {
         load: ['[tex]/noerrors']
+      },
+      startup: {
+        pageReady: function() {
+          return MathJax.startup.defaultPageReady();
+        }
       }
     };
   </script>
-  <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     // Ensure MathJax processes math after page load
     document.addEventListener('DOMContentLoaded', function() {
@@ -75,6 +255,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
   <!-- Bootstrap JavaScript for navigation functionality -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
+  <!-- LaTeX-like citation system for blog posts -->
+  <script src="{{ '/assets/js/citations.js' | relative_url }}" defer></script>
+  <!-- Academic numbering system (figures, tables, equations) for blog posts -->
+  <script src="{{ '/assets/js/academic-numbering.js' | relative_url }}" defer></script>
 
   <!-- Resource hints for better performance -->
   <meta name="theme-color" content="#38a169">

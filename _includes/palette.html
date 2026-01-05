@@ -1,0 +1,198 @@
+<!-- 
+  CENTRALIZED COLOR PALETTE SYSTEM
+  ================================
+  This file generates CSS custom properties based on _config.yml palette settings.
+  Edit site.palette values in _config.yml to change colors site-wide.
+  
+  DARK MODE BACKGROUNDS:
+    near-black  : #0f0f0f  (Default - deep black, elegant)
+    pure-black  : #000000  (OLED friendly, maximum contrast)
+    charcoal    : #121212  (Material Design dark, softer)
+    slate       : #1a202c  (Blue-tinted, original theme)
+    midnight    : #0d1117  (GitHub dark, subtle blue)
+  
+  LIGHT MODE BACKGROUNDS:
+    white       : #ffffff  (Default - pure white)
+    snow        : #fafafa  (Slightly off-white, easier on eyes)
+    cream       : #fffdf7  (Warm white, paper-like)
+    cool-gray   : #f8fafc  (Cool tinted white)
+  
+  ACCENT COLORS:
+    vivid-red   : #ef4444  (Default - bright, prominent red)
+    crimson     : #dc2626  (Deeper red, more classic)
+    coral       : #f97316  (Orange-red, warm)
+    rose        : #e11d48  (Pink-red, modern)
+    ruby        : #be123c  (Dark red, sophisticated)
+  
+  NAVBAR STYLES:
+    dark        : #1a202c  (Default dark)
+    darker      : #0f0f0f  (Near black)
+    pure-black  : #000000  (Pure black)
+    slate       : #1e293b  (Slate blue)
+-->
+<style id="palette-variables">
+:root {
+  /* =====================================================
+     ACCENT COLORS (from _config.yml: palette.accent)
+     ===================================================== */
+  {% case site.palette.accent %}
+    {% when "crimson" %}
+      --accent-color: #dc2626;
+      --accent-hover: #b91c1c;
+      --accent-light: #fecaca;
+      --accent-rgb: 220, 38, 38;
+      /* Link colors use accent */
+      --link-color: #dc2626;
+      --link-hover: #b91c1c;
+    {% when "coral" %}
+      --accent-color: #f97316;
+      --accent-hover: #ea580c;
+      --accent-light: #fed7aa;
+      --accent-rgb: 249, 115, 22;
+      /* Link colors use accent */
+      --link-color: #f97316;
+      --link-hover: #ea580c;
+    {% when "rose" %}
+      --accent-color: #e11d48;
+      --accent-hover: #be123c;
+      --accent-light: #fecdd3;
+      --accent-rgb: 225, 29, 72;
+      /* Link colors use accent */
+      --link-color: #e11d48;
+      --link-hover: #be123c;
+    {% when "ruby" %}
+      --accent-color: #be123c;
+      --accent-hover: #9f1239;
+      --accent-light: #fda4af;
+      --accent-rgb: 190, 18, 60;
+      /* Link colors use accent */
+      --link-color: #be123c;
+      --link-hover: #9f1239;
+    {% else %}
+      /* vivid-red (default) */
+      --accent-color: #ef4444;
+      --accent-hover: #dc2626;
+      --accent-light: #fecaca;
+      --accent-rgb: 239, 68, 68;
+      /* Link colors use accent */
+      --link-color: #ef4444;
+      --link-hover: #dc2626;
+  {% endcase %}
+
+  /* =====================================================
+     LIGHT MODE BACKGROUNDS (from _config.yml: palette.light_bg)
+     ===================================================== */
+  {% case site.palette.light_bg %}
+    {% when "snow" %}
+      --bg-color: #fafafa;
+      --intro-bg: #f5f5f5;
+    {% when "cream" %}
+      --bg-color: #fffdf7;
+      --intro-bg: #fefce8;
+    {% when "cool-gray" %}
+      --bg-color: #f8fafc;
+      --intro-bg: #f1f5f9;
+    {% else %}
+      /* white (default) */
+      --bg-color: #ffffff;
+      --intro-bg: #f7fafc;
+  {% endcase %}
+  
+  /* Card border for light mode (subtle) */
+  --card-border: rgba(0, 0, 0, 0.06);
+
+  /* =====================================================
+     NAVBAR COLORS (from _config.yml: palette.navbar)
+     ===================================================== */
+  {% case site.palette.navbar %}
+    {% when "darker" %}
+      --nav-bg: #0f0f0f;
+      --nav-border: #1a1a1a;
+    {% when "pure-black" %}
+      --nav-bg: #000000;
+      --nav-border: #171717;
+    {% when "slate" %}
+      --nav-bg: #1e293b;
+      --nav-border: #334155;
+    {% else %}
+      /* dark (default) */
+      --nav-bg: #1a202c;
+      --nav-border: #2d3748;
+  {% endcase %}
+  --nav-text: #f7fafc;
+}
+
+/* =====================================================
+   DARK MODE BACKGROUNDS (from _config.yml: palette.dark_bg)
+   Applied when body has .dark class
+   ===================================================== */
+.dark,
+html.dark,
+body.dark {
+  {% case site.palette.dark_bg %}
+    {% when "pure-black" %}
+      --bg-color: #000000;
+      --intro-bg: #0a0a0a;
+      --card-border: rgba(255, 255, 255, 0.1);
+    {% when "charcoal" %}
+      --bg-color: #121212;
+      --intro-bg: #1e1e1e;
+      --card-border: rgba(255, 255, 255, 0.08);
+    {% when "slate" %}
+      --bg-color: #1a202c;
+      --intro-bg: #2d3748;
+      --card-border: rgba(255, 255, 255, 0.06);
+    {% when "midnight" %}
+      --bg-color: #0d1117;
+      --intro-bg: #161b22;
+      --card-border: rgba(255, 255, 255, 0.1);
+    {% else %}
+      /* near-black (default) */
+      --bg-color: #0f0f0f;
+      --intro-bg: #1a1a1a;
+      --card-border: rgba(255, 255, 255, 0.1);
+  {% endcase %}
+  
+  /* Accent colors SAME as light mode for consistency */
+  /* Only accent-hover changes for better visibility on dark backgrounds */
+  /* Link colors also use accent for consistency */
+  {% case site.palette.accent %}
+    {% when "crimson" %}
+      --accent-color: #dc2626;
+      --accent-hover: #ef4444;
+      --accent-light: #fecaca;
+      --accent-rgb: 220, 38, 38;
+      --link-color: #dc2626;
+      --link-hover: #ef4444;
+    {% when "coral" %}
+      --accent-color: #f97316;
+      --accent-hover: #fb923c;
+      --accent-light: #fed7aa;
+      --accent-rgb: 249, 115, 22;
+      --link-color: #f97316;
+      --link-hover: #fb923c;
+    {% when "rose" %}
+      --accent-color: #e11d48;
+      --accent-hover: #f43f5e;
+      --accent-light: #fecdd3;
+      --accent-rgb: 225, 29, 72;
+      --link-color: #e11d48;
+      --link-hover: #f43f5e;
+    {% when "ruby" %}
+      --accent-color: #be123c;
+      --accent-hover: #e11d48;
+      --accent-light: #fda4af;
+      --accent-rgb: 190, 18, 60;
+      --link-color: #be123c;
+      --link-hover: #e11d48;
+    {% else %}
+      /* vivid-red (default) */
+      --accent-color: #ef4444;
+      --accent-hover: #f87171;
+      --accent-light: #fecaca;
+      --accent-rgb: 239, 68, 68;
+      --link-color: #ef4444;
+      --link-hover: #f87171;
+  {% endcase %}
+}
+</style>

@@ -1,12 +1,247 @@
+/* =====================================================
+   GLOBAL TYPOGRAPHY SETTINGS
+   Centralized font definitions for site-wide consistency
+   Based on: Roboto (body), Fira Code (code)
+   Font families defined in base.scss as CSS custom properties
+   ===================================================== */
+
+// =====================================================
+// CENTRALIZED TYPOGRAPHY CONFIG
+// Change these values to control typography site-wide
+// =====================================================
+
+// Font stacks
+$font-body: var(--font-body, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif);
+$font-code: var(--code-font-family, 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'Liberation Mono', monospace);
+
+// =====================================================
+// SPACING & LINE HEIGHT - SINGLE SOURCE OF TRUTH
+// =====================================================
+$line-height-tight: 1.3;      // For headings
+$line-height-base: 1.45;      // For body text, paragraphs, lists
+$line-height-relaxed: 1.6;    // For code blocks, special content
+
+// =====================================================
+// FONT WEIGHTS - SINGLE SOURCE OF TRUTH
+// =====================================================
+$font-weight-light: 300;      // Body text
+$font-weight-normal: 400;     // Normal weight
+$font-weight-medium: 500;     // Bold/strong text
+$font-weight-semibold: 600;   // Headings
+$font-weight-bold: 700;       // Extra emphasis
+
+// =====================================================
+// SPACING SCALE - MARGINS & PADDING
+// =====================================================
+$spacing-xs: 0.375rem;        // ~6px
+$spacing-sm: 0.5rem;          // ~8px
+$spacing-md: 1rem;            // ~16px
+$spacing-lg: 1.5rem;          // ~24px
+$spacing-xl: 2rem;            // ~32px
+$spacing-2xl: 2.5rem;         // ~40px
+
+// Paragraph/element margins
+$paragraph-margin: $spacing-md;
+$list-item-margin: $spacing-sm;
+$heading-margin-top: $spacing-xl;
+$heading-margin-bottom: 0.75rem;
+
+// =====================================================
+// FONT SIZE SCALE
+// Change $base-font-size to scale all typography
+// =====================================================
+$base-font-size: 1.6rem;  // ~18px - the foundation for all sizes
+
+// Modular scale multipliers (based on 1.25 ratio - Major Third)
+$scale-ratio: 1.25;
+
+// Computed font sizes - all derived from base
+$font-size-xs: calc(#{$base-font-size} / #{$scale-ratio} / #{$scale-ratio});  // ~0.72rem
+$font-size-sm: calc(#{$base-font-size} / #{$scale-ratio});                     // ~0.9rem
+$font-size-base: $base-font-size;                                               // 1.125rem
+$font-size-lg: calc(#{$base-font-size} * #{$scale-ratio});                     // ~1.4rem
+$font-size-xl: calc(#{$base-font-size} * #{$scale-ratio} * #{$scale-ratio});   // ~1.76rem
+
+// Header sizes - removed to use browser defaults
+
+// Special sizes (for code, math, and captions)
+$font-size-code: var(--code-font-size);                                        // Uses CSS variable from base.scss
+$font-size-math: var(--math-font-size);                                        // Uses CSS variable from base.scss
+$font-size-small: $font-size-sm;
+$font-size-caption: calc(#{$base-font-size} * 0.85);
+
+// =====================================================
+// BASE STYLES - Using centralized variables
+// =====================================================
+
 body {
-  color: var(--text-color, #333);
-  font-family: Roboto, sans-serif;
+  color: var(--text-color);
+  font-family: $font-body;
   font-feature-settings: "kern", "liga", "pnum";
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: $font-size-base;
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  letter-spacing: 0.01em;
 
   @media print {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
+  }
+}
+
+/* Global typography refinements */
+p {
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  margin-bottom: $paragraph-margin;
+}
+
+li {
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  margin-bottom: $list-item-margin;
+}
+
+strong, b {
+  font-weight: $font-weight-medium;
+}
+
+/* =====================================================
+   LIGHT MODE TYPOGRAPHY - body:not(.dark)
+   ===================================================== */
+body:not(.dark),
+body.light {
+  color: var(--text-color);
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+  }
+  
+  p, li {
+    color: var(--text-color);
+  }
+  
+  .section-title {
+    color: var(--heading-color);
+    border-bottom-color: #e2e8f0;
+  }
+  
+  .posttitle {
+    color: var(--heading-color);
+  }
+  
+  .article-post {
+    p, li {
+      color: var(--text-color);
+    }
+    
+    h1, h2, h3, h4, h5 {
+      color: var(--heading-color);
+    }
+    
+    h6 {
+      color: var(--text-muted);
+    }
+    
+    strong, b {
+      color: var(--text-strong);
+    }
+    
+    a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+    
+    code {
+      background-color: var(--code-bg);
+      color: var(--code-color);
+    }
+    
+    blockquote {
+      background-color: var(--blockquote-bg);
+      
+      p {
+        color: var(--text-muted);
+      }
+      
+      cite {
+        color: var(--text-muted);
+      }
+    }
+    
+    table {
+      th {
+        background-color: var(--table-header-bg);
+        color: var(--heading-color);
+      }
+      
+      th, td {
+        border-bottom-color: var(--table-border);
+      }
+      
+      tr:hover {
+        background-color: var(--table-row-hover);
+      }
+    }
+    
+    hr {
+      border-top-color: var(--hr-color);
+    }
+    
+    dl {
+      dt {
+        color: var(--heading-color);
+      }
+      
+      dd {
+        color: var(--text-color);
+      }
+    }
+    
+    kbd {
+      background-color: var(--kbd-bg);
+      border-color: var(--kbd-border);
+      box-shadow: inset 0 -1px 0 var(--kbd-shadow);
+    }
+    
+    .footnotes {
+      border-top-color: var(--hr-color);
+    }
+    
+    details {
+      background-color: var(--details-bg);
+      border-color: var(--details-border);
+      
+      summary {
+        color: var(--heading-color);
+      }
+      
+      &[open] summary {
+        border-bottom-color: var(--details-border);
+      }
+    }
+    
+    figcaption, .caption {
+      color: var(--text-muted);
+    }
+  }
+  
+  .toc {
+    background-color: var(--toc-bg);
+    
+    h3 {
+      color: var(--heading-color);
+    }
+    
+    ul li a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
   }
 }
 
@@ -16,14 +251,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Roboto, sans-serif;
-  line-height: 1.2;
-  margin: 0 0 0.75rem;
-  color: var(--heading-color, #333);
+  font-family: $font-body;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+  margin: 0 0 $spacing-sm;
+  color: var(--heading-color, #f7fafc);
 }
 
 p {
-  margin: 0 0 0.75rem; 
+  margin: 0 0 $paragraph-margin; 
   color: var(--text-color, #333);
 }
 
@@ -37,90 +273,581 @@ a:hover {
   color: var(--link-hover, #355e98);
 }
 
-/* Clear Header Hierarchy */
+/* =====================================================
+   CONSISTENT HEADER HIERARCHY
+   Standard typographic scale: h1 > h2 > h3 > h4 > h5 > h6
+   ===================================================== */
+
 h1 {
-  font-size: 4rem;
-  margin-bottom: 0.1rem;
-  font-weight: 500;
+  margin-bottom: $paragraph-margin;
+  font-weight: $font-weight-semibold;
 }
 
 h2 {
-  font-weight: 300;
-  font-size: 2.2rem;
+  font-weight: $font-weight-medium;
+  margin-bottom: $heading-margin-bottom;
 }
 
 h3 {
-  font-weight: 300;
-  font-size: 3rem;
+  font-weight: $font-weight-medium;
+  margin-bottom: $heading-margin-bottom;
+}
+
+h4 {
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-sm;
+  color: var(--heading-color, #333);
+}
+
+h5 {
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-sm;
+  color: var(--heading-color, #333);
+}
+
+h6 {
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-sm;
+  color: var(--heading-color, #333);
+}
+
+/* Homepage/Section-specific large headers (use these classes explicitly) */
+.section-title {
+  font-weight: $font-weight-medium;
   text-align: center;
-  border-bottom: 2px dashed var(--text-color, #333);
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
+  padding-bottom: $spacing-sm;
+  margin-bottom: $spacing-xl;
   position: relative;
   color: var(--heading-color, #333);
 
   @media print {
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
+    margin-bottom: $spacing-lg;
   }
 }
 
-h4 {
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--heading-color, #333);
-  
-  @media print {
-    font-size: 1.8rem;
-  }
-}
-
-h5 {
-  font-weight: 500;
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-  color: var(--heading-color, #333);
-  
-  @media print {
-    font-size: 1.6rem;
-  }
-}
-
-h6 {
-  font-weight: 500;
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: var(--heading-color, #333);
-  
-  @media print {
-    font-size: 1.4rem;
-  }
+.page-title {
+  margin-bottom: $spacing-sm;
+  font-weight: $font-weight-semibold;
 }
 
 p, ul, ol {
-  font-size: 1.6rem;
+  font-size: $font-size-base;
   text-align: left;
-  color: var(--text-color, #333);
+  color: var(--text-color, #e2e8f0);
+  line-height: $line-height-base;
 }
 
 ol li, ul li {
-  font-size: 1.6rem;
-  line-height: 1.7;
-  margin-bottom: 0.5rem;
-  color: var(--text-color, #333);
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  margin-bottom: $list-item-margin;
+  color: var(--text-color, #e2e8f0);
 }
 
 a i {
-  font-size:1.6rem;
+  font-size: $font-size-base;
 }
 
 mark {
   padding: 2px 4px;
-  font-size: 90%;
+  font-size: $font-size-sm;
   color: #fff;
   background-color: var(--accent-color, #333);
   border-radius: 3px;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+/* =====================================================
+   BLOG POST / ARTICLE TYPOGRAPHY
+   Clean, readable styling inspired by academic blogs
+   Uses same width as container for alignment
+   ===================================================== */
+
+.article-post {
+  /* Remove max-width to align with container - let Bootstrap handle width */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  
+  /* Article body text - uses same base font size as rest of site */
+  p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    margin-bottom: $paragraph-margin;
+    color: var(--text-color, #e2e8f0);
+    text-align: left;
+  }
+  
+  /* Article headers - uses browser default sizes */
+  h1 {
+    font-weight: $font-weight-semibold;
+    margin-top: $spacing-2xl;
+    margin-bottom: $paragraph-margin;
+    color: var(--heading-color, #f7fafc);
+  }
+  
+  h2 {
+    font-weight: $font-weight-light;
+    margin-top: $spacing-xl;
+    margin-bottom: $heading-margin-bottom;
+    color: var(--heading-color, #f7fafc);
+  }
+  
+  h3 {
+    font-weight: $font-weight-light;
+    margin-top: $spacing-xl;
+    margin-bottom: $heading-margin-bottom;
+    color: var(--heading-color, #f7fafc);
+  }
+  
+  h4 {
+    font-weight: $font-weight-light;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    color: var(--heading-color, #f7fafc);
+  }
+  
+  h5 {
+    font-weight: $font-weight-light;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    color: var(--heading-color, #f7fafc);
+  }
+  
+  h6 {
+    font-weight: $font-weight-light;
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-sm;
+    color: var(--text-muted, #a0aec0);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Lists - same font size as body text */
+  ul, ol {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    margin-bottom: $paragraph-margin;
+    padding-left: $spacing-xl;
+  }
+  
+  ul {
+    list-style-type: disc;
+  }
+  
+  ol {
+    list-style-type: decimal;
+  }
+  
+  li {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    margin-bottom: $list-item-margin;
+    color: var(--text-color, #e2e8f0);
+    
+    p {
+      margin-bottom: $spacing-sm;
+    }
+  }
+  
+  /* Nested lists */
+  ul ul, ol ol, ul ol, ol ul {
+    margin-top: $spacing-sm;
+    margin-bottom: $spacing-sm;
+  }
+  
+  /* Links */
+  a {
+    color: var(--link-color, #63b3ed);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: var(--link-hover, #90cdf4);
+      border-bottom-color: var(--link-hover, #90cdf4);
+    }
+  }
+  
+  /* Strong and emphasis */
+  strong, b {
+    font-weight: $font-weight-semibold;
+    color: var(--text-strong, #f7fafc);
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  /* Inline code - only outside of pre blocks */
+  :not(pre) > code {
+    font-family: $font-code;
+    font-size: $font-size-code;
+    padding: 0.2em 0.5em;
+    background-color: var(--code-bg, rgba(110, 118, 129, 0.4));
+    border-radius: 6px;
+    color: var(--code-color, #e2e8f0);
+  }
+  
+  /* Code blocks handled by _syntax.scss (Shiki) */
+  
+  /* Ensure pre inside .highlight doesn't get double styling */
+  .highlight pre,
+  .highlight pre.highlight {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--accent-color, #e53e3e);
+    background-color: var(--blockquote-bg, rgba(45, 55, 72, 0.3));
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    
+    p {
+      margin-bottom: 0.5rem;
+      color: var(--text-muted, #a0aec0);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      font-style: normal;
+      color: var(--text-muted, #718096);
+      
+      &::before {
+        content: "— ";
+      }
+    }
+  }
+  
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.75rem auto;
+    border-radius: 8px;
+  }
+  
+  /* Badge images - display inline (shields.io, badge.fury, github badges, etc.) */
+  img[src*="shields.io"],
+  img[src*="badge"],
+  img[src*="img.shields"],
+  img[src*="fury.io"],
+  img[src*="github.com"][src*="badge"],
+  img[src*="github.com"][src*="actions"],
+  img[src*="codecov.io"],
+  img[src*="coveralls.io"],
+  img[src*="travis-ci"],
+  img[src*="circleci"],
+  img[src*="readthedocs"],
+  p > a > img,
+  div[align="center"] img {
+    display: inline-block;
+    margin: 0.25rem;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+  
+  /* Badge container - center badges and allow wrapping */
+  p:has(> a > img[src*="shields.io"]),
+  p:has(> a > img[src*="badge"]),
+  div[align="center"] {
+    text-align: center;
+    line-height: 2;
+  }
+  
+  /* Image captions */
+  figcaption,
+  .caption {
+    text-align: center;
+    font-size: $font-size-caption;
+    color: var(--text-muted, #a0aec0);
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    margin: 1.75rem 0;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+    
+    th, td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--table-border, #4a5568);
+    }
+    
+    th {
+      font-weight: 600;
+      background-color: var(--table-header-bg, rgba(45, 55, 72, 0.5));
+      color: var(--heading-color, #f7fafc);
+    }
+    
+    tr:hover {
+      background-color: var(--table-row-hover, rgba(45, 55, 72, 0.3));
+    }
+  }
+  
+  /* Horizontal rules */
+  hr {
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1px solid var(--hr-color, #4a5568);
+  }
+  
+  /* Math equations (MathJax) - Fix scrollbar and alignment issues */
+  .MathJax,
+  .MathJax_Display,
+  mjx-container,
+  .katex-display {
+    overflow-x: visible;
+    overflow-y: visible;
+    max-width: 100%;
+    
+    /* Completely hide scrollbars */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+    
+    &::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari, Opera */
+      height: 0;
+      width: 0;
+    }
+  }
+  
+  /* Academic numbering - equation numbers and cross-references */
+  .equation-number,
+  .ref-link,
+  .eqref-link,
+  .ref-placeholder,
+  .eqref-placeholder {
+    overflow: visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+      height: 0;
+      width: 0;
+    }
+  }
+  
+  /* Inline math - fix vertical alignment */
+  mjx-container:not([display="true"]) {
+    display: inline-block !important;
+    vertical-align: baseline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Fix MathJax inline math alignment */
+  .MathJax {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+  
+  /* Ensure math elements align with text baseline */
+  mjx-math {
+    vertical-align: baseline !important;
+  }
+  
+  mjx-mi, mjx-mo, mjx-mn, mjx-mrow {
+    vertical-align: baseline !important;
+  }
+  
+  /* Display math blocks */
+  mjx-container[display="true"],
+  .MathJax_Display {
+    display: block !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+    overflow: visible !important;
+    font-size: inherit;  // Inherit from parent to match surrounding text
+  }
+  
+  /* Ensure MathJax output matches text size */
+  mjx-container {
+    font-size: $font-size-math !important;  // Derived from global --math-font-size
+  }
+  
+  /* Definition lists */
+  dl {
+    margin: 1.5rem 0;
+    
+    dt {
+      font-weight: 600;
+      color: var(--heading-color, #1a202c);
+      margin-top: 1rem;
+      
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    
+    dd {
+      margin-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-color, #333);
+    }
+  }
+  
+  /* Keyboard inputs */
+  kbd {
+    font-family: $font-code;
+    font-size: $font-size-caption;
+    padding: 0.15em 0.4em;
+    background-color: var(--kbd-bg, #edf2f7);
+    border: 1px solid var(--kbd-border, #cbd5e0);
+    border-radius: 4px;
+    box-shadow: inset 0 -1px 0 var(--kbd-shadow, #a0aec0);
+  }
+  
+  /* Abbreviations */
+  abbr[title] {
+    border-bottom: 1px dotted var(--text-muted, #718096);
+    cursor: help;
+  }
+  
+  /* Footnotes */
+  .footnotes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--hr-color, #e2e8f0);
+    font-size: $font-size-sm;
+    
+    ol {
+      font-size: $font-size-sm;
+    }
+    
+    li {
+      font-size: $font-size-sm;
+      margin-bottom: 0.75rem;
+    }
+  }
+  
+  /* Details/Summary */
+  details {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--details-bg, rgba(45, 55, 72, 0.05));
+    border-radius: 8px;
+    border: 1px solid var(--details-border, #e2e8f0);
+    
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      color: var(--heading-color, #1a202c);
+      
+      &:hover {
+        color: var(--accent-color, #e53e3e);
+      }
+    }
+    
+    &[open] summary {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--details-border, #e2e8f0);
+    }
+  }
+}
+
+/* Post title styling */
+.posttitle {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color, #1a202c);
+  text-align: center;
+}
+
+/* TOC styling in blog posts */
+.toc {
+  background-color: var(--toc-bg, rgba(45, 55, 72, 0.05));
+  border-left: 4px solid var(--accent-color, #e53e3e);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  
+  h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--heading-color, #1a202c);
+    text-align: left;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    
+    li {
+      font-size: $font-size-sm;
+      line-height: $line-height-relaxed;
+      margin-bottom: $spacing-sm;
+      
+      a {
+        color: var(--link-color, #3182ce);
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--link-hover, #2c5aa0);
+        }
+      }
+      
+      ul {
+        margin-top: 0.5rem;
+        margin-left: 1.25rem;
+        
+        li {
+          font-size: $font-size-caption;
+        }
+      }
+    }
+  }
+}
+
+/* =====================================================
+   GLOBAL SCROLLBAR FIX FOR ACADEMIC ELEMENTS
+   Prevents scrollbars on equation numbers, cross-references
+   ===================================================== */
+.equation-number,
+.ref-link,
+.eqref-link,
+.ref-placeholder,
+.eqref-placeholder,
+.academic-equation .equation-number,
+span.equation-number {
+  overflow: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+}
+
+/* Flagship crown icon */
+.flagship-crown {
+  color: gold;
 }

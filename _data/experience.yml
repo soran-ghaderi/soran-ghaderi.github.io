@@ -1,55 +1,22 @@
 - layout: left
-  #  company: Open Source
+  company: UIUC Blender Lab
+  link: blender.cs.illinois.edu
+  job_title: Research Intern
+  dates: Jul 2025 - Present
+  description: |
+    Energy-based transformers for image/video generation. Investigating mode collapse, inference-time compute scaling, and fast sampling strategies.
+
+- layout: left
+  company: University of Essex
+  job_title: Postgraduate Researcher
+  dates: Apr 2024 - Oct 2024
+  description: |
+    Developed <a href="https://soran-ghaderi.github.io/nir/">NIR</a> framework for integrating iterative reasoning into LLM hidden states without fine-tuning.
+
+- layout: left
+  company: Open Source
   link: github.com/soran-ghaderi
-  job_title: Postgraduate Student Researcher (Reasoning)
-  dates: Apr 2024 - present
-  #  quote: >
-  #   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    - Developed NIR Framework
-    - Researching Reasoning
-
-# Experience template
-- layout: left
-#  company: Open Source
-  link: github.com/soran-ghaderi
-  job_title: Open-Source Developer
-  dates: 2019 - present
-#  quote: >
-#   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    - TorchEBM library- Under development (a high performance and scalable Python lib for energy-based models)
-    - TransformerX library
-    - Emgraph library
-    - Bigraph library
-
-# Experience template
-- layout: left
-#  company: Open Source
-#  link: Link to company (optional)
-  job_title: Teaching Assistant
-  dates: Oct. 2018 - Jan. 2019
-  #  quote: >
-  #   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    - Social Networks Analysis: Python, Gephi, and review sessions
-
-- layout: left
-  #  company: Open Source
-  link: github.com/soran-ghaderi/EfficientCoF
-  job_title: Undergraduate Research Assistant
-  dates: Sep. 2017 - Jun. 2018
-  #  quote: >
-  #   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    - Developed EfficientCof
-
-- layout: left
-  #  company: Open Source
-#  link:
-  job_title: Intern - KurdCloud
-  dates: Jan. 2017 - Mar. 2018
-  #  quote: >
-  #   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    - Developed NFC-based Attendance Tracking Systems
+  job_title: Developer & Maintainer
+  dates: 2019 - Present
+  description: |
+    TorchEBM (8K+ downloads), cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See Projects section.

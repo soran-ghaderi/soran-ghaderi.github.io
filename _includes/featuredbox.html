@@ -56,7 +56,7 @@
     
     .featured-project-card {
         background: var(--bg-color, #ffffff);
-        border: none;
+        border: 1px solid var(--card-border, rgba(0, 0, 0, 0.06));
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         overflow: hidden;
@@ -77,15 +77,18 @@
     .featured-project-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-color: var(--accent-color, #ef4444);
     }
     
     .dark .featured-project-card {
-        background: var(--bg-color, #1a202c);
+        background: var(--intro-bg, #1a1a1a);
+        border: 1px solid var(--card-border, rgba(255, 255, 255, 0.1));
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
     
     .dark .featured-project-card:hover {
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border-color: var(--accent-color, #ef4444);
     }
     
     .featured-image-container {

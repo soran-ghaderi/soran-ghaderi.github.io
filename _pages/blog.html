@@ -6,7 +6,7 @@ comments: false
 ---
 
 <div class="container">
-    <h3>{{ site.blog_title | default: "Blog" }}</h3>
+    <h3 class="section-title">{{ site.blog_title | default: "Blog" }}</h3>
     
     {% for post in site.data.blog_posts %}
     <div class="row clearfix layout layout-left">

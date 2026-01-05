@@ -1,27 +1,275 @@
-.dark {
-  background-color: #1a202c;
-  color: #e2e8f0;
+/* =====================================================
+   DARK MODE STYLES
+   Applied when body has .dark class
+   Uses CSS variables from base.scss
+   ===================================================== */
+.dark,
+html.dark body,
+body.dark {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   // General text and background overrides
   h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color, #f7fafc);
+    color: var(--heading-color) !important;
   }
 
-  p, li, span, div {
-    color: var(--text-color, #e2e8f0);
+  p, li, span, div:not(.highlight):not(.rouge-code):not(.main-navigation):not(.main-navigation *) {
+    color: var(--text-color);
+  }
+
+  // Section titles (homepage sections)
+  .section-title {
+    color: var(--heading-color);
+    border-bottom-color: var(--text-muted);
+  }
+  
+  // Containers
+  .container:not(.main-navigation .container) {
+    background-color: var(--bg-color) !important;
+  }
+  
+  // Blog post container
+  .blog-post-container {
+    background-color: var(--bg-color) !important;
+  }
+  
+  // TOC Sidebar dark mode
+  .toc-sidebar {
+    .toc-title {
+      color: var(--text-muted);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .toc-nav ul li a {
+      color: var(--text-muted);
+      
+      &:hover {
+        color: var(--link-color);
+        border-left-color: var(--link-color);
+      }
+      
+      &.active {
+        color: var(--link-color);
+        border-left-color: var(--accent-color);
+      }
+    }
+  }
+  
+  // Post header dark mode
+  .post-header {
+    .posttitle {
+      color: var(--heading-color);
+    }
+  }
+  
+  .post-meta {
+    color: var(--text-muted);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    
+    .post-author {
+      color: var(--text-color);
+    }
+  }
+  
+  // Post footer dark mode
+  .post-footer {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    
+    .tags li a {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+    }
+  }
+  
+  .post-navigation {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    
+    a {
+      color: var(--link-color);
+    }
+  }
+
+  // =====================================================
+  // BLOG POST / ARTICLE DARK MODE STYLING
+  // =====================================================
+  .article-post {
+    // Article body text
+    p {
+      color: var(--text-color);
+    }
+    
+    // Headers
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--heading-color);
+    }
+    
+    h2 {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    h6 {
+      color: var(--text-muted);
+    }
+    
+    // Lists
+    ul, ol, li {
+      color: var(--text-color);
+    }
+    
+    // Links
+    a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+        border-bottom-color: var(--link-hover);
+      }
+    }
+    
+    // Strong text
+    strong, b {
+      color: var(--text-strong);
+    }
+    
+    // Inline code - only outside of pre blocks
+    :not(pre) > code {
+      background-color: var(--code-bg);
+      color: #fc8181;
+    }
+    
+    // Code blocks handled by _syntax.scss (Shiki)
+    
+    // Blockquotes
+    blockquote {
+      background-color: var(--blockquote-bg);
+      border-left-color: var(--accent-color);
+      
+      p {
+        color: var(--text-muted);
+      }
+      
+      cite {
+        color: var(--text-muted);
+      }
+    }
+    
+    // Tables
+    table {
+      th, td {
+        border-bottom-color: var(--table-border);
+      }
+      
+      th {
+        background-color: var(--table-header-bg);
+        color: var(--heading-color);
+      }
+      
+      tr:hover {
+        background-color: var(--table-row-hover);
+      }
+    }
+    
+    // Horizontal rules
+    hr {
+      border-top-color: var(--hr-color);
+    }
+    
+    // Definition lists
+    dl {
+      dt {
+        color: var(--heading-color);
+      }
+      
+      dd {
+        color: var(--text-color);
+      }
+    }
+    
+    // Keyboard inputs
+    kbd {
+      background-color: var(--kbd-bg);
+      border-color: var(--kbd-border);
+      box-shadow: inset 0 -1px 0 var(--kbd-shadow);
+      color: var(--text-color);
+    }
+    
+    // Abbreviations
+    abbr[title] {
+      border-bottom-color: var(--text-muted);
+    }
+    
+    // Footnotes
+    .footnotes {
+      border-top-color: var(--hr-color);
+    }
+    
+    // Details/Summary
+    details {
+      background-color: var(--details-bg);
+      border-color: var(--details-border);
+      
+      summary {
+        color: var(--heading-color);
+        
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+      
+      &[open] summary {
+        border-bottom-color: var(--details-border);
+      }
+    }
+    
+    // Image captions
+    figcaption,
+    .caption {
+      color: var(--text-muted);
+    }
+  }
+  
+  // Post title
+  .posttitle {
+    color: var(--heading-color);
+  }
+  
+  // TOC in dark mode
+  .toc {
+    background-color: var(--toc-bg);
+    border-left-color: var(--accent-color);
+    
+    h3 {
+      color: var(--heading-color);
+    }
+    
+    ul li a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
   }
 
   // Navigation - ensure it stays dark in dark mode too
+  // (Navigation is always dark by design)
   .main-navigation {
-    background-color: #1a202c !important;
-    border-color: #2d3748 !important;
+    background-color: var(--nav-bg) !important;
+    border-color: var(--nav-border) !important;
     
     .navbar-brand {
-      color: #f7fafc !important;
+      color: var(--nav-text) !important;
       
       &:hover,
       &:focus {
-        color: var(--link-color, #63b3ed) !important;
+        color: var(--link-color) !important;
       }
       
       .brand-logo {
@@ -34,47 +282,47 @@
     }
     
     .navbar-nav > li > a {
-      color: #f7fafc !important;
+      color: var(--nav-text) !important;
       
       &:hover,
       &:focus {
         color: var(--accent-color) !important;
-        background-color: rgba(229, 115, 115, 0.1) !important;
-        border-radius: 8px;
+        background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.12) !important;
+        border-radius: 4px;
       }
     }
     
     .navbar-nav > li.active > a {
       color: var(--accent-color) !important;
-      background-color: rgba(229, 115, 115, 0.15) !important;
-      border-radius: 8px;
+      background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.18) !important;
+      border-radius: 4px;
       
       &:hover,
       &:focus {
         color: var(--accent-hover) !important;
-        background-color: rgba(229, 115, 115, 0.2) !important;
+        background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.25) !important;
       }
     }
     
     .theme-toggle-btn {
-      border-color: #f7fafc !important;
-      color: #f7fafc !important;
+      border-color: var(--nav-text) !important;
+      color: var(--nav-text) !important;
       background: transparent !important;
       
       &:hover,
       &:focus,
       &:active {
         background-color: var(--accent-color) !important;
-        color: #1a202c !important;
+        color: var(--nav-bg) !important;
         border-color: var(--accent-color) !important;
       }
     }
     
     .navbar-toggle {
-      border-color: #f7fafc !important;
+      border-color: var(--nav-text) !important;
       
       .icon-bar {
-        background-color: #f7fafc !important;
+        background-color: var(--nav-text) !important;
       }
       
       &:hover {
@@ -87,8 +335,8 @@
     }
     
     .navbar-collapse {
-      background-color: #1a202c !important;
-      border-color: #2d3748 !important;
+      background-color: var(--nav-bg) !important;
+      border-color: var(--nav-border) !important;
       
       @media (max-width: 767px) {
         background-color: rgba(26, 32, 44, 0.98) !important;
@@ -98,45 +346,45 @@
 
   // Skills container specific styling
   .skills-container {
-    background-color: #1a202c !important;
+    background-color: var(--bg-color) !important;
     
     .skills-intro {
-      background-color: #1a202c !important;
+      background-color: var(--intro-bg) !important;
       border-left: 4px solid var(--accent-color);
-      color: var(--text-color, #e2e8f0);
+      color: var(--text-color);
       
       .lead {
-        color: var(--text-color, #e2e8f0) !important;
+        color: var(--text-color) !important;
         opacity: 1;
       }
     }
 
     .skill-group {
       > p > strong {
-        color: var(--heading-color, #f7fafc) !important;
+        color: var(--heading-color) !important;
       }
     }
 
     .skill-list {
       li {
-        color: var(--text-color, #e2e8f0) !important;
+        color: var(--text-color) !important;
         opacity: 1;
         
         strong {
-          color: var(--text-strong, #f7fafc) !important;
+          color: var(--text-strong) !important;
           opacity: 1;
         }
         
         em {
-          color: var(--text-muted, #a0aec0) !important;
+          color: var(--text-muted) !important;
           opacity: 1;
         }
         
         a {
-          color: var(--link-color, #63b3ed) !important;
+          color: var(--link-color) !important;
           
           &:hover {
-            color: var(--link-hover, #90cdf4) !important;
+            color: var(--link-hover) !important;
           }
         }
       }
@@ -144,54 +392,55 @@
   }
 
   // General link styling
-  a {
-    color: var(--link-color, #63b3ed);
+  a:not(.main-navigation a):not(.navbar-nav a) {
+    color: var(--link-color);
     
     &:hover {
-      color: var(--link-hover, #90cdf4);
+      color: var(--link-hover);
     }
   }
 
   // Form elements
-  input, textarea, select {
-    background-color: #1a202c;
-    color: var(--text-color, #e2e8f0);
-    border-color: #2d3748;
+  input:not(.main-navigation input), textarea, select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--nav-border);
   }
 
   // Cards and containers - ensure all use the same background
-  .card, .container {
-    background-color: #1a202c !important;
-    color: var(--text-color, #e2e8f0);
+  .card, 
+  .container:not(.main-navigation .container) {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
   }
 
   // Headers and navigation
   .header-container {
-    background-color: #1a202c;
-    color: var(--text-color, #e2e8f0);
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   // Footer
   .footer {
-    background-color: #1a202c;
-    color: var(--text-color, #e2e8f0);
+    background-color: var(--intro-bg);
+    color: var(--text-color);
   }
 
   // Override any remaining light mode colors
   .text-muted {
-    color: var(--text-muted, #a0aec0) !important;
+    color: var(--text-muted) !important;
   }
 
   .text-dark {
-    color: var(--text-color, #e2e8f0) !important;
+    color: var(--text-color) !important;
   }
 
   .bg-light {
-    background-color: #1a202c !important;
+    background-color: var(--bg-color) !important;
   }
 
   .bg-white {
-    background-color: #1a202c !important;
+    background-color: var(--bg-color) !important;
   }
 
   // All sections and content areas
@@ -200,8 +449,8 @@
   .projects-container,
   .publications-container,
   .skills-container {
-    background-color: #1a202c !important;
-    color: var(--text-color, #e2e8f0);
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
   }
 
   // Ensure all text elements use proper colors
@@ -209,19 +458,19 @@
   .layout-right,
   .layout-top {
     .details {
-      h4 {
-        color: var(--heading-color, #f7fafc) !important;
+      h3 {
+        color: var(--heading-color) !important;
       }
       
       p, span {
-        color: var(--text-color, #e2e8f0) !important;
+        color: var(--text-color) !important;
       }
     }
   }
 
   // Lists typography for dark mode
   ol li, ul li {
-    color: var(--text-color, #e2e8f0) !important;
+    color: var(--text-color) !important;
   }
 
   // Blog post sidebar share buttons
@@ -229,13 +478,13 @@
     .sidebar-share {
       .share-buttons-sidebar {
         .share-btn {
-          background-color: #2d3748;
-          color: var(--text-color, #e2e8f0);
-          border-color: var(--link-color, #63b3ed);
+          background-color: var(--intro-bg);
+          color: var(--text-color);
+          border-color: var(--link-color);
           
           &:hover {
-            background-color: var(--link-color, #63b3ed);
-            color: #1a202c;
+            background-color: var(--link-color);
+            color: var(--bg-color);
             box-shadow: 0 2px 8px rgba(99, 179, 237, 0.3);
           }
         }

@@ -60,3 +60,492 @@ mjx-container {
 .dark mjx-container {
   color: #e5e5e5;
 }
+
+/* =====================================================
+   NON-HIGHLIGHTED CODE BLOCKS (Plain text, BibTeX, etc.)
+   Fix visibility for code blocks without syntax highlighting
+   ===================================================== */
+
+/* Plain text/generic code blocks that aren't syntax highlighted */
+.article-post pre:not(.highlight):not(.rouge-table pre),
+.article-post .highlighter-rouge:not(.language-python):not(.language-javascript):not(.language-bash):not(.language-shell) .highlight,
+.article-post .language-text .highlight,
+.article-post .language-plaintext .highlight,
+.article-post .language-none .highlight {
+  background: var(--pre-bg) !important;
+  color: var(--pre-code-color) !important;
+  
+  pre, code {
+    color: var(--pre-code-color) !important;
+    background: transparent !important;
+  }
+}
+
+/* Generic code highlighting fallback - ensure all code is visible */
+.dark .highlight,
+.dark .highlighter-rouge .highlight {
+  /* Default text color for all unhighlighted tokens */
+  .n, .nx, .p, .w, .text {
+    color: var(--pre-code-color) !important;
+  }
+}
+
+/* Fix BibTeX/citation code blocks specifically */
+.dark .article-post .highlighter-rouge .highlight pre,
+.dark .article-post pre.highlight {
+  color: var(--pre-code-color);
+  
+  /* Ensure all text content is visible */
+  & > code,
+  & > code * {
+    color: inherit;
+  }
+}
+
+/* Plain code blocks without language specification */
+.dark .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
+  background: var(--pre-bg);
+  color: var(--pre-code-color);
+  
+  pre {
+    color: var(--pre-code-color);
+  }
+  
+  code {
+    color: var(--pre-code-color);
+  }
+  
+  /* Generic token styling for visibility */
+  .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
+  .o, .ow, .p, .w, .text, .err {
+    color: var(--pre-code-color);
+  }
+}
+
+/* Directory tree structure styling */
+.dark .article-post .language- .highlight,
+.dark .article-post .language-text .highlight,
+.dark .article-post .language-plaintext .highlight {
+  background: var(--pre-bg) !important;
+  
+  pre, code {
+    color: var(--pre-code-color) !important;
+  }
+  
+  /* Tree structure characters */
+  .err {
+    color: #858585 !important;
+    background: transparent !important;
+  }
+  
+  /* Comments in tree */
+  .c, .c1, .cm {
+    color: #6a9955 !important;
+  }
+}
+
+/* Fix word-wrap and overflow for BibTeX citations */
+.article-post .highlight pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Light mode equivalents */
+body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
+  background: var(--pre-bg);
+  color: var(--pre-code-color);
+  
+  pre, code {
+    color: var(--pre-code-color);
+  }
+  
+  .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
+  .o, .ow, .p, .w, .text, .err {
+    color: var(--pre-code-color);
+  }
+}
+
+/* =====================================================
+   LATEX-LIKE CITATION SYSTEM
+   Academic-style references and bibliography
+   
+   All styling derived from central CSS variables in base.scss:
+   - Typography: --base-font-size, --font-body
+   - Colors: --text-color, --text-muted, --heading-color
+   - Links: --link-color, --link-hover
+   - Accents: --accent-color
+   - Borders: --hr-color, --table-border
+   ===================================================== */
+
+/* Inline citation styling */
+.citation {
+  font-size: calc(var(--base-font-size) * 0.9);
+  font-family: var(--font-body);
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.citation-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0 1px;
+  border-radius: 2px;
+  
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+.citation-missing {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.citation-highlight {
+  background-color: rgba(var(--accent-rgb), 0.25);
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+/* Bibliography source block (hidden) */
+.bibliography-source {
+  display: none !important;
+}
+
+/* References section styling */
+.references-section {
+  margin-top: calc(var(--base-font-size) * 2);
+  padding-top: calc(var(--base-font-size) * 1.5);
+  border-top: 1px solid var(--hr-color);
+}
+
+.references-title {
+  font-size: calc(var(--base-font-size) * 1.4);
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: calc(var(--base-font-size) * 1.2);
+  color: var(--heading-color);
+}
+
+.references-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: none;
+}
+
+.bib-entry {
+  display: flex;
+  gap: calc(var(--base-font-size) * 0.5);
+  padding: calc(var(--base-font-size) * 0.5) calc(var(--base-font-size) * 0.35);
+  margin-bottom: calc(var(--base-font-size) * 0.35);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  line-height: 1.6;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: var(--table-row-hover);
+  }
+  
+  &:target,
+  &.bib-highlight {
+    background-color: rgba(var(--accent-rgb), 0.15);
+  }
+}
+
+.bib-number {
+  flex-shrink: 0;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  min-width: calc(var(--base-font-size) * 1.5);
+  font-size: calc(var(--base-font-size) * 0.9);
+}
+
+.bib-content {
+  flex: 1;
+  font-size: calc(var(--base-font-size) * 0.95);
+  font-family: var(--font-body);
+  color: var(--text-color);
+}
+
+.bib-authors {
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.bib-year {
+  color: var(--text-muted);
+}
+
+.bib-title {
+  color: var(--text-color);
+}
+
+.bib-journal,
+.bib-booktitle {
+  color: var(--text-color);
+}
+
+.bib-volume {
+  font-weight: 500;
+}
+
+.bib-doi,
+.bib-url,
+.bib-arxiv {
+  font-size: calc(var(--base-font-size) * 0.85);
+  color: var(--link-color);
+  word-break: break-all;
+  
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+/* Note: Dark mode styling is handled automatically via CSS variables
+   defined in base.scss. All citation colors use:
+   - --text-color, --text-muted, --text-strong for text
+   - --link-color, --link-hover for links
+   - --heading-color for titles
+   - --hr-color for borders
+   - --table-row-hover for hover states
+   - --accent-rgb for highlights
+   These variables automatically switch values in dark mode. */
+
+/* =====================================================
+   ACADEMIC NUMBERING SYSTEM
+   LaTeX-like figures, tables, equations, and algorithms
+   with automatic numbering and cross-references
+   ===================================================== */
+
+/* Academic Figure styling */
+.academic-figure {
+  margin: calc(var(--base-font-size) * 1.5) 0;
+  padding: 0;
+  text-align: center;
+  
+  .figure-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--base-font-size) * 0.5);
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    
+    /* Support for side-by-side images */
+    &.figure-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+      img {
+        flex: 1 1 auto;
+        min-width: 200px;
+      }
+    }
+  }
+  
+  .figure-caption {
+    margin-top: calc(var(--base-font-size) * 0.75);
+    font-size: calc(var(--base-font-size) * 0.9);
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    strong {
+      color: var(--text-strong);
+      font-weight: 600;
+    }
+  }
+}
+
+/* Academic Table styling */
+.academic-table {
+  margin: calc(var(--base-font-size) * 1.5) 0;
+  overflow-x: auto;
+  
+  .table-caption {
+    font-size: calc(var(--base-font-size) * 0.9);
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: calc(var(--base-font-size) * 0.5);
+    line-height: 1.5;
+    
+    strong {
+      color: var(--text-strong);
+      font-weight: 600;
+    }
+  }
+  
+  .table-content {
+    display: flex;
+    justify-content: center;
+    
+    table {
+      border-collapse: collapse;
+      font-size: calc(var(--base-font-size) * 0.95);
+      
+      th, td {
+        border: 1px solid var(--table-border);
+        padding: calc(var(--base-font-size) * 0.4) calc(var(--base-font-size) * 0.75);
+        text-align: left;
+      }
+      
+      th {
+        background: var(--table-header-bg);
+        font-weight: 600;
+        color: var(--heading-color);
+      }
+      
+      tr:nth-child(even) {
+        background: var(--table-row-alt);
+      }
+      
+      tr:hover {
+        background: var(--table-row-hover);
+      }
+    }
+  }
+}
+
+/* Academic Equation styling (numbered display equations) */
+.academic-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: calc(var(--base-font-size) * 1.25) 0;
+  position: relative;
+  
+  .equation-content {
+    flex: 1;
+    text-align: center;
+    
+    /* Override MathJax display styling to integrate with our layout */
+    mjx-container[jax="CHTML"][display="true"] {
+      margin: 0 !important;
+    }
+  }
+  
+  .equation-number {
+    position: absolute;
+    right: 0;
+    font-size: calc(var(--base-font-size) * 0.95);
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    font-weight: 500;
+    padding-left: calc(var(--base-font-size) * 1);
+    white-space: nowrap;
+    
+    @media (max-width: 600px) {
+      position: static;
+      margin-left: calc(var(--base-font-size) * 0.5);
+    }
+  }
+}
+
+/* Academic Algorithm styling */
+.academic-algorithm {
+  margin: calc(var(--base-font-size) * 1.5) 0;
+  border: 1px solid var(--table-border);
+  border-radius: 4px;
+  overflow: hidden;
+  
+  .algorithm-header {
+    background: var(--table-header-bg);
+    padding: calc(var(--base-font-size) * 0.5) calc(var(--base-font-size) * 0.75);
+    font-weight: 600;
+    font-size: calc(var(--base-font-size) * 0.95);
+    color: var(--heading-color);
+    border-bottom: 1px solid var(--table-border);
+  }
+  
+  .algorithm-content {
+    padding: calc(var(--base-font-size) * 0.75) calc(var(--base-font-size) * 1);
+    font-family: var(--font-code);
+    font-size: calc(var(--base-font-size) * 0.9);
+    line-height: 1.6;
+    background: var(--pre-bg);
+    color: var(--pre-code-color);
+    white-space: pre-wrap;
+    
+    /* Algorithm keywords */
+    .kw {
+      font-weight: 600;
+      color: var(--link-color);
+    }
+    
+    /* Algorithm comments */
+    .comment {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+  }
+}
+
+/* Cross-reference links */
+.ref-link,
+.eqref-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+.ref-error {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Scroll offset for anchor navigation (accounts for any fixed/sticky headers) */
+.academic-figure,
+.academic-table,
+.academic-equation,
+.academic-algorithm {
+  scroll-margin-top: 100px;
+}
+
+/* Scroll offset for headings with IDs (for TOC links and direct navigation) */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id],
+.bib-entry,
+.references-section,
+[id]:target {
+  scroll-margin-top: 100px;
+}
+
+/* Highlight target when navigating to it */
+.academic-figure:target,
+.academic-table:target,
+.academic-equation:target,
+.academic-algorithm:target {
+  animation: academic-highlight 2s ease-out;
+}
+
+@keyframes academic-highlight {
+  0% {
+    background-color: rgba(var(--accent-rgb), 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
+}

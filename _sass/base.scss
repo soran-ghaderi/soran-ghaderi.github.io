@@ -1,70 +1,197 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500,500italic,400italic,300italic,100italic,700italic);
+/* =====================================================
+   GLOBAL FONT & STYLE IMPORTS
+   Centralized font loading for consistency across site
+   ===================================================== */
+
+// Fonts are loaded via head.html with Google Fonts for better performance
+// Roboto: Body text, headings
+// Fira Code: Code blocks, inline code
+
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
-//@import url(https://use.fontawesome.com/releases/v5.11.2/css/all.css);
-//@import url(https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
-// CSS Custom Properties for Clean, Readable Color Scheme
+/* =====================================================
+   BOOTSTRAP RESET FOR SHIKI
+   Bootstrap 3.3.5 sets: pre { background-color: #f5f5f5 }
+   We use 'all: unset' in _syntax.scss to fully reset.
+   This is just a safety fallback.
+   ===================================================== */
+
+/* =====================================================
+   CSS CUSTOM PROPERTIES - CENTRALIZED COLOR SCHEME
+   All colors defined in one place for easy theming
+   Light mode is the default, dark mode overrides these
+   ===================================================== */
+
 :root {
-  // Main text colors - only 2 colors for normal text
+  // Font families (centralized)
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --code-font-family: 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'Liberation Mono', monospace;
+  
+  // Base font size (change this to scale all typography)
+  --base-font-size: 1.6rem;
+  --code-font-size: calc(var(--base-font-size) * 0.9);  // Derived from base font size (90%)
+  --math-font-size: calc(var(--base-font-size) * 1.2);              // Math equations use base font size
+  
+  // =====================================================
+  // LIGHT MODE COLORS (default)
+  // =====================================================
+  
+  // Main text colors
   --text-color: #2d3748;                    // Main dark gray text
   --text-strong: #1a202c;                   // Darker for headings/strong text
   --text-muted: #718096;                    // Muted gray for secondary text
   --heading-color: #1a202c;                 // Black for headers
   
-  // Links - blue as requested
-  --link-color: #3182ce;                    // Clean blue for links
-  --link-hover: #2c5aa0;                    // Darker blue on hover
+  // Links - uses accent color from _config.yml palette.accent
+  // Values are overridden by palette.html injection
+  --link-color: var(--accent-color);        // Uses accent color for links
+  --link-hover: var(--accent-hover);        // Uses accent hover for link hover
   
-  // Accent color - green family
-  // --accent-color: #38a169;                  // Clean green accent
-  // --accent-hover: #2f855a;                  // Darker green on hover
-  
-  // Accent color - red family
-  --accent-color: #e53e3e;                  // Clean red accent
-  --accent-hover: #9b2c2c;                  // Darker red on hover
+  // Accent color - configured via _config.yml palette.accent
+  // These are fallbacks; actual values injected by palette.html
+  --accent-color: #ef4444;                  // Default: vivid-red
+  --accent-hover: #dc2626;                  // Hover state
+  --accent-rgb: 239, 68, 68;                // RGB for rgba() usage
+  --accent-light: #fecaca;                  // Light accent for backgrounds
 
-
-  // Backgrounds
-  --bg-color: #ffffff;                      // White background
-  --intro-bg: #f7fafc;                     // Light gray for intro sections
+  // Backgrounds - configured via _config.yml palette.light_bg
+  // These are fallbacks; actual values injected by palette.html  
+  --bg-color: #ffffff;                      // Default: white
+  --intro-bg: #f7fafc;                      // Section backgrounds
+  --card-border: rgba(0, 0, 0, 0.06);       // Card borders (light mode)
   
-  // Social media icons - black/white only
-  --icon-color: #2d3748;                   // Black icons
-  --icon-hover: #1a202c;                   // Darker on hover
+  // Navigation - configured via _config.yml palette.navbar
+  // These are fallbacks; actual values injected by palette.html
+  --nav-bg: #1a202c;                        // Default: dark
+  --nav-text: #f7fafc;
+  --nav-border: #2d3748;
+  
+  // Social media icons
+  --icon-color: #2d3748;                    // Dark icons
+  --icon-hover: #1a202c;                    // Darker on hover
+  
+  // Article/Blog specific colors
+  --code-bg: rgba(175, 184, 193, 0.2);      // Light gray for inline code
+  --code-color: #24292f;                    // Dark text for inline code
+  --pre-bg: #f6f8fa;                        // Subtle gray to distinguish code blocks from page
+  --pre-border: #d0d7de;                    // Border for code blocks
+  --pre-code-color: #24292f;                // Fallback text for non-Shiki code blocks
+  --blockquote-bg: rgba(45, 55, 72, 0.05);  // Light background for blockquotes
+  --table-border: #d0d7de;                  // Table borders
+  --table-header-bg: rgba(45, 55, 72, 0.05);// Table header background
+  --table-row-hover: rgba(45, 55, 72, 0.03);// Table row hover
+  --table-row-alt: rgba(45, 55, 72, 0.02);  // Alternating table row background
+  --hr-color: #d0d7de;                      // Horizontal rule color
+  --toc-bg: rgba(45, 55, 72, 0.05);         // TOC background
+  --kbd-bg: #f6f8fa;                        // Keyboard input background
+  --kbd-border: #d0d7de;                    // Keyboard input border
+  --kbd-shadow: #afb8c1;                    // Keyboard input shadow
+  --details-bg: rgba(45, 55, 72, 0.05);     // Details/summary background
+  --details-border: #d0d7de;                // Details/summary border
+  
+  // Navigation colors (always dark)
+  --nav-bg: #1a202c;
+  --nav-text: #f7fafc;
+  --nav-border: #2d3748;
 }
 
-.dark {
-  // Main text colors - only 2 colors for normal text  
+/* =====================================================
+   DARK MODE CSS VARIABLES
+   Background & accent colors configured via _config.yml
+   These values are overridden by palette.html injection
+   ===================================================== */
+.dark,
+html.dark,
+body.dark {
+  // Main text colors  
   --text-color: #e2e8f0;                   // Light gray text
   --text-strong: #f7fafc;                  // White for headings/strong text
   --text-muted: #a0aec0;                   // Muted light gray for secondary text
   --heading-color: #f7fafc;                // White for headers
   
-  // Links - blue as requested
-  --link-color: #63b3ed;                   // Light blue for links
-  --link-hover: #90cdf4;                   // Lighter blue on hover
+  // Links - uses accent color from _config.yml palette.accent
+  // Values are overridden by palette.html injection
+  --link-color: var(--accent-color);       // Uses accent color for links
+  --link-hover: var(--accent-hover);       // Uses accent hover for link hover
   
-  // Accent color - green family
-  // --accent-color: #68d391;                 // Light green accent
-  // --accent-hover: #9ae6b4;                 // Lighter green on hover
-
-  // Accent color - red family
-  // --accent-color: #e57373;                 // Light red accent
-  // --accent-hover: #ffb3b3;                 // Lighter red on hover
-  --accent-color: #e53e3e;                  // Clean red accent
-  --accent-hover: #9b2c2c;                  // Darker red on hover
-
-
-
+  // Accent & Background colors are injected by palette.html
+  // from _config.yml settings (palette.dark_bg, palette.accent)
+  // Fallback values below:
+  --accent-color: #ef4444;
+  --accent-hover: #f87171;
+  --accent-rgb: 239, 68, 68;
+  --accent-light: #fecaca;
+  --bg-color: #0f0f0f;
+  --intro-bg: #1a1a1a;
+  --card-border: rgba(255, 255, 255, 0.1);  // Visible borders on dark bg
   
-  // Backgrounds
-  --bg-color: #1a202c;                     // Dark background
-  --intro-bg: #2d3748;                     // Darker gray for intro sections
-  
-  // Social media icons - black/white only
+  // Social media icons
   --icon-color: #e2e8f0;                   // Light gray icons
   --icon-hover: #f7fafc;                   // White on hover
+  
+  // Article/Blog specific colors (dark mode)
+  --code-bg: rgba(110, 118, 129, 0.4);     // Subtle gray for inline code
+  --code-color: #e2e8f0;                   // Light text for inline code
+  --pre-bg: #1e1e1e;                       // Fallback for non-Shiki code blocks (Shiki derives bg from theme)
+  --pre-border: #3c3c3c;                   // VS Code border
+  --pre-code-color: #d4d4d4;               // Fallback text for non-Shiki code blocks
+  --blockquote-bg: rgba(45, 55, 72, 0.3);  // Dark background for blockquotes
+  --table-border: #4a5568;                 // Table borders
+  --table-header-bg: rgba(45, 55, 72, 0.5);// Table header background
+  --table-row-hover: rgba(45, 55, 72, 0.3);// Table row hover
+  --table-row-alt: rgba(45, 55, 72, 0.2);  // Alternating table row background
+  --hr-color: #4a5568;                     // Horizontal rule color
+  --toc-bg: rgba(45, 55, 72, 0.5);         // TOC background
+  --kbd-bg: #2d3748;                       // Keyboard input background
+  --kbd-border: #4a5568;                   // Keyboard input border
+  --kbd-shadow: #1a202c;                   // Keyboard input shadow
+  --details-bg: rgba(45, 55, 72, 0.5);     // Details/summary background
+  --details-border: #4a5568;               // Details/summary border
+}
+
+/* =====================================================
+   LIGHT MODE CSS VARIABLES - Higher specificity override
+   When html has .light class, force light mode colors
+   ===================================================== */
+html.light,
+html.light body,
+html.light body.dark {
+  // Main text colors
+  --text-color: #2d3748 !important;
+  --text-strong: #1a202c !important;
+  --text-muted: #718096 !important;
+  --heading-color: #1a202c !important;
+  
+  // Links - uses accent color
+  --link-color: var(--accent-color) !important;
+  --link-hover: var(--accent-hover) !important;
+  
+  // Backgrounds
+  --bg-color: #ffffff !important;
+  --intro-bg: #f7fafc !important;
+  
+  // Icons
+  --icon-color: #2d3748 !important;
+  --icon-hover: #1a202c !important;
+  
+  // Article/Blog specific
+  --code-bg: rgba(175, 184, 193, 0.2) !important;
+  --code-color: #24292f !important;
+  --pre-bg: #ffffff !important;
+  --pre-border: #d0d7de !important;
+  --pre-code-color: #24292f !important;
+  --blockquote-bg: rgba(45, 55, 72, 0.05) !important;
+  --table-border: #d0d7de !important;
+  --table-header-bg: rgba(45, 55, 72, 0.05) !important;
+  --table-row-hover: rgba(45, 55, 72, 0.03) !important;
+  --hr-color: #d0d7de !important;
+  --toc-bg: rgba(45, 55, 72, 0.05) !important;
+  --kbd-bg: #f6f8fa !important;
+  --kbd-border: #d0d7de !important;
+  --kbd-shadow: #afb8c1 !important;
+  --details-bg: rgba(45, 55, 72, 0.05) !important;
+  --details-border: #d0d7de !important;
 }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
@@ -144,6 +271,23 @@ table {
   table-layout: fixed;
   width: 100%; }
 
+/* Exclude code highlight tables from general table styling */
+.highlight table.rouge-table {
+  margin: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+  
+  tr, td, th {
+    vertical-align: top;
+    border: none;
+  }
+  
+  td {
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
 th {
   border-bottom: 1px solid #a6a6a6;
   font-weight: 600;
@@ -183,8 +327,8 @@ html {
 }
 
 body {
-  background: var(--bg-color, #ffffff);
-  color: var(--text-color, #2d3748);
+  background: var(--bg-color);
+  color: var(--text-color);
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   width: 100%;
@@ -195,6 +339,235 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =====================================================
+   LIGHT MODE STYLES - body:not(.dark) / body.light / html.light
+   Explicit light mode styling for theme toggle
+   Uses CSS variables defined in :root
+   ===================================================== */
+html.light,
+html.light body,
+body:not(.dark),
+body.light {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color) !important;
+  }
+  
+  p, li, span, div:not(.highlight):not(.rouge-code):not(.main-navigation):not(.main-navigation *) {
+    color: var(--text-color);
+  }
+  
+  a:not(.main-navigation a):not(.navbar-nav a) {
+    color: var(--link-color);
+    
+    &:hover {
+      color: var(--link-hover);
+    }
+  }
+  
+  .container:not(.main-navigation .container) {
+    background-color: var(--bg-color) !important;
+  }
+  
+  .section-title {
+    color: var(--heading-color);
+    border-bottom-color: #e2e8f0;
+  }
+  
+  // Cards and intro sections
+  .intro-container,
+  .skills-intro {
+    background-color: var(--intro-bg) !important;
+    color: var(--text-color) !important;
+    
+    .lead {
+      color: var(--text-muted) !important;
+    }
+  }
+  
+  // All main containers
+  .education-container,
+  .experience-container,
+  .projects-container,
+  .publications-container,
+  .skills-container {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+  }
+  
+  // Footer
+  .footer {
+    background-color: var(--intro-bg) !important;
+    color: var(--text-color) !important;
+    border-top-color: #e2e8f0 !important;
+  }
+  
+  // Forms
+  input:not(.main-navigation input), 
+  textarea, 
+  select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: #e2e8f0;
+  }
+  
+  // Social icons
+  .icons a,
+  .social-icons a {
+    color: var(--icon-color);
+    
+    &:hover {
+      color: var(--icon-hover);
+    }
+  }
+  
+  // Profile image
+  .profile-img {
+    box-shadow: inset 0 0 20px var(--text-muted);
+  }
+  
+  // Skills section
+  .skills-container {
+    .skill-group > p > strong {
+      color: var(--heading-color) !important;
+    }
+    
+    .skill-list li {
+      color: var(--text-color) !important;
+      
+      strong {
+        color: var(--text-strong) !important;
+      }
+      
+      em {
+        color: var(--text-muted) !important;
+      }
+      
+      a {
+        color: var(--link-color) !important;
+        
+        &:hover {
+          color: var(--link-hover) !important;
+        }
+      }
+    }
+  }
+  
+  // Article/Blog specific light mode
+  .article-post {
+    p {
+      color: var(--text-color);
+    }
+    
+    h1, h2, h3, h4, h5 {
+      color: var(--heading-color);
+    }
+    
+    h6 {
+      color: var(--text-muted);
+    }
+    
+    strong, b {
+      color: var(--text-strong);
+    }
+    
+    a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+    
+    code {
+      background-color: var(--code-bg);
+      color: var(--code-color);
+    }
+    
+    blockquote {
+      background-color: var(--blockquote-bg);
+      
+      p {
+        color: var(--text-muted);
+      }
+    }
+    
+    table {
+      th, td {
+        border-bottom-color: var(--table-border);
+      }
+      
+      th {
+        background-color: var(--table-header-bg);
+        color: var(--heading-color);
+      }
+      
+      tr:hover {
+        background-color: var(--table-row-hover);
+      }
+    }
+    
+    hr {
+      border-top-color: var(--hr-color);
+    }
+    
+    kbd {
+      background-color: var(--kbd-bg);
+      border-color: var(--kbd-border);
+      box-shadow: inset 0 -1px 0 var(--kbd-shadow);
+    }
+    
+    details {
+      background-color: var(--details-bg);
+      border-color: var(--details-border);
+      
+      summary {
+        color: var(--heading-color);
+      }
+    }
+  }
+  
+  // TOC
+  .toc {
+    background-color: var(--toc-bg);
+    
+    h3 {
+      color: var(--heading-color);
+    }
+    
+    ul li a {
+      color: var(--link-color);
+      
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+  }
+  
+  // Post title
+  .posttitle {
+    color: var(--heading-color);
+  }
+  
+  // Layout sections
+  .layout-left,
+  .layout-right,
+  .layout-top {
+    .details {
+      h3 {
+        color: var(--heading-color) !important;
+      }
+      
+      p, span {
+        color: var(--text-color) !important;
+      }
+    }
+  }
 }
 
 .center-text {
@@ -202,7 +575,8 @@ body {
 
 .container {
   margin-top:30px;
-  background: var(--bg-color, #ffffff);
+  background: var(--bg-color);
+  transition: background-color 0.3s ease;
 
   @media print {
     margin-top: 20px;

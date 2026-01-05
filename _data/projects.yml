@@ -9,58 +9,45 @@
 #    Description about the work on/with the project
 
 - layout: left
-  name: cuRBLAS 🍒
-  link: https://github.com/soran-ghaderi/cuRBLAS
-  github: https://github.com/soran-ghaderi/cuRBLAS
-  description: >
-    Jun. 2025-Present<br>
-    <b>CUDA-accelerated randomized BLAS (RBLAS) algorithms & routines—cuBLAS for modern randomized linear algebra.</b><br>
-    <b>Keywords</b> -- CUDA, cuBLAS, cuRBLAS, NVIDIA, HPC, GPU-programming, Probabilistic methods, Linear algebra, Randomized methods<br>
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/curblas">
-    <img alt="PyPI - Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg">
-
-
-- layout: left
-  name: TorchEBM 🍓
+  name: TorchEBM 🍓 
   link: github.com/soran-ghaderi/torchebm
   github: soran-ghaderi/torchebm
   description: >
-    Oct. 2024-Present<br>
-    <b>Energy-Based Modeling library for PyTorch. Provides tools for sampling, inference, and learning in complex distributions.</b><br>
-    <b>Keywords</b> -- variational-inference, Reasoning, Sampling, langevin-dynamics, Contrastive Divergence, Energy-based-model, Diffusion-models probabilistic-ML, Score-matching, Generative-ai<br>
+    <b><i class="fas fa-crown flagship-crown"></i> Flagship</b><br>
+    <b>PyTorch library for energy-based models, diffusion, and flow matching.</b> Implements samplers, score/flow/contrastive objectives, SDE/ODE integrators, interpolants, and mixed-precision training.<br>
+    <span style="color:#888">PyTorch · CUDA</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/torchebm?style=social">
-    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/torchebm"> 
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/torchebm">
-    <img alt="PyPI - Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/torchebm">
+    <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">
+
+- layout: left
+  name: cuRBLAS 🍒
+  link: https://github.com/soran-ghaderi/cuRBLAS
+  github: soran-ghaderi/cuRBLAS
+  description: >
+    <b>GPU-accelerated randomized linear algebra.</b> CUDA kernels for Hutchinson trace estimation, randomized SVD, and probabilistic matrix operations—useful for sliced score matching and large-scale ML.<br>
+    <span style="color:#888">C++ · CUDA · Python</span><br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/curblas?style=social">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/curblas">
 
 - layout: left
   name: TransformerX
   link: github.com/tensorops/TransformerX
   github: tensorops/TransformerX
   description: >
-    2021-2022<br>
-    <b>A Python library for building transformer-based models.</b><br>
-    <b>Keywords</b> -- Deep-learning, Machine-learning, Transformers, Attention mechanisms, Algorithms, python library<br>
+    <b>Modular transformer research library.</b> Composable attention mechanisms, positional encodings, and architecture variants for rapid prototyping.<br>
+    <span style="color:#888">TensorFlow</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/tensorops/transformerx?style=social">
-    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/emgraph">
-    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/transformerx">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tensorops/transformerx">
-    <img alt="PyPI - Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg">
-    <img alt="PyPI - License" src="https://img.shields.io/pypi/l/transformerx.svg">
-    <img alt="PyPI - Format" src="https://img.shields.io/pypi/format/transformerx.svg">
 
 - layout: left
   name: Emgraph
   link: github.com/bi-graph/emgraph
   github: bi-graph/emgraph
   description: >
-    2021-2022<br>
-    <b>A Python toolkit for embedding knowledge graph, developing and evaluating models</b><br>
-    <b>Keywords</b> -- Deep-learning, Machine-learning, Graph, Knowledge-graph-embedding, Algorithms<br>
+    <b>Knowledge graph embedding library.</b> Train and evaluate TransE, DistMult, ComplEx, and other relational models on link prediction tasks.<br>
+    <span style="color:#888">TensorFlow 2</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bi-graph/emgraph?style=social">
-    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/emgraph"> 
-    <img src="https://img.shields.io/pypi/v/emgraph.svg" alt="latest release" />
-    <img alt="Tensorflow 2" src="https://img.shields.io/badge/TensorFlow2-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/emgraph">
 
 
 #    <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/bi-graph/emgraph">
@@ -86,12 +73,10 @@
   link: github.com/bi-graph/bigraph
   github: bi-graph/bigraph
   description: >
-    2019-2022<br>
-    <b>A python library for link prediction in bipartite-networks</b> <br>
-    <b>Keywords</b> -- link-prediction, Machine-learning, Graph, Graph-analysis<br>
+    <b>Bipartite graph link prediction.</b> Implements Jaccard, Adamic-Adar, Common Neighbors, Preferential Attachment, and Katz similarity for two-mode networks.<br>
+    <span style="color:#888">NetworkX · NumPy</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bi-graph/bigraph?style=social">
     <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/bigraph">
-    <img src="https://img.shields.io/pypi/v/bigraph.svg" alt="latest release" />
 #    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
 #  description: | # this will include new lines to allow paragraphs
 #    <b>Bigraph</b> is a Python package for Link prediction in bipartite networks. Currently, it encompasses
@@ -104,17 +89,13 @@
     
 
 - layout: left
-  name: TASE (<b>T</b>elegram <b>A</b>udio <b>S</b>earch <b>E</b>ngine)
+  name: TASE
   link: github.com/appheap/TASE
-  github: > 
-    appheap/TASE
-
+  github: appheap/TASE
   description: >
-    2020-2022<br>
-    A lightening-fast audio search engine python library on top of the Telegram messenger platform</b> <br>
-    <b>Keywords</b> -- Audio-search-engine, Audio-indexing, Knowledge-graph<br>
+    <b>Large-scale audio search engine.</b> Scalable indexing and retrieval with Elasticsearch, ArangoDB, and Redis for real-time multimodal search.<br>
+    <span style="color:#888">Elasticsearch · Python</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/appheap/TASE?style=social">
-    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/bigraph">
 #    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
 #  description: | # this will include new lines to allow paragraphs
 #    <b>TASE</b> allows users to quickly and easily find information that is of genuine interest

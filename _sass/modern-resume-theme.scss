@@ -4,6 +4,306 @@
 @import "dark";
 @import "icons";
 
+// =====================================================
+// BLOG POST LAYOUT - Standard width with TOC sidebar
+// =====================================================
+
+.blog-post-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.blog-post-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 220px minmax(0, 720px);
+    gap: 4rem;
+  }
+}
+
+// TOC Sidebar
+.toc-sidebar {
+  display: none;
+  
+  @media (min-width: 1024px) {
+    display: block;
+    position: relative;
+  }
+}
+
+.toc-nav {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 1rem;
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 3px;
+  }
+}
+
+.toc-title {
+  font-size: calc(var(--base-font-size) );
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--text-muted);
+}
+
+.toc-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    margin-bottom: 0.25rem;
+    
+    a {
+      display: block;
+      font-size: calc(var(--base-font-size) * 0.9);
+      line-height: 1.5;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.25rem 0;
+      border-left: 2px solid transparent;
+      padding-left: 0.75rem;
+      transition: all 0.15s ease;
+      
+      &:hover {
+        color: var(--link-color);
+        border-left-color: var(--link-color);
+      }
+      
+      &.active {
+        color: var(--link-color);
+        border-left-color: var(--accent-color);
+        font-weight: 500;
+      }
+    }
+    
+    // Nested list (h3)
+    ul {
+      margin-left: 0.5rem;
+      
+      li a {
+        font-size: calc(var(--base-font-size) * 0.8);
+        color: var(--text-muted);
+        opacity: 0.85;
+      }
+    }
+  }
+}
+
+// Main Post Content
+.blog-post-content {
+  max-width: 720px;
+  width: 100%;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+  
+  .posttitle {
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--text-muted);
+  
+  .post-author {
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .post-date {
+    &::before {
+      content: "·";
+      margin-right: 1rem;
+    }
+  }
+}
+
+.featured-image-wrapper {
+  margin: 2rem 0;
+  
+  .featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+// Article content styling
+.article-post {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  
+  p {
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--text-muted);
+  }
+  
+  h3 {
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  h4 {
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  
+  blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--blockquote-bg, rgba(0,0,0,0.02));
+    border-radius: 0 6px 6px 0;
+    
+    p {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+  }
+  
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  pre {
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  
+  :not(pre) > code {
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+}
+
+// Post footer
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--text-muted);
+  
+  .after-post-cats,
+  .after-post-tags {
+    margin-bottom: 1rem;
+  }
+  
+  .tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    
+    li a {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      background-color: var(--tag-bg, rgba(0,0,0,0.05));
+      border-radius: 4px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+    }
+  }
+}
+
+// Post navigation
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--text-muted);
+  
+  a {
+    font-size: calc(var(--base-font-size) * 0.9);
+    font-weight: 500;
+    color: var(--link-color);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    
+    &.prev {
+      text-align: left;
+    }
+    
+    &.next {
+      text-align: right;
+      margin-left: auto;
+    }
+  }
+}
+
+// =====================================================
+// END BLOG POST LAYOUT
+// =====================================================
+
 .header-right p {
   margin-bottom: 3px;
 }
@@ -62,9 +362,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat, no-repeat;
-  -moz-box-shadow: inset 0 0 20px var(--text-muted, #718096);
-  -webkit-box-shadow: inset 0 0 20px var(--text-muted, #718096);
-  box-shadow: inset 0 0 20px var(--text-muted, #718096);
+  -moz-box-shadow: inset 0 0 20px var(--text-muted);
+  -webkit-box-shadow: inset 0 0 20px var(--text-muted);
+  box-shadow: inset 0 0 20px var(--text-muted);
 }
 
 .into-text-1 {
@@ -78,7 +378,7 @@
 }
 
 .projects-container, .experience-container, .education-container, .publications-container, .skills-container {
-  background-color: var(--bg-color, #ffffff);
+  background-color: var(--bg-color);
   max-width: 100%;
   overflow-x: hidden;
   
@@ -89,23 +389,23 @@
 
 // Skills Section Styling - Professional and Theme-Consistent
 .skills-container {
-  background-color: var(--bg-color, #ffffff);
+  background-color: var(--bg-color);
   max-width: 100%;
   overflow-x: hidden;
   
   .skills-intro {
     margin-bottom: 3rem;
     padding: 2rem;
-    background-color: var(--intro-bg, #f7fafc);
+    background-color: var(--intro-bg);
     border-left: 4px solid var(--accent-color);
     border-radius: 0 8px 8px 0;
     
     .lead {
       margin-bottom: 0;
       color: var(--text-color, #2d3748);
-      font-size: 1.6rem;
-      line-height: 1.6;
-      font-weight: 300;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      font-weight: $font-weight-light;
       opacity: 1;
     }
     
@@ -126,10 +426,10 @@
     > p > strong {
       color: var(--heading-color, #1a202c);
       font-size: 1.4rem;
-      font-weight: 600;
+      font-weight: $font-weight-semibold;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 1.5rem;
+      margin-bottom: $spacing-lg;
       display: block;
       opacity: 1;
     }
@@ -137,14 +437,14 @@
 
   .skill-list {
     list-style-type: disc;
-    margin-left: 2rem;
-    margin-bottom: 1.5rem;
+    margin-left: $spacing-xl;
+    margin-bottom: $spacing-lg;
     
     li {
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+      line-height: $line-height-base;
       color: var(--text-color, #2d3748);
-      font-size: 1.6rem;
+      font-size: $font-size-base;
       opacity: 1;
       
       &:last-child {
@@ -152,26 +452,26 @@
       }
       
       strong {
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
         color: var(--text-strong, #1a202c);
-        font-size: 1.6rem;
+        font-size: $font-size-base;
         opacity: 1;
       }
       
       em {
         color: var(--text-muted, #718096);
         font-style: normal;
-        font-size: 1.4rem;
+        font-size: $font-size-sm;
         display: block;
-        margin-top: 0.5rem;
-        line-height: 1.5;
+        margin-top: $spacing-sm;
+        line-height: $line-height-base;
         opacity: 1;
       }
       
       a {
         color: var(--link-color, #3182ce);
         text-decoration: none;
-        font-weight: 400;
+        font-weight: $font-weight-normal;
         opacity: 1;
         
         &:hover {
@@ -225,10 +525,10 @@
   
   // Ensure proper spacing between skill sections
   .details {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     
     @media (min-width: 768px) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -245,13 +545,13 @@
 }
 
 .layout {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
   background-color: var(--bg-color, #ffffff);
 
   .details {
     text-align: left;
-    padding-bottom: 1rem;
+    padding-bottom: 0.1rem;
 
     p {
       margin-bottom: 1rem;
@@ -292,24 +592,33 @@
       font-size: 1.5rem;
     }
 
-    h4 {
+    h3 {
       margin-bottom: 0.5rem;
-      font-weight: 500;
-      font-size: 2rem;
+      font-weight: 600;
       color: var(--heading-color, #333);
 
       @media print {
         margin-bottom: 0.4rem;
-        font-size: 1.8rem;
       }
 
       a {
-        font-weight: 500;
+        font-weight: 600;
         color: var(--link-color, #477dca);
         
         &:hover {
           color: var(--link-hover, #355e98);
         }
+      }
+    }
+
+    h4 {
+      margin-bottom: 0.3rem;
+      margin-top: 0;
+      font-weight: 500;
+      color: var(--text-strong, #333);
+
+      @media print {
+        margin-bottom: 0.2rem;
       }
     }
   }
@@ -618,14 +927,14 @@ details[open] .details-summary::after {
   }
 }
 
-// Navigation Bar Styling - Always Dark (Bootstrap 3) - COMPREHENSIVE FIX
+// Navigation Bar Styling - Uses CSS variables from _config.yml palette.navbar
 .main-navigation {
-  background-color: #1a202c !important;
-  border-color: #2d3748 !important;
+  background-color: var(--nav-bg, #1a202c) !important;
+  border-color: var(--nav-border, #2d3748) !important;
   border-radius: 0;
-  min-height: 70px !important;
+  min-height: 54px !important;
   z-index: 1030;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 100%;
   overflow-x: hidden !important;
@@ -644,7 +953,7 @@ details[open] .details-summary::after {
     max-width: 100%;
     margin: 0 auto;
     position: relative;
-    min-height: 70px !important;
+    min-height: 54px !important;
     overflow-x: hidden !important;
     
     // Match Bootstrap 3 container responsive behavior
@@ -662,32 +971,32 @@ details[open] .details-summary::after {
   .navbar-header {
     background-color: transparent !important;
     float: none !important;
-    min-height: 70px !important;
+    min-height: 54px !important;
   }
   
   .navbar-brand {
-    color: #f7fafc !important;
-    font-weight: 600;
-    font-size: 1.7rem;
-    height: 70px !important;
-    padding: 20px 15px !important;
+    color: var(--nav-text, #f7fafc) !important;
+    font-weight: 400;
+    font-size: 1.5rem;
+    height: 54px !important;
+    padding: 12px 15px !important;
     background-color: transparent !important;
     float: none !important;
     display: inline-block !important;
     
     &:hover,
     &:focus {
-      color: #e2e8f0 !important;
+      color: var(--accent-color) !important;
       background-color: transparent !important;
     }
     
     .brand-logo {
-      max-height: 48px;
-      width: 48px;
+      max-height: 36px;
+      width: 36px;
       border-radius: 50%;
       object-fit: cover;
       display: inline-block;
-      margin-right: 12px;
+      margin-right: 10px;
       vertical-align: middle;
       border: 2px solid var(--accent-color);
       transition: none !important;
@@ -707,17 +1016,17 @@ details[open] .details-summary::after {
       background-color: transparent !important;
       
       > a {
-        color: #f7fafc !important;
-        font-weight: 500;
-        line-height: 35px;
-        padding: 17px 22px !important;
+        color: var(--nav-text, #f7fafc) !important;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 8px 16px !important;
         transition: none !important;
         text-transform: uppercase;
-        font-size: 1.4rem;
-        letter-spacing: 0.8px;
+        font-size: 1.3rem;
+        letter-spacing: 0.6px;
         position: relative;
         overflow: hidden;
-        border-radius: 8px;
+        border-radius: 4px;
         margin: 0 2px;
         background-color: transparent !important;
         
@@ -729,23 +1038,23 @@ details[open] .details-summary::after {
         &:hover,
         &:focus {
           color: var(--accent-color) !important;
-          background-color: rgba(229, 62, 62, 0.08) !important;
+          background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.12) !important;
           transform: none !important;
           box-shadow: none !important;
-          border-radius: 8px;
+          border-radius: 4px;
         }
       }
       
       &.active > a {
         color: var(--accent-color) !important;
-        font-weight: 600;
-        background-color: rgba(229, 62, 62, 0.12) !important;
-        border-radius: 8px;
+        font-weight: 500;
+        background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.18) !important;
+        border-radius: 4px;
         
         &:hover,
         &:focus {
           color: var(--accent-hover) !important;
-          background-color: rgba(229, 62, 62, 0.18) !important;
+          background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.25) !important;
         }
         
         &::before {
@@ -804,8 +1113,8 @@ details[open] .details-summary::after {
   
   .navbar-collapse {
     position: relative !important;
-    background-color: #1a202c !important;
-    border-color: #2d3748 !important;
+    background-color: var(--nav-bg, #1a202c) !important;
+    border-color: var(--nav-border, #2d3748) !important;
     border: none !important;
     display: flex !important;
     justify-content: center !important;
@@ -814,9 +1123,9 @@ details[open] .details-summary::after {
     overflow-x: hidden !important;
     
     @media (max-width: 767px) {
-      background-color: rgba(26, 32, 44, 0.98) !important;
+      background-color: var(--nav-bg, rgba(26, 32, 44, 0.98)) !important;
       backdrop-filter: blur(10px);
-      border-top: 1px solid #2d3748 !important;
+      border-top: 1px solid var(--nav-border, #2d3748) !important;
       border-left: none !important;
       border-right: none !important;
       border-bottom: none !important;
@@ -826,7 +1135,7 @@ details[open] .details-summary::after {
     &.in,
     &.show,
     &.collapsing {
-      background-color: rgba(26, 32, 44, 0.98) !important;
+      background-color: var(--nav-bg, rgba(26, 32, 44, 0.98)) !important;
       
       @media (max-width: 767px) {
         display: block !important;
@@ -836,14 +1145,14 @@ details[open] .details-summary::after {
   
   .theme-toggle-btn {
     background: transparent !important;
-    border: 2px solid #f7fafc !important;
-    color: #f7fafc !important;
+    border: 1.5px solid var(--nav-text, #f7fafc) !important;
+    color: var(--nav-text, #f7fafc) !important;
     margin: 0;
-    padding: 12px 15px;
+    padding: 8px 10px;
     border-radius: 50%;
     transition: none !important;
-    width: 50px;
-    height: 50px;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -870,7 +1179,7 @@ details[open] .details-summary::after {
     }
     
     i {
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: none !important;
     }
     
@@ -880,26 +1189,26 @@ details[open] .details-summary::after {
   }
   
   .navbar-toggle {
-    border-color: #f7fafc !important;
+    border-color: var(--nav-text, #f7fafc) !important;
     background-color: transparent !important;
     position: absolute !important;
     right: 15px !important;
-    top: 15px !important;
+    top: 10px !important;
     margin: 0 !important;
-    padding: 10px 14px;
-    border-radius: 6px;
+    padding: 8px 12px;
+    border-radius: 4px;
     transition: none !important;
     z-index: 1031 !important;
     
     &:hover,
     &:focus {
-      background-color: rgba(247, 250, 252, 0.1) !important;
+      background-color: rgba(var(--accent-rgb, 239, 68, 68), 0.1) !important;
       border-color: var(--accent-color) !important;
       transform: none !important;
     }
     
     .icon-bar {
-      background-color: #f7fafc !important;
+      background-color: var(--nav-text, #f7fafc) !important;
       width: 24px;
       height: 3px;
       border-radius: 2px;

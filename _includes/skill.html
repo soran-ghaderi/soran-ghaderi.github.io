@@ -1,5 +1,5 @@
 <div class="skills-content">
-    <h3>{{ site.skills_title | default: "Technical Expertise" }}</h3>
+    <h3 class="section-title">{{ site.skills_title | default: "Technical Expertise" }}</h3>
     {% for skill in site.data.skills %}
     {% include {{ skill.layout | default: 'left-skill' | append: ".html" }} item=skill %}
     {% endfor %}

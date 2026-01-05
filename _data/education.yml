@@ -1,28 +1,15 @@
-# Education Template
 - layout: left
   name: University of Essex
   dates: 2023 - 2024
-  qualification: MSc. Artificial Intelligence
-#  quote: >
-#    Short institution or course description (optional)
-  description: | # this will include new lines to allow paragraphs
-    Dissertation: Neural Integration of Iterative Reasoning (NIR) in LLMs for Code Generation (<a href="https://soran-ghaderi.github.io/nir/">Website</a>)
+  qualification: MSc Artificial Intelligence (Distinction)
+  description: |
+    Dissertation: <a href="https://soran-ghaderi.github.io/nir/">NIR</a> — Neural Integration of Iterative Reasoning in LLMs for Code Generation
     
-    Other: 
-    - An Automatic Differentiation and Backpropagation Framework from Scratch (with a Keras-like API) (<a href="https://github.com/soran-ghaderi/backpropagation">Codes</a>)
-    - DL Competition Winner 🥇: Inter-Departmental Neural Network Challenge: Rossmann Store Sales
-      - Top scores among cohort (100+ participants): 0.10886 (public) / 0.11384 (private)
-    - Efficient LLM-centric Indoor Navigation Glasses using Jetson Mini 
-    - RL-based Agents for Resistance (social game), Pacman, Chasing and escaping vehicles etc.
+    🥇 1st place, Inter-Departmental Neural Network Challenge (100+ participants)
 
 - layout: left
   name: University of Kurdistan
   dates: 2014 - 2018
-  qualification: BEng. Computer Engineering (Software)
-  #  quote: >
-  #    Short institution or course description (optional)
-  description: | # this will include new lines to allow paragraphs
-    Thesis: EfficientCoF - A New Efficient Subspace and K-Means Clustering-based Method to Improve Collaborative Filtering (<a href="https://github.com/soran-ghaderi/EfficientCoF">Codes</a>)
-    
-    Other:
-    - Combined Adaptive Neuro-fuzzy Inference System and Particle Swarm Optimization (ANFIS-PSO) for predicting emissions from engine with different fuels (2016)
+  qualification: BEng Computer Engineering
+  description: |
+    Thesis: <a href="https://github.com/soran-ghaderi/EfficientCoF">EfficientCoF</a> — Subspace clustering for collaborative filtering

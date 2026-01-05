@@ -7,36 +7,31 @@ post_class: post-template
 
 <!-- Begin Article
 ================================================== -->
-<div class="container">
-    <div class="row">
+<div class="blog-post-container">
+    <div class="blog-post-wrapper">
+        
+        <!-- TOC Sidebar -->
+        <aside class="toc-sidebar">
+            <nav class="toc-nav" aria-label="Table of contents">
+                <h4 class="toc-title">Contents</h4>
+                {% include toc.html html=content h_min=2 h_max=3 %}
+            </nav>
+        </aside>
 
-        <!-- Post -->
-        {% assign author = site.data.members.author.authors[page.author] %}
+        <!-- Main Post Content -->
+        <article class="blog-post-content">
+            {% assign author = site.data.members.author.authors[page.author] %}
 
-        <div class="col-md-12 flex-first flex-md-unordered">
-            <div class="mainheading">
-
-                <!-- Author Box --> 
-               <!-- {% if page.author %}
-               <div class="row post-top-meta">
-                   <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
-                       {% if author.avatar %}
-                       <img class="author-thumb" src="{{site.url}}/{{ author.avatar }}" alt="{{ author.display_name }}">
-                       {% else %}
-                       <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=25&d=mm&r=x" alt="{{ author.display_name }}">
-                       {% endif %}
-                   </div>
-                   <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                       <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-                       <span class="author-description">{{ author.description }}</span>
-                   </div>
-               </div>
-               {% endif %} -->
-
+            <header class="post-header">
                 <!-- Post Title -->
-                <h1 class="posttitle center-text">{{ page.title }}</h1><br><br>
-
-            </div>
+                <h1 class="posttitle">{{ page.title }}</h1>
+                
+                <!-- Post Meta -->
+                <div class="post-meta">
+                    <span class="post-author">{{ page.author | default: site.name }}</span>
+                    <span class="post-date"><time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
+                </div>
+            </header>
 
             <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
             {% if site.adsense == "enabled" %}
@@ -46,7 +41,7 @@ post_class: post-template
 
             <!-- Post Featured Image -->
             {% if page.image %}
-            <div class="text-center">
+            <div class="featured-image-wrapper">
             {% if site.lazyimages == "enabled" %}
             <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.url }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
             {% else %}
@@ -58,18 +53,6 @@ post_class: post-template
 
             <!-- Post Content -->
             <div class="article-post">
-                <!-- Toc if any -->
-                {% if page.toc %}
-                    {% if page.beforetoc %}
-                        <p><em>{{page.beforetoc}}</em></p>
-                    {% endif %}
-                    <div class="toc mt-4 mb-4 lead">
-                        <h3 class="font-weight-bold">Summary</h3>
-                        {% include toc.html html=content %}
-                    </div>
-                {% endif %}
-                <!-- End Toc -->
-                <br>
                 {{content}}
             </div>
 
@@ -81,54 +64,54 @@ post_class: post-template
 <!--            {% endif %}-->
 
             <!-- Post Date -->
-            <p>
-            <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-                {% if page.last_modified_at %}
-                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-                {% endif %}
-                </small>
-            </p>
+            <footer class="post-footer">
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
+                    {% if page.last_modified_at %}
+                    (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+                    {% endif %}
+                    </small>
+                </p>
 
-            <!-- Post Categories -->
-            <div class="after-post-cats">
-                <ul class="tags mb-4">
-                    {% assign sortedCategories = page.categories | sort %}
-                    {% for category in sortedCategories %}
-                    <li>
-                        <a class="smoothscroll" href="{{site.url}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <!-- End Categories -->
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        {% assign sortedCategories = page.categories | sort %}
+                        {% for category in sortedCategories %}
+                        <li>
+                            <a class="smoothscroll" href="{{site.url}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- End Categories -->
 
-            <!-- Post Tags -->
-            <div class="after-post-tags">
-                <ul class="tags">
-                    {% assign sortedTags = page.tags | sort %}
-                    {% for tag in sortedTags %}
-                    <li>
-                        <a class="smoothscroll" href="{{site.url}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <!-- End Tags -->
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        {% assign sortedTags = page.tags | sort %}
+                        {% for tag in sortedTags %}
+                        <li>
+                            <a class="smoothscroll" href="{{site.url}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- End Tags -->
 
-            <!-- Prev/Next -->
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold lead mx-0">
-            {% if page.previous.url %}
-            <a class="prev d-block col-md-6" href="{{ site.url }}/{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
-            {% endif %}
-            {% if page.next.url %}
-            <a class="next d-block col-md-6 text-right" href="{{ site.url }}/{{page.next.url}}">{{page.next.title}} &raquo; </a>
-            {% endif %}
-            <div class="clearfix"></div>
-            </div>
-            <!-- End Categories -->
+                <!-- Prev/Next -->
+                <nav class="post-navigation">
+                    {% if page.previous.url %}
+                    <a class="prev" href="{{ site.url }}/{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <a class="next" href="{{ site.url }}/{{page.next.url}}">{{page.next.title}} &raquo;</a>
+                    {% endif %}
+                </nav>
+            </footer>
 
-        </div>
+        </article>
         <!-- End Post -->
 
     </div>

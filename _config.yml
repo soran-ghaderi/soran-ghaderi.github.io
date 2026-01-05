@@ -256,6 +256,18 @@ shiki:
   dark_theme: github-dark-default
   light_theme: github-light-default
 
+# =============================================================================
+# CITATION STYLE CONFIGURATION
+# =============================================================================
+# Academic citation/reference style for blog posts.
+# Supported styles:
+#   - "apa"       : APA 7th Edition (Author, Year. Title. URL)
+#   - "ieee"      : IEEE (Author, "Title," Year. [Online]. Available: URL)
+#   - "chicago"   : Chicago Author-Date (Author. Year. "Title." URL)
+#   - "vancouver" : Vancouver/Numeric (Author. Title. Year. URL) [default]
+# =============================================================================
+citation_style: "apa"
+
 defaults:
   - scope:
       path: _posts

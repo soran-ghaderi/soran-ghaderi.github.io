@@ -38,10 +38,10 @@
   // =====================================================
   
   // Main text colors
-  --text-color: #2d3748;                    // Main dark gray text
-  --text-strong: #1a202c;                   // Darker for headings/strong text
-  --text-muted: #718096;                    // Muted gray for secondary text
-  --heading-color: #1a202c;                 // Black for headers
+  --text-color: #1a202c;                    // Dark text for high contrast
+  --text-strong: #0d1117;                   // Near-black for headings/strong text
+  --text-muted: #4a5568;                    // Darker muted for better readability
+  --heading-color: #0d1117;                 // Near-black for headers
   
   // Links - uses accent color from _config.yml palette.accent
   // Values are overridden by palette.html injection
@@ -73,10 +73,23 @@
   
   // Article/Blog specific colors
   --code-bg: rgba(175, 184, 193, 0.2);      // Light gray for inline code
-  --code-color: #24292f;                    // Dark text for inline code
+  --code-color: #c72d4a;                    // Reddish text for inline code (matches dark mode style)
   --pre-bg: #f6f8fa;                        // Subtle gray to distinguish code blocks from page
   --pre-border: #d0d7de;                    // Border for code blocks
   --pre-code-color: #24292f;                // Fallback text for non-Shiki code blocks
+  
+  // Syntax highlighting colors (GitHub Light theme)
+  --syntax-text: #24292f;                   // Default text
+  --syntax-comment: #6a737d;                // Comments
+  --syntax-string: #032f62;                 // Strings
+  --syntax-number: #005cc5;                 // Numbers
+  --syntax-keyword: #d73a49;                // Keywords, operators
+  --syntax-function: #6f42c1;               // Function names
+  --syntax-class: #005cc5;                  // Class names, builtins
+  --syntax-punctuation: #24292f;            // Punctuation
+  --syntax-deleted: #d73a49;                // Deleted text (diff)
+  --syntax-inserted: #22863a;               // Inserted text (diff)
+  
   --blockquote-bg: rgba(45, 55, 72, 0.05);  // Light background for blockquotes
   --table-border: #d0d7de;                  // Table borders
   --table-header-bg: rgba(45, 55, 72, 0.05);// Table header background
@@ -136,6 +149,19 @@ body.dark {
   --pre-bg: #1e1e1e;                       // Fallback for non-Shiki code blocks (Shiki derives bg from theme)
   --pre-border: #3c3c3c;                   // VS Code border
   --pre-code-color: #d4d4d4;               // Fallback text for non-Shiki code blocks
+  
+  // Syntax highlighting colors (GitHub Dark theme)
+  --syntax-text: #e1e4e8;                  // Default text
+  --syntax-comment: #6a737d;               // Comments
+  --syntax-string: #9ecbff;                // Strings
+  --syntax-number: #79b8ff;                // Numbers
+  --syntax-keyword: #f97583;               // Keywords, operators
+  --syntax-function: #b392f0;              // Function names
+  --syntax-class: #79b8ff;                 // Class names, builtins
+  --syntax-punctuation: #e1e4e8;           // Punctuation
+  --syntax-deleted: #f97583;               // Deleted text (diff)
+  --syntax-inserted: #85e89d;              // Inserted text (diff)
+  
   --blockquote-bg: rgba(45, 55, 72, 0.3);  // Dark background for blockquotes
   --table-border: #4a5568;                 // Table borders
   --table-header-bg: rgba(45, 55, 72, 0.5);// Table header background
@@ -158,10 +184,10 @@ html.light,
 html.light body,
 html.light body.dark {
   // Main text colors
-  --text-color: #2d3748 !important;
-  --text-strong: #1a202c !important;
-  --text-muted: #718096 !important;
-  --heading-color: #1a202c !important;
+  --text-color: #1a202c !important;
+  --text-strong: #0d1117 !important;
+  --text-muted: #4a5568 !important;
+  --heading-color: #0d1117 !important;
   
   // Links - uses accent color
   --link-color: var(--accent-color) !important;
@@ -177,8 +203,8 @@ html.light body.dark {
   
   // Article/Blog specific
   --code-bg: rgba(175, 184, 193, 0.2) !important;
-  --code-color: #24292f !important;
-  --pre-bg: #ffffff !important;
+  --code-color: #c72d4a !important;
+  --pre-bg: #f6f8fa !important;
   --pre-border: #d0d7de !important;
   --pre-code-color: #24292f !important;
   --blockquote-bg: rgba(45, 55, 72, 0.05) !important;
@@ -484,7 +510,7 @@ body.light {
       }
     }
     
-    code {
+    :not(pre) > code {
       background-color: var(--code-bg);
       color: var(--code-color);
     }

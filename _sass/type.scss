@@ -154,7 +154,7 @@ body.light {
       }
     }
     
-    code {
+    :not(pre) > code {
       background-color: var(--code-bg);
       color: var(--code-color);
     }
@@ -490,17 +490,9 @@ mark {
     color: var(--code-color, #e2e8f0);
   }
   
-  /* Code blocks handled by _syntax.scss (Shiki) */
-  
-  /* Ensure pre inside .highlight doesn't get double styling */
-  .highlight pre,
-  .highlight pre.highlight {
-    margin: 0;
-    padding: 0;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0;
-  }
+  /* Code blocks handled by _syntax.scss
+     Note: Padding, background, and border are set in _syntax.scss via CSS variables.
+     Do NOT override them here to avoid specificity conflicts. */
   
   /* Blockquotes */
   blockquote {

@@ -5,3 +5,4 @@ _site
 *.code-workspace
 vendor
 .idea
+.github/copilot-instructions.md

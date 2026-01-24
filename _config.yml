@@ -57,8 +57,8 @@ darkmode: true
 #   - "ruby"          : #be123c  (Dark red, sophisticated)
 #
 # NAVBAR STYLE OPTIONS:
-#   - "dark"          : Dark navbar (Default - #1a202c)
-#   - "darker"        : Darker navbar (#0f0f0f)
+#   - "dark"          : Dark navbar (Default - #0f0f0f, matches dark mode)
+#   - "darker"        : Same as dark (#0f0f0f)
 #   - "pure-black"    : Pure black navbar (#000000)
 #   - "slate"         : Slate blue navbar (#1e293b)
 # =============================================================================

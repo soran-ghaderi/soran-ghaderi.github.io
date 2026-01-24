@@ -63,9 +63,9 @@
   
   // Navigation - configured via _config.yml palette.navbar
   // These are fallbacks; actual values injected by palette.html
-  --nav-bg: #1a202c;                        // Default: dark
+  --nav-bg: #0f0f0f;                        // Default: matches dark mode bg
   --nav-text: #f7fafc;
-  --nav-border: #2d3748;
+  --nav-border: #1a1a1a;
   
   // Social media icons
   --icon-color: #2d3748;                    // Dark icons
@@ -103,10 +103,13 @@
   --details-bg: rgba(45, 55, 72, 0.05);     // Details/summary background
   --details-border: #d0d7de;                // Details/summary border
   
-  // Navigation colors (always dark)
-  --nav-bg: #1a202c;
+  // Navigation colors (always dark - matches dark mode bg)
+  --nav-bg: #0f0f0f;
   --nav-text: #f7fafc;
-  --nav-border: #2d3748;
+  --nav-border: #1a1a1a;
+  
+  // Profile image shadow
+  --profile-shadow: rgba(255, 255, 255, 0.8);  // White shadow for light bg
 }
 
 /* =====================================================
@@ -174,6 +177,9 @@ body.dark {
   --kbd-shadow: #1a202c;                   // Keyboard input shadow
   --details-bg: rgba(45, 55, 72, 0.5);     // Details/summary background
   --details-border: #4a5568;               // Details/summary border
+  
+  // Profile image shadow
+  --profile-shadow: rgba(0, 0, 0, 0.6);    // Dark shadow for dark bg
 }
 
 /* =====================================================
@@ -452,9 +458,9 @@ body.light {
     }
   }
   
-  // Profile image
+  // Profile image - white shadow for light background
   .profile-img {
-    box-shadow: inset 0 0 20px var(--text-muted);
+    box-shadow: inset 0 0 20px var(--profile-shadow);
   }
   
   // Skills section

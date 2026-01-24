@@ -25,6 +25,11 @@ body.dark {
     border-bottom-color: var(--text-muted);
   }
   
+  // Profile image - dark shadow for dark background
+  .profile-img {
+    box-shadow: inset 0 0 20px var(--profile-shadow);
+  }
+  
   // Containers
   .container:not(.main-navigation .container) {
     background-color: var(--bg-color) !important;

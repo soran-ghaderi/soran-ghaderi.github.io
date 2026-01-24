@@ -362,9 +362,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat, no-repeat;
-  -moz-box-shadow: inset 0 0 20px var(--text-muted);
-  -webkit-box-shadow: inset 0 0 20px var(--text-muted);
-  box-shadow: inset 0 0 20px var(--text-muted);
+  -moz-box-shadow: inset 0 0 20px var(--profile-shadow);
+  -webkit-box-shadow: inset 0 0 20px var(--profile-shadow);
+  box-shadow: inset 0 0 20px var(--profile-shadow);
 }
 
 .into-text-1 {
@@ -929,8 +929,8 @@ details[open] .details-summary::after {
 
 // Navigation Bar Styling - Uses CSS variables from _config.yml palette.navbar
 .main-navigation {
-  background-color: var(--nav-bg, #1a202c) !important;
-  border-color: var(--nav-border, #2d3748) !important;
+  background-color: var(--nav-bg, #0f0f0f) !important;
+  border-color: var(--nav-border, #1a1a1a) !important;
   border-radius: 0;
   min-height: 54px !important;
   z-index: 1030;
@@ -1113,8 +1113,8 @@ details[open] .details-summary::after {
   
   .navbar-collapse {
     position: relative !important;
-    background-color: var(--nav-bg, #1a202c) !important;
-    border-color: var(--nav-border, #2d3748) !important;
+    background-color: var(--nav-bg, #0f0f0f) !important;
+    border-color: var(--nav-border, #1a1a1a) !important;
     border: none !important;
     display: flex !important;
     justify-content: center !important;
@@ -1123,9 +1123,9 @@ details[open] .details-summary::after {
     overflow-x: hidden !important;
     
     @media (max-width: 767px) {
-      background-color: var(--nav-bg, rgba(26, 32, 44, 0.98)) !important;
+      background-color: var(--nav-bg, rgba(15, 15, 15, 0.98)) !important;
       backdrop-filter: blur(10px);
-      border-top: 1px solid var(--nav-border, #2d3748) !important;
+      border-top: 1px solid var(--nav-border, #1a1a1a) !important;
       border-left: none !important;
       border-right: none !important;
       border-bottom: none !important;
@@ -1135,7 +1135,7 @@ details[open] .details-summary::after {
     &.in,
     &.show,
     &.collapsing {
-      background-color: var(--nav-bg, rgba(26, 32, 44, 0.98)) !important;
+      background-color: var(--nav-bg, rgba(15, 15, 15, 0.98)) !important;
       
       @media (max-width: 767px) {
         display: block !important;
@@ -1242,13 +1242,13 @@ details[open] .details-summary::after {
     
     .navbar-nav {
       margin: 0;
-      background-color: rgba(26, 32, 44, 0.98) !important;
-      border-top: 1px solid #2d3748;
+      background-color: rgba(15, 15, 15, 0.98) !important;
+      border-top: 1px solid var(--nav-border);
       backdrop-filter: blur(10px);
       
       > li > a {
         padding: 15px 25px;
-        border-bottom: 1px solid #2d3748;
+        border-bottom: 1px solid var(--nav-border);
         font-size: 1.4rem;
         border-radius: 0;
         margin: 0;
@@ -1283,8 +1283,8 @@ body:not(.dark) .main-navigation,
 body.dark .main-navigation,
 .navbar,
 .navbar-default {
-  background-color: #1a202c !important;
-  border-color: #2d3748 !important;
+  background-color: var(--nav-bg) !important;
+  border-color: var(--nav-border) !important;
   
   // Force ALL elements to stay dark
   *, *::before, *::after {
@@ -1385,8 +1385,8 @@ body.dark .main-navigation,
   
   .navbar-collapse {
     position: relative !important;
-    background-color: #1a202c !important;
-    border-color: #2d3748 !important;
+    background-color: var(--nav-bg) !important;
+    border-color: var(--nav-border) !important;
     border: none !important;
     display: flex !important;
     justify-content: center !important;
@@ -1395,9 +1395,9 @@ body.dark .main-navigation,
     overflow-x: hidden !important;
     
     @media (max-width: 767px) {
-      background-color: rgba(26, 32, 44, 0.98) !important;
+      background-color: rgba(15, 15, 15, 0.98) !important;
       backdrop-filter: blur(10px);
-      border-top: 1px solid #2d3748 !important;
+      border-top: 1px solid var(--nav-border) !important;
       border-left: none !important;
       border-right: none !important;
       border-bottom: none !important;
@@ -1407,7 +1407,7 @@ body.dark .main-navigation,
     &.in,
     &.show,
     &.collapsing {
-      background-color: rgba(26, 32, 44, 0.98) !important;
+      background-color: rgba(15, 15, 15, 0.98) !important;
       
       @media (max-width: 767px) {
         display: block !important;
@@ -1442,7 +1442,7 @@ main {
 .navbar-light,
 .navbar-dark,
 nav[class*="navbar"] {
-  background-color: #1a202c !important;
+  background-color: var(--nav-bg) !important;
   background-image: none !important;
   border: none !important;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2) !important;

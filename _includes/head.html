@@ -121,8 +121,24 @@
   <script src="{{ '/assets/js/academic-numbering.js' | relative_url }}" defer></script>
 
   <!-- Resource hints for better performance -->
-  <meta name="theme-color" content="#38a169">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="color-scheme" content="dark light">
+  
+  <!-- Early dark mode script to prevent flash of light theme -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('darkMode');
+      // Default to dark mode unless explicitly set to light
+      var isDark = saved === null ? true : saved === 'true';
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
 
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}

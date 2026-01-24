@@ -64,11 +64,12 @@ mjx-container {
 /* =====================================================
    NON-HIGHLIGHTED CODE BLOCKS (Plain text, BibTeX, etc.)
    Fix visibility for code blocks without syntax highlighting
+   IMPORTANT: Only targets blocks WITHOUT language classes 
+   to preserve syntax highlighting for Python, JS, etc.
    ===================================================== */
 
 /* Plain text/generic code blocks that aren't syntax highlighted */
-.article-post pre:not(.highlight):not(.rouge-table pre),
-.article-post .highlighter-rouge:not(.language-python):not(.language-javascript):not(.language-bash):not(.language-shell) .highlight,
+/* Only target blocks that are explicitly plain text */
 .article-post .language-text .highlight,
 .article-post .language-plaintext .highlight,
 .article-post .language-none .highlight {
@@ -79,45 +80,26 @@ mjx-container {
     color: var(--pre-code-color) !important;
     background: transparent !important;
   }
-}
-
-/* Generic code highlighting fallback - ensure all code is visible */
-.dark .highlight,
-.dark .highlighter-rouge .highlight {
-  /* Default text color for all unhighlighted tokens */
-  .n, .nx, .p, .w, .text {
+  
+  /* Override all tokens for plain text */
+  span {
     color: var(--pre-code-color) !important;
   }
 }
 
 /* Fix BibTeX/citation code blocks specifically */
-.dark .article-post .highlighter-rouge .highlight pre,
-.dark .article-post pre.highlight {
+.dark .article-post .language-bibtex .highlight pre,
+.dark .article-post .language-text .highlight pre,
+.dark .article-post .language-plaintext .highlight pre {
   color: var(--pre-code-color);
-  
-  /* Ensure all text content is visible */
-  & > code,
-  & > code * {
-    color: inherit;
-  }
 }
 
-/* Plain code blocks without language specification */
+/* Plain code blocks without language specification - make text visible */
 .dark .article-post div.highlighter-rouge:not([class*="language-"]) .highlight {
   background: var(--pre-bg);
   color: var(--pre-code-color);
   
-  pre {
-    color: var(--pre-code-color);
-  }
-  
-  code {
-    color: var(--pre-code-color);
-  }
-  
-  /* Generic token styling for visibility */
-  .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
-  .o, .ow, .p, .w, .text, .err {
+  pre, code, span {
     color: var(--pre-code-color);
   }
 }
@@ -156,12 +138,7 @@ body:not(.dark) .article-post div.highlighter-rouge:not([class*="language-"]) .h
   background: var(--pre-bg);
   color: var(--pre-code-color);
   
-  pre, code {
-    color: var(--pre-code-color);
-  }
-  
-  .n, .na, .nb, .nc, .nd, .ne, .nf, .ni, .nl, .nn, .no, .nt, .nv,
-  .o, .ow, .p, .w, .text, .err {
+  pre, code, span {
     color: var(--pre-code-color);
   }
 }

@@ -36,148 +36,6 @@
   <!-- Centralized Color Palette (from _config.yml) -->
   {%- include palette.html -%}
 
-  <!-- Shiki syntax highlighting with dual themes (light/dark CSS variables) -->
-  <!-- Theme configuration from _config.yml: shiki.dark_theme and shiki.light_theme -->
-  <script type="module">
-    // Shiki - TextMate grammar powered syntax highlighter (same as VS Code)
-    // Using dual themes: outputs CSS variables for both light and dark themes
-    // Background color is derived from the theme via --shiki-dark-bg / inline style
-    
-    // Theme configuration from Jekyll central config (_config.yml)
-    const SHIKI_CONFIG = {
-      darkTheme: '{{ site.shiki.dark_theme | default: "github-dark-default" }}',
-      lightTheme: '{{ site.shiki.light_theme | default: "github-light-default" }}'
-    };
-    
-    // Language alias mapping
-    const langMap = {
-      'py': 'python',
-      'js': 'javascript',
-      'ts': 'typescript',
-      'sh': 'bash',
-      'shell': 'bash',
-      'yml': 'yaml',
-      'tex': 'latex',
-      'bibtex': 'bibtex',
-      'text': 'plaintext',
-      '': 'plaintext'
-    };
-    
-    // Highlighter instance - cached for performance
-    let highlighterPromise = null;
-    
-    async function getHighlighter() {
-      if (!highlighterPromise) {
-        highlighterPromise = (async () => {
-          const { createHighlighter } = await import('https://esm.sh/shiki@1.24.0');
-          return createHighlighter({
-            themes: [SHIKI_CONFIG.lightTheme, SHIKI_CONFIG.darkTheme],
-            langs: ['python', 'javascript', 'typescript', 'bash', 'yaml', 'json', 
-                    'html', 'css', 'markdown', 'latex', 'bibtex', 'plaintext',
-                    'ruby', 'java', 'c', 'cpp', 'go', 'rust', 'sql', 'xml', 'diff']
-          });
-        })();
-      }
-      return highlighterPromise;
-    }
-    
-    async function highlightSingleBlock(highlighter, pre, code, lang) {
-      try {
-        const html = highlighter.codeToHtml(code, {
-          lang,
-          themes: {
-            light: SHIKI_CONFIG.lightTheme,
-            dark: SHIKI_CONFIG.darkTheme
-          },
-          defaultColor: 'light'
-        });
-        
-        const temp = document.createElement('div');
-        temp.innerHTML = html;
-        const newPre = temp.firstElementChild;
-        
-        if (newPre) {
-          newPre.dataset.shikiCode = code;
-          newPre.dataset.shikiLang = lang;
-          newPre.dataset.shikiDone = 'true';
-          pre.parentNode.replaceChild(newPre, pre);
-          return true;
-        }
-      } catch (err) {
-        console.warn('Shiki highlight failed for', lang, ':', err.message);
-        // Mark as attempted to avoid infinite retries
-        pre.dataset.shikiDone = 'error';
-      }
-      return false;
-    }
-    
-    async function highlightCodeBlocks() {
-      // Collect all code blocks that need highlighting
-      const blocks = [];
-      
-      for (const block of document.querySelectorAll('pre:not([data-shiki-done]) code')) {
-        const pre = block.parentElement;
-        if (!pre || pre.tagName !== 'PRE' || pre.dataset.shikiDone) continue;
-        
-        const code = block.textContent || '';
-        if (!code.trim()) continue;
-        
-        let lang = 'plaintext';
-        for (const cls of block.className.split(' ')) {
-          if (cls.startsWith('language-')) {
-            lang = cls.replace('language-', '');
-            break;
-          }
-        }
-        lang = langMap[lang] ?? lang;
-        
-        // Store data and mark as processing
-        pre.dataset.shikiCode = code;
-        pre.dataset.shikiLang = lang;
-        blocks.push({ pre, code, lang });
-      }
-      
-      if (blocks.length === 0) return;
-      
-      try {
-        const highlighter = await getHighlighter();
-        
-        // Process all blocks in parallel for maximum performance
-        await Promise.all(
-          blocks.map(({ pre, code, lang }) => 
-            highlightSingleBlock(highlighter, pre, code, lang)
-          )
-        );
-      } catch (err) {
-        console.error('Shiki initialization failed:', err);
-      }
-    }
-    
-    // Robust initialization with multiple fallbacks
-    async function initShiki() {
-      try {
-        await highlightCodeBlocks();
-      } catch (err) {
-        console.error('Shiki highlighting error:', err);
-      }
-    }
-    
-    // Run on DOMContentLoaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initShiki);
-    } else {
-      initShiki();
-    }
-    
-    // Also run after full page load (catches late-loading content)
-    window.addEventListener('load', () => {
-      setTimeout(initShiki, 100);
-    });
-    
-    // Expose for manual re-highlighting
-    window.shikiHighlight = highlightCodeBlocks;
-  </script>
-
   <!-- MathJax Configuration for Math Rendering -->
   <!-- 
     Note: kramdown with math_engine: mathjax outputs <script type="math/tex"> tags (MathJax v2 format)
@@ -263,8 +121,24 @@
   <script src="{{ '/assets/js/academic-numbering.js' | relative_url }}" defer></script>
 
   <!-- Resource hints for better performance -->
-  <meta name="theme-color" content="#38a169">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="color-scheme" content="dark light">
+  
+  <!-- Early dark mode script to prevent flash of light theme -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('darkMode');
+      // Default to dark mode unless explicitly set to light
+      var isDark = saved === null ? true : saved === 'true';
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
 
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}

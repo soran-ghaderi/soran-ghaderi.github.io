@@ -57,8 +57,8 @@ darkmode: true
 #   - "ruby"          : #be123c  (Dark red, sophisticated)
 #
 # NAVBAR STYLE OPTIONS:
-#   - "dark"          : Dark navbar (Default - #1a202c)
-#   - "darker"        : Darker navbar (#0f0f0f)
+#   - "dark"          : Dark navbar (Default - #0f0f0f, matches dark mode)
+#   - "darker"        : Same as dark (#0f0f0f)
 #   - "pure-black"    : Pure black navbar (#000000)
 #   - "slate"         : Slate blue navbar (#1e293b)
 # =============================================================================
@@ -245,16 +245,10 @@ footer_show_references: true
 markdown: kramdown
 kramdown:
   math_engine: mathjax
-  syntax_highlighter: none
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: true
-
-# Shiki syntax highlighting themes (client-side)
-# Available themes: https://shiki.style/themes
-shiki:
-  dark_theme: github-dark-default
-  light_theme: github-light-default
+      line_numbers: false
 
 # =============================================================================
 # CITATION STYLE CONFIGURATION

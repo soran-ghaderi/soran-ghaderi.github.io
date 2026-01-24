@@ -2,6 +2,7 @@ ul.icons a:hover {
   background: none;
   transform: none;
   box-shadow: none;
+  text-decoration: none;
 }
 
 ul.icons li {
@@ -25,6 +26,13 @@ ul.icons a {
   border-radius: 100%;
   background: none;
   color: var(--icon-color, #2d3748);
+  text-decoration: none;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
 }
 
 .icons i {

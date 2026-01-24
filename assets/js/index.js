@@ -234,12 +234,13 @@
 
 // =====================================================
 // CODE BLOCK ENHANCEMENTS
-// Copy button on hover, line numbers (VS Code style)
+// Copy button on hover for code blocks only (not inline code)
 // =====================================================
 (function() {
   function initCodeBlocks() {
-    // Find all code block containers (highlighter-rouge wraps .highlight)
-    const codeContainers = document.querySelectorAll('.highlighter-rouge, .highlight:not(.highlighter-rouge .highlight), pre.highlight');
+    // Only target actual code blocks: div.highlighter-rouge (Jekyll/Rouge) or pre.shiki (Shiki)
+    // This EXCLUDES inline code which is just <code> without .highlighter-rouge wrapper
+    const codeContainers = document.querySelectorAll('div.highlighter-rouge, pre.shiki, figure.highlight');
     
     console.log('Found code blocks:', codeContainers.length);
     
@@ -254,6 +255,11 @@
         return;
       }
       
+      // Skip if this is not a block-level code element (extra safety check)
+      if (container.tagName === 'CODE' && container.parentElement && container.parentElement.tagName !== 'PRE') {
+        return;
+      }
+      
       // Get the actual highlight block
       const block = container.classList.contains('highlight') ? container : container.querySelector('.highlight') || container;
       
@@ -261,12 +267,13 @@
       const wrapper = document.createElement('div');
       wrapper.className = 'code-block-wrapper';
       
-      // Create copy button
+      // Create copy button with icon
       const copyButton = document.createElement('button');
       copyButton.className = 'copy-button';
-      copyButton.textContent = 'Copy';
+      copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
       copyButton.setAttribute('aria-label', 'Copy code to clipboard');
       copyButton.setAttribute('type', 'button');
+      copyButton.setAttribute('title', 'Copy code');
       
       // Copy functionality
       copyButton.addEventListener('click', function() {
@@ -285,18 +292,18 @@
         textToCopy = textToCopy.split('\n').map(line => line.trimEnd()).join('\n').trim();
         
         navigator.clipboard.writeText(textToCopy).then(function() {
-          copyButton.textContent = 'Copied!';
+          copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
           copyButton.classList.add('copied');
           
           setTimeout(function() {
-            copyButton.textContent = 'Copy';
+            copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
             copyButton.classList.remove('copied');
           }, 2000);
         }).catch(function(err) {
           console.error('Failed to copy:', err);
-          copyButton.textContent = 'Error';
+          copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>';
           setTimeout(function() {
-            copyButton.textContent = 'Copy';
+            copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
           }, 2000);
         });
       });

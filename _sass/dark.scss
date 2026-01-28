@@ -239,6 +239,114 @@ body.dark {
       color: var(--text-muted);
     }
   }
+
+  // =====================================================
+  // BLOG LISTING PAGE DARK MODE
+  // =====================================================
+  
+  .blog-listing-container {
+    background-color: var(--bg-color);
+  }
+  
+  .blog-subsection-title {
+    color: var(--heading-color);
+    border-bottom-color: var(--card-border);
+  }
+  
+  .blog-featured-card,
+  .blog-card {
+    background: var(--bg-color);
+    border-color: var(--card-border);
+    
+    &:hover {
+      border-color: var(--accent-color);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .blog-featured-image,
+  .blog-card-image {
+    background: var(--intro-bg);
+  }
+  
+  .blog-card-image-placeholder i {
+    color: var(--text-muted);
+  }
+  
+  .blog-featured-title,
+  .blog-card-title {
+    color: var(--heading-color);
+  }
+  
+  .blog-card:hover .blog-card-title {
+    color: var(--accent-color);
+  }
+  
+  .blog-featured-excerpt,
+  .blog-card-excerpt {
+    color: var(--text-muted);
+  }
+  
+  .blog-card-excerpt {
+    color: var(--text-color);
+  }
+  
+  .blog-post-date,
+  .blog-post-author {
+    color: var(--text-muted);
+  }
+  
+  .blog-post-category {
+    background: rgba(var(--accent-rgb), 0.15);
+    color: var(--accent-color);
+  }
+  
+  .blog-category-badge {
+    background: var(--intro-bg);
+    color: var(--text-muted);
+  }
+  
+  .blog-card:hover .blog-category-badge {
+    background: rgba(var(--accent-rgb), 0.15);
+    color: var(--accent-color);
+  }
+  
+  .blog-read-more {
+    color: var(--text-muted);
+  }
+  
+  .blog-card:hover .blog-read-more {
+    color: var(--accent-color);
+  }
+  
+  // External blog links dark mode
+  .blog-card-external:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+  
+  .blog-external-link {
+    background: rgba(var(--accent-rgb), 0.12);
+    color: var(--accent-color);
+    
+    &:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+  }
+  
+  .blog-external-link-sm {
+    background: rgba(var(--accent-rgb), 0.12);
+    color: var(--accent-color);
+    
+    &:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+  }
+  
+  // =====================================================
+  // END BLOG LISTING PAGE DARK MODE
+  // =====================================================
   
   // Post title
   .posttitle {

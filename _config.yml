@@ -262,6 +262,12 @@ kramdown:
 # =============================================================================
 citation_style: "apa"
 
+# Collections for internal blog posts (separate from project posts in _posts/)
+collections:
+  blog_posts:
+    output: true
+    permalink: /blog/:title/
+
 defaults:
   - scope:
       path: _posts
@@ -271,6 +277,11 @@ defaults:
       path: _pages
     values:
       layout: page
+  - scope:
+      path: ""
+      type: blog_posts
+    values:
+      layout: post
 sass:
   sass_dir: _sass
   style: compressed

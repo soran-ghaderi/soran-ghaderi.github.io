@@ -1,6 +1,8 @@
 <div class="container publication-container">
   <h3 class="section-title">{{ site.publication_title | default: "Publications" }}</h3>
-  {% for publication in site.data.publication %}
-  {% include {{ publication.layout | default: 'left-publication' | append: ".html" }} item=publication %}
-  {% endfor %}
+  <div class="publication-list">
+    {% for publication in site.data.publication %}
+    {% include {{ publication.layout | default: 'left-publication' | append: ".html" }} item=publication %}
+    {% endfor %}
+  </div>
 </div>

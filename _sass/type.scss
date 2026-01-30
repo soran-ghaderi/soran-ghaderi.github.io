@@ -362,13 +362,27 @@ mark {
    BLOG POST / ARTICLE TYPOGRAPHY
    Clean, readable styling inspired by academic blogs
    Uses same width as container for alignment
+   RESPONSIVE - adapts to all screen sizes
    ===================================================== */
 
 .article-post {
   /* Remove max-width to align with container - let Bootstrap handle width */
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  
+  /* Responsive typography base */
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
   
   /* Article body text - uses same base font size as rest of site */
   p {
@@ -377,14 +391,36 @@ mark {
     margin-bottom: $paragraph-margin;
     color: var(--text-color, #e2e8f0);
     text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      font-size: calc(#{$font-size-base} * 0.95);
+      margin-bottom: calc(#{$paragraph-margin} * 0.9);
+    }
+    
+    @media (max-width: 480px) {
+      font-size: calc(#{$font-size-base} * 0.9);
+    }
   }
   
-  /* Article headers - uses browser default sizes */
+  /* Article headers - uses browser default sizes with responsive adjustments */
   h1 {
     font-weight: $font-weight-semibold;
     margin-top: $spacing-2xl;
     margin-bottom: $paragraph-margin;
     color: var(--heading-color, #f7fafc);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      margin-top: $spacing-xl;
+      font-size: 1.75rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
   }
   
   h2 {
@@ -392,6 +428,17 @@ mark {
     margin-top: $spacing-xl;
     margin-bottom: $heading-margin-bottom;
     color: var(--heading-color, #f7fafc);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      margin-top: $spacing-lg;
+      font-size: 1.4rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.25rem;
+    }
   }
   
   h3 {
@@ -399,6 +446,17 @@ mark {
     margin-top: $spacing-xl;
     margin-bottom: $heading-margin-bottom;
     color: var(--heading-color, #f7fafc);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      margin-top: $spacing-lg;
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
   }
   
   h4 {
@@ -406,6 +464,16 @@ mark {
     margin-top: $spacing-lg;
     margin-bottom: $spacing-sm;
     color: var(--heading-color, #f7fafc);
+    word-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      margin-top: $spacing-md;
+      font-size: 1.1rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.05rem;
+    }
   }
   
   h5 {
@@ -413,6 +481,12 @@ mark {
     margin-top: $spacing-lg;
     margin-bottom: $spacing-sm;
     color: var(--heading-color, #f7fafc);
+    word-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      margin-top: $spacing-md;
+      font-size: 1rem;
+    }
   }
   
   h6 {
@@ -424,12 +498,22 @@ mark {
     letter-spacing: 0.5px;
   }
   
-  /* Lists - same font size as body text */
+  /* Lists - same font size as body text, responsive padding */
   ul, ol {
     font-size: $font-size-base;
     line-height: $line-height-base;
     margin-bottom: $paragraph-margin;
     padding-left: $spacing-xl;
+    
+    @media (max-width: 768px) {
+      padding-left: $spacing-lg;
+      font-size: calc(#{$font-size-base} * 0.95);
+    }
+    
+    @media (max-width: 480px) {
+      padding-left: 1.25rem;
+      font-size: calc(#{$font-size-base} * 0.9);
+    }
   }
   
   ul {
@@ -445,6 +529,16 @@ mark {
     line-height: $line-height-base;
     margin-bottom: $list-item-margin;
     color: var(--text-color, #e2e8f0);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      font-size: calc(#{$font-size-base} * 0.95);
+    }
+    
+    @media (max-width: 480px) {
+      font-size: calc(#{$font-size-base} * 0.9);
+    }
     
     p {
       margin-bottom: $spacing-sm;
@@ -488,13 +582,19 @@ mark {
     background-color: var(--code-bg, rgba(110, 118, 129, 0.4));
     border-radius: 6px;
     color: var(--code-color, #e2e8f0);
+    word-break: break-word;
+    
+    @media (max-width: 480px) {
+      font-size: 0.85em;
+      padding: 0.15em 0.4em;
+    }
   }
   
   /* Code blocks handled by _syntax.scss
      Note: Padding, background, and border are set in _syntax.scss via CSS variables.
      Do NOT override them here to avoid specificity conflicts. */
   
-  /* Blockquotes */
+  /* Blockquotes - responsive padding and margins */
   blockquote {
     margin: 1.75rem 0;
     padding: 1.25rem 1.5rem;
@@ -502,6 +602,19 @@ mark {
     background-color: var(--blockquote-bg, rgba(45, 55, 72, 0.3));
     border-radius: 0 8px 8px 0;
     font-style: italic;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    
+    @media (max-width: 768px) {
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+    }
+    
+    @media (max-width: 480px) {
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      border-left-width: 3px;
+    }
     
     p {
       margin-bottom: 0.5rem;
@@ -519,19 +632,34 @@ mark {
       font-style: normal;
       color: var(--text-muted, #718096);
       
+      @media (max-width: 480px) {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+      }
+      
       &::before {
         content: "— ";
       }
     }
   }
   
-  /* Images */
+  /* Images - responsive with proper constraints */
   img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 1.75rem auto;
     border-radius: 8px;
+    
+    @media (max-width: 768px) {
+      margin: 1.25rem auto;
+      border-radius: 6px;
+    }
+    
+    @media (max-width: 480px) {
+      margin: 1rem auto;
+      border-radius: 4px;
+    }
   }
   
   /* Badge images - display inline (shields.io, badge.fury, github badges, etc.) */
@@ -552,6 +680,8 @@ mark {
     margin: 0.25rem;
     border-radius: 4px;
     vertical-align: middle;
+    max-width: 100%;
+    height: auto;
   }
   
   /* Badge container - center badges and allow wrapping */
@@ -560,9 +690,10 @@ mark {
   div[align="center"] {
     text-align: center;
     line-height: 2;
+    overflow-wrap: break-word;
   }
   
-  /* Image captions */
+  /* Image captions - responsive sizing */
   figcaption,
   .caption {
     text-align: center;
@@ -570,19 +701,65 @@ mark {
     color: var(--text-muted, #a0aec0);
     margin-top: 0.5rem;
     font-style: italic;
+    padding: 0 0.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
   
-  /* Tables */
+  /* Tables - responsive with horizontal scroll on mobile */
   table {
     width: 100%;
+    max-width: 100%;
     margin: 1.75rem 0;
     border-collapse: collapse;
     font-size: $font-size-sm;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    @media (max-width: 768px) {
+      margin: 1.25rem 0;
+      font-size: 0.85rem;
+    }
+    
+    @media (max-width: 480px) {
+      margin: 1rem 0;
+      font-size: 0.8rem;
+    }
+    
+    /* Table scrollbar styling */
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--text-muted, #888);
+      border-radius: 2px;
+    }
     
     th, td {
       padding: 0.875rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--table-border, #4a5568);
+      white-space: nowrap;
+      
+      @media (max-width: 768px) {
+        padding: 0.625rem 0.75rem;
+      }
+      
+      @media (max-width: 480px) {
+        padding: 0.5rem 0.625rem;
+      }
     }
     
     th {
@@ -596,30 +773,51 @@ mark {
     }
   }
   
-  /* Horizontal rules */
+  /* Horizontal rules - responsive margins */
   hr {
     margin: 2.5rem 0;
     border: none;
     border-top: 1px solid var(--hr-color, #4a5568);
   }
   
-  /* Math equations (MathJax) - Fix scrollbar and alignment issues */
+  /* Math equations (MathJax/KaTeX) - Responsive with proper overflow handling */
   .MathJax,
   .MathJax_Display,
   mjx-container,
-  .katex-display {
-    overflow-x: visible;
-    overflow-y: visible;
+  .katex-display,
+  .katex {
     max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
     
-    /* Completely hide scrollbars */
-    scrollbar-width: none;  /* Firefox */
-    -ms-overflow-style: none;  /* IE/Edge */
+    /* Show scrollbar only when needed on mobile */
+    scrollbar-width: thin;
+    -ms-overflow-style: auto;
     
     &::-webkit-scrollbar {
-      display: none;  /* Chrome, Safari, Opera */
-      height: 0;
-      width: 0;
+      height: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--text-muted, #888);
+      border-radius: 2px;
+    }
+    
+    @media (min-width: 769px) {
+      /* Hide scrollbar on desktop when not needed */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overflow-x: visible;
+      
+      &::-webkit-scrollbar {
+        display: none;
+        height: 0;
+        width: 0;
+      }
     }
   }
   
@@ -632,6 +830,7 @@ mark {
     overflow: visible;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    flex-shrink: 0;
     
     &::-webkit-scrollbar {
       display: none;
@@ -641,11 +840,14 @@ mark {
   }
   
   /* Inline math - fix vertical alignment */
-  mjx-container:not([display="true"]) {
+  mjx-container:not([display="true"]),
+  .katex:not(.katex-display .katex) {
     display: inline-block !important;
     vertical-align: baseline !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow-x: visible;
+    max-width: none;
   }
   
   /* Fix MathJax inline math alignment */
@@ -663,19 +865,41 @@ mark {
     vertical-align: baseline !important;
   }
   
-  /* Display math blocks */
+  /* Display math blocks - responsive */
   mjx-container[display="true"],
-  .MathJax_Display {
+  .MathJax_Display,
+  .katex-display {
     display: block !important;
     margin: 1.5rem 0 !important;
     text-align: center;
-    overflow: visible !important;
-    font-size: inherit;  // Inherit from parent to match surrounding text
+    font-size: inherit;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    @media (max-width: 768px) {
+      margin: 1rem 0 !important;
+      padding: 0.5rem 0;
+      text-align: left;
+    }
   }
   
-  /* Ensure MathJax output matches text size */
+  /* Ensure MathJax output scales on mobile */
   mjx-container {
-    font-size: $font-size-math !important;  // Derived from global --math-font-size
+    font-size: $font-size-math !important;
+    
+    @media (max-width: 480px) {
+      font-size: calc(#{$font-size-math} * 0.9) !important;
+    }
+  }
+  
+  /* KaTeX responsive scaling */
+  .katex {
+    font-size: 1.1em;
+    
+    @media (max-width: 480px) {
+      font-size: 1em;
+    }
   }
   
   /* Definition lists */
@@ -840,13 +1064,19 @@ span.equation-number {
 }
 
 /* =====================================================
-   ACADEMIC FIGURES - CENTERED LAYOUT
+   ACADEMIC FIGURES - RESPONSIVE CENTERED LAYOUT
    ===================================================== */
 .academic-figure {
   display: block !important;
   text-align: center !important;
   margin: 2rem auto !important;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  
+  @media (max-width: 768px) {
+    margin: 1.5rem auto !important;
+  }
   
   img {
     display: block;
@@ -859,6 +1089,13 @@ span.equation-number {
   &:has(img + img) img {
     display: inline-block;
     margin: 0.25rem;
+    max-width: calc(50% - 0.5rem);
+    
+    @media (max-width: 480px) {
+      display: block;
+      max-width: 100%;
+      margin: 0.5rem auto;
+    }
   }
   
   figcaption {
@@ -866,6 +1103,242 @@ span.equation-number {
     font-style: italic;
     margin-top: 0.75rem;
     color: var(--text-muted, #888);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* =====================================================
+   ACADEMIC EQUATIONS - RESPONSIVE WITH SCROLL ON MOBILE
+   ===================================================== */
+.academic-equation {
+  display: block;
+  margin: 1.5rem 0;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+  }
+  
+  /* Equation number positioning */
+  .equation-number {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    @media (max-width: 480px) {
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+  }
+  
+  /* Scrollbar styling for mobile */
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--text-muted, #888);
+    border-radius: 2px;
+  }
+}
+
+/* =====================================================
+   ACADEMIC TABLES - RESPONSIVE WITH SCROLL
+   ===================================================== */
+.academic-table {
+  display: block;
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+  }
+  
+  table {
+    min-width: 100%;
+    border-collapse: collapse;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* Table caption */
+  &[data-caption]::before {
+    content: attr(data-caption);
+    display: block;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    color: var(--text-muted, #888);
+    font-size: 0.9rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* Scrollbar styling */
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--text-muted, #888);
+    border-radius: 2px;
+  }
+}
+
+/* =====================================================
+   ACADEMIC ALGORITHMS - RESPONSIVE STYLING
+   ===================================================== */
+.academic-algorithm {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--blockquote-bg, rgba(45, 55, 72, 0.05));
+  border-left: 4px solid var(--accent-color, #e53e3e);
+  border-radius: 0 8px 8px 0;
+  font-family: var(--code-font-family, 'Fira Code', monospace);
+  font-size: 0.9rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Algorithm caption */
+  &[data-caption]::before {
+    content: attr(data-caption);
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: normal;
+    color: var(--heading-color, #333);
+    font-size: 0.95rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Scrollbar styling */
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--text-muted, #888);
+    border-radius: 2px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE CODE BLOCKS
+   ===================================================== */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  code {
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}
+
+/* =====================================================
+   GLOBAL RESPONSIVE CONTENT FIXES
+   ===================================================== */
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive video embeds */
+video,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive video wrapper for aspect ratio preservation */
+.video-wrapper,
+.embed-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  
+  iframe,
+  video,
+  embed,
+  object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 

@@ -1,7 +1,8 @@
 # External Blog Posts
 # Fields:
 #   - title: Post title (required)
-#   - date: Display date (required)
+#   - date: Date in YYYY-MM-DD format for sorting (required)
+#   - display_date: Human-readable date for display (required)
 #   - categories: Comma-separated categories for badges (optional)
 #   - description: Short excerpt/description (required)
 #   - image: Thumbnail image URL (optional, external URLs supported)
@@ -10,8 +11,21 @@
 #       - platform: Display name (e.g., "Towards Data Science")
 #       - url: External URL
 
+# - title: "Video World Models: From Bidirectional Diffusion to Autoregressive Reality Engines"
+#   date: 2026-01-20
+#   display_date: "Jan 2026"
+#   categories: "Video Generation, Diffusion Models"
+#   description: "Video diffusion models can generate stunning short clips, but building true world simulators requires a fundamental shift. This post explores how recent advances in causal attention, distribution matching distillation, and long-range memory are enabling real-time video generation that can extend to minutes while maintaining temporal coherence."
+#   image: "https://causvid.github.io/static/images/teaser.gif"  
+#   links:
+#     - platform: "Towards Data Science"
+#       url: "https://towardsdatascience.com/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99/"
+#     - platform: "Medium"
+#       url: "https://medium.com/data-science/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99"
+
 - title: "Training an EBM with Contrastive Divergence"
-  date: "May 2025"
+  date: 2025-05-01
+  display_date: "May 2025"
   categories: "Energy-Based Models"
   description: "Interactive notebook providing a hands-on tutorial on training a simple EBM on synthetic datasets using the TorchEBM library. Covers energy functions, Langevin Dynamics for sampling, and Contrastive Divergence."
   image: "https://github.com/soran-ghaderi/torchebm/raw/master/docs/assets/animations/ebm_training_animation.gif"
@@ -22,10 +36,11 @@
       url: "https://colab.research.google.com/drive/1NaSsYEcW6IQgYuOrtyT_Djk9uq7Z5Ir6?usp=sharing" 
       
 - title: "Hamiltonian Mechanics"
-  date: "March 2025"
-  categories: "Research, Tutorials"
+  date: 2025-03-01
+  display_date: "March 2025"
+  categories: "Hamiltonian-mechanics, Tutorials"
   description: "Hamiltonian mechanics is a way to describe how physical systems, like planets or pendulums, move over time, focusing on energy rather than just forces. By reframing complex dynamics through energy lenses, this 19th-century physics framework now powers cutting-edge generative AI."
-  image: "https://contributor.insightmediagroup.io/wp-content/uploads/2025/03/pendulum_phase_space-1.mp4"  # Add thumbnail URL here
+  image: "https://contributor.insightmediagroup.io/wp-content/uploads/2025/03/pendulum_phase_space-1.mp4"
   featured: true
   links:
     - platform: "TorchEBM Blog"
@@ -34,10 +49,11 @@
       url: "https://towardsdatascience.com/from-physics-to-probability-hamiltonian-mechanics-for-generative-modeling-and-mcmc/"
 
 - title: "The Map Of Transformers"
-  date: "April 2023"
+  date: 2023-04-01
+  display_date: "April 2023"
   categories: "Natural Language Processing"
   description: "A broad overview of Transformers research covering the landscape of transformer architectures, their applications, and the evolution of attention mechanisms in deep learning."
-  # image: ""  # Add thumbnail URL here
+  image: "https://miro.medium.com/v2/resize:fit:786/format:webp/1*HBoGVHTx5QqLKYkTupwZaA.png" 
   links:
     - platform: "Towards Data Science"
       url: "https://towardsdatascience.com/the-map-of-transformers-e14952226398/"
@@ -45,10 +61,11 @@
       url: "https://medium.com/data-science/the-map-of-transformers-e14952226398"
 
 - title: "Transformers in Action: Attention Is All You Need"
-  date: "September 2022"
+  date: 2022-09-01
+  display_date: "September 2022"
   categories: "Deep Learning"
   description: "A brief survey, illustration, and implementation guide to understanding the transformer architecture and attention mechanisms that revolutionized natural language processing."
-  # image: ""  # Add thumbnail URL here
+  image: "https://miro.medium.com/v2/resize:fit:786/format:webp/1*nqEy4i4sQPhYV0E2n436fQ.png" 
   links:
     - platform: "Towards Data Science"
       url: "https://towardsdatascience.com/transformers-in-action-attention-is-all-you-need-ac10338a023a/"
@@ -56,10 +73,11 @@
       url: "https://medium.com/data-science/transformers-in-action-attention-is-all-you-need-ac10338a023a"
 
 - title: "Rethinking Thinking: How Do Attention Mechanisms Actually Work?"
-  date: "July 2022"
+  date: 2022-07-01
+  display_date: "July 2022"
   categories: "Deep Learning, Neuroscience"
   description: "The brain, the mathematics, and DL – research frontiers exploring the intersection of neuroscience and attention mechanisms in artificial intelligence."
-  # image: ""  # Add thumbnail URL here
+  image: "https://miro.medium.com/v2/resize:fit:786/format:webp/1*rn3dKuGlyCljldvE94KrnA.png"  
   links:
     - platform: "Towards Data Science"
       url: "https://towardsdatascience.com/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99/"
@@ -67,7 +85,8 @@
       url: "https://medium.com/data-science/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99"
 
 # - title: "Langevin Dynamics Sampling with TorchEBM"
-#   date: "April 2024"
+#   date: 2024-04-01
+#   display_date: "April 2024"
 #   categories: "Tutorials, Examples"
 #   description: "A powerful sampling technique that allows us to draw samples from complex probability distributions. Tutorial exploring TorchEBM's implementation of Langevin dynamics for sampling from various energy landscapes."
 #   image: ""

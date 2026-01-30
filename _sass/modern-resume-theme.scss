@@ -159,6 +159,11 @@
     height: auto;
     border-radius: 8px;
   }
+  
+  video.featured-image {
+    display: block;
+    max-width: 100%;
+  }
 }
 
 // Article content styling

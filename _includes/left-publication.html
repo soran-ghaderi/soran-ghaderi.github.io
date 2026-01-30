@@ -1,208 +1,87 @@
-<div class="row clearfix layout layout-left publication-card">
-    <!-- Left Column: Image or GIF Container with 16:9 Aspect Ratio -->
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details text-center">
-        {% if include.item.gif or include.item.image %}
-        <div class="img-container" style="position:relative; width:100%; padding-bottom:56.25%; border-radius: 12px; overflow: hidden;">
-            {% if include.item.gif %}
-            <img src="{{ include.item.gif }}" alt="Publication GIF" class="img-responsive" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" />
-            {% else %}
-            <img src="{{ include.item.image }}" alt="Publication Image" class="img-responsive" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" />
-            {% endif %}
-        </div>
+<!-- Publication Card - Unified style matching blog post cards -->
+<article class="publication-card">
+    <!-- Image Section -->
+    {% if include.item.gif or include.item.image %}
+    <div class="publication-card-image">
+        {% if include.item.gif %}
+        <img src="{{ include.item.gif }}" alt="{{ include.item.title }}">
         {% else %}
-        <!-- Fallback icon if no image/GIF is specified -->
-        <i class="fa fa-book fa-3x" aria-hidden="true"></i>
+        <img src="{{ include.item.image }}" alt="{{ include.item.title }}">
         {% endif %}
     </div>
+    {% else %}
+    <div class="publication-card-image publication-card-image-placeholder">
+        <i class="fa fa-book"></i>
+    </div>
+    {% endif %}
 
-    <!-- Right Column: Main Publication Details -->
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-        {% if include.item.title %}
-        <h4>{{ include.item.title }}</h4>
-        {% endif %}
-
-
-        {% if include.item.venue or include.item.year %}
-        <p>
-            {% if include.item.venue %}
-            <strong>{{ include.item.venue }}</strong>
+    <!-- Content Section -->
+    <div class="publication-card-content">
+        <div class="publication-card-header">
+            {% if include.item.title %}
+            <h5 class="publication-card-title">{{ include.item.title }}</h5>
             {% endif %}
-            {% if include.item.year %}
-            <span> ({{ include.item.year }})</span>
-            {% endif %}
-        </p>
+            
+            <div class="publication-card-meta">
+                {% if include.item.year %}
+                <span class="publication-date">{{ include.item.year }}</span>
+                {% endif %}
+                {% if include.item.publication_type %}
+                <span class="publication-type-badge">{{ include.item.publication_type }}</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Venue -->
+        {% if include.item.venue %}
+        <p class="publication-venue"><em>{{ include.item.venue }}</em></p>
         {% endif %}
 
-        {% if include.item.publication_type %}
-            <p><strong>{{ include.item.publication_type }}</strong></p>
-        {% endif %}
-
-
-        <!-- Author Information -->
-        <p>Author(s):
-            {% assign site_author = site.name | strip %} <!-- Get the site name (your name) -->
-
+        <!-- Authors -->
+        {% if include.item.authors %}
+        <p class="publication-authors">
+            {% assign site_author = site.name | strip %}
             {% for author in include.item.authors %}
                 {% if author == site_author %}
-                    <strong>{{ author }}</strong>
+                    <strong class="publication-author-highlight">{{ author }}</strong>
                 {% else %}
-                    <span style="color: grey;">{{ author }}</span>
+                    <span class="publication-author">{{ author }}</span>
                 {% endif %}
                 {% unless forloop.last %}, {% endunless %}
             {% endfor %}
         </p>
-
-
-        <!-- Additional Links in One Line with Separator -->
-        {% assign links = "" %}
-        {% assign link_list = "" %}
-
-        {% if include.item.link %}
-        {% assign link_list = link_list | append: '<a href="' | append: include.item.link | append: '" target="_blank">Publication</a>||' %}
-        {% endif %}
-        {% if include.item.website %}
-        {% assign link_list = link_list | append: '<a href="' | append: include.item.website | append: '" target="_blank">Website</a>||' %}
-        {% endif %}
-        {% if include.item.code %}
-        {% assign link_list = link_list | append: '<a href="' | append: include.item.code | append: '" target="_blank">Code</a>||' %}
-        {% endif %}
-        {% if include.item.paper %}
-        {% assign link_list = link_list | append: '<a href="' | append: include.item.paper | append: '" target="_blank">Paper</a>||' %}
         {% endif %}
 
-        <!-- Remove trailing separator -->
-        {% assign links = link_list | split: '||' | join: ' | ' %}
-
-        {% if links != "" %}
-        <p>{{ links }}</p>
-        {% endif %}
-
-<!--        {% if include.item.details %}-->
-<!--        <div class="abstract-container">-->
-<!--            <div class="abstract-content">-->
-<!--                {{ include.item.details | strip | markdownify }}-->
-<!--            </div>-->
-<!--            <div class="abstract-gradient"></div>-->
-<!--            <button class="abstract-toggle" aria-expanded="false">-->
-<!--                <i class="fa fa-chevron-down"></i>-->
-<!--            </button>-->
-<!--        </div>-->
-<!--        {% endif %}-->
-
-<!--        {% if include.item.cite %}-->
-<!--        <div class="abstract-container">-->
-<!--            <div class="abstract-content">-->
-<!--                {% for entry in include.item.cite %}-->
-<!--                <div class="citation-entry">-->
-<!--                    <p>-->
-<!--                        @{{ entry.type }}&#123;{{ entry.id }},<br>-->
-<!--                        author: &emsp;&emsp;=  {% for author in entry.authors %}-->
-<!--                        {{ author.family }}, {{ author.given }} {% unless forloop.last %}, {% endunless %}-->
-<!--                        {% endfor %}-->
-<!--                        <br>-->
-<!--                        title: &emsp;&emsp;&emsp;   =  {{ entry.title }},<br>-->
-<!--                        school: &emsp;&emsp;=  {{ entry.publisher }},<br>-->
-<!--                        year: &emsp;&emsp;&emsp;=  {{ entry.issued.year }},<br>-->
-<!--                        type: &emsp;&emsp;&emsp;=  {{ entry.genre }},<br>-->
-<!--                        }-->
-<!--                    </p>-->
-
-<!--                </div>-->
-<!--                {% endfor %}-->
-<!--            </div>-->
-<!--            <div class="abstract-gradient"></div>-->
-<!--            <button class="abstract-toggle" aria-expanded="false">-->
-<!--                <i class="fa fa-chevron-down"></i>-->
-<!--            </button>-->
-<!--        </div>-->
-<!--        {% endif %}-->
-
-
-
+        <!-- Footer with badges and links -->
+        <div class="publication-card-footer">
+            <div class="publication-badges">
+                {% if include.item.venue %}
+                <span class="publication-badge">{{ include.item.venue | truncatewords: 3 }}</span>
+                {% endif %}
+            </div>
+            
+            <div class="publication-links">
+                {% if include.item.paper %}
+                <a href="{{ include.item.paper }}" target="_blank" rel="noopener" class="publication-link">
+                    Paper <i class="fa fa-file-pdf"></i>
+                </a>
+                {% endif %}
+                {% if include.item.code %}
+                <a href="{{ include.item.code }}" target="_blank" rel="noopener" class="publication-link">
+                    Code <i class="fab fa-github"></i>
+                </a>
+                {% endif %}
+                {% if include.item.website %}
+                <a href="{{ include.item.website }}" target="_blank" rel="noopener" class="publication-link">
+                    Website <i class="fa fa-globe"></i>
+                </a>
+                {% endif %}
+                {% if include.item.link %}
+                <a href="{{ include.item.link }}" target="_blank" rel="noopener" class="publication-link">
+                    Publication <i class="fa fa-external-link-alt"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
     </div>
-</div>
-
-<script>
-    function initializeAbstracts() {
-        const abstractContainers = document.querySelectorAll('.abstract-container');
-
-        abstractContainers.forEach(container => {
-            const content = container.querySelector('.abstract-content');
-            const toggle = container.querySelector('.abstract-toggle');
-
-            // Only show toggle if content is taller than max-height
-            if (content.scrollHeight > content.offsetHeight) {
-                toggle.style.display = 'flex';
-            } else {
-                toggle.style.display = 'none';
-            }
-
-            // Remove existing listener before adding new one
-            toggle.removeEventListener('click', toggleAbstract);
-            toggle.addEventListener('click', toggleAbstract);
-        });
-    }
-
-    function toggleAbstract(event) {
-        const toggle = event.currentTarget;
-        const container = toggle.closest('.abstract-container');
-        const content = container.querySelector('.abstract-content');
-
-        content.classList.toggle('expanded');
-        toggle.classList.toggle('expanded');
-    }
-
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', initializeAbstracts);
-
-    // Handle dynamic content changes
-    const observer = new MutationObserver(initializeAbstracts);
-    observer.observe(document.body, { childList: true, subtree: true });
-
-</script>
-
-
-<style>
-    .abstract-container {
-        position: relative;
-        margin-top: 1rem;
-    }
-
-    .abstract-content {
-        max-height: 3.6em;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
-
-    .abstract-content.expanded {
-        max-height: 1000px;
-    }
-
-    .abstract-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 0.5rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: currentColor;
-        opacity: 0.2;
-    }
-
-    .abstract-toggle:hover {
-        opacity: 0.2;
-    }
-
-    .abstract-toggle i {
-        transition: transform 0.3s ease;
-    }
-
-    .abstract-toggle.expanded i {
-        transform: rotate(180deg);
-    }
-</style>
-
-
-
+</article>

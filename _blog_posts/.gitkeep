@@ -1,0 +1,16 @@
+# This directory contains internal blog posts (separate from projects in _posts/)
+# 
+# To create a new blog post, add a markdown file with the following frontmatter:
+#
+# ---
+# layout: post
+# title: "Your Blog Post Title"
+# author: Soran Ghaderi
+# date: 2025-01-28
+# image: https://example.com/thumbnail.jpg  # Optional thumbnail
+# featured: false  # Set to true to show in Featured section
+# categories: [Category1, Category2]
+# excerpt: "A short description of your blog post..."
+# ---
+#
+# Your blog post content goes here...

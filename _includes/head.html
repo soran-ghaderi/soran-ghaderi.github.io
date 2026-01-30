@@ -25,9 +25,11 @@
   <title>{{ site.name }} | {{ site.title }}</title>
   {%- seo title=false -%}
 
-  <!-- Critical CSS - Bootstrap with preload -->
-  <link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></noscript>
+  <!-- Bootstrap CSS - loaded directly for reliability on GitHub Pages -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Main CSS -->
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">

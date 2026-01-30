@@ -7,8 +7,8 @@
 // Roboto: Body text, headings
 // Fira Code: Code blocks, inline code
 
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+// NOTE: Bootstrap and Font Awesome are loaded via <link> tags in head.html
+// Do NOT use @import url() here as it causes issues with GitHub Pages SCSS compilation
 
 /* =====================================================
    BOOTSTRAP RESET FOR SHIKI

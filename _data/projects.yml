@@ -16,7 +16,7 @@
   description: >
     <b><i class="fas fa-crown flagship-crown"></i> Flagship</b> <span class="badge badge-accent">Featured</span><br>
     <b>PyTorch library for energy-based models, diffusion, and flow matching.</b> Implements samplers, score/flow/contrastive objectives, SDE/ODE integrators, interpolants, and mixed-precision training.<br>
-    <span style="color:#888">PyTorch · CUDA</span> <a href="/2025/02/19/torchebm/" style="text-decoration: none;"> <span class="badge badge-accent badge-pulse">Read more</span></a><br>
+    <span style="color:#888">PyTorch · CUDA</span> <a href="/2025/02/19/torchebm.html" style="text-decoration: none;"> <span class="badge badge-accent badge-pulse">Read more</span></a><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/torchebm?style=social">
     <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/torchebm">
     <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">

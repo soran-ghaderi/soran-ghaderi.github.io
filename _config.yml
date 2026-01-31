@@ -23,7 +23,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: Looking for PhD & Research/Job Opportunities - MSc in AI at the University of Essex
+title: Looking for PhD Opportunities - MSc in AI at the University of Essex
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -62,6 +62,29 @@ darkmode: true
 #   - "pure-black"    : Pure black navbar (#000000)
 #   - "slate"         : Slate blue navbar (#1e293b)
 # =============================================================================
+# // =========================================================================
+# // BADGE SYSTEM - Announcement badges with colored dot indicators
+# // =========================================================================
+# // 
+# // USAGE (in HTML/Markdown):
+# // 
+# //   PILL BADGES (subtle background with colored dot):
+# //     <span class="badge badge-new">New</span>
+# //     <span class="badge badge-hot">Trending</span>
+# //     <span class="badge badge-update">Updated</span>
+# //     <span class="badge badge-pinned">Pinned</span> 
+# //     <span class="badge badge-soon">Soon</span>
+# //     <span class="badge badge-accent">Featured</span>   (uses site accent color)
+# //
+# //   MINIMAL BADGES (inline with text, just dot + text):
+# //     <span class="badge-minimal badge-new">New collaboration</span>
+# //     <span class="badge-minimal badge-hot">Hot topic</span>
+# //
+# //   WITH PULSE ANIMATION:
+# //     <span class="badge badge-new badge-pulse">New</span>
+# //
+# // =========================================================================
+  
 palette:
   dark_bg: "near-black"      # Dark mode background
   light_bg: "white"          # Light mode background  
@@ -134,7 +157,7 @@ about_content: | # this will include new lines to allow paragraphs
   </p>
   
   <details>
-  <summary><strong>▸ Key areas (click to expand)</strong></summary>
+  <summary><strong>▸ Key areas <span class="badge badge-soon">Click to expand</span></strong></summary>
   <br>
   <ul>
     <li><strong>Generative Modeling</strong>: Energy-Based Models, Diffusion/Score-Based Models, Normalizing Flows, Optimal Transport, Consistency Models. Mathematical tools: ODEs, PDEs (Fokker-Planck), SDEs, Itô Calculus, OT theory. Also language models and autoregressive generation.</li>
@@ -159,24 +182,14 @@ about_content: | # this will include new lines to allow paragraphs
   </ul>
   </section>
   
-  
   <section>
-    <h3>Open Source</h3>
-    <p><strong>Current libraries</strong></p>
-    <ul>
-      <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> <strong><i class="fas fa-crown flagship-crown"></i> Flagship</strong> <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">· EBMs, diffusion, flow matching, SDE/ODE integrators</li>
-        <li><a href="https://github.com/soran-ghaderi/cuRBLAS">cuRBLAS 🍒</a> · CUDA kernels for randomized linear algebra</li>
-    </ul>
-    <details>
-    <summary><strong>▸ Previous libraries (click to expand)</strong></summary>
-    <ul style="margin-top: 0.5em;">
-        <li><a href="https://github.com/tensorops/TransformerX">TransformerX</a> · Modular transformer research library</li>
-        <li><a href="https://github.com/bi-graph/Emgraph">Emgraph</a> · Knowledge graph embeddings</li>
-        <li><a href="https://github.com/bi-graph/Bigraph">Bigraph</a> · Bipartite graph link prediction</li>
-        <li><a href="https://github.com/soran-ghaderi/backpropagation">Nano Autodiff</a> · From-scratch autodiff engine</li>
-        <li><a href="https://github.com/appheap/TASE">TASE</a> · Large-scale multimodal audio search engine</li>
-    </ul>
-    </details>
+    <h3>Writing</h3>
+    <p>
+      <span class="badge badge-new badge-pulse">New</span>
+      <a href="/blog/video-world-models/" style="font-weight: 500;">Video World Models</a> — 
+      <span style="color: var(--text-muted);">From slow bidirectional diffusion to real-time autoregressive world simulators. 
+      Causality, self-forcing, attention sinks, and the path to interactive video generation.</span>
+    </p>
   </section>
   
   <section>

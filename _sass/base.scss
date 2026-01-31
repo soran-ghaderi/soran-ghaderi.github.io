@@ -103,6 +103,15 @@
   --details-bg: rgba(45, 55, 72, 0.05);     // Details/summary background
   --details-border: #d0d7de;                // Details/summary border
   
+  --badge-text: #374151;                    // Dark gray text
+  --badge-border: #e5e7eb;                  // Light gray border
+  --badge-bg: #f9fafb;                      // Very light gray bg
+  --badge-dot-new: #92ca0e;                // NEON SPRING GREEN (super bright lime)
+  --badge-dot-hot: #f84727;                // Tomato - glows on dark
+  --badge-dot-update: #00bfff;              // DeepSkyBlue - electric
+  --badge-dot-pinned: #9333ea;              // Vivid purple
+  --badge-dot-muted: #6b7280;               // Gray
+  
   // Navigation colors (always dark - matches dark mode bg)
   --nav-bg: #0f0f0f;
   --nav-text: #f7fafc;
@@ -180,6 +189,16 @@ body.dark {
   
   // Profile image shadow
   --profile-shadow: rgba(0, 0, 0, 0.6);    // Dark shadow for dark bg
+  
+  // Badge colors (dark mode - neon vibrant)
+  --badge-text: #f3f4f6;                   // Light text
+  --badge-border: #4b5563;                 // Medium gray border
+  --badge-bg: rgba(55, 65, 81, 0.6);       // Translucent dark bg
+  --badge-dot-new: #92ca0e;                // NEON SPRING GREEN (super bright lime)
+  --badge-dot-hot: #f84727;                // Tomato - glows on dark
+  --badge-dot-update: #00e5ff;             // Neon cyan
+  --badge-dot-pinned: #a855f7;             // Bright violet
+  --badge-dot-muted: #9ca3af;              // Cool gray
 }
 
 /* =====================================================

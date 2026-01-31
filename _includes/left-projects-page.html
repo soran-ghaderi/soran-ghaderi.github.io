@@ -1,14 +1,14 @@
 <div class="row clearfix layout layout-left">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-        {%- if include.item.name -%}<h3>{{ include.item.name }}</h3>{%- endif -%}
-        {%- if include.item.company -%}<h3>{{ include.item.company }}</h3>{%- endif -%}
+        {%- if include.item.name -%}<h3>{{ include.item.name }}{% if include.item.badge %} {{ include.item.badge }}{% endif %}</h3>{%- endif -%}
+        {%- if include.item.company -%}<h3>{{ include.item.company }}{% if include.item.badge %} {{ include.item.badge }}{% endif %}</h3>{%- endif -%}
 
 
         {%- if include.item.link -%}
         {%- if include.item.github -%}
         <p class="no-print">
             <a href="https://github.com/{{ include.item.github }}" target="_blank">
-                <i class="fab fa-github" title="{{ include.item.name }} Github link"></i>
+                <i class="fab fa-github" title="{{ include.item.name | strip_html }} Github link"></i>
             </a> {% include a.html href=include.item.link class="link" %}{{ include.item.link }}</a>
         </p>
 

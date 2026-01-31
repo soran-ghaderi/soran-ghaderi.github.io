@@ -23,7 +23,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: Looking for PhD & Research/Job Opportunities - MSc in AI at the University of Essex
+title: Looking for PhD Opportunities - MSc in AI at the University of Essex
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -72,7 +72,7 @@ darkmode: true
 # //     <span class="badge badge-new">New</span>
 # //     <span class="badge badge-hot">Trending</span>
 # //     <span class="badge badge-update">Updated</span>
-# //     <span class="badge badge-pinned">Pinned</span>
+# //     <span class="badge badge-pinned">Pinned</span> 
 # //     <span class="badge badge-soon">Soon</span>
 # //     <span class="badge badge-accent">Featured</span>   (uses site accent color)
 # //
@@ -157,7 +157,7 @@ about_content: | # this will include new lines to allow paragraphs
   </p>
   
   <details>
-  <summary><strong>▸ Key areas (click to expand)</strong></summary>
+  <summary><strong>▸ Key areas <span class="badge badge-soon">Click to expand</span></strong></summary>
   <br>
   <ul>
     <li><strong>Generative Modeling</strong>: Energy-Based Models, Diffusion/Score-Based Models, Normalizing Flows, Optimal Transport, Consistency Models. Mathematical tools: ODEs, PDEs (Fokker-Planck), SDEs, Itô Calculus, OT theory. Also language models and autoregressive generation.</li>
@@ -182,34 +182,10 @@ about_content: | # this will include new lines to allow paragraphs
   </ul>
   </section>
   
-  
   <section>
-    <h3>Open Source</h3>
-    <p><strong>Current libraries</strong></p>
-    <ul>
-      <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> <span class="badge badge-pinned badge-pulse">pinned</span> <strong><i class="fas fa-crown flagship-crown"></i> Flagship</strong> <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">· EBMs, diffusion, flow matching, SDE/ODE integrators</li>
-        <li><a href="https://github.com/soran-ghaderi/cuRBLAS">cuRBLAS 🍒</a> · CUDA kernels for randomized linear algebra</li>
-    </ul>
-    <details>
-    <summary><strong>▸ Previous libraries (click to expand)</strong></summary>
-    <ul style="margin-top: 0.5em;">
-        <li><a href="https://github.com/tensorops/TransformerX">TransformerX</a> · Modular transformer research library</li>
-        <li><a href="https://github.com/bi-graph/Emgraph">Emgraph</a> · Knowledge graph embeddings</li>
-        <li><a href="https://github.com/bi-graph/Bigraph">Bigraph</a> · Bipartite graph link prediction</li>
-        <li><a href="https://github.com/soran-ghaderi/backpropagation">Nano Autodiff</a> · From-scratch autodiff engine</li>
-        <li><a href="https://github.com/appheap/TASE">TASE</a> · Large-scale multimodal audio search engine</li>
-    </ul>
-    </details>
-  </section>
-  
-  <section>
-    <h3>Latest Writing</h3>
+    <h3>Writing</h3>
     <p>
       <span class="badge badge-new badge-pulse">New</span>
-      <span class="badge badge-hot badge-pulse">hot</span>
-      <span class="badge badge-update badge-pulse">update</span>
-      <span class="badge badge-pinned badge-pulse">pinned</span>
-      <span class="badge badge-muted badge-pulse">muted</span>
       <a href="/blog/video-world-models/" style="font-weight: 500;">Video World Models</a> — 
       <span style="color: var(--text-muted);">From slow bidirectional diffusion to real-time autoregressive world simulators. 
       Causality, self-forcing, attention sinks, and the path to interactive video generation.</span>
@@ -219,7 +195,7 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>News</h3>
     <ul>
-        <li><span class="badge badge-new">New</span> Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
+        <li>Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
         <li>MSc defended at Essex (<a href="https://soran-ghaderi.github.io/nir/">NIR thesis</a>) - Oct. 2024</li>
     </ul>
   </section>

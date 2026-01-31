@@ -1,10 +1,10 @@
 
 - layout: left-projects-page
-  name: TorchEBM
+  name: TorchEBM 
   link: github.com/soran-ghaderi/torchebm
   github: soran-ghaderi/torchebm
   description: >
-    Oct. 2024-Present<br>
+    Oct. 2024-Present<br> 
     <b>Energy-Based Modeling library for PyTorch. Provides tools for sampling, inference, and learning in complex distributions.</b>
     <b>Keywords</b> -- variational-inference, Reasoning, Sampling, langevin-dynamics, Contrastive Divergence, Energy-based-model, Diffusion-models probabilistic-ML, Score-matching, Generative-ai<br>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/torchebm">

@@ -2902,3 +2902,104 @@ mjx-container[display="true"],
     padding-right: 10px;
   }
 }
+
+// =====================================================
+// ANNOUNCEMENT BADGES — Elegant Minimal Style
+// =====================================================
+// A refined badge with a small colored indicator dot.
+// Clean, understated, and compatible with academic aesthetic.
+//
+// Usage:
+//   <span class="badge badge-new">New</span>
+//   <span class="badge badge-hot">Trending</span>
+//   <span class="badge badge-update">Updated</span>
+//   <span class="badge badge-pinned">Pinned</span>
+//   <span class="badge badge-soon">Soon</span>
+//   <span class="badge badge-accent">Featured</span>
+//
+// Minimal (dot only, no box):
+//   <span class="badge-minimal badge-new">New collaboration announced</span>
+// =====================================================
+
+// Main badge: subtle pill with colored dot indicator
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: calc(var(--base-font-size) * 0.8);
+  font-weight: 500;
+  padding: 0.2em 0.65em 0.2em 0.5em;
+  border-radius: 9999px;  // Full pill shape
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  
+  // Colored dot before text
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  &:hover {
+    border-color: var(--text-muted);
+  }
+}
+
+// Dot colors by variant
+.badge-new::before { background: var(--badge-dot-new); }
+.badge-hot::before { background: var(--badge-dot-hot); }
+.badge-update::before { background: var(--badge-dot-update); }
+.badge-pinned::before { background: var(--badge-dot-pinned); }
+.badge-soon::before { background: var(--badge-dot-muted); }
+.badge-accent::before { background: var(--accent-color); }
+
+// Minimal variant: just the dot + text, no pill background
+.badge-minimal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: inherit;  // Match surrounding text
+  font-weight: 500;
+  color: var(--text-color);
+  
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  &.badge-new::before { background: var(--badge-dot-new); }
+  &.badge-hot::before { background: var(--badge-dot-hot); }
+  &.badge-update::before { background: var(--badge-dot-update); }
+  &.badge-pinned::before { background: var(--badge-dot-pinned); }
+  &.badge-soon::before { background: var(--badge-dot-muted); }
+  &.badge-accent::before { background: var(--accent-color); }
+}
+
+// Pulsing dot animation (subtle glow)
+.badge-pulse::before,
+.badge-minimal.badge-pulse::before {
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% { 
+    opacity: 0.7;
+    box-shadow: 0 0 0 3px transparent;
+  }
+}

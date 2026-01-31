@@ -62,6 +62,29 @@ darkmode: true
 #   - "pure-black"    : Pure black navbar (#000000)
 #   - "slate"         : Slate blue navbar (#1e293b)
 # =============================================================================
+# // =========================================================================
+# // BADGE SYSTEM - Announcement badges with colored dot indicators
+# // =========================================================================
+# // 
+# // USAGE (in HTML/Markdown):
+# // 
+# //   PILL BADGES (subtle background with colored dot):
+# //     <span class="badge badge-new">New</span>
+# //     <span class="badge badge-hot">Trending</span>
+# //     <span class="badge badge-update">Updated</span>
+# //     <span class="badge badge-pinned">Pinned</span>
+# //     <span class="badge badge-soon">Soon</span>
+# //     <span class="badge badge-accent">Featured</span>   (uses site accent color)
+# //
+# //   MINIMAL BADGES (inline with text, just dot + text):
+# //     <span class="badge-minimal badge-new">New collaboration</span>
+# //     <span class="badge-minimal badge-hot">Hot topic</span>
+# //
+# //   WITH PULSE ANIMATION:
+# //     <span class="badge badge-new badge-pulse">New</span>
+# //
+# // =========================================================================
+  
 palette:
   dark_bg: "near-black"      # Dark mode background
   light_bg: "white"          # Light mode background  
@@ -164,7 +187,7 @@ about_content: | # this will include new lines to allow paragraphs
     <h3>Open Source</h3>
     <p><strong>Current libraries</strong></p>
     <ul>
-      <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> <strong><i class="fas fa-crown flagship-crown"></i> Flagship</strong> <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">· EBMs, diffusion, flow matching, SDE/ODE integrators</li>
+      <li><a href="https://github.com/soran-ghaderi/torchebm">TorchEBM 🍓</a> <span class="badge badge-pinned badge-pulse">pinned</span> <strong><i class="fas fa-crown flagship-crown"></i> Flagship</strong> <img alt="Downloads" src="https://static.pepy.tech/badge/torchebm?style=flat-square">· EBMs, diffusion, flow matching, SDE/ODE integrators</li>
         <li><a href="https://github.com/soran-ghaderi/cuRBLAS">cuRBLAS 🍒</a> · CUDA kernels for randomized linear algebra</li>
     </ul>
     <details>
@@ -180,9 +203,23 @@ about_content: | # this will include new lines to allow paragraphs
   </section>
   
   <section>
+    <h3>Latest Writing</h3>
+    <p>
+      <span class="badge badge-new badge-pulse">New</span>
+      <span class="badge badge-hot badge-pulse">hot</span>
+      <span class="badge badge-update badge-pulse">update</span>
+      <span class="badge badge-pinned badge-pulse">pinned</span>
+      <span class="badge badge-muted badge-pulse">muted</span>
+      <a href="/blog/video-world-models/" style="font-weight: 500;">Video World Models</a> — 
+      <span style="color: var(--text-muted);">From slow bidirectional diffusion to real-time autoregressive world simulators. 
+      Causality, self-forcing, attention sinks, and the path to interactive video generation.</span>
+    </p>
+  </section>
+  
+  <section>
     <h3>News</h3>
     <ul>
-        <li>Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
+        <li><span class="badge badge-new">New</span> Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
         <li>MSc defended at Essex (<a href="https://soran-ghaderi.github.io/nir/">NIR thesis</a>) - Oct. 2024</li>
     </ul>
   </section>

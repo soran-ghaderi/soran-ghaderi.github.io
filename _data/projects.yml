@@ -9,7 +9,7 @@
 #    Description about the work on/with the project
 
 - layout: left
-  name: TorchEBM 🍓 
+  name: TorchEBM 🍓 <span class="badge badge-pinned badge-pulse">pinned</span>
   link: github.com/soran-ghaderi/torchebm
   github: soran-ghaderi/torchebm
   description: >

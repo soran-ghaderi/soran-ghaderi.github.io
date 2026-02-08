@@ -38,6 +38,47 @@
   <!-- Centralized Color Palette (from _config.yml) -->
   {%- include palette.html -%}
 
+  <!-- Early media interceptor: prevents browser from fetching off-screen videos/images
+       before the main lazy-media.js IntersectionObserver can take over. Runs in <head>
+       so the MutationObserver catches elements as they enter the DOM during parsing. -->
+  <script>
+  (function(){
+    if(!window.MutationObserver)return;
+    // Skip navbar/header elements — only intercept inside page-content
+    var SKIP='.navbar,.site-header,header,[role="banner"]';
+    function inSkipZone(el){for(var p=el;p;p=p.parentElement){if(p.matches&&p.matches(SKIP))return true}return false}
+    function interceptVideo(v){
+      if(v.classList.contains('lazy-video'))return;// already handled by template
+      if(inSkipZone(v))return;
+      if(v.hasAttribute('autoplay')){v.setAttribute('data-autoplay','');v.removeAttribute('autoplay')}
+      v.setAttribute('preload','none');v.classList.add('lazy-video');
+      v.querySelectorAll('source[src]').forEach(function(s){
+        if(!s.hasAttribute('data-src')){s.setAttribute('data-src',s.getAttribute('src'));s.removeAttribute('src')}
+      });
+      if(v.getAttribute('src')){v.setAttribute('data-video-src',v.getAttribute('src'));v.removeAttribute('src')}
+    }
+    function interceptImg(img){
+      if(inSkipZone(img))return;
+      if(!img.hasAttribute('loading'))img.setAttribute('loading','lazy');
+      if(!img.hasAttribute('decoding'))img.setAttribute('decoding','async');
+    }
+    var mo=new MutationObserver(function(muts){
+      muts.forEach(function(m){m.addedNodes.forEach(function(n){
+        if(n.nodeType!==1)return;
+        if(n.tagName==='VIDEO')interceptVideo(n);
+        else if(n.tagName==='IMG')interceptImg(n);
+        if(n.querySelectorAll){
+          n.querySelectorAll('video').forEach(interceptVideo);
+          n.querySelectorAll('img').forEach(interceptImg);
+        }
+      })});
+    });
+    mo.observe(document.documentElement,{childList:true,subtree:true});
+    // Store ref so lazy-media.js can disconnect it after taking over
+    window.__lazyMediaEarlyMO=mo;
+  })();
+  </script>
+
   <!-- MathJax Configuration for Math Rendering -->
   <!-- 
     Note: kramdown with math_engine: mathjax outputs <script type="math/tex"> tags (MathJax v2 format)

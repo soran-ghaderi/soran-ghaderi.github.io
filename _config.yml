@@ -23,7 +23,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: Looking for PhD Opportunities - MSc in AI at the University of Essex
+title: ML Research Engineer at CoSTAR National Lab | Open to PhD Opportunities
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -140,7 +140,8 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>About</h3>
   <p>
-  Research intern at <a href="https://blender.cs.illinois.edu/">UIUC Blender Lab</a> working on energy-based models. 
+  ML Research Engineer at <a href="https://www.costar.gov/">CoSTAR National Lab</a> working on video and world models for virtual production.
+  Previously research intern at <a href="https://blender.cs.illinois.edu/">UIUC Blender Lab</a> (energy-based models). 
   MSc AI (Distinction) from <a href="https://www.essex.ac.uk/">Essex</a>, supervised by 
   <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Prof. Luca Citi</a>.
   </p>
@@ -195,7 +196,8 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>News</h3>
     <ul>
-        <li>Started Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
+        <li><span class="badge badge-new badge-pulse">New</span> Joined CoSTAR National Lab as ML Research Engineer - Feb. 2026</li>
+        <li>Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
         <li>MSc defended at Essex (<a href="https://soran-ghaderi.github.io/nir/">NIR thesis</a>) - Oct. 2024</li>
     </ul>
   </section>

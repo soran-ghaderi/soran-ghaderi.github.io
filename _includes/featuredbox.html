@@ -6,11 +6,11 @@
             {% if post.image %}
             <div class="featured-card-image">
                 {% if post.image contains '.mp4' %}
-                <video autoplay loop muted playsinline>
-                    <source src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}{{ post.image }}{% endif %}" type="video/mp4">
+                <video class="lazy-video" loop muted playsinline data-autoplay preload="none">
+                    <source data-src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}{{ post.image }}{% endif %}" type="video/mp4">
                 </video>
                 {% else %}
-                <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}{{ post.image }}{% endif %}" alt="{{ post.title }}">
+                <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}{{ post.image }}{% endif %}" alt="{{ post.title }}" loading="lazy" decoding="async">
                 {% endif %}
             </div>
             {% else %}

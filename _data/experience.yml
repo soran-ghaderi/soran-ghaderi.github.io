@@ -1,8 +1,15 @@
 - layout: left
+  company: CoSTAR National Lab
+  job_title: ML Research Engineer
+  dates: Feb 2026 - Present
+  description: |
+    Generative video and world models for virtual production.
+
+- layout: left
   company: UIUC Blender Lab
   link: blender.cs.illinois.edu
   job_title: Research Intern
-  dates: Jul 2025 - Present
+  dates: Jul 2025 - Jan 2026
   description: |
     Energy-based transformers for image/video generation. Investigating mode collapse, inference-time compute scaling, and fast sampling strategies.
 

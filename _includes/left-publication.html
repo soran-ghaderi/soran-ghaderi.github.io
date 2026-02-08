@@ -4,9 +4,9 @@
     {% if include.item.gif or include.item.image %}
     <div class="publication-card-image">
         {% if include.item.gif %}
-        <img src="{{ include.item.gif }}" alt="{{ include.item.title }}">
+        <img src="{{ include.item.gif }}" alt="{{ include.item.title }}" loading="lazy" decoding="async">
         {% else %}
-        <img src="{{ include.item.image }}" alt="{{ include.item.title }}">
+        <img src="{{ include.item.image }}" alt="{{ include.item.title }}" loading="lazy" decoding="async">
         {% endif %}
     </div>
     {% else %}

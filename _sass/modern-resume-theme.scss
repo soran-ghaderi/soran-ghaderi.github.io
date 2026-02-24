@@ -1027,12 +1027,11 @@
   margin-bottom: 20px;
   display: block;
   border-radius: 100px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat, no-repeat;
-  -moz-box-shadow: inset 0 0 20px var(--profile-shadow);
-  -webkit-box-shadow: inset 0 0 20px var(--profile-shadow);
-  box-shadow: inset 0 0 20px var(--profile-shadow);
+  object-fit: cover;
+  object-position: center;
+  -moz-box-shadow: 0 0 20px var(--profile-shadow);
+  -webkit-box-shadow: 0 0 20px var(--profile-shadow);
+  box-shadow: 0 0 20px var(--profile-shadow);
 }
 
 .into-text-1 {

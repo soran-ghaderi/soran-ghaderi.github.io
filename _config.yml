@@ -23,7 +23,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: ML Research Engineer at CoSTAR National Lab | Open to PhD Opportunities
+title: ML Research Engineer at CoSTAR National Lab | Incoming PhD in Computer Science
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -158,7 +158,7 @@ about_content: | # this will include new lines to allow paragraphs
   </p>
   
   <details>
-  <summary><strong>▸ Key areas <span class="badge badge-soon">Click to expand</span></strong></summary>
+  <summary><strong>▸ Key areas <span class="badge badge-accent">Click to expand</span></strong></summary>
   <br>
   <ul>
     <li><strong>Generative Modeling</strong>: Energy-Based Models, Diffusion/Score-Based Models, Normalizing Flows, Optimal Transport, Consistency Models. Mathematical tools: ODEs, PDEs (Fokker-Planck), SDEs, Itô Calculus, OT theory. Also language models and autoregressive generation.</li>

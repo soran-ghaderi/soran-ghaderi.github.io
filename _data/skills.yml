@@ -1,237 +1,51 @@
 # _data/skills.yml
-
-#    - name: Python
-#      description: Experienced in machine learning, deep learning, and software development
-#    - name: C++
-#      description: Intermediate knowledge with experience in algorithm implementation and briefly for computer vision
 #
-
-# Professional Skills - Clean and organized structure
-
-- layout: left-skill
-  type: technical
-  items:
-    - category: Core Programming
-      items:
-        - name: Python
-          tool-type: Languages
-          notes: Expert level - Machine learning, deep learning, and software development with 6+ years experience
-          projects:
-            - name: Multiple ML Libraries
-              link: https://github.com/soran-ghaderi/
-
-        - name: C++
-          tool-type: Languages  
-          notes: Intermediate - Algorithm implementation and computer vision applications
-
-        - name: JavaScript
-          tool-type: Languages
-          notes: Working knowledge - Web development and front-end applications
-
-    - category: Machine Learning & AI
-      items:
-        - name: PyTorch
-          tool-type: Deep Learning Frameworks
-          notes: Expert level - Custom implementations, multi-GPU training, library development
-          projects:
-            - name: TorchEBM
-              link: https://github.com/soran-ghaderi/torchebm
-            - name: NIR Framework
-              link: https://soran-ghaderi.github.io/nir/
-
-        - name: TensorFlow/Keras
-          tool-type: Deep Learning Frameworks
-          notes: Advanced - Model development, deployment, and research applications
-          projects:
-            - name: TransformerX
-              link: https://github.com/tensorops/TransformerX
-            - name: Emgraph
-              link: https://github.com/bi-graph/emgraph
-
-        - name: JAX
-          tool-type: Deep Learning Frameworks
-          notes: Intermediate - Numerical computing and research applications
-
-        - name: Hugging Face
-          tool-type: ML Tools
-          notes: Advanced - Transformers, datasets, and model hub integration
-
-        - name: Large Language Models
-          tool-type: Specialized AI
-          notes: Expert level - LLM training, fine-tuning (PEFT, SFT, DPO, RLHF), and evaluation
-
-        - name: Generative Models
-          tool-type: Specialized AI
-          notes: Advanced - Diffusion models, energy-based models, VAEs, normalizing flows
-
-    - category: Data Science & Analytics
-      items:
-        - name: Scientific Computing
-          tool-type: Data Analysis
-          notes: NumPy, Pandas, SciPy, Matplotlib for data processing and visualization
-
-        - name: Mathematical Foundations
-          tool-type: Mathematics
-          notes: Linear algebra, calculus, probability theory, optimization, differential geometry
-
-        - name: Numerical Methods
-          tool-type: Computational Mathematics
-          notes: ODE solvers, MCMC methods, gradient-based optimization
-
-    - category: Software Engineering
-      items:
-        - name: Development Tools
-          tool-type: DevOps & Tools
-          notes: Git/GitHub, Docker, CI/CD pipelines, test-driven development
-
-        - name: Database Systems
-          tool-type: Data Infrastructure
-          notes: Elasticsearch, Redis, ArangoDB, PostgreSQL for large-scale data processing
-
-        - name: Distributed Systems
-          tool-type: Architecture
-          notes: RabbitMQ, Celery, microservices architecture, API development
-
-        - name: High-Performance Computing
-          tool-type: Performance Optimization
-          notes: Multi-GPU systems, distributed training, CUDA fundamentals
-
-- layout: left-skill
-  type: research
-  items:
-    - category: Research & Communication
-      items:
-        - name: Technical Writing
-          tool-type: Communication
-          notes: Published articles with 50,000+ views on Medium and Towards Data Science
-          projects:
-            - name: "Hamiltonian Mechanics for Generative Modeling"
-              link: https://towardsdatascience.com/from-physics-to-probability-hamiltonian-mechanics-for-generative-modeling-and-mcmc/
-            - name: "The Map Of Transformers"
-              link: https://medium.com/towards-data-science/the-map-of-transformers-e14952226398
-
-        - name: Open Source Development
-          tool-type: Community
-          notes: Developed and maintained multiple PyPI libraries with comprehensive documentation
-          projects:
-            - name: TorchEBM Library
-              link: https://github.com/soran-ghaderi/torchebm
-            - name: TASE Search Engine
-              link: https://github.com/soran-ghaderi/TASE
-
-        - name: Academic Research
-          tool-type: Research Skills
-          notes: Experimental design, ablation studies, peer review, scientific methodology
-
-- layout: left-skill
-  type: language
-  items:
-    - name: English
-      proficiency: Fluent (Professional working)
-
-    - name: Kurdish
-      proficiency: Native
-
-    - name: Persian
-      proficiency: Professional working
-
-- layout: left-skill
-  type: interest
-  items:
-    - notes: |
-        **Research Interests**: Mathematical foundations of machine learning, particularly geometry and topology. 
-        Currently exploring information geometry, manifold learning, and geometric deep learning.<br><br>
-        
-        **Technical Pursuits**: Implementing theoretical concepts in code, staying current with AI research, 
-        attending conferences and talks on physics-ML intersections.<br><br>
-        
-        **Personal**: Urban exploration, hiking, and martial arts (kickboxing).
-
+# =============================================================================
+# TEMPLATE — copy, uncomment, and fill in your data
+# =============================================================================
 #
-#- layout: list
-#  category: Technical Skills
-#  title: Software Engineering Skills
-#  items:
-#    - name: Open-source Libraries development
-#    - name: Agile methodologies (Kanban)
-#    - name: Asynchronous and multiprocessing programming
-#    - name: Git version control
-#    - name: API integration and microservices architecture
+# --- TECHNICAL / RESEARCH SKILLS ---
+#
+# - layout: left-skill
+#   type: technical          # or: research
+#   items:
+#     - category: Category Name
+#       items:
+#         - name: Skill Name
+#           tool-type: Group Label   # skills with the same tool-type are grouped together
+#           notes: Short description of proficiency / context
+#           projects:                # optional
+#             - name: Project Name
+#               link: https://github.com/user/repo
+#
+#         - name: Another Skill
+#           tool-type: Group Label
+#           notes: Notes here
+#
+#     - category: Another Category
+#       items:
+#         - name: Skill Name
+#           tool-type: Group Label
+#           notes: Notes here
+#
+# --- LANGUAGE SKILLS ---
+#
+# - layout: left-skill
+#   type: language
+#   items:
+#     - name: English
+#       proficiency: Fluent (Professional working)
+#     - name: Kurdish
+#       proficiency: Native
+#
+# --- INTERESTS ---
+#
+# - layout: left-skill
+#   type: interest
+#   items:
+#     - notes: |
+#         **Research Interests**: Description here.<br><br>
+#         **Personal**: Something else here.
+#
+# =============================================================================
 
-#- layout: list
-#  category: Technical Skills
-#  title: Technical Skills
-#  items:
-#    - category: Programming Languages
-#      items:
-#        - name: Python
-#          description: Experienced in machine learning, deep learning, and software development
-#        - name: C++
-#          description: Intermediate knowledge with experience in algorithm implementation and briefly for computer vision
-#    - category: Machine Learning & Deep Learning
-#      items:
-#        - name: Frameworkss
-#          description: PyTorch, TensorFlow, Keras
-#        - name: Libraries
-#          description: NumPy, Pandas, Scikit-learn, Matplotlib
-#        - name: Specialized Tools (limited experience)
-#          description: NVIDIA TensorRT, CUDA
-#    - category: Software Engineering Skills
-#      items:
-#        - name: Open-source Libraries development
-#        - name: Agile methodologies (Kanban)
-#        - name: Asynchronous and multiprocessing programming
-#        - name: Git version control
-#        - name: API integration and microservices architecture
-#
-#
-#- layout: project # or left
-#  category: Projects
-#  title: Open Source Projects & Contributions
-#  projects:
-#    - name: ML Libraries
-#      description: |
-#        Developed and deployed multiple Python libraries on PyPI, including TransformerX, Emgraph, and Bigraph.
-#        Implemented modular, object-oriented architectures with comprehensive documentation and testing.
-#        Actively engaged in open-source community through code reviews and collaborative development.
-#    - name: TASE - Telegram Music Search Engine
-#      description: |
-#        Built a scalable music search engine using Python.
-#        Integrated technologies: Elasticsearch, Pyrogram, ArangoDB, RabbitMQ, Celery.
-#        Implemented fault-tolerant microservices architecture.
-#
-#
-#- layout: writing # or left
-#  category: Writing
-#  title: Technical Writing
-#
-#  writing-items:
-#    - type: other
-#      content: Published popular articles on Medium and Towards Data Science
-#    - type: article
-#      items:
-#        - name: The Map Of Transformers
-#          url: https://medium.com/towards-data-science/the-map-of-transformers-e14952226398
-#          descrition:
-#        - name: Transformers - in Action Attention Is All You Need
-#          url: https://medium.com/towards-data-science/transformers-in-action-attention-is-all-you-need-ac10338a023a
-#          descrition:
-#        - name: Rethinking Thinking - How Do Attention Mechanisms Actually Work?
-#          url: https://medium.com/towards-data-science/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99
-#          descrition:
-#  writing-items:
-#    - writing-item:
-#      - other: Published popular articles on Medium and Towards Data Science
-#    - writing-item:
-#      - article:
-#        - name: The Map Of Transformers
-#          url: https://towardsdatascience.com/the-map-of-transformers-e14952226398
-#          descrition:
-#      - article:
-#        - name: Transformers - in Action Attention Is All You Need
-#          url: https://towardsdatascience.com/transformers-in-action-attention-is-all-you-need-ac10338a023a
-#          descrition:
-#      - article:
-#        - name: Rethinking Thinking - How Do Attention Mechanisms Actually Work?
-#          url: https://towardsdatascience.com/rethinking-thinking-how-do-attention-mechanisms-actually-work-a6f67d313f99
-#          descrition:

@@ -1,9 +1,10 @@
 # Site
-
-#description: "Jekyll template, Medium styled, free for bloggers."
+url: "https://soran-ghaderi.github.io"
+description: "Personal website of Soran Ghaderi — ML Research Engineer. Research in energy-based models, diffusion models, world models, and embodied AI."
+image: images/profile.jpeg
 logo: 'images/profile.jpeg'
 favicon: 'images/profile.jpeg'
-baseurl: '/'
+baseurl: ''
 google_analytics: 'UA-46278016-1'
 #disqus: 'demowebsite'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
@@ -93,6 +94,9 @@ palette:
 
 # Social links
 twitter_username: soranghadri
+twitter:
+  username: soranghadri
+  card: summary
 github_username: soran-ghaderi
 #medium_username: soran-ghaderi
 #stackoverflow_username: "00000001"
@@ -285,6 +289,10 @@ collections:
 
 defaults:
   - scope:
+      path: ""
+    values:
+      image: images/profile.jpeg
+  - scope:
       path: _posts
     values:
       layout: post
@@ -303,6 +311,8 @@ sass:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 exclude: [
   "Gemfile",

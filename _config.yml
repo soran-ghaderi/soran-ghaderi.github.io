@@ -175,7 +175,7 @@ about_content: | # this will include new lines to allow paragraphs
   </details>
   
   <p style="margin-top: 1em;">
-  <strong>Current Focus</strong>: Unifying diffusion, flow-based, and energy-based models through statistical mechanics and differential geometry, toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
+  <strong>Current Focus</strong>: Studying diffusion, flow-based, and energy-based models through statistical mechanics and differential geometry, toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
   </p>
   
   <h4>Research Highlights</h4>

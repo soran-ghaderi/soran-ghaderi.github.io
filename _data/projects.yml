@@ -14,7 +14,7 @@
   link: github.com/soran-ghaderi/torchebm
   github: soran-ghaderi/torchebm
   description: >
-    <i class="fas fa-crown flagship-crown"></i> <span class="badge badge-accent">Featured</span> <a href="/2025/02/19/torchebm.html" style="text-decoration: none;"> <span class="badge badge-accent badge-pulse">Read more</span></a><br>
+    <i class="fas fa-crown flagship-crown"></i> <span class="badge badge-update badge-pulse">Updated</span> <a href="/2025/02/19/torchebm.html" style="text-decoration: none;"> <span class="badge badge-accent badge-pulse">Read more</span></a><br>
     <b>PyTorch library for energy-based models, diffusion, and flow matching.</b> Implements samplers, score/flow/contrastive objectives, SDE/ODE integrators, interpolants, and mixed-precision training.<br>
     <span style="color:#888">PyTorch · CUDA</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/torchebm?style=social">
@@ -26,7 +26,7 @@
   link: github.com/soran-ghaderi/worldkernels
   github: soran-ghaderi/worldkernels
   description: >
-    <i class="fas fa-crown flagship-crown"></i> <b>High-throughput world model inference engine.</b> Stateful session management for BiD and AR world models (DreamDojo, Cosmos, DreamZero, etc.) with persistent KV-cache, CUDA graph capture, continuous batching, speculative decoding, and <code>torch.compile</code> fusion. Sub-millisecond scheduling via async token queues; REST/WebSocket streaming with backpressure.<br>
+    <i class="fas fa-crown flagship-crown"></i> <span class="badge badge-new badge-pulse">Soon</span> <b>High-throughput world model inference engine.</b> Stateful session management for BiD and AR world models (DreamDojo, Cosmos, DreamZero, etc.) with persistent KV-cache, CUDA graph capture, continuous batching, speculative decoding, and <code>torch.compile</code> fusion. Sub-millisecond scheduling via async token queues; REST/WebSocket streaming with backpressure.<br>
     <span style="color:#888">PyTorch · CUDA · Python</span><br>
 
   # <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/worldkernels?style=social">

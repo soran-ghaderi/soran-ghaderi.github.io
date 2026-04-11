@@ -3,7 +3,7 @@
   job_title: ML Research Engineer
   dates: Feb 2026 - Present
   description: |
-    Generative video and world models for virtual production.
+    Generative video and world models for virtual production. <a href="https://www.costarnetwork.co.uk/directory/soran-ghaderi">[Profile]</a>
 
 - layout: left
   company: UIUC Blender Lab
@@ -26,4 +26,4 @@
   job_title: Developer & Maintainer
   dates: 2019 - Present
   description: |
-    TorchEBM (8K+ downloads), cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See Projects section.
+    TorchEBM, cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See Projects section.

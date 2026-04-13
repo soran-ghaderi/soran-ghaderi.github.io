@@ -21,6 +21,10 @@
 
   <!-- Fonts: Roboto for body, Fira Code for code -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  {% if page.direction == 'rtl' %}
+  <!-- Vazirmatn: elegant Persian/Kurdish/Arabic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {% endif %}
 
   <title>{{ site.name }} | {{ site.title }}</title>
   {%- seo title=false -%}

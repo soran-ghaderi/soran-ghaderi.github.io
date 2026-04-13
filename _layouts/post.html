@@ -8,18 +8,20 @@ post_class: post-template
 <!-- Begin Article
 ================================================== -->
 <div class="blog-post-container">
-    <div class="blog-post-wrapper">
+    <div class="blog-post-wrapper{% if page.direction == 'rtl' %} rtl-wrapper{% endif %}">
         
-        <!-- TOC Sidebar -->
+        {% unless page.direction == 'rtl' %}
+        <!-- TOC Sidebar (LTR: left side) -->
         <aside class="toc-sidebar">
             <nav class="toc-nav" aria-label="Table of contents">
                 <h4 class="toc-title">Contents</h4>
                 {% include toc.html html=content h_min=2 h_max=3 %}
             </nav>
         </aside>
+        {% endunless %}
 
         <!-- Main Post Content -->
-        <article class="blog-post-content">
+        <article class="blog-post-content{% if page.direction == 'rtl' %} rtl{% endif %}"{% if page.direction == 'rtl' %} dir="rtl" lang="{{ page.lang | default: 'ar' }}"{% endif %}>
             {% assign author = site.data.members.author.authors[page.author] %}
 
             <header class="post-header">
@@ -117,6 +119,16 @@ post_class: post-template
 
         </article>
         <!-- End Post -->
+
+        {% if page.direction == 'rtl' %}
+        <!-- TOC Sidebar (RTL: right side) -->
+        <aside class="toc-sidebar">
+            <nav class="toc-nav" aria-label="Table of contents">
+                <h4 class="toc-title">ناوەڕۆک</h4>
+                {% include toc.html html=content h_min=2 h_max=3 %}
+            </nav>
+        </aside>
+        {% endif %}
 
     </div>
 </div>

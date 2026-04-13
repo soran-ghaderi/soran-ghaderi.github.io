@@ -582,3 +582,123 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id],
     background-color: transparent;
   }
 }
+
+/* ── RTL support for Kurdish / Arabic / Persian posts ── */
+.blog-post-content.rtl {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: right !important;
+    font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+  }
+
+  .post-meta {
+    direction: ltr;
+    text-align: right;
+  }
+
+  .article-post {
+    direction: rtl;
+    text-align: right;
+
+    p, li, td, th, figcaption, blockquote, summary, details {
+      text-align: right !important;
+      direction: rtl;
+      line-height: 2;
+      font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+    }
+
+    ol, ul {
+      padding-right: 1.5em;
+      padding-left: 0;
+    }
+
+    blockquote {
+      border-right: 4px solid var(--accent-color, #007bff);
+      border-left: none;
+      padding-right: 1em;
+      padding-left: 0;
+    }
+
+    code, pre {
+      direction: ltr;
+      text-align: left !important;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .MathJax, mjx-container {
+      direction: ltr;
+      text-align: left;
+    }
+
+    .MathJax_Display, mjx-container[display="true"] {
+      direction: ltr;
+      text-align: center !important;
+    }
+  }
+}
+
+/* RTL wrapper: TOC on the right side */
+.blog-post-wrapper.rtl-wrapper {
+  @media (min-width: 1024px) {
+    grid-template-columns: minmax(0, 800px) 220px !important;
+    margin-right: 0 !important;
+    margin-left: 220px;
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: 180px;
+  }
+
+  .toc-sidebar {
+    direction: rtl;
+    order: 2;
+
+    .toc-nav {
+      padding-right: 0;
+      padding-left: 1rem;
+      text-align: right;
+    }
+
+    .toc-title {
+      text-align: right;
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+    }
+
+    ul {
+      padding-right: 0.75em;
+      padding-left: 0;
+
+      li {
+        text-align: right;
+
+        a {
+          direction: rtl;
+          text-align: right;
+          font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+          border-left: none;
+          padding-left: 0;
+          border-right: 2px solid transparent;
+          padding-right: 0.75rem;
+
+          &:hover {
+            border-right-color: var(--link-color);
+            border-left-color: transparent;
+          }
+
+          &.active {
+            border-right-color: var(--accent-color);
+            border-left-color: transparent;
+          }
+        }
+
+        ul {
+          margin-left: 0;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

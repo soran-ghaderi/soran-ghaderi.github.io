@@ -1,19 +1,55 @@
 <!-- Footer
 ================================================== -->
-<footer class="container footer-container">
-  <div class="row">
-    <div class="col-md-6 col-sm-6 text-center text-lg-left">
-      <p>Copyright © {{ site.time | date: "%Y" }} {{ site.name }}</p>
+<footer class="site-footer" role="contentinfo">
+  <div class="container site-footer__inner">
+
+    <div class="site-footer__brand">
+      <span class="site-footer__name">{{ site.name | escape }}</span>
+      {%- if site.title -%}
+      <span class="site-footer__sep" aria-hidden="true">·</span>
+      <span class="site-footer__title">{{ site.title | escape }}</span>
+      {%- endif -%}
     </div>
-    <div class="col-md-6 col-sm-6 text-center text-lg-right">
-      <p>
-        {{ site.name | escape }} -
-        <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
-        {%- if site.footer_show_references -%}
-        {%include footer_links.html%}
-        {%- endif -%}
-      </p>
+
+    <nav class="site-footer__social" aria-label="Social links">
+      {%- if site.email -%}
+      <a href="mailto:{{ site.email }}" aria-label="Email" title="Email">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </a>
+      {%- endif -%}
+      {%- if site.github_username -%}
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      {%- endif -%}
+      {%- if site.linkedin_username -%}
+      <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      {%- endif -%}
+      {%- if site.twitter_username -%}
+      <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      {%- endif -%}
+      {%- if site.medium_username -%}
+      <a href="https://{{ site.medium_username }}.medium.com" target="_blank" rel="noopener" aria-label="Medium" title="Medium">
+        <i class="fab fa-medium" aria-hidden="true"></i>
+      </a>
+      {%- endif -%}
+      {%- for link in site.additional_links -%}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.title | escape }}" title="{{ link.title | escape }}">
+        <i class="{{ link.icon }}" aria-hidden="true"></i>
+      </a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>© {{ site.time | date: "%Y" }} {{ site.name | escape }}</span>
+      <span class="site-footer__sep" aria-hidden="true">·</span>
+      <a href="#top" class="site-footer__top" aria-label="Back to top">Back to top ↑</a>
     </div>
+
   </div>
 </footer>
 <!-- End Footer

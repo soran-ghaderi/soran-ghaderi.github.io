@@ -7,9 +7,15 @@ author: Soran Ghaderi
 
 image: images/transformerx.png
 featured: true
-hidden: true
+hidden: false
 comments: false
 excerpt: TransformerX is a Python library for building transformer-based models.
+description: "TransformerX is a Python library for building modular transformer architectures, offering reusable attention layers, encoders, and decoders for research on sequence modelling and NLP."
+last_modified_at: 2024-01-01
+tags: [transformers, attention-mechanism, deep-learning, nlp, python]
+redirect_from:
+  - /2022/07/08/transformerx.html
+  - /2022/07/08/transformerx/
 ---
 
 ## Foreword

@@ -392,7 +392,7 @@
         });
         ticking = true;
       }
-    });
+    }, { passive: true });
     
     // Initialize on load
     updateActiveLink();

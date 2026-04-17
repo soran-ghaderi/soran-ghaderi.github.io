@@ -9,6 +9,9 @@ hidden: false
 comments: true
 categories: Video-Generation World-models
 excerpt: "Video diffusion models can generate stunning short clips, but building true world simulators requires a fundamental shift. This post explores how recent advances in causal attention, distribution matching distillation, and long-range memory are enabling real-time video generation that can extend to minutes while maintaining temporal coherence."
+description: "A deep dive into video world models: the shift from slow bidirectional diffusion to real-time autoregressive simulators, covering causal attention, self-forcing, distribution matching distillation, attention sinks, and long-range memory for minute-scale coherent video generation."
+last_modified_at: 2026-01-20
+tags: [video-generation, world-models, diffusion-models, autoregressive-models, causal-attention, self-forcing]
 ---
 
 ## The World Simulator Problem

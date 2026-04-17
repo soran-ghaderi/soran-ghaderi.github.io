@@ -131,7 +131,11 @@ body.dark {
     // Links
     a {
       color: var(--link-color);
-      
+      // Higher-contrast body-copy link color on dark backgrounds (WCAG AA).
+      // color-mix is progressively enhanced; browsers without it fall through
+      // to the line above.
+      color: color-mix(in srgb, var(--link-color) 55%, #ffffff);
+
       &:hover {
         color: var(--link-hover);
         border-bottom-color: var(--link-hover);
@@ -237,6 +241,18 @@ body.dark {
     figcaption,
     .caption {
       color: var(--text-muted);
+    }
+  }
+
+  // =====================================================
+  // BODY-COPY LINK CONTRAST (About / Publications / Projects)
+  // Scoped strictly to paragraphs and lists, so navbar / card /
+  // button links are untouched.
+  // =====================================================
+  .intro-container {
+    p a,
+    li a {
+      color: color-mix(in srgb, var(--link-color) 55%, #ffffff);
     }
   }
 

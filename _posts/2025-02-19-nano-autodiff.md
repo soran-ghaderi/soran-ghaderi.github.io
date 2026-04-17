@@ -10,6 +10,12 @@ featured: false
 hidden: false
 comments: true
 excerpt: A from-scratch implementation of the following components with a Keras-like API
+description: "Nano AutoDiff is a from-scratch educational implementation of reverse-mode automatic differentiation in Python, with a Keras-like API covering tensors, computational graphs, gradients, and basic neural network layers."
+last_modified_at: 2025-02-19
+tags: [automatic-differentiation, autograd, deep-learning, python, from-scratch]
+redirect_from:
+  - /2025/02/19/nano-autodiff.html
+  - /2025/02/19/nano-autodiff/
 ---
 
 

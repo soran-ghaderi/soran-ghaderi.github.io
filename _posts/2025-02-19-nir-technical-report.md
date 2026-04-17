@@ -7,6 +7,13 @@ featured: true
 hidden: false
 comments: true
 excerpt: A comprehensive technical analysis of the NIR framework - separating reasoning from generation in LLMs, then strategically reintegrating contextual understanding at multiple architectural depths.
+description: "A technical deep dive into the Neural Integration of Iterative Reasoning (NIR) framework, exploring how reasoning can be separated from generation in large language models and then reintegrated at multiple architectural depths for context-aware code generation."
+last_modified_at: 2025-02-19
+tags: [large-language-models, reasoning, code-generation, transformers, deep-learning]
+redirect_from:
+  - /2025/02/19/nir-technical-report.html
+  - /2025/02/19/nir-technical-report/
+  - /nir/
 ---
 
 *Soran Ghaderi*  

@@ -1,9 +1,9 @@
 # Site
 url: "https://soran-ghaderi.github.io"
 description: "Personal website of Soran Ghaderi — ML Research Engineer. Research in energy-based models, diffusion models, world models, and embodied AI."
-image: images/profile.jpeg
-logo: 'images/profile.jpeg'
-favicon: 'images/profile.jpeg'
+image: images/profile-2026.jpg
+logo: 'images/profile-2026.jpg'
+favicon: 'images/profile-2026.jpg'
 baseurl: ''
 google_analytics: 'UA-46278016-1'
 #disqus: 'demowebsite'
@@ -138,7 +138,7 @@ additional_links:
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: images/profile.jpeg #Directory of profile image (eg. images/profile.jpg)
+about_profile_image: images/profile-2026.jpg #Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
   
   <section>
@@ -291,11 +291,12 @@ defaults:
   - scope:
       path: ""
     values:
-      image: images/profile.jpeg
+      image: images/profile-2026.jpg
   - scope:
       path: _posts
     values:
       layout: post
+      permalink: /projects/:title/
   - scope:
       path: _pages
     values:
@@ -313,6 +314,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-redirect-from
 
 exclude: [
   "Gemfile",

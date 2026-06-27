@@ -180,7 +180,7 @@ about_content: | # this will include new lines to allow paragraphs
   </details>
   
   <p style="margin-top: 1em;">
-  <strong>Current Focus.</strong> Bringing diffusion, Schrödinger bridges, flow-based, and energy-based models under one view through statistical mechanics and differential geometry, so that different tasks become conditioning queries on a single trained model with calibrated uncertainty.
+  <strong>Current Focus.</strong> Bringing diffusion, Schrödinger bridges, flow-based, and energy-based models under one view through statistical mechanics and differential geometry.
   </p>
   
   </section>

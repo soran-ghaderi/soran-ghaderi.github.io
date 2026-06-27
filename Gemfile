@@ -24,9 +24,11 @@ group :jekyll_plugins do
   gem "rouge"
 end
 
-# HTML validation in CI (bundle exec htmlproofer).
+# Local + CI test tooling (`rake test` → build, html-proofer, smoke tests).
 group :development, :test do
   gem "html-proofer", "~> 5.0"
+  gem "minitest", "~> 5.0"
+  gem "rake", "~> 13.0"
 end
 
 # Windows-only helpers — no-ops on Linux/macOS and the CI runner.

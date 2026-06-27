@@ -40,6 +40,11 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      # Gate the deploy: a failed check aborts before the artifact is uploaded,
+      # so a broken build can never be published (Pages keeps the last good deploy).
+      - name: Validate links & build invariants
+        run: bundle exec rake proof smoke
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

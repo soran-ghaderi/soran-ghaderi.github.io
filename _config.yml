@@ -24,7 +24,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: ML Research Engineer at CoSTAR National Lab | Incoming DPhil in Computer Science
+title: ML Research Engineer at CoSTAR National Lab | Incoming DPhil student in Computer Science
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -136,11 +136,15 @@ additional_links:
 # gtag: "UA-00000000-0"
 # google_analytics: "UA-00000000-0"
 
+#   <p>My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop embodied agents able to reason and interact with the real world.</p>
+
 # About Section
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile-2026.jpg #Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
   
+
+
   <section>
     <h3>About</h3>
   <p>
@@ -153,38 +157,32 @@ about_content: | # this will include new lines to allow paragraphs
   
   <section>
     <h3>Research Interests</h3>
-  <p>My ultimate objective is to study the cognitive mechanisms underlying intelligence and develop embodied agents able to reason and interact with the real world.
-  </p>
-  <p>
-  I work on differentiable approaches for iterative reasoning and planning in uncertain environments. 
-  Building more capable, efficient, and generalizable AI systems, particularly at the intersection of deep learning, 
-  statistical mechanics, probabilistic modeling, and geometric methods.In a wider context, I am interested in developing a network of specialized networks such as memory and rapid learning, goal-driven planning, spatial reasoning, and error detection and conflict monitoring that operate collaboratively to consistently make good decisions within a complex environment. 
-  </p>
+  <p>A representation of a system can be learned and refined from partial views and  measurements. A signal, a geometric system evolving over time, or an image could be the different faces of the same underlying system or its evolved state.
+  Most of what we ask of such a system, whether we are recovering something hidden, reconstructing what we cannot observe directly, or anticipating how it will behave, is the same question asked through a different measurement.</p>
+  <strong>I'm interested in developing differentiable methods for learning such representations.</strong> 
+  <br><br>
+  <p>When a general method can absorb the structure of a problem from scale, it usually overtakes the carefully engineered alternative <cite data-key="sutton2019bitter"></cite>.</p>
+  <p> Taken to its limit this points to one model rather than many. A representation of biological systems wide enough to reach across scales, from molecular structure through anatomy and imaging to how a patient changes over time, learned together so that what is known at one scale sharpens inference at another.</p>
+
   
   <details>
   <summary><strong>▸ Key areas <span class="badge badge-accent">Click to expand</span></strong></summary>
   <br>
   <ul>
-    <li><strong>Generative Modeling</strong>: Energy-Based Models, Diffusion/Score-Based Models, Normalizing Flows, Optimal Transport, Consistency Models. Mathematical tools: ODEs, PDEs (Fokker-Planck), SDEs, Itô Calculus, OT theory. Also language models and autoregressive generation.</li>
-    <li><strong>Generalisation, Reasoning & Planning</strong>: Robust OOD performance for complex decision-making.</li>
-    <li><strong>Geometric & Mathematical Foundations</strong>: Differential geometry (Riemannian manifolds), metric learning, Hamiltonian & Lagrangian formulations for efficient learning algorithms.</li>
-    <li><strong>Efficient Architectures</strong>: Transformers & attention mechanisms.</li>
-    <li><strong>MPC, RL, Agents & Embodied Intelligence</strong></li>
-    <li><strong>Applications</strong>: World Models, robotics, AI for science, LLMs.</li>
+  <li><strong>One representation, many questions:</strong> Treating tasks as conditionals of a single learned model of the system, where generalisation comes from a representation made rich by varied measurements and data modalities rather than from composition built in by hand.</li>
+  <li><strong>Continuous-time generative models:</strong> Diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models, used as learned priors and samplers. Built on ODEs and SDEs, Fokker-Planck and Itô calculus, and probability-flow ideas.</li>
+  <li><strong>Amortised and simulation-based inference:</strong> Neural posterior estimation, amortised variational inference, and likelihood-free methods that turn expensive per-case fitting into a single forward pass.</li>
+  <li><strong>Learned priors for ill-posed problems:</strong> Expressive generative models that make sense of measurements which do not determine a unique answer, with calibrated uncertainty and correct coverage.</li>
+  <li><strong>Geometry and operators:</strong> Riemannian geometry and shape spaces for representation, and links to statistical mechanics.</li>
+  <li><strong>Generalisation and robustness:</strong> Out-of-distribution behaviour, transfer across systems and regimes, and reliability when data are scarce or noisy.</li>
+  <li><strong>Applications:</strong> Scientific inference, with digital twins and cardiac modelling as the present testbed.</li>
   </ul>
   </details>
   
   <p style="margin-top: 1em;">
-  <strong>Current Focus</strong>: Unifying diffusion, Schrödinger bridges, flow-based, and energy-based models through statistical mechanics and differential geometry, toward agents capable of fast generation, reasoning (as optimisation), and robust planning under uncertainty.
+  <strong>Current Focus.</strong> Bringing diffusion, Schrödinger bridges, flow-based, and energy-based models under one view through statistical mechanics and differential geometry.
   </p>
   
-  <h4>Research Highlights</h4>
-  <ul>
-      <li><strong>Reasoning & Planning</strong>: Agents that reason, plan, and adapt to novel environments</li>
-      <li><strong>Representation Learning</strong>: Learning the geometry of parameters and data distributions</li>
-      <li><strong>OOD Generalisation</strong>: Robust behaviour beyond training distribution</li>
-      <li><strong>Embodied Intelligence</strong>: Systems that learn through interaction with the world</li>
-  </ul>
   </section>
   
   <section>
@@ -212,7 +210,17 @@ about_content: | # this will include new lines to allow paragraphs
         <li>Full scholarship for MSc AI, University of Essex</li>
     </ul>
   </section>
-  
+
+  <div class="bibliography-data" style="display:none;">
+  @misc{sutton2019bitter,
+    author    = {Sutton, Richard S.},
+    title     = {The Bitter Lesson},
+    year      = {2019},
+    publisher = {Incomplete Ideas (blog)},
+    url       = {http://www.incompleteideas.net/IncIdeas/BitterLesson.html}
+  }
+  </div>
+
 #        I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
 #      With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
 #

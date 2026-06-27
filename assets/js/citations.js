@@ -14,7 +14,12 @@
   'use strict';
 
   function getArticleRoot() {
-    return document.querySelector('.article-post') || document.querySelector('article') || document.body;
+    return (
+      document.querySelector('.article-post') ||
+      document.querySelector('article') ||
+      document.querySelector('.intro-container') ||
+      document.body
+    );
   }
 
   function findBibliographyData(root) {

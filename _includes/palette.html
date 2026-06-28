@@ -81,22 +81,19 @@
 
   /* =====================================================
      LIGHT MODE BACKGROUNDS (from _config.yml: palette.light_bg)
+     Values are assigned once here, then emitted on :root (below) AND on
+     the high-specificity html.light block (after :root). The override block
+     is required because base.scss applies light colors via an html.light
+     rule with !important — a plain :root value here would never win.
      ===================================================== */
   {% case site.palette.light_bg %}
-    {% when "snow" %}
-      --bg-color: #fafafa;
-      --intro-bg: #f5f5f5;
-    {% when "cream" %}
-      --bg-color: #fffdf7;
-      --intro-bg: #fefce8;
-    {% when "cool-gray" %}
-      --bg-color: #f8fafc;
-      --intro-bg: #f1f5f9;
-    {% else %}
-      /* white (default) */
-      --bg-color: #ffffff;
-      --intro-bg: #f7fafc;
+    {% when "snow" %}{% assign light_bg = "#fafafa" %}{% assign light_intro_bg = "#f5f5f5" %}
+    {% when "cream" %}{% assign light_bg = "#fffdf7" %}{% assign light_intro_bg = "#fefce8" %}
+    {% when "cool-gray" %}{% assign light_bg = "#f8fafc" %}{% assign light_intro_bg = "#f1f5f9" %}
+    {% else %}{% assign light_bg = "#ffffff" %}{% assign light_intro_bg = "#f7fafc" %}
   {% endcase %}
+  --bg-color: {{ light_bg }};
+  --intro-bg: {{ light_intro_bg }};
   
   /* Card border for light mode (subtle) */
   --card-border: rgba(0, 0, 0, 0.06);
@@ -120,6 +117,19 @@
       --nav-border: #1a1a1a;
   {% endcase %}
   --nav-text: #f7fafc;
+}
+
+/* =====================================================
+   LIGHT MODE BACKGROUNDS — high-specificity override
+   Mirrors base.scss's html.light block so the config-driven value wins
+   there too, including the server-rendered body.dark flash on first paint.
+   base.scss no longer hardcodes these (see _sass/base.scss html.light).
+   ===================================================== */
+html.light,
+html.light body,
+html.light body.dark {
+  --bg-color: {{ light_bg }} !important;
+  --intro-bg: {{ light_intro_bg }} !important;
 }
 
 /* =====================================================

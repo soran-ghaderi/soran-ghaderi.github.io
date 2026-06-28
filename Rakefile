@@ -42,4 +42,13 @@ Rake::Task[:smoke].add_description "Assert build-output invariants (run after a 
 desc "Full local check: build, then proof + smoke on the result"
 task test: %i[build proof smoke]
 
+desc "Dev server that also restarts on _config.yml changes (passes extra args through)"
+task :serve do
+  # Jekyll's --watch ignores _config.yml, so scripts/serve.sh wraps `jekyll serve`
+  # and restarts it when the config changes. Forward any extra CLI args.
+  sh "scripts/serve.sh", *ARGV[1..]
+  # Don't let Rake try to run the forwarded args as tasks.
+  exit
+end
+
 task default: :test

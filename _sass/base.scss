@@ -218,10 +218,10 @@ html.light body.dark {
   --link-color: var(--accent-color) !important;
   --link-hover: var(--accent-hover) !important;
   
-  // Backgrounds
-  --bg-color: #ffffff !important;
-  --intro-bg: #f7fafc !important;
-  
+  // Backgrounds — driven by _config.yml (palette.light_bg) via palette.html's
+  // html.light override block. Do NOT hardcode here: an !important value would
+  // override the config and the light-mode palette setting would do nothing.
+
   // Icons
   --icon-color: #2d3748 !important;
   --icon-hover: #1a202c !important;

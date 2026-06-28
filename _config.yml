@@ -87,8 +87,8 @@ darkmode: true
 # // =========================================================================
   
 palette:
-  dark_bg: "near-black"      # Dark mode background
-  light_bg: "white"          # Light mode background  
+  dark_bg: "charcoal"      # Dark mode background
+  light_bg: "cream"          # Light mode background  
   accent: "crimson"        # Accent color (used for highlights, links hover, etc.)
   navbar: "darker"             # Navbar style
 

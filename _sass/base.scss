@@ -37,12 +37,13 @@
   // LIGHT MODE COLORS (default)
   // =====================================================
   
-  // Main text colors
-  --text-color: #1a202c;                    // Dark text for high contrast
-  --text-strong: #0d1117;                   // Near-black for headings/strong text
-  --text-muted: #4a5568;                    // Darker muted for better readability
-  --heading-color: #0d1117;                 // Near-black for headers
-  
+  // Main text colors — warm near-black, pairs with the warm cream backgrounds
+  // (sand/parchment/bone) and stays >14:1 on pure white, so safe on any light_bg.
+  --text-color: #26221c;                    // Warm dark text for high contrast
+  --text-strong: #1a1611;                   // Warm near-black for headings/strong text
+  --text-muted: #5c5346;                    // Warm muted for secondary text
+  --heading-color: #1a1611;                 // Warm near-black for headers
+
   // Links - uses accent color from _config.yml palette.accent
   // Values are overridden by palette.html injection
   --link-color: var(--accent-color);        // Uses accent color for links
@@ -208,11 +209,11 @@ body.dark {
 html.light,
 html.light body,
 html.light body.dark {
-  // Main text colors
-  --text-color: #1a202c !important;
-  --text-strong: #0d1117 !important;
-  --text-muted: #4a5568 !important;
-  --heading-color: #0d1117 !important;
+  // Main text colors — warm near-black (matches :root above; pairs with cream bgs)
+  --text-color: #26221c !important;
+  --text-strong: #1a1611 !important;
+  --text-muted: #5c5346 !important;
+  --heading-color: #1a1611 !important;
   
   // Links - uses accent color
   --link-color: var(--accent-color) !important;
@@ -272,7 +273,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: var(--accent-hover, #2f855a);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3); }
+    box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3); }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
@@ -380,7 +381,7 @@ html {
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-body, Roboto, sans-serif);
   -webkit-font-smoothing: antialiased;
   width: 100%;
   max-width: 100%;

@@ -21,8 +21,7 @@
   <link rel="dns-prefetch" href="//ajax.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 
-  <!-- Fonts: Roboto for body, Fira Code for code -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts: configured via _config.yml `typography:` — loaded by typography.html below -->
   {% if page.direction == 'rtl' %}
   <!-- Vazirmatn: elegant Persian/Kurdish/Arabic font -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,6 +42,10 @@
 
   <!-- Centralized Color Palette (from _config.yml) -->
   {%- include palette.html -%}
+
+  <!-- Centralized Typography (from _config.yml: typography.*) — must come after
+       main.css so its :root font vars override the base.scss fallbacks -->
+  {%- include typography.html -%}
 
   <!-- Early media interceptor: prevents browser from fetching off-screen videos/images
        before the main lazy-media.js IntersectionObserver can take over. Runs in <head>

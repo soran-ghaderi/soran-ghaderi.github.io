@@ -10,24 +10,27 @@
 // Change these values to control typography site-wide
 // =====================================================
 
-// Font stacks
+// Font stacks — families come from _config.yml `typography:` via _includes/typography.html
 $font-body: var(--font-body, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif);
+$font-heading: var(--font-heading, #{$font-body});
 $font-code: var(--code-font-family, 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'Liberation Mono', monospace);
 
 // =====================================================
 // SPACING & LINE HEIGHT - SINGLE SOURCE OF TRUTH
 // =====================================================
 $line-height-tight: 1.3;      // For headings
-$line-height-base: 1.45;      // For body text, paragraphs, lists
+$line-height-base: var(--line-height-body, 1.45);   // Body text — configurable (typography.line_height)
 $line-height-relaxed: 1.6;    // For code blocks, special content
 
 // =====================================================
 // FONT WEIGHTS - SINGLE SOURCE OF TRUTH
 // =====================================================
-$font-weight-light: 300;      // Body text
-$font-weight-normal: 400;     // Normal weight
-$font-weight-medium: 500;     // Bold/strong text
-$font-weight-semibold: 600;   // Headings
+// Body + heading weights come from _config.yml (typography.body_weight / heading_weight).
+// --font-weight-medium (sub-headings + strong) tracks heading_weight one step down.
+$font-weight-light: var(--font-weight-body, 300);     // Body text (typography.body_weight)
+$font-weight-normal: 400;                             // Normal weight
+$font-weight-medium: var(--font-weight-medium, 500);  // Sub-headings / strong text
+$font-weight-semibold: var(--font-weight-heading, 600); // Headings (typography.heading_weight)
 $font-weight-bold: 700;       // Extra emphasis
 
 // =====================================================
@@ -50,10 +53,10 @@ $heading-margin-bottom: 0.75rem;
 // FONT SIZE SCALE
 // Change $base-font-size to scale all typography
 // =====================================================
-$base-font-size: 1.6rem;  // ~18px - the foundation for all sizes
+$base-font-size: var(--base-font-size, 1.6rem);  // foundation for all sizes (typography.base_size)
 
-// Modular scale multipliers (based on 1.25 ratio - Major Third)
-$scale-ratio: 1.25;
+// Modular scale multiplier (typography.scale) — Major Third (1.25) by default
+$scale-ratio: var(--font-scale, 1.25);
 
 // Computed font sizes - all derived from base
 $font-size-xs: calc(#{$base-font-size} / #{$scale-ratio} / #{$scale-ratio});  // ~0.72rem
@@ -251,7 +254,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-body;
+  font-family: $font-heading;
   font-weight: $font-weight-semibold;
   line-height: $line-height-tight;
   margin: 0 0 $spacing-sm;

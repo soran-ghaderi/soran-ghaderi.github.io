@@ -1,0 +1,115 @@
+<!--
+  CENTRALIZED TYPOGRAPHY SYSTEM
+  ============================
+  Generates font CSS custom properties + the Google Fonts <link>s from the
+  _config.yml `typography:` block. Mirrors _includes/palette.html.
+
+  A `preset` sets defaults for everything; any field under typography: overrides
+  just that one knob. An absent/empty typography block = the "modern" preset
+  (the site's original Roboto / Fira Code look) — so this is non-breaking.
+
+  PRESETS:        body            headings          code            feel
+    system        system UI       system UI         system mono     no web fonts, instant
+    modern        Roboto          Roboto            Fira Code       original look (default)
+    editorial     Source Sans 3   Fraunces (serif)  JetBrains Mono  literary
+    grotesk       Inter           Inter             JetBrains Mono  clean modern
+    book          Lora (serif)    Lora              IBM Plex Mono   traditional reading
+
+  OVERRIDES (any Google Fonts family name): body_font, heading_font, code_font,
+  body_weight, heading_weight, base_size, scale, line_height.
+-->
+{%- assign tp = site.typography -%}
+
+{%- comment -%} 1. Preset defaults {%- endcomment -%}
+{%- case tp.preset -%}
+  {%- when "system" -%}
+    {%- assign d_body = "system" -%}{%- assign d_head = "system" -%}{%- assign d_code = "system" -%}
+    {%- assign d_bodyw = 400 -%}{%- assign d_headw = 600 -%}
+    {%- assign d_base = "1.6rem" -%}{%- assign d_scale = "1.25" -%}{%- assign d_lh = "1.45" -%}
+  {%- when "editorial" -%}
+    {%- assign d_body = "Source Sans 3" -%}{%- assign d_head = "Fraunces" -%}{%- assign d_code = "JetBrains Mono" -%}
+    {%- assign d_bodyw = 400 -%}{%- assign d_headw = 600 -%}
+    {%- assign d_base = "1.6rem" -%}{%- assign d_scale = "1.25" -%}{%- assign d_lh = "1.5" -%}
+  {%- when "grotesk" -%}
+    {%- assign d_body = "Inter" -%}{%- assign d_head = "Inter" -%}{%- assign d_code = "JetBrains Mono" -%}
+    {%- assign d_bodyw = 400 -%}{%- assign d_headw = 600 -%}
+    {%- assign d_base = "1.55rem" -%}{%- assign d_scale = "1.25" -%}{%- assign d_lh = "1.5" -%}
+  {%- when "book" -%}
+    {%- assign d_body = "Lora" -%}{%- assign d_head = "Lora" -%}{%- assign d_code = "IBM Plex Mono" -%}
+    {%- assign d_bodyw = 400 -%}{%- assign d_headw = 600 -%}
+    {%- assign d_base = "1.65rem" -%}{%- assign d_scale = "1.25" -%}{%- assign d_lh = "1.6" -%}
+  {%- else -%}
+    {%- comment -%} modern (default) — the site's original look {%- endcomment -%}
+    {%- assign d_body = "Roboto" -%}{%- assign d_head = "Roboto" -%}{%- assign d_code = "Fira Code" -%}
+    {%- assign d_bodyw = 300 -%}{%- assign d_headw = 600 -%}
+    {%- assign d_base = "1.6rem" -%}{%- assign d_scale = "1.25" -%}{%- assign d_lh = "1.45" -%}
+{%- endcase -%}
+
+{%- comment -%} 2. Apply per-field overrides (a non-empty value wins) {%- endcomment -%}
+{%- assign body_font = d_body -%}{%- if tp.body_font and tp.body_font != "" -%}{%- assign body_font = tp.body_font -%}{%- endif -%}
+{%- assign head_font = d_head -%}{%- if tp.heading_font and tp.heading_font != "" -%}{%- assign head_font = tp.heading_font -%}{%- endif -%}
+{%- assign code_font = d_code -%}{%- if tp.code_font and tp.code_font != "" -%}{%- assign code_font = tp.code_font -%}{%- endif -%}
+{%- assign body_w = d_bodyw -%}{%- if tp.body_weight and tp.body_weight != "" -%}{%- assign body_w = tp.body_weight -%}{%- endif -%}
+{%- assign head_w = d_headw -%}{%- if tp.heading_weight and tp.heading_weight != "" -%}{%- assign head_w = tp.heading_weight -%}{%- endif -%}
+{%- assign base_size = d_base -%}{%- if tp.base_size and tp.base_size != "" -%}{%- assign base_size = tp.base_size -%}{%- endif -%}
+{%- assign scale = d_scale -%}{%- if tp.scale and tp.scale != "" -%}{%- assign scale = tp.scale -%}{%- endif -%}
+{%- assign lh = d_lh -%}{%- if tp.line_height and tp.line_height != "" -%}{%- assign lh = tp.line_height -%}{%- endif -%}
+
+{%- comment -%} sub-heading / strong weight tracks the heading weight, one step down {%- endcomment -%}
+{%- assign medium_w = head_w | minus: 100 -%}
+{%- if medium_w < 400 -%}{%- assign medium_w = 400 -%}{%- endif -%}
+
+{%- comment -%} 3. Font stacks (serif fonts get a serif fallback) {%- endcomment -%}
+{%- assign sans_fb = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" -%}
+{%- assign serif_fb = "Georgia, Cambria, 'Times New Roman', Times, serif" -%}
+{%- assign mono_fb = "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" -%}
+{%- assign serif_fonts = "Lora,Fraunces,Source Serif 4,Merriweather,Playfair Display,Newsreader,Bitter,PT Serif,Noto Serif,Spectral,Cormorant,Libre Baskerville,EB Garamond,Crimson Pro" | split: "," -%}
+{%- assign italic_fonts = "Roboto,Inter,Lora,Fraunces,Source Sans 3,Source Serif 4,JetBrains Mono,Merriweather,Playfair Display,Open Sans,Work Sans,Newsreader,Bitter,Nunito Sans,Spectral,EB Garamond,Crimson Pro,Libre Franklin,Mulish,Karla" | split: "," -%}
+
+{%- if body_font == "system" -%}{%- assign body_stack = sans_fb -%}
+{%- elsif serif_fonts contains body_font -%}{%- assign body_stack = "'" | append: body_font | append: "', " | append: serif_fb -%}
+{%- else -%}{%- assign body_stack = "'" | append: body_font | append: "', " | append: sans_fb -%}{%- endif -%}
+{%- if head_font == "system" -%}{%- assign head_stack = sans_fb -%}
+{%- elsif serif_fonts contains head_font -%}{%- assign head_stack = "'" | append: head_font | append: "', " | append: serif_fb -%}
+{%- else -%}{%- assign head_stack = "'" | append: head_font | append: "', " | append: sans_fb -%}{%- endif -%}
+{%- if code_font == "system" -%}{%- assign code_stack = mono_fb -%}
+{%- else -%}{%- assign code_stack = "'" | append: code_font | append: "', " | append: mono_fb -%}{%- endif -%}
+
+{%- comment -%} 4. Weight specs for the Google Fonts request {%- endcomment -%}
+{%- assign tw = "" | append: body_w | append: "," | append: medium_w | append: "," | append: head_w | append: ",400,700" -%}
+{%- assign text_weights = tw | split: "," | uniq | sort -%}
+{%- assign code_weights = "400,500,700" | split: "," -%}
+{%- assign text_plain = text_weights | join: ";" -%}
+{%- capture text_ital -%}{%- for w in text_weights -%}0,{{ w }};{%- endfor -%}{%- for w in text_weights -%}1,{{ w }}{%- unless forloop.last -%};{%- endunless -%}{%- endfor -%}{%- endcapture -%}
+{%- assign code_plain = code_weights | join: ";" -%}
+
+<style id="typography-variables">
+:root {
+  --font-body: {{ body_stack }};
+  --font-heading: {{ head_stack }};
+  --code-font-family: {{ code_stack }};
+  --font-weight-body: {{ body_w }};
+  --font-weight-medium: {{ medium_w }};
+  --font-weight-heading: {{ head_w }};
+  --base-font-size: {{ base_size }};
+  --font-scale: {{ scale }};
+  --line-height-body: {{ lh }};
+}
+</style>
+
+{%- comment -%} 5. Google Fonts <link>s — one per distinct non-system family {%- endcomment -%}
+{%- if body_font != "system" -%}{%- assign q = body_font | replace: " ", "+" -%}
+{%- if italic_fonts contains body_font -%}
+<link href="https://fonts.googleapis.com/css2?family={{ q }}:ital,wght@{{ text_ital }}&display=swap" rel="stylesheet">
+{%- else -%}
+<link href="https://fonts.googleapis.com/css2?family={{ q }}:wght@{{ text_plain }}&display=swap" rel="stylesheet">
+{%- endif -%}{%- endif -%}
+{%- if head_font != "system" and head_font != body_font -%}{%- assign q = head_font | replace: " ", "+" -%}
+{%- if italic_fonts contains head_font -%}
+<link href="https://fonts.googleapis.com/css2?family={{ q }}:ital,wght@{{ text_ital }}&display=swap" rel="stylesheet">
+{%- else -%}
+<link href="https://fonts.googleapis.com/css2?family={{ q }}:wght@{{ text_plain }}&display=swap" rel="stylesheet">
+{%- endif -%}{%- endif -%}
+{%- if code_font != "system" and code_font != body_font and code_font != head_font -%}{%- assign q = code_font | replace: " ", "+" -%}
+<link href="https://fonts.googleapis.com/css2?family={{ q }}:wght@{{ code_plain }}&display=swap" rel="stylesheet">
+{%- endif -%}

@@ -10,25 +10,64 @@
     charcoal    : #121212  (Material Design dark, softer)
     slate       : #1a202c  (Blue-tinted, original theme)
     midnight    : #0d1117  (GitHub dark, subtle blue)
-  
-  LIGHT MODE BACKGROUNDS:
+    ink         : #141413  (Anthropic warm near-black)
+    espresso    : #1a1714  (Warmer brown-black)
+
+  LIGHT MODE BACKGROUNDS:  (these go in light_bg — NOT the accent names below)
     white       : #ffffff  (Default - pure white)
     snow        : #fafafa  (Slightly off-white, easier on eyes)
     cream       : #fffdf7  (Warm white, paper-like)
     cool-gray   : #f8fafc  (Cool tinted white)
-  
+    -- Warm editorial creams (light → deeper) --
+    ivory       : #fdfbf4  (Brightest warm white)
+    sand        : #faf9f5  (Anthropic warm cream)
+    bone        : #f7f4ee  (Soft warm off-white)
+    linen       : #f5f1e8  (Warm woven off-white)
+    almond      : #f3ebdd  (Warm tan paper)
+    parchment   : #f4efe3  (Vintage book paper)
+    oat         : #f0ead9  (Deep warm oatmeal)
+    -- Tinted creams (pair with an accent family) --
+    blush       : #f7efe9  (Pale warm pink-tan — clay/terracotta/rust)
+    dove        : #efece6  (Warm greige)
+    sage-mist   : #eef1e7  (Pale green tint — sage/moss/pine)
+    mist        : #eaeef2  (Pale blue tint — denim/indigo/steel/teal)
+
   ACCENT COLORS:
+    -- Reds (original) --
     vivid-red   : #ef4444  (Default - bright, prominent red)
     crimson     : #dc2626  (Deeper red, more classic)
     coral       : #f97316  (Orange-red, warm)
     rose        : #e11d48  (Pink-red, modern)
     ruby        : #be123c  (Dark red, sophisticated)
-  
+    -- Mid-century editorial: Warm --
+    clay        : #b15738  (Anthropic soft terracotta)
+    terracotta  : #b0532f  (Deeper, redder clay)
+    rust        : #9c4a2a  (Burnt brick-orange)
+    brick       : #8a3f3a  (Deep muted brick-red)
+    burgundy    : #7a3540  (Wine red)
+    -- Mid-century editorial: Gold / earth --
+    ochre       : #966b23  (Mid-century honey-gold)
+    bronze      : #856231  (Brown-gold / caramel)
+    olive       : #66652c  (Yellow-green olive)
+    -- Mid-century editorial: Green --
+    sage        : #566b3e  (Muted olive-green)
+    moss        : #4f6b46  (Cool muted green)
+    pine        : #2f6048  (Deep forest green)
+    teal        : #2f6f6d  (Desaturated deep teal)
+    -- Mid-century editorial: Blue --
+    denim       : #3f5e7a  (Desaturated denim blue)
+    indigo      : #42618a  (Editorial deep blue)
+    steel       : #4d6473  (Dusty steel-blue)
+    -- Mid-century editorial: Purple --
+    plum        : #86496a  (Muted aubergine)
+    (Each editorial accent auto-brightens in dark mode for legibility.)
+
   NAVBAR STYLES:
     dark        : #1a202c  (Default dark)
     darker      : #0f0f0f  (Near black)
     pure-black  : #000000  (Pure black)
     slate       : #1e293b  (Slate blue)
+    ink         : #141413  (Anthropic warm near-black)
 -->
 <style id="palette-variables">
 :root {
@@ -68,6 +107,123 @@
       /* Link colors use accent */
       --link-color: #be123c;
       --link-hover: #9f1239;
+    {% comment %} ---- Mid-century editorial accents (warm) ---- {% endcomment %}
+    {% when "clay" %}
+      --accent-color: #b15738;
+      --accent-hover: #92482e;
+      --accent-light: #ead4cc;
+      --accent-rgb: 177, 87, 56;
+      --link-color: #b15738;
+      --link-hover: #92482e;
+    {% when "terracotta" %}
+      --accent-color: #b0532f;
+      --accent-hover: #904426;
+      --accent-light: #ead5cc;
+      --accent-rgb: 176, 83, 47;
+      --link-color: #b0532f;
+      --link-hover: #904426;
+    {% when "rust" %}
+      --accent-color: #9c4a2a;
+      --accent-hover: #7c3b21;
+      --accent-light: #ead5cc;
+      --accent-rgb: 156, 74, 42;
+      --link-color: #9c4a2a;
+      --link-hover: #7c3b21;
+    {% when "brick" %}
+      --accent-color: #8a3f3a;
+      --accent-hover: #6d322e;
+      --accent-light: #eacfcd;
+      --accent-rgb: 138, 63, 58;
+      --link-color: #8a3f3a;
+      --link-hover: #6d322e;
+    {% when "burgundy" %}
+      --accent-color: #7a3540;
+      --accent-hover: #5e2931;
+      --accent-light: #e9cdd2;
+      --accent-rgb: 122, 53, 64;
+      --link-color: #7a3540;
+      --link-hover: #5e2931;
+    {% comment %} ---- editorial accents (gold / earth) ---- {% endcomment %}
+    {% when "ochre" %}
+      --accent-color: #966b23;
+      --accent-hover: #75531b;
+      --accent-light: #eadfcc;
+      --accent-rgb: 150, 107, 35;
+      --link-color: #966b23;
+      --link-hover: #75531b;
+    {% when "bronze" %}
+      --accent-color: #856231;
+      --accent-hover: #674c26;
+      --accent-light: #eadecc;
+      --accent-rgb: 133, 98, 49;
+      --link-color: #856231;
+      --link-hover: #674c26;
+    {% when "olive" %}
+      --accent-color: #66652c;
+      --accent-hover: #494920;
+      --accent-light: #e9e9cd;
+      --accent-rgb: 102, 101, 44;
+      --link-color: #66652c;
+      --link-hover: #494920;
+    {% comment %} ---- editorial accents (green) ---- {% endcomment %}
+    {% when "sage" %}
+      --accent-color: #566b3e;
+      --accent-hover: #41512f;
+      --accent-light: #dce5d2;
+      --accent-rgb: 86, 107, 62;
+      --link-color: #566b3e;
+      --link-hover: #41512f;
+    {% when "moss" %}
+      --accent-color: #4f6b46;
+      --accent-hover: #3d5236;
+      --accent-light: #d7e3d4;
+      --accent-rgb: 79, 107, 70;
+      --link-color: #4f6b46;
+      --link-hover: #3d5236;
+    {% when "pine" %}
+      --accent-color: #2f6048;
+      --accent-hover: #224533;
+      --accent-light: #cfe8dc;
+      --accent-rgb: 47, 96, 72;
+      --link-color: #2f6048;
+      --link-hover: #224533;
+    {% when "teal" %}
+      --accent-color: #2f6f6d;
+      --accent-hover: #235251;
+      --accent-light: #cdeae9;
+      --accent-rgb: 47, 111, 109;
+      --link-color: #2f6f6d;
+      --link-hover: #235251;
+    {% comment %} ---- editorial accents (blue) ---- {% endcomment %}
+    {% when "denim" %}
+      --accent-color: #3f5e7a;
+      --accent-hover: #31495f;
+      --accent-light: #d0dce7;
+      --accent-rgb: 63, 94, 122;
+      --link-color: #3f5e7a;
+      --link-hover: #31495f;
+    {% when "indigo" %}
+      --accent-color: #42618a;
+      --accent-hover: #354e6e;
+      --accent-light: #cfdae8;
+      --accent-rgb: 66, 97, 138;
+      --link-color: #42618a;
+      --link-hover: #354e6e;
+    {% when "steel" %}
+      --accent-color: #4d6473;
+      --accent-hover: #3d4f5b;
+      --accent-light: #d4dde2;
+      --accent-rgb: 77, 100, 115;
+      --link-color: #4d6473;
+      --link-hover: #3d4f5b;
+    {% comment %} ---- editorial accent (purple) ---- {% endcomment %}
+    {% when "plum" %}
+      --accent-color: #86496a;
+      --accent-hover: #6c3b55;
+      --accent-light: #e6d1dc;
+      --accent-rgb: 134, 73, 106;
+      --link-color: #86496a;
+      --link-hover: #6c3b55;
     {% else %}
       /* vivid-red (default) */
       --accent-color: #ef4444;
@@ -90,6 +246,19 @@
     {% when "snow" %}{% assign light_bg = "#fafafa" %}{% assign light_intro_bg = "#f5f5f5" %}
     {% when "cream" %}{% assign light_bg = "#fffdf7" %}{% assign light_intro_bg = "#fefce8" %}
     {% when "cool-gray" %}{% assign light_bg = "#f8fafc" %}{% assign light_intro_bg = "#f1f5f9" %}
+    {% comment %} ---- Warm editorial creams (light → deeper) ---- {% endcomment %}
+    {% when "ivory" %}{% assign light_bg = "#fdfbf4" %}{% assign light_intro_bg = "#f7f3e8" %}
+    {% when "sand" %}{% assign light_bg = "#faf9f5" %}{% assign light_intro_bg = "#f3f1e9" %}
+    {% when "bone" %}{% assign light_bg = "#f7f4ee" %}{% assign light_intro_bg = "#efebe0" %}
+    {% when "linen" %}{% assign light_bg = "#f5f1e8" %}{% assign light_intro_bg = "#ece5d6" %}
+    {% when "almond" %}{% assign light_bg = "#f3ebdd" %}{% assign light_intro_bg = "#eaddc8" %}
+    {% when "parchment" %}{% assign light_bg = "#f4efe3" %}{% assign light_intro_bg = "#ebe4d2" %}
+    {% when "oat" %}{% assign light_bg = "#f0ead9" %}{% assign light_intro_bg = "#e7dcc4" %}
+    {% comment %} ---- Tinted creams (pair with an accent family) ---- {% endcomment %}
+    {% when "blush" %}{% assign light_bg = "#f7efe9" %}{% assign light_intro_bg = "#ecddd3" %}
+    {% when "dove" %}{% assign light_bg = "#efece6" %}{% assign light_intro_bg = "#e4dfd5" %}
+    {% when "sage-mist" %}{% assign light_bg = "#eef1e7" %}{% assign light_intro_bg = "#e2e7d6" %}
+    {% when "mist" %}{% assign light_bg = "#eaeef2" %}{% assign light_intro_bg = "#dde4ea" %}
     {% else %}{% assign light_bg = "#ffffff" %}{% assign light_intro_bg = "#f7fafc" %}
   {% endcase %}
   --bg-color: {{ light_bg }};
@@ -111,6 +280,9 @@
     {% when "slate" %}
       --nav-bg: #1e293b;
       --nav-border: #334155;
+    {% when "ink" %}
+      --nav-bg: #141413;
+      --nav-border: #232220;
     {% else %}
       /* dark (default) - matches dark mode background */
       --nav-bg: #0f0f0f;
@@ -156,6 +328,14 @@ body.dark {
       --bg-color: #0d1117;
       --intro-bg: #161b22;
       --card-border: rgba(255, 255, 255, 0.1);
+    {% when "ink" %}
+      --bg-color: #141413;
+      --intro-bg: #1e1d1b;
+      --card-border: rgba(255, 255, 255, 0.09);
+    {% when "espresso" %}
+      --bg-color: #1a1714;
+      --intro-bg: #241f1a;
+      --card-border: rgba(255, 255, 255, 0.08);
     {% else %}
       /* near-black (default) */
       --bg-color: #0f0f0f;
@@ -195,6 +375,119 @@ body.dark {
       --accent-rgb: 190, 18, 60;
       --link-color: #be123c;
       --link-hover: #e11d48;
+    {% comment %} ---- Mid-century editorial accents (brighter for dark bg) ---- {% endcomment %}
+    {% when "clay" %}
+      --accent-color: #c3623f;
+      --accent-hover: #cd7b5e;
+      --accent-light: #ead4cc;
+      --accent-rgb: 177, 87, 56;
+      --link-color: #c3623f;
+      --link-hover: #cd7b5e;
+    {% when "terracotta" %}
+      --accent-color: #c85f35;
+      --accent-hover: #d27854;
+      --accent-light: #ead5cc;
+      --accent-rgb: 176, 83, 47;
+      --link-color: #c85f35;
+      --link-hover: #d27854;
+    {% when "rust" %}
+      --accent-color: #c86035;
+      --accent-hover: #d27954;
+      --accent-light: #ead5cc;
+      --accent-rgb: 156, 74, 42;
+      --link-color: #c86035;
+      --link-hover: #d27954;
+    {% when "brick" %}
+      --accent-color: #bc6462;
+      --accent-hover: #c8807f;
+      --accent-light: #eacfcd;
+      --accent-rgb: 138, 63, 58;
+      --link-color: #bc6462;
+      --link-hover: #c8807f;
+    {% when "burgundy" %}
+      --accent-color: #ba666c;
+      --accent-hover: #c78287;
+      --accent-light: #e9cdd2;
+      --accent-rgb: 122, 53, 64;
+      --link-color: #ba666c;
+      --link-hover: #c78287;
+    {% when "ochre" %}
+      --accent-color: #a67727;
+      --accent-hover: #c78f2f;
+      --accent-light: #eadfcc;
+      --accent-rgb: 150, 107, 35;
+      --link-color: #a67727;
+      --link-hover: #c78f2f;
+    {% when "bronze" %}
+      --accent-color: #a17738;
+      --accent-hover: #be8d44;
+      --accent-light: #eadecc;
+      --accent-rgb: 133, 98, 49;
+      --link-color: #a17738;
+      --link-hover: #be8d44;
+    {% when "olive" %}
+      --accent-color: #82813a;
+      --accent-hover: #9e9d47;
+      --accent-light: #e9e9cd;
+      --accent-rgb: 102, 101, 44;
+      --link-color: #82813a;
+      --link-hover: #9e9d47;
+    {% when "sage" %}
+      --accent-color: #718650;
+      --accent-hover: #87a05f;
+      --accent-light: #dce5d2;
+      --accent-rgb: 86, 107, 62;
+      --link-color: #718650;
+      --link-hover: #87a05f;
+    {% when "moss" %}
+      --accent-color: #63895a;
+      --accent-hover: #769f6d;
+      --accent-light: #d7e3d4;
+      --accent-rgb: 79, 107, 70;
+      --link-color: #63895a;
+      --link-hover: #769f6d;
+    {% when "pine" %}
+      --accent-color: #4b8a72;
+      --accent-hover: #59a488;
+      --accent-light: #cfe8dc;
+      --accent-rgb: 47, 96, 72;
+      --link-color: #4b8a72;
+      --link-hover: #59a488;
+    {% when "teal" %}
+      --accent-color: #3d8b87;
+      --accent-hover: #49a7a3;
+      --accent-light: #cdeae9;
+      --accent-rgb: 47, 111, 109;
+      --link-color: #3d8b87;
+      --link-hover: #49a7a3;
+    {% when "denim" %}
+      --accent-color: #5985a1;
+      --accent-hover: #7298b1;
+      --accent-light: #d0dce7;
+      --accent-rgb: 63, 94, 122;
+      --link-color: #5985a1;
+      --link-hover: #7298b1;
+    {% when "indigo" %}
+      --accent-color: #6281b0;
+      --accent-hover: #7d97be;
+      --accent-light: #cfdae8;
+      --accent-rgb: 66, 97, 138;
+      --link-color: #6281b0;
+      --link-hover: #7d97be;
+    {% when "steel" %}
+      --accent-color: #638594;
+      --accent-hover: #7a98a6;
+      --accent-light: #d4dde2;
+      --accent-rgb: 77, 100, 115;
+      --link-color: #638594;
+      --link-hover: #7a98a6;
+    {% when "plum" %}
+      --accent-color: #ac6990;
+      --accent-hover: #bb83a3;
+      --accent-light: #e6d1dc;
+      --accent-rgb: 134, 73, 106;
+      --link-color: #ac6990;
+      --link-hover: #bb83a3;
     {% else %}
       /* vivid-red (default) */
       --accent-color: #ef4444;

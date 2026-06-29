@@ -43,26 +43,82 @@ darkmode: true
 #   - "charcoal"      : #121212  (Material Design dark, softer)
 #   - "slate"         : #1a202c  (Blue-tinted, original theme)
 #   - "midnight"      : #0d1117  (GitHub dark, subtle blue)
+#   - "ink"           : #141413  (Anthropic warm near-black)
+#   - "espresso"      : #1a1714  (Warmer brown-black)
 #
-# LIGHT MODE BACKGROUND OPTIONS:
+# LIGHT MODE BACKGROUND OPTIONS  (light_bg only — these are NOT the accent names):
 #   - "white"         : #ffffff  (Default - pure white)
 #   - "snow"          : #fafafa  (Slightly off-white, easier on eyes)
 #   - "cream"         : #fffdf7  (Warm white, paper-like)
 #   - "cool-gray"     : #f8fafc  (Cool tinted white)
+#   --- Warm editorial creams (light -> deeper) ---
+#   - "ivory"         : #fdfbf4  (Brightest warm white)
+#   - "sand"          : #faf9f5  (Anthropic warm cream)
+#   - "bone"          : #f7f4ee  (Soft warm off-white)
+#   - "linen"         : #f5f1e8  (Warm woven off-white)
+#   - "almond"        : #f3ebdd  (Warm tan paper)
+#   - "parchment"     : #f4efe3  (Vintage book paper)
+#   - "oat"           : #f0ead9  (Deep warm oatmeal)
+#   --- Tinted creams (pair with an accent family) ---
+#   - "blush"         : #f7efe9  (Pale warm pink-tan — clay/terracotta/rust)
+#   - "dove"          : #efece6  (Warm greige)
+#   - "sage-mist"     : #eef1e7  (Pale green tint — sage/moss/pine)
+#   - "mist"          : #eaeef2  (Pale blue tint — denim/indigo/steel/teal)
 #
-# ACCENT COLOR OPTIONS:
+# ACCENT COLOR OPTIONS  (accent only — colorful names like clay/rust/teal go HERE,
+#                        not in light_bg; light backgrounds must stay pale):
+#   --- Reds (original) ---
 #   - "vivid-red"     : #ef4444  (Default - bright, prominent red)
 #   - "crimson"       : #dc2626  (Deeper red, more classic)
 #   - "coral"         : #f97316  (Orange-red, warm)
 #   - "rose"          : #e11d48  (Pink-red, modern)
 #   - "ruby"          : #be123c  (Dark red, sophisticated)
+#   --- Mid-century editorial: Warm ---
+#   - "clay"          : #b15738  (Anthropic soft terracotta)
+#   - "terracotta"    : #b0532f  (Deeper, redder clay)
+#   - "rust"          : #9c4a2a  (Burnt brick-orange)
+#   - "brick"         : #8a3f3a  (Deep muted brick-red)
+#   - "burgundy"      : #7a3540  (Wine red)
+#   --- Mid-century editorial: Gold / earth ---
+#   - "ochre"         : #966b23  (Mid-century honey-gold)
+#   - "bronze"        : #856231  (Brown-gold / caramel)
+#   - "olive"         : #66652c  (Yellow-green olive)
+#   --- Mid-century editorial: Green ---
+#   - "sage"          : #566b3e  (Muted olive-green)
+#   - "moss"          : #4f6b46  (Cool muted green)
+#   - "pine"          : #2f6048  (Deep forest green)
+#   - "teal"          : #2f6f6d  (Desaturated deep teal)
+#   --- Mid-century editorial: Blue ---
+#   - "denim"         : #3f5e7a  (Desaturated denim blue)
+#   - "indigo"        : #42618a  (Editorial deep blue)
+#   - "steel"         : #4d6473  (Dusty steel-blue)
+#   --- Mid-century editorial: Purple ---
+#   - "plum"          : #86496a  (Muted aubergine)
+#   (Editorial accents auto-brighten in dark mode; all WCAG-AA legible as links.)
 #
 # NAVBAR STYLE OPTIONS:
 #   - "dark"          : Dark navbar (Default - #0f0f0f, matches dark mode)
 #   - "darker"        : Same as dark (#0f0f0f)
 #   - "pure-black"    : Pure black navbar (#000000)
 #   - "slate"         : Slate blue navbar (#1e293b)
+#   - "ink"           : Warm near-black navbar (#141413)
+#
+# READY-MADE EDITORIAL "RECIPES" (copy values into the palette: block below):
+#   Anthropic Clay     accent: clay      light_bg: sand       dark_bg: ink       navbar: ink
+#   Editorial Teal     accent: teal      light_bg: sand       dark_bg: ink       navbar: ink
+#   Mid-century Ochre  accent: ochre     light_bg: parchment  dark_bg: espresso  navbar: ink
+#   Forest Study       accent: pine      light_bg: bone       dark_bg: ink       navbar: ink
+#   Indigo Press       accent: indigo    light_bg: sand       dark_bg: ink       navbar: ink
+#   Aubergine          accent: plum      light_bg: parchment  dark_bg: ink       navbar: ink
 # =============================================================================
+palette:
+  dark_bg: "ink"      # Dark mode background
+  light_bg: "sand"          # Light mode background (warm cream; see options above)
+  accent: "terracotta"        # Accent color (used for highlights, links hover, etc.)
+  navbar: "darker"             # Navbar style
+
+
+
 # // =========================================================================
 # // BADGE SYSTEM - Announcement badges with colored dot indicators
 # // =========================================================================
@@ -86,11 +142,53 @@ darkmode: true
 # //
 # // =========================================================================
   
-palette:
-  dark_bg: "charcoal"      # Dark mode background
-  light_bg: "cream"          # Light mode background  
-  accent: "crimson"        # Accent color (used for highlights, links hover, etc.)
-  navbar: "darker"             # Navbar style
+
+# =============================================================================
+# TYPOGRAPHY CONFIGURATION
+# =============================================================================
+# Control fonts, weights, size and density site-wide. Pick a `preset` for
+# one-line theming, then optionally override any single field. Leave the whole
+# block out (or set preset: "modern") to keep the site's original look.
+#
+# PRESET OPTIONS  (preset):
+#   - "system"      : System UI fonts — no web-font download, instant load
+#   - "modern"      : Roboto + Fira Code (DEFAULT — the original look)
+#   - "editorial"   : Source Sans 3 body + Fraunces serif headings + JetBrains Mono
+#   - "grotesk"     : Inter everywhere + JetBrains Mono (clean, modern)
+#   - "book"        : Lora serif + IBM Plex Mono (traditional reading)
+#
+# OVERRIDES  (each is optional; a non-empty value wins over the preset):
+#   - body_font     : any Google Fonts family, e.g. "Inter"     (blank = preset)
+#   - heading_font  : family for h1-h6, e.g. "Fraunces"         (blank = same as body)
+#   - code_font     : monospace family, e.g. "JetBrains Mono"   (blank = preset)
+#   - body_weight   : 100-900, body/paragraph text             (e.g. 300, 400)
+#   - heading_weight: 100-900, headings (sub-headings + <strong> track this -100)
+#   - base_size     : overall text size, a rem value           (e.g. "1.6rem")
+#   - scale         : modular-scale ratio between sizes         (e.g. 1.2, 1.25, 1.333)
+#   - line_height   : body line-height / reading density        (e.g. 1.45, 1.6)
+#
+# Use "system" for any *_font to opt that slot out of web fonts.
+# Free-form fonts: make sure the family exists on fonts.google.com and has the
+# weight you ask for, or it falls back to the system stack (other fonts unaffected).
+#
+# READY-MADE TYPE "RECIPES":
+#   Original     preset: modern
+#   Literary     preset: editorial    body_weight: 400   line_height: 1.55
+#   Academic     preset: book         base_size: "1.65rem"
+#   Minimal      preset: grotesk      heading_weight: 700
+#   Fastest      preset: system
+# =============================================================================
+typography:
+  preset: "modern"          # system | modern | editorial | grotesk | book
+  # ---- optional overrides (leave blank to inherit from the preset) ----
+  body_font: "Inter"             # e.g. "Source Sans 3"   (blank = preset's body font)
+  heading_font: "Inter"          # e.g. "Fraunces"        (blank = same as body)
+  code_font: "JetBrains Mono"             # e.g. "JetBrains Mono"   (blank = preset's code font)
+  body_weight: "400"           # e.g. 400               (blank = preset)
+  heading_weight: ""        # e.g. 600               (blank = preset)
+  base_size: ""             # e.g. "1.6rem"          (blank = preset)
+  scale: ""                 # e.g. 1.25              (blank = preset)
+  line_height: "1.45"           # e.g. 1.45              (blank = preset)
 
 # Social links
 twitter_username: soranghadri

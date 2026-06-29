@@ -58,12 +58,30 @@ title: Your Title
 email: your@email.com
 darkmode: true  # true | false | never
 
-# Color palette
+# Color palette (see _config.yml comments for hex values + ready-made "recipe" combos)
 palette:
-  dark_bg: "near-black"    # near-black | pure-black | charcoal | slate | midnight
-  light_bg: "white"        # white | snow | cream | cool-gray
-  accent: "crimson"        # vivid-red | crimson | coral | rose | ruby
-  navbar: "darker"         # dark | darker | pure-black | slate
+  dark_bg: "near-black"    # near-black | pure-black | charcoal | slate | midnight | ink | espresso
+  light_bg: "white"        # white | snow | cream | cool-gray | ivory | sand | bone | linen
+                           # | almond | parchment | oat | blush | dove | sage-mist | mist
+  accent: "crimson"        # reds: vivid-red | crimson | coral | rose | ruby
+                           # editorial: clay | terracotta | rust | brick | burgundy | ochre | bronze
+                           #            | olive | sage | moss | pine | teal | denim | indigo | steel | plum
+  navbar: "darker"         # dark | darker | pure-black | slate | ink
+# Mid-century editorial recipe: light_bg: sand + dark_bg: ink + navbar: ink + a warm
+# accent (clay/ochre) or cool-organic accent (teal/sage/indigo/plum).
+
+# Typography (see _config.yml comments for full guide). Pick a preset, then
+# optionally override any single field with a Google Fonts family / weight / size.
+typography:
+  preset: "modern"         # system | modern | editorial | grotesk | book
+  body_font: ""            # any Google Fonts family (blank = preset)
+  heading_font: ""         # family for h1-h6 (blank = same as body)
+  code_font: ""            # monospace family (blank = preset)
+  body_weight: ""          # 100-900 (blank = preset)
+  heading_weight: ""       # 100-900 (blank = preset)
+  base_size: ""            # e.g. "1.6rem" (blank = preset)
+  scale: ""                # modular-scale ratio, e.g. 1.25 (blank = preset)
+  line_height: ""          # body density, e.g. 1.45 (blank = preset)
 
 # Citation style for blog posts
 citation_style: "apa"      # apa | ieee | chicago | vancouver

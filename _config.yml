@@ -246,8 +246,9 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>About</h3>
   <p>
-  ML Research Engineer at <a href="https://www.costarnetwork.co.uk/directory/soran-ghaderi">CoSTAR National Lab</a> working on video and world models for virtual production.
-  Previously research intern at UIUC Blender Lab (energy-based models). 
+  Incoming DPhil student in computer science, starting autumn 2026.
+  Currently ML Research Engineer at <a href="https://www.costarnetwork.co.uk/directory/soran-ghaderi">CoSTAR National Lab</a> working on video and world models for virtual production.
+  Previously research intern at UIUC Blender Lab (energy-based models).
   MSc AI (Distinction) from the University of Essex, supervised by 
   <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Prof. Luca Citi</a>.
   </p>
@@ -255,41 +256,18 @@ about_content: | # this will include new lines to allow paragraphs
   
   <section>
     <h3>Research Interests</h3>
-  <p>A representation of a system can be learned and refined from partial views and  measurements. A signal, a geometric system evolving over time, or an image could be the different faces of the same underlying system or its evolved state.
-  Most of what we ask of such a system, whether we are recovering something hidden, reconstructing what we cannot observe directly, or anticipating how it will behave, is the same question asked through a different measurement.</p>
-  <strong>I'm interested in developing differentiable methods for learning such representations.</strong> 
-  <br><br>
-  <p>When a general method can absorb the structure of a problem from scale, it usually overtakes the carefully engineered alternative <cite data-key="sutton2019bitter"></cite>.</p>
-  <p> Taken to its limit this points to one model rather than many. A representation of biological systems wide enough to reach across scales, from molecular structure through anatomy and imaging to how a patient changes over time, learned together so that what is known at one scale sharpens inference at another.</p>
-
-  
-  <details>
-  <summary><strong>▸ Key areas <span class="badge badge-accent">Click to expand</span></strong></summary>
-  <br>
-  <ul>
-  <li><strong>One representation, many questions:</strong> Treating tasks as conditionals of a single learned model of the system, where generalisation comes from a representation made rich by varied measurements and data modalities rather than from composition built in by hand.</li>
-  <li><strong>Continuous-time generative models:</strong> Diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models, used as learned priors and samplers. Built on ODEs and SDEs, Fokker-Planck and Itô calculus, and probability-flow ideas.</li>
-  <li><strong>Amortised and simulation-based inference:</strong> Neural posterior estimation, amortised variational inference, and likelihood-free methods that turn expensive per-case fitting into a single forward pass.</li>
-  <li><strong>Learned priors for ill-posed problems:</strong> Expressive generative models that make sense of measurements which do not determine a unique answer, with calibrated uncertainty and correct coverage.</li>
-  <li><strong>Geometry and operators:</strong> Riemannian geometry and shape spaces for representation, and links to statistical mechanics.</li>
-  <li><strong>Generalisation and robustness:</strong> Out-of-distribution behaviour, transfer across systems and regimes, and reliability when data are scarce or noisy.</li>
-  <li><strong>Applications:</strong> Scientific inference, with digital twins and cardiac modelling as the present testbed.</li>
-  </ul>
-  </details>
-  
-  <p style="margin-top: 1em;">
-  <strong>Current Focus.</strong> Bringing diffusion, Schrödinger bridges, flow-based, and energy-based models under one view through statistical mechanics and differential geometry.
-  </p>
-  
+  <p>I work on generative models for inverse problems. Measurements are usually partial and noisy, so the interesting part is the prior. I use diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models as learned priors and samplers, built on ODEs and SDEs, Fokker-Planck, and Itô calculus.</p>
+  <p>I find general methods particularly interesting which improve with data, compute, and better algorithms that don't compete with learning from data. Amortised and simulation-based inference is that bet in practice. Pretrain once, then answer each new case from knowledge with calibrated uncertainty.</p>
+  <p><strong>Current focus.</strong> A common view of diffusion, Schrödinger bridges, flows, and energy-based models through statistical mechanics and differential geometry, with cardiac digital twins as the testbed.</p>
   </section>
   
   <section>
     <h3>Writing</h3>
     <p>
       <span class="badge badge-new badge-pulse">New</span>
-      <a href="/blog/video-world-models/" style="font-weight: 500;">Video World Models</a> — 
-      <span style="color: var(--text-muted);">From slow bidirectional diffusion to real-time autoregressive world simulators. 
-      Causality, self-forcing, attention sinks, and the path to interactive video generation.</span>
+      <a href="/blog/video-world-models/" style="font-weight: 500;">Video World Models</a>,
+      <span style="color: var(--text-muted);">on turning slow bidirectional diffusion into real-time interactive simulators.
+      Causality, self-forcing, attention sinks.</span>
     </p>
   </section>
   

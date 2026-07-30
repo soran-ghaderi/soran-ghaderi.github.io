@@ -100,14 +100,14 @@
 #    <mark>matplotlib</mark> - <mark>Sphinx</mark> - <mark>Python</mark><br><br>
     
 
-- layout: left
-  name: TASE
-  link: github.com/appheap/TASE
-  github: appheap/TASE
-  description: >
-    <b>Large-scale audio search engine.</b> Scalable indexing and retrieval with Elasticsearch, ArangoDB, and Redis for real-time multimodal search.<br>
-    <span style="color:#888">Elasticsearch · Python</span><br>
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/appheap/TASE?style=social">
+# - layout: left
+#   name: TASE
+#   link: github.com/appheap/TASE
+#   github: appheap/TASE
+#   description: >
+#     <b>Large-scale audio search engine.</b> Scalable indexing and retrieval with Elasticsearch, ArangoDB, and Redis for real-time multimodal search.<br>
+#     <span style="color:#888">Elasticsearch · Python</span><br>
+#     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/appheap/TASE?style=social">
 #    <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/bigraph">
 #  description: | # this will include new lines to allow paragraphs
 #    <b>TASE</b> allows users to quickly and easily find information that is of genuine interest

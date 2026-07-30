@@ -256,9 +256,8 @@ about_content: | # this will include new lines to allow paragraphs
   
   <section>
     <h3>Research Interests</h3>
-  <p>I work on generative models for inverse problems. Measurements are usually partial and noisy, so the interesting part is the prior. I use diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models as learned priors and samplers, built on ODEs and SDEs, Fokker-Planck, and Itô calculus.</p>
-  <p>I find general methods particularly interesting which improve with data, compute, and better algorithms that don't compete with learning from data. Amortised and simulation-based inference is that bet in practice. Pretrain once, then answer each new case from knowledge with calibrated uncertainty.</p>
-  <p><strong>Current focus.</strong> A common view of diffusion, Schrödinger bridges, flows, and energy-based models through statistical mechanics and differential geometry, with cardiac digital twins as the testbed.</p>
+  <p>I work on generative models for inverse problems with calibrated uncertainty. Measurements are usually partial and noisy, so the interesting part is the prior. I use diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models as learned priors and samplers, built on ODEs and SDEs, Fokker-Planck, and Itô calculus.</p>
+  <p><strong>Current focus:</strong> A common view of diffusion, Schrödinger bridges, flows, and energy-based models through statistical mechanics and differential geometry, with cardiac digital twins as the testbed.</p>
   </section>
   
   <section>
@@ -319,7 +318,7 @@ about_content: | # this will include new lines to allow paragraphs
 #    - Images
 
 # Projects Section
-# projects_title: Projects #(Use this to override about projects section title)
+projects_title: Machine Learning Libraries #(Use this to override about projects section title)
 
 # Experience Section
 # experience_title: Experience #(Use this to override about experience section title)

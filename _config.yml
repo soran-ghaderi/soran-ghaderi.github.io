@@ -24,7 +24,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: ML Research Engineer at CoSTAR National Lab | Incoming DPhil student in Computer Science
+title: Computer Science DPhil student at the University ofOxford
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -246,19 +246,22 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>About</h3>
   <p>
-  Incoming DPhil student in computer science, starting autumn 2026.
-  Currently ML Research Engineer at <a href="https://www.costarnetwork.co.uk/directory/soran-ghaderi">CoSTAR National Lab</a> working on video and world models for virtual production.
+  DPhil student in Computer Science at the University of Oxford with Prof. <a href="https://www.cs.ox.ac.uk/people/alfonso.bueno-orovio/">Alfonso Bueno-Orovio</a>.
   Previously research intern at UIUC Blender Lab (energy-based models).
-  MSc AI (Distinction) from the University of Essex, supervised by 
-  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Prof. Luca Citi</a>.
+  MSc AI (Distinction) from the University of Essex, supervised by Prof. 
+  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Luca Citi</a>.
   </p>
   </section>
   
   <section>
     <h3>Research Interests</h3>
-  <p>I work on generative models for inverse problems with calibrated uncertainty. Measurements are usually partial and noisy, so the interesting part is the prior. I use diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models as learned priors and samplers, built on ODEs and SDEs, Fokker-Planck, and Itô calculus.</p>
-  <p><strong>Current focus:</strong> A common view of diffusion, Schrödinger bridges, flows, and energy-based models through statistical mechanics and differential geometry, with cardiac digital twins as the testbed.</p>
-  </section>
+    <p>What are the fundamental invariances that can compose and create intelligence? My ultimate goal is understanding and building intelligence. </p>
+    <p>Many interesting scientific questions need modeling non-linear and chaotic dynamical systems. Some are intrinsically ill-posed and have non-unique solutions, therefore, we need a propbabilistic language. I'm interested in developing models able to represent such dynamics natively.</p>
+    <p>Inverse problems usually need to be solved from noisy and partially observed data. The question is how can we learn the global representation of the underlying dynamics under data constraints? Given that I tend to avoid handcrafting physics and learning-competing inductive biases explicitly (for generalizability and scalability reasons), data-efficient self-supervised learning methods are another line of work I'm keen to work on.</p>
+    <h3>Research Infrastructure</h3>
+    <p>I also like to build the infrastructure for other researchers working on a wide range of methods such as diffusion and score-based models, flow-based models and stochastic interpolants, Schrödinger bridges, and energy-based models as learned priors and samplers, built on ODEs and SDEs, Fokker-Planck, and Itô calculus.</p>
+    <p>I've built TorchEBM for this purpose by looking at the problem through the lens of statistical mechanics, differential and Riemannian geometry, and Optimal Transport.</p>
+    </section>
   
   <section>
     <h3>Writing</h3>

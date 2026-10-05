@@ -1,15 +1,19 @@
 - layout: left
+  name: University of Oxford 
+  dates: 2026 - 2030
+  qualification: DPhil Computer Science
+  # description: |
+    
+- layout: left
   name: University of Essex 
   dates: 2023 - 2024
   qualification: MSc Artificial Intelligence (Distinction)
   description: |
-    Dissertation: <a href="https://soran-ghaderi.github.io/nir/">NIR</a> — Neural Integration of Iterative Reasoning in LLMs for Code Generation
+    Dissertation: <a href="https://soran-ghaderi.github.io/nir/">NIR</a>, Neural Integration of Iterative Reasoning in LLMs for Code Generation
     
-    🥇 1st place, Inter-Departmental Neural Network Challenge (100+ participants)
-
 - layout: left
   name: University of Kurdistan
   dates: 2014 - 2018
   qualification: BEng Computer Engineering
   description: |
-    Thesis: <a href="https://github.com/soran-ghaderi/EfficientCoF">EfficientCoF</a> — Subspace clustering for collaborative filtering
+    Thesis: <a href="https://github.com/soran-ghaderi/EfficientCoF">EfficientCoF</a>, Subspace clustering for collaborative filtering

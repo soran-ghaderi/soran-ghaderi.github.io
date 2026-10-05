@@ -26,7 +26,7 @@
   link: github.com/soran-ghaderi/worldkernels
   github: soran-ghaderi/worldkernels
   description: >
-    <i class="fas fa-crown flagship-crown"></i> <span class="badge badge-new badge-pulse">Soon</span> <b>High-throughput world model inference engine.</b> Stateful session management for BiD and AR world models (DreamDojo, Cosmos, DreamZero, etc.) with persistent KV-cache, CUDA graph capture, continuous batching, speculative decoding, and <code>torch.compile</code> fusion. Sub-millisecond scheduling via async token queues; REST/WebSocket streaming with backpressure.<br>
+    <b>High-throughput world model inference engine.</b> Supports BiD and AR world models (DreamDojo, Cosmos, DreamZero, etc.) with persistent KV-cache, CUDA graph capture, continuous batching, speculative decoding, and <code>torch.compile</code> fusion. Sub-millisecond scheduling via async token queues.<br>
     <span style="color:#888">PyTorch · CUDA · Python</span><br>
 
   # <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/worldkernels?style=social">
@@ -37,7 +37,7 @@
   link: https://github.com/soran-ghaderi/cuRBLAS
   github: soran-ghaderi/cuRBLAS
   description: >
-    <b>GPU-accelerated randomized linear algebra.</b> CUDA kernels for Hutchinson trace estimation, randomized SVD, and probabilistic matrix operations—useful for sliced score matching and large-scale ML.<br>
+    <b>GPU-accelerated randomized linear algebra.</b> CUDA kernels for Hutchinson trace estimation, randomized SVD, and probabilistic matrix operations, useful for sliced score matching and large-scale ML.<br>
     <span style="color:#888">C++ · CUDA · Python</span><br>
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/soran-ghaderi/curblas?style=social">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/soran-ghaderi/curblas">

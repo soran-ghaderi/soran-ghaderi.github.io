@@ -1,5 +1,43 @@
 # Publication Template
 - layout: left-publication
+  title: "Mixed-Field Matching: Time-Conditioned Transport with Energy-Based Refinement"
+  # venue: omitted on purpose while under double-blind review; add it if accepted
+  year: 2026
+  publication_type: Preprint
+  authors:
+    - Soran Ghaderi
+    - Alexi Gladstone
+    - Amir Bar
+  # No external links by choice. When public, add any of: paper, code, website, link
+  # Thumbnail: image: /assets/images/mfm.png (or gif:). Without one a book icon is shown.
+  image: /assets/images/vector_field_comparison.png
+  details: |
+    TL;DR: The noise level helps far from the data and little near it, so one network keeps that input below a threshold and holds it fixed above, transporting far away and refining on a fixed landscape near the data. Improves FID and sFID on ImageNet-256.
+
+    Abstract: We introduce Mixed-Field Matching (MFM), which trains one network whose time input follows the noise level up to a threshold and stays fixed above it. Diffusion and flow-matching models give the network the noise level at every step of generation, while recent equilibrium models remove it entirely. We argue that the need for the noise level changes during generation. Far from the data, one noisy sample is consistent with many noise levels and many clean images, and the noise level reduces this uncertainty about where the sample should move. Close to the data, the manifold hypothesis suggests that the sample itself carries this information. MFM sampling first transports noise toward the data with the time-conditioned field and then refines each sample using a single time-independent field. A penalty that sets the field to zero on clean training examples keeps finished samples in place, so extra refinement steps do not degrade them. On a two-dimensional example where equilibrium matching (EqM) moves every sample onto the data but gives the modes the wrong proportions, MFM assigns samples to modes about as accurately as flow matching (FM). On ImageNet-256 with DiT-XL/2, at the same training and sampling cost as the baselines, MFM lowers FID by 15% relative to EqM and 28% relative to FM without guidance, and by 14% and 33% at a shared classifier-free guidance scale.
+
+    Highlights:
+    - MFM lowers FID by 15% relative to EqM and 28% relative to FM without guidance, and by 14% and 33% at a shared classifier-free guidance scale.
+    - Stable refinement at no extra training cost.
+
+- layout: left-publication
+  title: "How to Train Your Energy-Based Transformer: Understanding Stability in EBMs"
+  # venue: omitted on purpose while under double-blind review; add it if accepted
+  year: 2026
+  publication_type: Preprint
+  authors:
+    - Soran Ghaderi
+    - Alexi Gladstone
+    - Francesco Innocenti
+  # No external links by choice. When public, add any of: paper, code, website, link
+  # Thumbnail: image: /assets/images/ebt-stability.png (or gif:). Without one a book icon is shown.
+  image: /assets/images/curvature-ebm-stability.png
+  details: |
+    TL;DR: We explain why training energy-based transformers is unstable, derive a curvature score that predicts collapse, and show which backprop truncation works best per model size.
+
+    Abstract: Diffusion and autoregressive models generate images, video, and text at scale. Energy-based models (EBMs) cast generation as energy minimization. They learn a scalar energy that scores how well a candidate output matches the data, and energy-based transformers (EBTs) scale this approach by implementing the energy with a transformer. An EBT generates by refining a prediction through a sequence of gradient descent updates on the energy, starting from a noisy or corrupted input. Training differentiates through this refinement sequence, the same computation as backpropagation through time (BPTT) in recurrent networks, and it is often unstable. We analyze this instability. Each backward step multiplies the gradient by a factor set by the step size and by the curvature of the energy with respect to the prediction. We bound the resulting growth and convert the bound into a curvature score computed during training. We compare full BPTT with two lower-cost gradient estimators, truncated BPTT, which differentiates only the last few updates, and Anticipated Reweighted Truncated Backpropagation (ARTBP), which cuts the sequence at random points and reweights the surviving terms to remove the bias introduced by the cut. In image denoising with three model sizes, we find that the best estimator changes with scale. ARTBP gives the highest final training reconstruction quality with the small model, while truncation to the last three updates is best for the base and large models. With the objective and forward trajectory fixed, we find that the truncated gradient changes from closely aligned with the full gradient early in training to pointing in the opposite direction later. The curvature score separates failed from successful completed runs and predicts training stability over a horizon that shrinks with model size.
+
+- layout: left-publication
   title: Neural Integration of Iterative Reasoning (NIR) in LLMs for Code Generation
   venue: University of Essex
   year: 2024

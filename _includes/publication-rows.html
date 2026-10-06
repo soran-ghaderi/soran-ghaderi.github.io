@@ -1,0 +1,15 @@
+{%- comment -%}
+  Renders publication rows. Parameters: items (array of publication entries), title (string),
+  more_url (optional link to the full list), more_text (optional label), class (optional extra class).
+{%- endcomment -%}
+<div class="container publications-container{% if include.class %} {{ include.class }}{% endif %}">
+  <h3 class="section-title">{{ include.title }}</h3>
+  {%- for publication in include.items %}
+  {% include left-publication-row.html item=publication %}
+  {%- endfor %}
+  {%- if include.more_url %}
+  <p class="section-more">
+    <a href="{{ include.more_url | relative_url }}">{{ include.more_text | default: "All publications" }} <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </p>
+  {%- endif %}
+</div>

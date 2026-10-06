@@ -105,6 +105,8 @@ All content is driven by YAML files in `_data/`:
 | `projects.yml` | Open-source projects |
 | `experience.yml` | Work history |
 | `education.yml` | Academic background |
+| `awards.yml` | Awards and funding (CV page) |
+| `menu_items/menu.yml` | Navigation bar entries |
 | `skills.yml` | Technical skills |
 
 ### Publications
@@ -116,6 +118,7 @@ All content is driven by YAML files in `_data/`:
   venue: "Conference/Journal"
   year: 2024
   publication_type: "Conference Paper"
+  selected: true          # feature on the homepage (Selected Publications)
   authors:
     - Your Name
     - Co-Author Name
@@ -133,6 +136,7 @@ All content is driven by YAML files in `_data/`:
   name: Project Name
   github: username/repo
   link: github.com/username/repo
+  selected: true          # feature on the homepage (Selected Software)
   description: >
     <b>Short description.</b><br>
     <span style="color:#888">Python · PyTorch</span><br>
@@ -249,9 +253,19 @@ Override in `_config.yml`:
 
 ```yaml
 education_title: Education
-publication_title: Selected Publications
+publication_title: Publications
+selected_publications_title: Selected Publications   # homepage
+selected_projects_title: Selected Software           # homepage
+awards_title: Awards                                 # CV page
 skills_title: Technical Skills
 ```
+
+The homepage shows the About section plus entries flagged `selected: true`.
+
+### About backdrop
+
+The homepage shows a rounded photo panel of the Radcliffe Camera behind the portrait, filling the profile column from the top of the about row to the end of the about text (a fixed-height card on phones). `scripts/make_backdrop.py` generates the assets (crop, sky extension, grade, 1x/2x WebP + JPEG fallback, inline placeholder) into `assets/images/backdrop/` and writes `_data/about_backdrop.yml` (`enabled`, `side: left|right`, srcset, caption, credit). The photo is CC BY-SA 4.0, so the homepage footer prints the credit line from that file. The image is skipped in print and when the visitor prefers reduced data.
+Education, experience, the full publication list, awards and all projects live on the CV page (`_pages/cv.html`, served at `/cv.html`).
 
 ---
 

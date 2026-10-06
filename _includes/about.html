@@ -1,12 +1,36 @@
+{%- assign bd = site.data.about_backdrop -%}
+{%- assign has_backdrop = false -%}
+{%- if site.about_profile_image and bd and bd.enabled != false and bd.srcset -%}{%- assign has_backdrop = true -%}{%- endif -%}
+{%- assign backdrop_right = false -%}
+{%- if has_backdrop and bd.side == "right" -%}{%- assign backdrop_right = true -%}{%- endif -%}
 <div class="container intro-container">
   <!-- <h2 class="section-title">{{ site.about_title | default: "About Me" }}</h2> -->
-  <div class="row clearfix">
+  <div class="row clearfix about-row{% if has_backdrop %} about-row--backdrop{% endif %}{% if backdrop_right %} about-row--right{% endif %}">
+    {%- if has_backdrop -%}
+    <!-- Photo panel: a rounded card filling the profile column from the top of the row to the end of the about text; the portrait sits inside it.
+         Assets and credit come from _data/about_backdrop.yml (scripts/make_backdrop.py). -->
+    <div class="about-backdrop" aria-hidden="true">
+      <div class="about-backdrop__media"{% if bd.lqip %} style="background-image:url('{{ bd.lqip }}')"{% endif %}>
+        <img src="{{ bd.fallback | relative_url }}"
+             srcset="{{ bd.srcset }}"
+             sizes="{{ bd.sizes }}"
+             width="{{ bd.width }}" height="{{ bd.height }}"
+             alt="" loading="lazy" decoding="async" fetchpriority="low">
+      </div>
+      {%- if bd.caption %}
+      <span class="about-backdrop__caption">
+        <span>{{ bd.caption }}</span>
+        {%- if bd.subcaption %}<span class="about-backdrop__caption-sub">{{ bd.subcaption }}</span>{% endif %}
+      </span>
+      {%- endif %}
+    </div>
+    {%- endif -%}
     {%- if site.about_profile_image -%}
-      <div class="col-xs-12 col-sm-4 col-md-3 no-print">
+      <div class="col-xs-12 col-sm-4 col-md-3 no-print about-media{% if backdrop_right %} col-sm-push-8 col-md-push-9{% endif %}">
         <img class="profile-img" src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name | default: 'Profile photo' }}" fetchpriority="high" decoding="async" width="200" height="200">
       </div>
     {%- endif -%}
-    <div class="{{ 'col-xs-12 ' }}{%- if site.about_profile_image -%}col-sm-8 col-md-9 col-print-12{%- endif -%}">
+    <div class="col-xs-12 {%- if site.about_profile_image %} col-sm-8 col-md-9 col-print-12{% if backdrop_right %} col-sm-pull-4 col-md-pull-3{% endif %}{% endif %} about-body">
       {{ site.about_content | strip | markdownify }}
     </div>
   </div>

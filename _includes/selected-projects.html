@@ -1,0 +1,12 @@
+{%- assign selected_projects = site.data.projects | where: "selected", true -%}
+{%- if selected_projects.size > 0 -%}
+<div class="container projects-container selected-section">
+  <h3 class="section-title">{{ site.selected_projects_title | default: "Selected Software" }}</h3>
+  {%- for project in selected_projects %}
+  {% include {{ project.layout | default: 'left' | append: ".html" }} item=project %}
+  {%- endfor %}
+  <p class="section-more">
+    <a href="{{ '/projects-page.html' | relative_url }}">All software <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </p>
+</div>
+{%- endif -%}

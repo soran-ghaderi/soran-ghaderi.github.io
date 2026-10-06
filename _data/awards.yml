@@ -1,0 +1,15 @@
+# Awards & funding, newest first. Rendered on the CV page (_pages/cv.html) by _includes/awards.html
+# Fields: title, org, year, description (markdown/HTML), layout (default: left-award)
+- layout: left-award
+  title: EPSRC DPhil Studentship
+  org: University of Oxford
+  year: 2026
+  description: |
+    Doctoral studentship funded by the Engineering and Physical Sciences Research Council (EPSRC).
+
+- layout: left-award
+  title: MSc Scholarship
+  org: University of Essex
+  year: 2023
+  description: |
+    Full scholarship for the MSc in Artificial Intelligence.

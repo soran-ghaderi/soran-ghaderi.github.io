@@ -24,7 +24,7 @@ repository: https://github.com/soran-ghaderi/soran-ghaderi.github.io
 
 # Personal info
 name: Soran Ghaderi
-title: ML Research Engineer at CoSTAR National Lab | Incoming DPhil student in Computer Science
+title: Computer Science DPhil student at the University of Oxford
 email: soran.gdr.cs@gmail.com
 #phone: Your phone number (optional)
 #website: https://soran-ghaderi.github.io
@@ -246,76 +246,33 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>About</h3>
   <p>
-  Incoming DPhil student in computer science, starting autumn 2026.
-  Currently ML Research Engineer at <a href="https://www.costarnetwork.co.uk/directory/soran-ghaderi">CoSTAR National Lab</a> working on video and world models for virtual production.
+  DPhil (PhD) student in Computer Science at the University of Oxford advised by Prof. <a href="https://www.cs.ox.ac.uk/people/alfonso.bueno-orovio/">Alfonso Bueno-Orovio</a>.
   Previously research intern at UIUC Blender Lab (energy-based models).
-  MSc AI (Distinction) from the University of Essex, supervised by 
-  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Prof. Luca Citi</a>.
+  MSc AI (Distinction) from the University of Essex, advised by Prof. 
+  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Luca Citi</a>.
   </p>
   </section>
   
   <section>
     <h3>Research Interests</h3>
-  <p>I work on generative models for inverse problems with calibrated uncertainty. Measurements are usually partial and noisy, so the interesting part is the prior. I use diffusion and score-based models, flow matching and stochastic interpolants, Schrödinger bridges, optimal transport, and energy-based models as learned priors and samplers, built on ODEs and SDEs, Fokker-Planck, and Itô calculus.</p>
-  <p><strong>Current focus:</strong> A common view of diffusion, Schrödinger bridges, flows, and energy-based models through statistical mechanics and differential geometry, with cardiac digital twins as the testbed.</p>
-  </section>
-  
-  <section>
-    <h3>Writing</h3>
-    <p>
-      <span class="badge badge-new badge-pulse">New</span>
-      <a href="/blog/video-world-models/" style="font-weight: 500;">Video World Models</a>,
-      <span style="color: var(--text-muted);">on turning slow bidirectional diffusion into real-time interactive simulators.
-      Causality, self-forcing, attention sinks.</span>
-    </p>
-  </section>
-  
+    <p>What are the fundamental invariances that can compose and create intelligence? My ultimate goal is to understand and build intelligence.</p>
+    <p>Many interesting scientific questions need modeling non-linear and chaotic dynamical systems. Some are intrinsically ill-posed and have non-unique solutions and need a probabilistic language. I'm interested in developing models able to represent such dynamics natively.</p>
+    <p>Inverse problems usually need to be solved from noisy and partially observed data. The question is how can we learn the global representation of the underlying dynamics under data constraints? Given that I tend to avoid handcrafting physics and learning-competing inductive biases explicitly (for generalizability and scalability reasons), data-efficient self-supervised learning methods are another line of work I'm keen to work on.</p>
+    <p>I've built TorchEBM that looks at these problems through the lens of statistical mechanics, differential and Riemannian geometry, and Optimal Transport.</p>
+    </section>
+    
   <section>
     <h3>News</h3>
     <ul>
-        <li><span class="badge badge-new badge-pulse">New</span> Joined CoSTAR National Lab as ML Research Engineer - Feb. 2026</li>
-        <li>Research Collaboration with UIUC Blender Lab - Jul. 2025</li>
-        <li>MSc defended at Essex (<a href="https://soran-ghaderi.github.io/nir/">NIR thesis</a>) - Oct. 2024</li>
+        <li><span class="badge badge-new">New Preprint</span> Mixed-Field Matching: Time-Conditioned Transport with Energy-Based Refinement - Oct. 2026</li>
+        <li><span class="badge badge-new">New Preprint</span> How to Train Your Energy-Based Transformer: Understanding Stability in EBMs - Oct. 2026</li>
+        <li><span class="badge badge-accent badge-pulse">New</span> Awarded EPSRC DPhil studentship at University of Oxford - Feb. 2026</li>
+        <li><span class="badge badge-new badge-pulse">New</span> CS DPhil offer at University of Oxford - Feb. 2026</li>
+        <li>Joined CoSTAR National Lab as ML Research Engineer - Feb. 2026</li>
+        <li>Research Collaboration with UIUC Blender Lab - Jan. 2025</li>
+        <li>Full scholarship for MSc AI, University of Essex - Oct. 2023</li>
     </ul>
   </section>
-  
-  <section>
-    <h3>Awards</h3>
-    <ul>
-        <li>Full scholarship for MSc AI, University of Essex</li>
-    </ul>
-  </section>
-
-  <div class="bibliography-data" style="display:none;">
-  @misc{sutton2019bitter,
-    author    = {Sutton, Richard S.},
-    title     = {The Bitter Lesson},
-    year      = {2019},
-    publisher = {Incomplete Ideas (blog)},
-    url       = {http://www.incompleteideas.net/IncIdeas/BitterLesson.html}
-  }
-  </div>
-
-#        I am a Master's student pursuing a specialization in Artificial Intelligence at the University of Essex.
-#      With over three years of hands-on experience, my passion lies in the realm of deep learning and autonomous agents.
-#
-#      I am eager to explore the potential of attention mechanisms in enhancing the performance of multimodal models in
-#      representation learning, reasoning, and zero-shot learning within uncertain environments.
-#
-#      Parallel to this, I have actively engaged in freelance work and collaborated with research teams, and have made
-#      contributions to the open-source community.
-
-#  ### Academic accomplishments<br>
-#
-#
-#
-#  <br>
-
-#  You can even add paragraphs by using empty lines like this and add anything else markdown supports such as
-#    - Lists
-#    - Tables
-#    - <a href="google.com">Links</a>
-#    - Images
 
 # Projects Section
 projects_title: Machine Learning Libraries #(Use this to override about projects section title)

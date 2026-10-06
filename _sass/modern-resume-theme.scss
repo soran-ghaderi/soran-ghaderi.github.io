@@ -2943,6 +2943,10 @@ html, body {
 // ULTIMATE OVERFLOW PREVENTION - NUCLEAR OPTION
 .main-navigation {
   position: fixed !important;
+  // `top` must be set here, not inherited from Bootstrap's .navbar-fixed-top: without it a fixed
+  // element keeps its flow position, i.e. 70px down (the body padding), whenever the CDN CSS is
+  // blocked or late.
+  top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   width: 100vw !important;

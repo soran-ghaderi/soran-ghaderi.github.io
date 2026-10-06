@@ -255,7 +255,7 @@ about_content: | # this will include new lines to allow paragraphs
   
   <section>
     <h3>Research Interests</h3>
-    <p>What are the fundamental invariances that can compose and create intelligence? My ultimate goal is understanding and building intelligence. </p>
+    <p>What are the fundamental invariances that can compose and create intelligence? My ultimate goal is to understand and build intelligence.</p>
     <p>Many interesting scientific questions need modeling non-linear and chaotic dynamical systems. Some are intrinsically ill-posed and have non-unique solutions, therefore, we need a propbabilistic language. I'm interested in developing models able to represent such dynamics natively.</p>
     <p>Inverse problems usually need to be solved from noisy and partially observed data. The question is how can we learn the global representation of the underlying dynamics under data constraints? Given that I tend to avoid handcrafting physics and learning-competing inductive biases explicitly (for generalizability and scalability reasons), data-efficient self-supervised learning methods are another line of work I'm keen to work on.</p>
     <h3>Research Infrastructure</h3>

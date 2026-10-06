@@ -1,6 +1,8 @@
 # Publication Template
+# Add `selected: true` to an entry to feature it in the homepage "Selected Publications" section.
 - layout: left-publication
   title: "Mixed-Field Matching: Time-Conditioned Transport with Energy-Based Refinement"
+  selected: true
   # venue: omitted on purpose while under double-blind review; add it if accepted
   year: 2026
   publication_type: Preprint
@@ -16,6 +18,7 @@
 
 - layout: left-publication
   title: "How to Train Your Energy-Based Transformer: Understanding Stability in EBMs"
+  selected: true
   # venue: omitted on purpose while under double-blind review; add it if accepted
   year: 2026
   publication_type: Preprint
@@ -31,6 +34,7 @@
 
 - layout: left-publication
   title: Neural Integration of Iterative Reasoning (NIR) in LLMs for Code Generation
+  selected: false
   venue: University of Essex
   year: 2024
   publication_type: Master's Thesis

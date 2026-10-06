@@ -1,0 +1,10 @@
+<div class="row clearfix layout layout-left">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      {%- if include.item.title -%}<h3>{{ include.item.title }}</h3>{%- endif -%}
+      {%- if include.item.org -%}<h4>{{ include.item.org }}</h4>{%- endif -%}
+      {%- if include.item.year -%}<p>{{ include.item.year }}</p>{%- endif -%}
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      {{ include.item.description | strip | markdownify }}
+    </div>
+</div>

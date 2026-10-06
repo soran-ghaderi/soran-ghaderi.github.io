@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}"{% if site.darkmode == true %} class="dark"{% endif %}>
 
 {%- include head.html -%}
 
@@ -17,17 +17,11 @@
 
       {%- include about.html -%}
 
-      {%- if site.data.education.size > 0 -%}
-      {%- include education.html -%}
-      {%- endif -%}
+      {%- comment -%} Education, experience and the full project list live on /cv.html.
+          Items with `selected: true` in _data/publication.yml and _data/projects.yml show here. {%- endcomment -%}
+      {%- include selected-publications.html -%}
 
-      {%- if site.data.experience.size > 0 -%}
-        {%- include experience.html -%}
-      {%- endif -%}
-
-      {%- if site.data.projects.size > 0 -%}
-      {%- include projects.html -%}
-      {%- endif -%}
+      {%- include selected-projects.html -%}
 
 <!--      {%- if site.more_content -%}-->
 <!--        {%- include more.html -%}-->

@@ -1,0 +1,5 @@
+{%- assign selected_pubs = site.data.publication | where: "selected", true -%}
+{%- if selected_pubs.size > 0 -%}
+{%- assign selected_pubs_title = site.selected_publications_title | default: "Selected Publications" -%}
+{% include publication-rows.html items=selected_pubs title=selected_pubs_title more_url="/publications.html" class="selected-section" %}
+{%- endif -%}

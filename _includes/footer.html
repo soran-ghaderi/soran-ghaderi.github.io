@@ -50,6 +50,11 @@
       <a href="#top" class="site-footer__top" aria-label="Back to top">Back to top ↑</a>
     </div>
 
+    {%- assign bd = site.data.about_backdrop -%}
+    {%- if page.layout == "homepage" and bd and bd.enabled != false and bd.credit %}
+    <p class="site-footer__credit">{{ bd.credit }}</p>
+    {%- endif %}
+
   </div>
 </footer>
 <!-- End Footer

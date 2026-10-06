@@ -1,0 +1,39 @@
+<!-- Compact publication row: same two-column layout as education / experience / projects -->
+<div class="row clearfix layout layout-left layout-publication-row">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      {%- if include.item.year -%}<h3>{{ include.item.year }}</h3>{%- endif -%}
+      {%- if include.item.publication_type -%}<h4>{{ include.item.publication_type }}</h4>{%- endif -%}
+      {%- if include.item.venue -%}<p>{{ include.item.venue }}</p>{%- endif -%}
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 publication-row-body">
+      {%- assign primary_link = include.item.paper | default: include.item.website | default: include.item.link -%}
+      <p class="publication-row-title">
+        {%- if primary_link -%}
+        <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ include.item.title }}</a>
+        {%- else -%}
+        {{ include.item.title }}
+        {%- endif -%}
+      </p>
+      {%- if include.item.authors %}
+      <p class="publication-row-authors">
+        {%- assign site_author = site.name | strip -%}
+        {%- for author in include.item.authors -%}
+          {%- if author == site_author -%}
+            <strong class="publication-author-highlight">{{ author }}</strong>
+          {%- else -%}
+            <span class="publication-author">{{ author }}</span>
+          {%- endif -%}
+          {%- unless forloop.last %}, {% endunless -%}
+        {%- endfor -%}
+      </p>
+      {%- endif %}
+      {%- if include.item.paper or include.item.code or include.item.website or include.item.link %}
+      <p class="publication-row-links">
+        {%- if include.item.paper %}<a href="{{ include.item.paper }}" target="_blank" rel="noopener"><i class="fa fa-file-pdf" aria-hidden="true"></i>Paper</a>{% endif -%}
+        {%- if include.item.code %}<a href="{{ include.item.code }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>Code</a>{% endif -%}
+        {%- if include.item.website %}<a href="{{ include.item.website }}" target="_blank" rel="noopener"><i class="fa fa-globe" aria-hidden="true"></i>Website</a>{% endif -%}
+        {%- if include.item.link %}<a href="{{ include.item.link }}" target="_blank" rel="noopener"><i class="fa fa-external-link-alt" aria-hidden="true"></i>Publication</a>{% endif -%}
+      </p>
+      {%- endif %}
+    </div>
+</div>

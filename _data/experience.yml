@@ -1,7 +1,14 @@
 - layout: left
+  company: University of Oxford
+  job_title: Doctoral Researcher
+  dates: Oct 2026 - Present
+  description: |
+    Researcher
+
+- layout: left
   company: CoSTAR National Lab
   job_title: ML Research Engineer
-  dates: Feb 2026 - Present
+  dates: Feb 2026 - Oct 2026
   description: |
     Generative video and world models for virtual production. <a href="https://www.costarnetwork.co.uk/directory/soran-ghaderi">[Profile]</a>
 
@@ -26,4 +33,4 @@
   job_title: Developer & Maintainer
   dates: 2019 - Present
   description: |
-    TorchEBM, cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See Projects section.
+    TorchEBM, cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See the Software page.

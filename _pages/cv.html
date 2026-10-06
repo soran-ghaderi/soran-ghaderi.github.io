@@ -1,0 +1,29 @@
+---
+layout: default
+title: CV
+permalink: /cv
+comments: false
+---
+
+<div class="container cv-container">
+    {%- if site.data.education.size > 0 -%}
+    {%- include education.html -%}
+    {%- endif -%}
+
+    {%- if site.data.experience.size > 0 -%}
+    {%- include experience.html -%}
+    {%- endif -%}
+
+    {%- if site.data.publication.size > 0 -%}
+    {%- assign cv_publication_title = site.publication_title | default: "Publications" -%}
+    {%- include publication-rows.html items=site.data.publication title=cv_publication_title -%}
+    {%- endif -%}
+
+    {%- if site.data.awards.size > 0 -%}
+    {%- include awards.html -%}
+    {%- endif -%}
+
+    {%- if site.data.projects.size > 0 -%}
+    {%- include projects.html -%}
+    {%- endif -%}
+</div>

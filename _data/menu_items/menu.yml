@@ -7,8 +7,11 @@ docs:
   - title: Publications
     url: /publications.html
 
-  - title: Projects
+  - title: Software
     url: /projects-page.html
 
   - title: Blog
     url: /blog
+
+  - title: CV
+    url: /cv.html

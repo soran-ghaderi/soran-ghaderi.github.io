@@ -1,0 +1,6 @@
+<div class="container awards-container">
+  <h3 class="section-title">{{ site.awards_title | default: "Awards" }}</h3>
+  {%- for award in site.data.awards %}
+  {% include {{ award.layout | default: 'left-award' | append: ".html" }} item=award %}
+  {%- endfor %}
+</div>

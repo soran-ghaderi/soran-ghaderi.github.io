@@ -1295,6 +1295,9 @@
 // PUBLICATION CARDS - Shared palette, typography and rounded card language
 // =====================================================
 
+// =====================================================
+// PUBLICATION CARDS (Publications page) — same shell as the blog list card
+// =====================================================
 .publication-list {
   display: flex;
   flex-direction: column;
@@ -1302,207 +1305,190 @@
 }
 
 .publication-card {
-  --publication-padding: 2rem;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
-  padding: var(--publication-padding);
   background: var(--bg-color);
   border: 1px solid var(--card-border);
   border-radius: 12px;
-  transition: border-color 0.2s ease;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
   @media (hover: hover) {
     &:hover {
-      border-color: rgba(var(--accent-rgb), 0.35);
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+      .publication-card-title {
+        color: var(--accent-color);
+      }
     }
   }
-
-  @media (max-width: 767px) {
-    --publication-padding: 1.6rem;
-  }
 }
 
-// Only the overview participates in the two-column layout. Expanding an
-// abstract must not contribute to the image or metadata's grid sizing.
 .publication-card-overview {
-  display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
-  gap: 2.4rem;
+  display: flex;
   min-width: 0;
 
-  @media (max-width: 991px) {
-    grid-template-columns: 200px minmax(0, 1fr);
-    column-gap: 2rem;
-  }
-
-  @media (max-width: 767px) {
-    grid-template-columns: 160px minmax(0, 1fr);
-    column-gap: 1.6rem;
-  }
-
   @media (max-width: 575px) {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 1.6rem;
+    flex-direction: column;
   }
 }
 
-// Avoid the site's universal color transition replaying stale theme colors
-// when a previously hidden abstract is opened after switching themes.
-.publication-card * {
-  transition: none;
-}
-
+// Figure column: flush with the card edge like the blog image column, but the
+// figure is kept whole (contain) on the tinted surface instead of being cropped.
 .publication-card-image {
-  align-self: start;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  padding: 1rem;
-  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+  min-height: 150px;
   background: var(--intro-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
 
   img {
+    position: absolute;
+    inset: 1.2rem;
+    width: calc(100% - 2.4rem);
+    height: calc(100% - 2.4rem);
     display: block;
-    width: 100%;
-    height: 100%;
     object-fit: contain;
-    // Scientific figures stay whole and stationary while reading the abstract.
-    transform: none;
+    transform: none;          // figures stay still; no hover zoom on scientific plots
     will-change: auto;
   }
 
+  @media (max-width: 767px) {
+    width: 160px;
+    min-height: 130px;
+  }
+
   @media (max-width: 575px) {
+    width: 100%;
+    min-height: 0;
     aspect-ratio: 2 / 1;
   }
 }
 
 .publication-card-image-placeholder i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 2.5rem;
   color: var(--text-muted);
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .publication-card-content {
+  flex: 1;
   min-width: 0;
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 1.6rem 2rem;
+
+  @media (max-width: 575px) {
+    padding: 1.4rem 1.6rem;
+  }
+}
+
+.publication-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .publication-card-title {
-  margin: 0 0 0.8rem;
+  margin: 0;
   font-size: calc(var(--base-font-size) * 1.1);
-  font-weight: var(--font-weight-heading, 600);
+  font-weight: 600;
+  line-height: 1.35;
   color: var(--heading-color);
-  line-height: 1.4;
   overflow-wrap: anywhere;
+  transition: color 0.2s ease;
 }
 
+// "2026 · Preprint · Venue" — the blog's meta-line pattern
 .publication-card-meta {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 0.8rem;
-}
-
-// Scope text colors to the card so the general dark-mode span/p rules don't win.
-.publication-card .publication-date {
+  align-items: center;
+  gap: 0.3rem 0;
+  margin: 0;
   font-size: calc(var(--base-font-size) * 0.8);
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  color: var(--text-muted);
-}
-
-.publication-card .publication-type-badge {
-  padding: 0.2rem 0.7rem;
-  border: 1px solid var(--card-border);
-  border-radius: 4px;
-  background: var(--intro-bg);
-  color: var(--text-muted);
-  font-size: calc(var(--base-font-size) * 0.72);
-  font-weight: 500;
   line-height: 1.5;
+
+  time,
+  span {
+    color: var(--text-muted) !important;      // the light theme recolours bare spans with !important
+    font-variant-numeric: tabular-nums;
+  }
+
+  > * + *::before {
+    content: "·";
+    margin: 0 0.8rem;
+    color: var(--text-muted);
+  }
 }
 
 .publication-card .publication-authors {
   margin: 0;
-  font-size: calc(var(--base-font-size) * 0.85);
+  font-size: calc(var(--base-font-size) * 0.9);
   line-height: 1.6;
   color: var(--text-muted);
-}
 
-.publication-card .publication-author {
-  color: var(--text-muted);
+  .publication-author {
+    color: var(--text-muted) !important;
+  }
 }
 
 .publication-author-highlight {
   color: var(--heading-color);
-  font-weight: var(--font-weight-medium, 500);
+  font-weight: 500;
 }
 
-.publication-card .publication-venue {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: calc(var(--base-font-size) * 0.8);
-  line-height: 1.5;
-}
-
-.publication-card-footer {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
-  margin-top: 0.8rem;
-}
-
+// Link pills: identical to the blog's external-link pills
 .publication-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
 .publication-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  min-height: 36px;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--card-border);
+  padding: 0.3rem 0.75rem;
   border-radius: 6px;
-  background: transparent;
+  background: rgba(var(--accent-rgb), 0.08);
   color: var(--link-color);
-  font-size: calc(var(--base-font-size) * 0.8);
+  font-size: calc(var(--base-font-size) * 0.85);
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.5;
   text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   i {
-    font-size: 0.9em;
-    color: var(--accent-color);
+    margin-left: 0.45rem;
+    font-size: calc(var(--base-font-size) * 0.7);
   }
 
   &:hover {
-    border-color: var(--accent-color);
-    background: rgba(var(--accent-rgb), 0.06);
-    color: var(--link-hover);
+    background: var(--accent-color);
+    color: #fff;
     text-decoration: none;
   }
 
   &:focus-visible {
     outline: 2px solid var(--accent-color);
-    outline-offset: 3px;
+    outline-offset: 2px;
     text-decoration: none;
   }
 }
 
+// Expandable abstract: a slim footer row; the body is capped to a readable measure
 .publication-card .publication-abstract {
   display: block;
   min-width: 0;
-  margin: 1rem 0 0;
+  margin: 0;
   padding: 0;
   background: transparent;
   border: 0;
@@ -1513,14 +1499,12 @@
 .publication-abstract-toggle {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 32px;
+  gap: 0.6rem;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 1rem 2rem;
   list-style: none;
   cursor: pointer;
-  font-size: calc(var(--base-font-size) * 0.9);
+  font-size: calc(var(--base-font-size) * 0.85);
   font-weight: 500;
   line-height: 1.5;
   color: var(--text-muted);
@@ -1530,8 +1514,7 @@
   &::marker { content: ''; }
 
   i {
-    margin-right: 0.3rem;
-    font-size: 0.75em;
+    font-size: 0.7em;
     transition: transform 0.2s ease;
   }
 
@@ -1541,8 +1524,11 @@
 
   &:focus-visible {
     outline: 2px solid var(--accent-color);
-    outline-offset: 3px;
-    border-radius: 4px;
+    outline-offset: -2px;
+  }
+
+  @media (max-width: 575px) {
+    padding: 1rem 1.6rem;
   }
 }
 
@@ -1556,50 +1542,344 @@
 }
 
 .publication-card .publication-abstract-body {
-  width: 100%;
-  min-width: 0;
+  max-width: 80ch;                 // comfortable reading measure inside a wide card
   margin: 0;
-  padding: 0.8rem 0 0;
+  padding: 0 2rem 1.8rem;
   background: transparent;
   color: var(--text-color);
-  font-family: var(--font-body);
-  font-size: var(--base-font-size);
-  font-weight: var(--font-weight-body, 400);
+  font-size: calc(var(--base-font-size) * 0.95);
   line-height: 1.65;
   text-align: left;
   overflow-wrap: break-word;
 
+  // Don't replay the theme colour transition when a hidden abstract is first opened
+  &, * { transition: none; }
+
   p, ul, ol, li {
     color: inherit;
-    font-family: inherit;
     font-size: inherit;
-    font-weight: inherit;
     line-height: inherit;
     text-align: inherit;
   }
 
-  p, ul, ol {
-    margin: 0 0 1em;
-  }
-
-  ul, ol {
-    padding-left: 1.3em;
-  }
-
+  p, ul, ol { margin: 0 0 1em; }
+  ul, ol { padding-left: 1.3em; }
   li { margin-bottom: 0.35em; }
   li::marker { color: var(--accent-color); }
+
   strong, b {
     color: var(--heading-color);
-    font-size: inherit;
     font-weight: 600;
   }
+
   > :last-child { margin-bottom: 0; }
+
+  @media (max-width: 575px) {
+    padding: 0 1.6rem 1.6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .publication-card,
-  .publication-card * {
+  .publication-card-title,
+  .publication-link,
+  .publication-abstract-toggle,
+  .publication-abstract-toggle i {
     transition: none;
+  }
+}
+
+// Homepage "selected" sections and the link to the full page
+.selected-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-more {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.75rem 0 0;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: calc(var(--base-font-size) * 0.85);
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease, gap 0.2s ease;
+
+    i { font-size: 0.75em; }
+
+    &:hover {
+      color: var(--accent-color);
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+  }
+}
+
+// Compact publication rows (homepage + CV). Same grid as the other CV rows.
+.publication-row-body {
+  .publication-row-title {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--heading-color);
+  }
+
+  .publication-row-authors {
+    margin-bottom: 0.4rem;
+    font-size: calc(var(--base-font-size) * 0.95);
+    color: var(--text-muted);
+
+    .publication-author { color: var(--text-muted); }
+  }
+
+  .publication-row-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    margin-bottom: 0;
+    font-size: calc(var(--base-font-size) * 0.85);
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      i {
+        margin-right: 0.35rem;
+        font-size: 0.85em;
+      }
+
+      &:hover {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Linked titles keep the heading colour; the selector outranks the theme's global
+// `.dark a:not(.main-navigation a):not(.navbar-nav a)` link rule.
+.layout.layout-publication-row .publication-row-body .publication-row-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+}
+
+.awards-container {
+  background-color: var(--bg-color);
+}
+
+// =====================================================
+// ABOUT BACKDROP — rounded photo panel behind the portrait
+// Markup: _includes/about.html; assets, caption + credit: _data/about_backdrop.yml
+// =====================================================
+.about-row {
+  position: relative;
+}
+
+// The panel fills the profile column's content box from the top of the about row
+// to the end of the about text. It is a card, so it shares the cards' 12px radius.
+.about-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;                                   // column gutter
+  width: calc(25% - 30px);                      // col-md-3 content box
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);  // hairline on the photo, same in both themes
+  background-color: #0a0d16;                    // base under the inline placeholder
+  box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+
+  @media (max-width: 991px) {
+    width: calc(33.3333% - 30px);               // col-sm-4 content box
+  }
+
+  // Phones: the same card at a fixed height at the top of the section; the text follows it.
+  @media (max-width: 767px) {
+    right: 15px;
+    bottom: auto;
+    width: auto;
+    height: 380px;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.about-row--right .about-backdrop {
+  left: auto;
+  right: 15px;
+
+  @media (max-width: 767px) {
+    left: 15px;
+  }
+}
+
+.about-backdrop__media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;                       // inline placeholder, painted before the image arrives
+  background-position: 50% 0;
+
+  img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0;                     // sky under the portrait, the dome right below it
+    transform: none;                            // undo the global img GPU-layer rule
+    will-change: auto;
+    backface-visibility: visible;
+    animation: about-backdrop-in 600ms ease-out both;
+
+    @media (max-width: 767px) {
+      object-position: 50% 18%;                 // brings the dome under the portrait
+    }
+  }
+
+  // Scrim: settles the sky behind the portrait, leaves the facade open, anchors the caption
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 9, 18, 0.40) 0%,
+      rgba(6, 9, 18, 0.08) 34%,
+      rgba(6, 9, 18, 0.14) 66%,
+      rgba(6, 9, 18, 0.84) 100%
+    );
+
+    // Phones: the dome sits in the lower half of the shorter card, so keep the scrim open longer
+    @media (max-width: 767px) {
+      background: linear-gradient(
+        180deg,
+        rgba(6, 9, 18, 0.36) 0%,
+        rgba(6, 9, 18, 0.06) 42%,
+        rgba(6, 9, 18, 0.10) 74%,
+        rgba(6, 9, 18, 0.74) 100%
+      );
+    }
+  }
+}
+
+.about-backdrop__caption {
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 1.4rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+// The caption always sits on the dark photo, so it keeps its own colour in both themes.
+// `!important` + the long selectors are needed because the light theme recolours every
+// `span` with `html.light body span { color: … !important }`.
+.about-row .about-backdrop .about-backdrop__caption > span {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.about-row .about-backdrop .about-backdrop__caption > .about-backdrop__caption-sub {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.56) !important;
+}
+
+@keyframes about-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-backdrop__media img {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-data: reduce) {
+  .about-backdrop__media img {
+    display: none;                              // the panel keeps its inline placeholder
+  }
+}
+
+// Portrait inside the panel: inset from the top, scaled to the column, white ring, deep shadow
+.about-row--backdrop {
+  .about-media,
+  .about-body {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-media {
+    padding-top: 2.4rem;
+
+    @media (max-width: 767px) {
+      min-height: 380px;
+      padding-top: 2rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .profile-img {
+    width: min(200px, calc(100% - 3.2rem));
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    @media (max-width: 767px) {
+      width: 168px;
+    }
+  }
+}
+
+// Ring + shadow on the portrait. Selector outranks the themes' `html.light body .profile-img` glow rules.
+.about-row.about-row--backdrop .about-media .profile-img {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+// Footer credit for the backdrop photo
+.site-footer__credit {
+  margin: 0.9rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  opacity: 0.8;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(128, 128, 128, 0.45);
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: var(--accent-color);
+    }
   }
 }
 

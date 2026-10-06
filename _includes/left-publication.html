@@ -1,33 +1,33 @@
-<!-- Publication card: stable figure preview with a full-width abstract. -->
+<!-- Publication card: same shell as the blog list card (flush image column, meta line, link pills),
+     with the figure kept whole and an expandable abstract below the overview. -->
 <article class="publication-card">
     <div class="publication-card-overview">
-        <!-- Image Section -->
-        {% if include.item.gif or include.item.image %}
+        {%- assign figure = include.item.gif | default: include.item.image -%}
+        {%- if figure %}
         <div class="publication-card-image">
-            {% if include.item.gif %}
-            <img src="{{ include.item.gif | relative_url }}" alt="{{ include.item.title | escape }}" loading="lazy" decoding="async">
-            {% else %}
-            <img src="{{ include.item.image | relative_url }}" alt="{{ include.item.title | escape }}" loading="lazy" decoding="async">
-            {% endif %}
+            <img src="{{ figure | absolute_url }}" alt="" loading="lazy" decoding="async">
         </div>
-        {% else %}
+        {%- else %}
         <div class="publication-card-image publication-card-image-placeholder" aria-hidden="true">
             <i class="fa fa-book"></i>
         </div>
-        {% endif %}
+        {%- endif %}
 
-        <!-- Content Section -->
         <div class="publication-card-content">
             <div class="publication-card-header">
-                {% if include.item.title %}
                 <h4 class="publication-card-title">{{ include.item.title }}</h4>
-                {% endif %}
+                {%- if include.item.year or include.item.publication_type or include.item.venue %}
+                <p class="publication-card-meta">
+                    {%- if include.item.year %}<time datetime="{{ include.item.year }}">{{ include.item.year }}</time>{% endif -%}
+                    {%- if include.item.publication_type %}<span>{{ include.item.publication_type }}</span>{% endif -%}
+                    {%- if include.item.venue %}<span>{{ include.item.venue }}</span>{% endif -%}
+                </p>
+                {%- endif %}
             </div>
 
-            <!-- Authors -->
-            {% if include.item.authors %}
+            {%- if include.item.authors %}
             <p class="publication-authors">
-                {% assign site_author = site.name | strip %}
+                {%- assign site_author = site.name | strip -%}
                 {%- for author in include.item.authors -%}
                     {%- if author == site_author -%}
                         <strong class="publication-author-highlight">{{ author }}</strong>
@@ -37,62 +37,28 @@
                     {%- unless forloop.last %}, {% endunless -%}
                 {%- endfor %}
             </p>
-            {% endif %}
+            {%- endif %}
 
-            {% if include.item.year or include.item.publication_type %}
-            <div class="publication-card-meta">
-                {% if include.item.year %}
-                <time class="publication-date" datetime="{{ include.item.year }}">{{ include.item.year }}</time>
-                {% endif %}
-                {% if include.item.publication_type %}
-                <span class="publication-type-badge">{{ include.item.publication_type }}</span>
-                {% endif %}
+            {%- if include.item.paper or include.item.code or include.item.website or include.item.link %}
+            <div class="publication-links">
+                {%- if include.item.paper %}<a href="{{ include.item.paper }}" target="_blank" rel="noopener" class="publication-link">Paper <i class="fa fa-file-pdf" aria-hidden="true"></i></a>{% endif %}
+                {%- if include.item.code %}<a href="{{ include.item.code }}" target="_blank" rel="noopener" class="publication-link">Code <i class="fab fa-github" aria-hidden="true"></i></a>{% endif %}
+                {%- if include.item.website %}<a href="{{ include.item.website }}" target="_blank" rel="noopener" class="publication-link">Website <i class="fa fa-globe" aria-hidden="true"></i></a>{% endif %}
+                {%- if include.item.link %}<a href="{{ include.item.link }}" target="_blank" rel="noopener" class="publication-link">Publication <i class="fa fa-external-link-alt" aria-hidden="true"></i></a>{% endif %}
             </div>
-            {% endif %}
-
-            {% if include.item.venue or include.item.paper or include.item.code or include.item.website or include.item.link %}
-            <div class="publication-card-footer">
-                {% if include.item.venue %}
-                <p class="publication-venue"><em>{{ include.item.venue }}</em></p>
-                {% endif %}
-                {% if include.item.paper or include.item.code or include.item.website or include.item.link %}
-                <div class="publication-links">
-                    {% if include.item.paper %}
-                    <a href="{{ include.item.paper }}" target="_blank" rel="noopener" class="publication-link">
-                        <i class="fa fa-file-pdf" aria-hidden="true"></i> Paper
-                    </a>
-                    {% endif %}
-                    {% if include.item.code %}
-                    <a href="{{ include.item.code }}" target="_blank" rel="noopener" class="publication-link">
-                        <i class="fab fa-github" aria-hidden="true"></i> Code
-                    </a>
-                    {% endif %}
-                    {% if include.item.website %}
-                    <a href="{{ include.item.website }}" target="_blank" rel="noopener" class="publication-link">
-                        <i class="fa fa-globe" aria-hidden="true"></i> Website
-                    </a>
-                    {% endif %}
-                    {% if include.item.link %}
-                    <a href="{{ include.item.link }}" target="_blank" rel="noopener" class="publication-link">
-                        <i class="fa fa-external-link-alt" aria-hidden="true"></i> Publication
-                    </a>
-                    {% endif %}
-                </div>
-                {% endif %}
-            </div>
-            {% endif %}
+            {%- endif %}
         </div>
     </div>
 
-    {% if include.item.details %}
+    {%- if include.item.details %}
     <details class="publication-abstract">
         <summary class="publication-abstract-toggle">
-            Abstract
+            <span>Abstract</span>
             <i class="fa fa-chevron-down" aria-hidden="true"></i>
         </summary>
         <div class="publication-abstract-body">
             {{ include.item.details | markdownify }}
         </div>
     </details>
-    {% endif %}
+    {%- endif %}
 </article>

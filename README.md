@@ -265,6 +265,10 @@ The homepage shows the About section plus entries flagged `selected: true`.
 ### About backdrop
 
 The homepage shows a rounded photo panel of the Radcliffe Camera behind the portrait, filling the profile column from the top of the about row to the end of the about text (a fixed-height card on phones). `scripts/make_backdrop.py` generates the assets (crop, sky extension, grade, 1x/2x WebP + JPEG fallback, inline placeholder) into `assets/images/backdrop/` and writes `_data/about_backdrop.yml` (`enabled`, `side: left|right`, srcset, caption, credit). The photo is CC BY-SA 4.0, so the homepage footer prints the credit line from that file. The image is skipped in print and when the visitor prefers reduced data.
+
+### Portrait
+
+`about_profile_image` in `_config.yml` is the full-resolution source photo only. `scripts/make_portrait.py` crops it head-and-shoulders, white-balances it part way, quietens the background, applies the same grade as the backdrop and writes 1x/2x/3x WebP (plus a JPEG fallback), the favicon set, the Apple touch icon and the 1200px social-card image into `assets/images/portrait/`, recording the paths in `_data/about_portrait.yml`. `_includes/about.html`, `menubar.html` (brand logo) and `head.html` (icons) read that file; `image`, `logo` and `favicon` in `_config.yml` point at the generated files too. Re-run the script after replacing the photo and adjust `CROP` in it if the framing changes. `--hq DIR` also writes a full-quality `portrait-hq.jpg` (no grain, quality 92) for profile uploads such as LinkedIn; it is not part of the site.
 Education, experience, the full publication list, awards and all projects live on the CV page (`_pages/cv.html`, served at `/cv.html`).
 
 ---

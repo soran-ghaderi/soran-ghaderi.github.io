@@ -1,5 +1,5 @@
 ---
 # To change the default theme layout see: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: homepage
-image: images/profile-2026.jpg
+image: assets/images/portrait/og-image.jpg
 ---

@@ -15,7 +15,10 @@
                 <!-- Brand/Logo as first item -->
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{ site.url }}/">
-                        {% if site.about_profile_image %}
+                        {% assign pt = site.data.about_portrait %}
+                        {% if pt and pt.brand %}
+                            <img src="{{ pt.src | relative_url }}" srcset="{{ pt.brand | relative_url }} 200w" sizes="36px" width="36" height="36" alt="{{ site.name }}" class="brand-logo">
+                        {% elsif site.about_profile_image %}
                             <img src="{{ site.url }}/{{ site.about_profile_image }}" alt="{{ site.name }}" class="brand-logo">
                         {% elsif site.logo %}
                             <img src="{{ site.url }}/{{ site.logo }}" alt="{{ site.name }}" class="brand-logo">

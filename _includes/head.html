@@ -38,7 +38,14 @@
   
   <!-- Main CSS -->
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
+  {%- assign pt = site.data.about_portrait %}
+  {%- if pt and pt.favicon %}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ pt.favicon | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ pt.favicon_large | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ pt.apple_touch_icon | relative_url }}">
+  {%- else %}
+  <link rel="icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
+  {%- endif %}
 
   <!-- Centralized Color Palette (from _config.yml) -->
   {%- include palette.html -%}

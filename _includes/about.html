@@ -27,7 +27,13 @@
     {%- endif -%}
     {%- if site.about_profile_image -%}
       <div class="col-xs-12 col-sm-4 col-md-3 no-print about-media{% if backdrop_right %} col-sm-push-8 col-md-push-9{% endif %}">
+        {%- assign pt = site.data.about_portrait -%}
+        {%- if pt and pt.srcset %}
+        <!-- Pre-cropped, graded 1x/2x/3x portrait from scripts/make_portrait.py (_data/about_portrait.yml) -->
+        <img class="profile-img" src="{{ pt.src | relative_url }}" srcset="{{ pt.srcset }}" sizes="{{ pt.sizes }}" alt="{{ site.name | default: 'Profile photo' }}" fetchpriority="high" decoding="async" width="200" height="200">
+        {%- else %}
         <img class="profile-img" src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name | default: 'Profile photo' }}" fetchpriority="high" decoding="async" width="200" height="200">
+        {%- endif %}
       </div>
     {%- endif -%}
     <div class="col-xs-12 {%- if site.about_profile_image %} col-sm-8 col-md-9 col-print-12{% if backdrop_right %} col-sm-pull-4 col-md-pull-3{% endif %}{% endif %} about-body">

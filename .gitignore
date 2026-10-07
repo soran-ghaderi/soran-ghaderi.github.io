@@ -8,3 +8,4 @@ _site
 vendor
 .idea
 .github/copilot-instructions.md
+__pycache__/

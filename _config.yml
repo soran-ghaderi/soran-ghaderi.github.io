@@ -259,7 +259,7 @@ about_content: | # this will include new lines to allow paragraphs
     <p>What are the fundamental invariances that can compose and create intelligence? My ultimate goal is to understand and build intelligence.</p>
     <p>Many interesting scientific questions need modeling non-linear and chaotic dynamical systems. Some are intrinsically ill-posed and have non-unique solutions and need a probabilistic language. I'm interested in developing models able to represent such dynamics natively.</p>
     <p>Inverse problems usually need to be solved from noisy and partially observed data. The question is how can we learn the global representation of the underlying dynamics under data constraints? Given that I tend to avoid handcrafting physics and learning-competing inductive biases explicitly (for generalizability and scalability reasons), data-efficient self-supervised learning methods are another line of work I'm keen to work on.</p>
-    <p>I've built TorchEBM that looks at these problems through the lens of statistical mechanics, differential and Riemannian geometry, and Optimal Transport.</p>
+    <p>I've built TorchEBM that looks at these problems through the lens of statistical mechanics and information geometry, differential and Riemannian geometry, Itô and stochastic calculus, and Optimal Transport.</p>
     </section>
     
   <section>

@@ -6,17 +6,17 @@ comments: false
 ---
 
 <div class="container cv-container">
+    {%- if site.data.publication.size > 0 -%}
+    {%- assign cv_publication_title = site.publication_title | default: "Publications" -%}
+    {%- include publication-rows.html items=site.data.publication title=cv_publication_title -%}
+    {%- endif -%}
+
     {%- if site.data.education.size > 0 -%}
     {%- include education.html -%}
     {%- endif -%}
 
     {%- if site.data.experience.size > 0 -%}
     {%- include experience.html -%}
-    {%- endif -%}
-
-    {%- if site.data.publication.size > 0 -%}
-    {%- assign cv_publication_title = site.publication_title | default: "Publications" -%}
-    {%- include publication-rows.html items=site.data.publication title=cv_publication_title -%}
     {%- endif -%}
 
     {%- if site.data.awards.size > 0 -%}

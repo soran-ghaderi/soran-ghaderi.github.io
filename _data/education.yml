@@ -2,7 +2,8 @@
   name: University of Oxford 
   dates: 2026 - 2030
   qualification: DPhil Computer Science
-  # description: |
+  description: |
+    Generative models. 
     
 - layout: left
   name: University of Essex 

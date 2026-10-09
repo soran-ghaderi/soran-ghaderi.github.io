@@ -3,7 +3,7 @@
   job_title: Doctoral Researcher
   dates: Oct 2026 - Present
   description: |
-    Theoretical foundations of generative models, PDEs, chaotic dynamical systems and ill-posed inverse problems, applied to cardiac ECG parameter estimation and the wider scientific problems. Additionally, the formal side of the work and deriving convergence and generalisation bounds, stability guarantees and identifiability.
+    Theoretical foundations of generative models for ill-posed inverse problems in systems governed by PDEs and chaotic dynamics, applied to cardiac ECG parameter estimation and wider scientific problems. Additionally, the formal side of the work and deriving convergence and generalisation bounds, stability guarantees and identifiability results.
 
 - layout: left
   company: CoSTAR National Lab

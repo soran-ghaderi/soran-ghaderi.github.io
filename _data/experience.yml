@@ -6,6 +6,14 @@
     Theoretical foundations of generative models for ill-posed inverse problems in systems governed by PDEs and chaotic dynamics, applied to cardiac ECG parameter estimation and wider scientific problems. Additionally, the formal side of the work and deriving convergence and generalisation bounds, stability guarantees and identifiability results.
 
 - layout: left
+  company: Open Source
+  link: github.com/soran-ghaderi
+  job_title: Developer & Maintainer
+  dates: 2019 - Present
+  description: |
+    TorchEBM, cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See the Software page.
+
+- layout: left
   company: CoSTAR National Lab
   job_title: ML Research Engineer
   dates: Feb 2026 - Sep 2026
@@ -26,11 +34,3 @@
   dates: Apr 2024 - Oct 2024
   description: |
     Developed <a href="https://soran-ghaderi.github.io/nir/">NIR</a> framework for integrating iterative reasoning into LLM hidden states without fine-tuning.
-
-- layout: left
-  company: Open Source
-  link: github.com/soran-ghaderi
-  job_title: Developer & Maintainer
-  dates: 2019 - Present
-  description: |
-    TorchEBM, cuRBLAS, TransformerX, Emgraph, Bigraph, TASE. See the Software page.

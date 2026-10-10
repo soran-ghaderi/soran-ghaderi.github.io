@@ -247,10 +247,10 @@ about_content: | # this will include new lines to allow paragraphs
   <section>
     <h3>About</h3>
   <p>
-  DPhil (PhD) student in Computer Science at the University of Oxford advised by Prof. <a href="https://www.cs.ox.ac.uk/people/alfonso.bueno-orovio/">Alfonso Bueno-Orovio</a>.
+  DPhil (PhD) student in Computer Science at the University of Oxford advised by Prof. <a href="https://www.cs.ox.ac.uk/people/alfonso.bueno-orovio/" target="_blank" rel="noopener">Alfonso Bueno-Orovio</a>.
   Previously research intern at UIUC Blender Lab (energy-based models).
   MSc AI (Distinction) from the University of Essex, advised by Prof. 
-  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi">Luca Citi</a>.
+  <a href="https://www.essex.ac.uk/people/CITIL35902/Luca Citi" target="_blank" rel="noopener">Luca Citi</a>.
   </p>
   </section>
   
